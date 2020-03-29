@@ -1,0 +1,11 @@
+{
+ :paths
+ ["src"]
+ :deps
+ {org.clojure/clojure {:mvn/version "1.10.1"}
+  org.clojure/data.csv {:mvn/version "0.1.4"}
+  cheshire {:mvn/version "5.9.0"}}
+
+ :aliases {:rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
+                   :main-opts  ["-m" "rebel-readline.main"]}}
+ }
