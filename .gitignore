@@ -1,1 +1,4 @@
 .cpcache
+.nrepl-port
+.shadow-cljs
+public/js/compiled

@@ -11,8 +11,8 @@
 
 (let [uri (URL. "https://e.infogram.com/api/live/flex/0e44ab71-9a20-43ab-89b3-0e73c594668f/832a1373-0724-4182-a188-b958f9bf0906?")
       dest (io/file "src/datos.json")
-      conn ^HttpURLConnection (.openConnection ^URL uri)
-      _ (.connect conn)]
+      conn ^HttpURLConnection (.openConnection ^URL uri)]
+  (.connect conn)
   (with-open [is (.getInputStream conn)]
     (io/copy is dest)))
 
@@ -35,6 +35,7 @@
       ages (into [] (map #(clojure.string/lower-case (nth % 5)) bogota))
       only-infected (remove (fn [s] (= "recuperado" (clojure.string/lower-case (nth s 4)))) rows)
       by-regions (frequencies (map #(nth % 2) only-infected))]
+
   ;; all statuses available
   (distinct (map #(clojure.string/lower-case (nth % 4)) rows))
 
@@ -44,23 +45,17 @@
   ;; ;; count fallecidos en bogota
   (count (filter #(= "fallecido" %) statuses)) ;; => 3 => 5
 
-  ;; ;; (print bogota)
-  (count rows) ;; => 491 => 539 => 608 => 702
+  (count rows) ;; => 491 => 539 => 608 => 702 => 798
 
   (count (filter #{"Bogotá"}
-           (map #(nth % 2) rows))) ;; => 225 => 264 => 297
+           (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353
 
-  (count (filter #{"28/3/2020"}
-                 (map #(nth % 1) rows)))
+  (count (filter #{"30/3/2020"}
+                 (map #(nth % 1) rows))) ;; =>
   ;; 27/3/2020 => 48
   ;; 28/3/2020 => 69
   ;; 29/3/2020 => 94
-
-  (count (filter #{"29/3/2020"}
-                 (map #(nth % 1) rows))) ;; => 94
-
-
-  (filter #(some #{"fallecido"} %) (map #(clojure.string/lower-case (nth % 4)) (filter #(some #{"Bogotá"} %) rows)))
+  ;; 30/3/2020 => 96
 
   ;; statuses to lower case
   (map #(clojure.string/lower-case (nth % 4)) (filter #(some #{"Bogotá"} %) rows))
@@ -69,16 +64,25 @@
        (filter #(some #{"Bogotá"} %) rows))
 
   ;; numero de relacionados en bogota
-  (count (filter #(= "relacionado" %) types)) ;; => 71 ;; => 73 ;; => 89
-  (count (filter #(= "importado" %) types)) ;; => 126 => 139 => 154
+  (count (filter #(= "relacionado" %) types)) ;; => 71 ;; => 73 ;; => 89 ;; => 95
+  (count (filter #(= "importado" %) types)) ;; => 126 => 139 => 154 => 178
 
   ;; por edades
-  ;; => {"10 a 19" 6, "20 a 29" 53, "30 a 39" 76, "40 a 49" 58, "60 a 69" 36, "70 a 79" 14, "50 a 59" 48, "80 a 89" 6}
+  ;; => {"20 a 29" 62, "70 a 79" 18, "60 a 69" 41, "50 a 59" 59, "40 a 49" 65, "10 a 19" 6, "80 a 89" 7, "30 a 39" 90, "0 a 9" 2}
   (frequencies ages)
 
   ;; suma por regiones
   (frequencies (map #(nth % 2) only-infected))
-  (by-regions "Bogotá") ;; => 294
+  (by-regions "Bogotá") ;; => 294 => 350
 
-  ;; {"recuperado" 3, "en casa" 259, "hospital uci" 16, "hospital" 14, "fallecido" 5}
-  (frequencies statuses))
+  ;; => {"recuperado" 3, "en casa" 305, "hospital uci" 17, "hospital" 20, "fallecido" 5}
+  (frequencies statuses)
+  ;; by-regions
+
+  ;; Fallecidos total
+  (count (filter #{"Fallecido"}
+           (map #(nth % 4) rows))) ;; => 14
+
+  ;; fallecidos por regiones:
+  ;; => {"Santa Marta" 1, "Cali" 4, "Cartagena" 3, "Bogotá" 5, "Neiva" 1}
+  (frequencies (into [] (map #(nth % 2) (filter #(some #{"Fallecido"} %) rows)))))
