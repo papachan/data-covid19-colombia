@@ -10,24 +10,23 @@
            java.net.HttpURLConnection))
 
 (let [uri (URL. "https://e.infogram.com/api/live/flex/0e44ab71-9a20-43ab-89b3-0e73c594668f/832a1373-0724-4182-a188-b958f9bf0906?")
-      dest (io/file "src/datos.json")
+      dest (io/file "resources/datos.json")
       conn ^HttpURLConnection (.openConnection ^URL uri)]
   (.connect conn)
   (with-open [is (.getInputStream conn)]
     (io/copy is dest)))
 
-(let [content (slurp (io/resource "datos.json"))
-      json-data (json/parse-string content)
-      data (json-data "data")
+(def content (slurp (io/resource "datos.json")))
+(def json-data (json/parse-string content))
+
+(let [data (json-data "data")
       date (clojure.string/replace (last (map #(nth % 1) (rest (first data)))) #"/" "-")
       file-name (clojure.string/join ["data/" "Datos_" date ".csv"])]
   (spit file-name "" :append false)
   (with-open [out-file (io/writer file-name)]
     (csv/write-csv out-file (first data))))
 
-(let [content (slurp (io/resource "datos.json"))
-      json-data (json/parse-string content)
-      data (json-data "data")
+(let [data (json-data "data")
       rows (into [] (rest (first data)))
       bogota (filter #(some #{"Bogotá"} %) rows)
       statuses (into [] (map #(clojure.string/lower-case (nth % 4)) bogota))
