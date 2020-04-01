@@ -1,6 +1,22 @@
 
-Start:
+### Colombian Corona virus reports
+
+
+Start the project:
 
 ```
-clj -m demo.colombia
+    yarn
+```
+
+then:
+
+```
+    shadow-cljs watch app
+```
+
+Release for github pages:
+
+
+```
+    $ shadow-cljs release app
 ```

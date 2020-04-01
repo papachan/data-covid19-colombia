@@ -2,3 +2,4 @@
 .nrepl-port
 .shadow-cljs
 public/js/compiled
+node_modules
