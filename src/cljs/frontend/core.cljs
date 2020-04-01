@@ -1,7 +1,27 @@
 (ns frontend.core
-  (:require [reagent.core :as reagent :refer [atom]]
+  (:require [re-frame.core :as re-frame]
+            [reagent.core :as reagent :refer [atom]]
             ["chartist" :as chartist]))
 
+
+;;; Events Handlers ;;;
+
+(re-frame/reg-event-db
+ ::initialize-db
+ (fn [_ _]
+   {:data nil}))
+
+(re-frame/reg-event-db
+ ::set-data-db
+ (fn [db [_ new-value]]
+   (assoc db :data new-value)))
+
+;;; Subscriptions ;;;
+
+(re-frame/reg-sub
+ ::data
+ (fn [db]
+   (:data db)))
 
 (defn fetching-data
   []
@@ -9,7 +29,17 @@
       (.then #(.json %))
       (.then (fn [j] (js->clj j :keywordize-keys true)))
       (.then (fn [res]
-               (:data res)))))
+               (re-frame/dispatch [::set-data-db (:data res)])))))
+
+(defn sum [coll]
+  (loop [in coll,
+         sum 0,
+         out ()]
+    (if (seq in)
+      (recur (rest in) (+ (second (first in)) sum)
+             (cons [(first (first in)) (+ (second (first in)) sum)]
+                   out))
+      (reverse out))))
 
 (defn show-chart
   [data]
@@ -20,16 +50,20 @@
                  :showArea true
                  :axisY {:onlyInteger true}
                  :chartPadding {:right 100
-                                :left 100}}
-        ]
+                                :left 100}}]
     (chartist/Line. ".ct-chart" (clj->js data) (clj->js options))))
 
 (defn chart-component
   []
-  (let [data (fetching-data)]
+  (let [data @(re-frame/subscribe [::data])
+        rows (rest (first data))
+        fechas (sort (frequencies (into [] (map #(clojure.string/lower-case (nth % 1)) rows))))
+        res (sum fechas)
+        series (into [] (map #(nth % 1) res))
+        fechas (into [] (map #(first (clojure.string/split (nth % 0) #"/")) res))]
     (reagent/create-class
-     {:component-did-mount #(show-chart {:labels ["Mar" "Jun" "Jul"]
-                                         :series [[1 12 10] [1 40 80]]})
+     {:component-did-mount #(show-chart {:labels fechas
+                                         :series [series]})
       :display-name        "chart-component"
       :reagent-render      (fn []
                              [:div {:class "ct-chart ct-perfect-fourth"}])})))
@@ -47,4 +81,6 @@
   ;; init is called ONCE when the page loads
   ;; this is called in the index.html and must be exported
   ;; so it is available even in :advanced release builds
+  (re-frame/dispatch-sync [::initialize-db])
+  (fetching-data)
   (start))
