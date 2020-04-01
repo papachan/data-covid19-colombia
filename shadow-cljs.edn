@@ -27,4 +27,6 @@
          :http-root    "public"
          :http-port    3000
          :preloads     [devtools.preload]}
-        }}}
+
+        :release
+        {:output-dir "docs/js/compiled"}}}}

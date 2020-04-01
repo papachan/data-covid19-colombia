@@ -1,27 +1,8 @@
 (ns frontend.core
   (:require [re-frame.core :as re-frame]
             [reagent.core :as reagent :refer [atom]]
-            ["chartist" :as chartist]))
-
-
-;;; Events Handlers ;;;
-
-(re-frame/reg-event-db
- ::initialize-db
- (fn [_ _]
-   {:data nil}))
-
-(re-frame/reg-event-db
- ::set-data-db
- (fn [db [_ new-value]]
-   (assoc db :data new-value)))
-
-;;; Subscriptions ;;;
-
-(re-frame/reg-sub
- ::data
- (fn [db]
-   (:data db)))
+            ["chartist" :as chartist]
+            [frontend.events :as events]))
 
 (defn fetching-data
   []
@@ -29,7 +10,7 @@
       (.then #(.json %))
       (.then (fn [j] (js->clj j :keywordize-keys true)))
       (.then (fn [res]
-               (re-frame/dispatch [::set-data-db (:data res)])))))
+               (re-frame/dispatch [::events/set-data-db (:data res)])))))
 
 (defn sum [coll]
   (loop [in coll,
@@ -45,28 +26,25 @@
   [data]
   (let [options {:fullWidth true
                  :height "380px"
-                 :low 0
-                 :lineSmooth false
-                 :showArea true
-                 :axisY {:onlyInteger true}
-                 :chartPadding {:right 100
-                                :left 100}}]
+                 :lineSmooth false}]
     (chartist/Line. ".ct-chart" (clj->js data) (clj->js options))))
 
 (defn chart-component
   []
-  (let [data @(re-frame/subscribe [::data])
-        rows (rest (first data))
-        fechas (sort (frequencies (into [] (map #(clojure.string/lower-case (nth % 1)) rows))))
-        res (sum fechas)
-        series (into [] (map #(nth % 1) res))
-        fechas (into [] (map #(first (clojure.string/split (nth % 0) #"/")) res))]
-    (reagent/create-class
-     {:component-did-mount #(show-chart {:labels fechas
-                                         :series [series]})
-      :display-name        "chart-component"
-      :reagent-render      (fn []
-                             [:div {:class "ct-chart ct-perfect-fourth"}])})))
+  (let [data @(re-frame/subscribe [::events/data])]
+    (when-not (empty? data)
+      (let [fechas (sort (frequencies (into [] (map #(nth % 1) data))))
+            res (sum fechas)
+            series1 (into [] (map #(nth % 1) res))
+            fechas (into [] (map #(first (clojure.string/split (nth % 0) #"/")) res))]
+        (reagent/create-class
+         {:component-did-mount #(show-chart {:labels fechas
+                                             :series [series1]})
+          :display-name        "chart-component"
+          :reagent-render      (fn []
+                                 [:div {:id "chart4"
+                                        :class "ct-chart"}])})))))
+
 
 (defn start []
   (reagent/render [chart-component]
@@ -81,6 +59,7 @@
   ;; init is called ONCE when the page loads
   ;; this is called in the index.html and must be exported
   ;; so it is available even in :advanced release builds
-  (re-frame/dispatch-sync [::initialize-db])
+  (re-frame/dispatch-sync [::events/initialize-db])
+  ;; (re-frame/dispatch [::events/initialize-db])
   (fetching-data)
   (start))
