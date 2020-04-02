@@ -917,7 +917,7 @@ ID de caso,Fecha de diagnóstico,Ciudad de ubicación,Departamento,Atención**,E
 916,01/04/2020,Barranquilla,Barranquilla,Casa,61,M,En estudio,Colombia
 917,01/04/2020,Cumbal,Nariño,Casa,57,F,Importado,Ecuador
 918,01/04/2020,Cumbal,Nariño,Casa,58,M,Importado,Ecuador
-919,01/04/2020,Cartago,Valle del Cauca,Casa,16.,F,Importado,Francia
+919,01/04/2020,Cartago,Valle del Cauca,Casa,16,F,Importado,Francia
 920,01/04/2020,Cali,Valle del Cauca,Casa,41,M,En estudio,Colombia
 921,01/04/2020,Ulloa,Valle del Cauca,Casa,58,M,Importado,Estados Unidos
 922,01/04/2020,Yumbo,Valle del Cauca,Casa,68,F,Importado,España
