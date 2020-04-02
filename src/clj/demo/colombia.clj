@@ -4,7 +4,8 @@
             [clojure.string :as str]
             [clojure.java.io :as io]
             [clojure.data.csv :as csv]
-            [cheshire.core :as json])
+            [cheshire.core :as json]
+            [clj-time.format :as f])
   (:import java.net.URL
            java.net.HttpURLConnection))
 
@@ -25,13 +26,30 @@
   (with-open [out-file (io/writer file-name)]
     (csv/write-csv out-file (first data))))
 
+(defn make-serie
+  [coll]
+  (loop [in coll,
+         out {}]
+    (if (seq in)
+      (recur (rest in)
+             (conj out {(first in) 0}))
+      out)))
+
+
+(def fmt (f/formatter "dd/MM/yyyyy"))
+
 (let [rows (into [] (rest (first data)))
       bogota (filter #(some #{"Bogotá"} %) rows)
       statuses (into [] (map #(clojure.string/lower-case (nth % 4)) bogota))
       types (into [] (map #(clojure.string/lower-case (nth % 7)) bogota))
       ages (into [] (map #(clojure.string/lower-case (nth % 5)) bogota))
       only-infected (remove (fn [s] (= "recuperado" (clojure.string/lower-case (nth s 4)))) rows)
-      by-regions (frequencies (map #(nth % 2) only-infected))]
+      by-regions (frequencies (map #(nth % 2) only-infected))
+      series-fechas (make-serie (sort (into #{} (map #(nth % 1) rows))))
+      deaths (frequencies (into [] (map #(nth % 1) (filter #(some #{"Fallecido"} %) rows))))
+      result (apply merge series-fechas deaths)]
+
+  ;; (merge fechas fallecidos)
 
   ;; all cases per dates
   (sort (frequencies (into [] (map #(nth % 1) rows))))
@@ -90,4 +108,7 @@
 
   ;; fallecidos por regiones:
   ;; => => {"Santa Marta" 1, "Cali" 5, "Cartagena" 3, "Bogotá" 5, "Pereira" 1, "Soledad" 1, "Neiva" 1}
-  (frequencies (into [] (map #(nth % 2) (filter #(some #{"Fallecido"} %) rows)))))
+  (frequencies (into [] (map #(nth % 2) (filter #(some #{"Fallecido"} %) rows))))
+
+  ;; timeseries
+  (map (fn [[k v]] [(f/unparse fmt k) v]) (sort (map (fn [[k v]] [(f/parse fmt k) v]) result))))

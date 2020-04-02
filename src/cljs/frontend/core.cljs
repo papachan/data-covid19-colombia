@@ -2,7 +2,10 @@
   (:require [re-frame.core :as re-frame]
             [reagent.core :as reagent :refer [atom]]
             ["chartist" :as chartist]
-            [frontend.events :as events]))
+            [frontend.events :as events]
+            [goog.i18n.DateTimeFormat.Format :as fmt]
+            [frontend.date :as d]))
+
 
 (defn fetching-data
   []
@@ -22,6 +25,14 @@
                    out))
       (reverse out))))
 
+(defn make-serie [coll]
+  (loop [in coll,
+         out {}]
+    (if (seq in)
+      (recur (rest in)
+             (conj out {(first in) 0}))
+      out)))
+
 (defn show-chart
   [data]
   (let [options {:fullWidth true
@@ -33,13 +44,22 @@
   []
   (let [data @(re-frame/subscribe [::events/data])]
     (when-not (empty? data)
-      (let [fechas (sort (frequencies (into [] (map #(nth % 1) data))))
-            res (sum fechas)
+      (let [formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy")
+            contamined (map (fn [[k v]] [(.format formatter k)
+                                         v]) (sort (map (fn [[k v]] [(d/parse-date k) v]) (frequencies (into [] (map #(nth % 1) data))))))
+            series-fechas (into {} (map (fn [[k v]] {k 0}) contamined))
+            res (sum contamined)
+
+            deaths (frequencies (into [] (map #(.format formatter (d/parse-date (nth % 1))) (filter #(some #{"Fallecido"} %) data))))
+            result (apply merge series-fechas deaths)
+
             series1 (into [] (map #(nth % 1) res))
-            fechas (into [] (map #(first (clojure.string/split (nth % 0) #"/")) res))]
+            series2 (into [] (map (fn [[k v]] v) (sum (map (fn [[k v]] [k v]) (sort (map (fn [[k v]] [(d/parse-date k) v]) result))))))
+
+            labels-fechas (into [] (map #(first (clojure.string/split (first %) #"/")) contamined))]
         (reagent/create-class
-         {:component-did-mount #(show-chart {:labels fechas
-                                             :series [series1]})
+         {:component-did-mount #(show-chart {:labels labels-fechas
+                                             :series [series1 series2]})
           :display-name        "chart-component"
           :reagent-render      (fn []
                                  [:div {:id "chart4"
