@@ -49,7 +49,8 @@
       deaths (frequencies (into [] (map #(nth % 1) (filter #(some #{"Fallecido"} %) rows))))
       result (apply merge series-fechas deaths)]
 
-  ;; (merge fechas fallecidos)
+  ;; all deaths by dates
+  (apply merge series-fechas deaths)
 
   ;; all cases per dates
   (sort (frequencies (into [] (map #(nth % 1) rows))))
@@ -63,12 +64,12 @@
   ;; ;; count fallecidos en bogota
   (count (filter #(= "fallecido" %) statuses)) ;; => 3 => 5
 
-  (count rows) ;; => 491 => 539 => 608 => 702 => 798 => 906 => 1065
+  (count rows) ;; => 491 => 539 => 608 => 702 => 798 => 906 => 1065 => 1267
 
   (count (filter #{"Bogotá"}
-           (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472
+           (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587
 
-  (count (filter #{"01/04/2020"}
+  (count (filter #{"03/04/2020"}
                  (map #(nth % 1) rows))) ;; =>
   ;; 27/3/2020 => 48
   ;; 28/3/2020 => 69
@@ -76,6 +77,8 @@
   ;; 30/3/2020 => 96
   ;; 31/3/2020 => 108
   ;; 01/4/2020 => 159
+  ;; 02/4/2020 => 96
+  ;; 03/4/2020 => 106
 
   ;; statuses to lower case
   ;; (map #(clojure.string/lower-case (nth % 4)) (filter #(some #{"Bogotá"} %) rows))
@@ -84,30 +87,30 @@
   ;;      (filter #(some #{"Bogotá"} %) rows))
 
   ;; numero de relacionados en bogota
-  (count (filter #(= "relacionado" %) types)) ;; => 71 ;; => 73 ;; => 89 ;; => 95 => 115 => 134
-  (count (filter #(= "importado" %) types)) ;; => 126 => 139 => 154 => 178 => 183 => 195
+  (count (filter #(= "relacionado" %) types)) ;; => 71 ;; => 73 ;; => 89 ;; => 95 => 115 => 134 => 154
+  (count (filter #(= "importado" %) types)) ;; => 126 => 139 => 154 => 178 => 183 => 195 => 222
 
-  ;; numero de casos relacionados y en estudio en bogota
-  (count (filter (fn [s] (or (= "relacionado" s) (= "en estudio" s))) types)) ;; => 207 => 277
+  ;; ;; numero de casos relacionados y en estudio en bogota
+  (count (filter (fn [s] (or (= "relacionado" s) (= "en estudio" s))) types)) ;; => 207 => 277 => 365
 
   ;; por edades
   ;; => {"20 a 29" 67, "70 a 79" 18, "60 a 69" 44, "50 a 59" 64, "40 a 49" 72, "10 a 19" 10, "80 a 89" 7, "30 a 39" 104, "0 a 9" 4}
   (frequencies ages)
 
-  ;; suma por regiones
+  ;; ;; suma por regiones
   (frequencies (map #(nth % 2) only-infected))
-  (by-regions "Bogotá") ;; => 294 => 350 => 371 => 451
+  (by-regions "Bogotá") ;; => 294 => 350 => 371 => 451 => 566
 
-  ;; => {"recuperado" 21, "casa" 378, "hospital" 44, "hospital uci" 24, "fallecido" 5}
+  ;; => {"recuperado" 21, "casa" 468, "hospital" 61, "hospital uci" 26, "fallecido" 11}
   (frequencies statuses)
-  ;; by-regions
+  ;; ;; by-regions
 
   ;; Fallecidos total
   (count (filter #{"Fallecido"}
-                 (map #(nth % 4) rows))) ;; => 14 ;; => 16 => 17
+                 (map #(nth % 4) rows))) ;; => 14 ;; => 16 => 17 => 25
 
   ;; fallecidos por regiones:
-  ;; => => {"Santa Marta" 1, "Cali" 5, "Cartagena" 3, "Bogotá" 5, "Pereira" 1, "Soledad" 1, "Neiva" 1}
+  ;; => {"Cali" 4, "Pereira" 1, "Neiva" 1, "Santander de Quilichao" 1, "Cartagena" 3, "Bogotá" 11, "Santa Marta" 1, "Soledad" 1, "Barranquilla" 1, "Zipaquirá" 1}
   (frequencies (into [] (map #(nth % 2) (filter #(some #{"Fallecido"} %) rows))))
 
   ;; timeseries
