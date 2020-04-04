@@ -1,5 +1,6 @@
 body {
-  background-color: #8a8a8a;
+  /* background-color: #8a8a8a; */
+  background-color: #2b2b39;
   padding: 20px;
   margin: 0;
   font-family: arial;
@@ -14,23 +15,75 @@ header {
 header h1 {
   display: block;
   margin: 0 auto;
+  color: lightcoral;
+  font-size: 1.4em;
+  margin-bottom: 20px;
 }
 
 header .author {
-  font-size: 14px;
+  font-size: 12px;
   text-align: left;
   margin-top: 10px;
+  color: #808080;
+}
+
+.container {
+  position: relative;
+}
+
+.graph {
+  width: 680px;
+  float: left;
+}
+
+#stats {
+  float: left;
+  width: 200px;
+  margin-left: 20px;
+}
+
+#block-stats-1 {
+  display: block;
+  background-color: #1b1921;
+  border-radius: 12px;
+  width: 200px;
+  height: 180px;
+  padding: 20px 0 10px 0;
+  margin-bottom: 20px;
+}
+
+#block-stats-1 .title {
+  color: #828282;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+#block-stats-1 .stats {
+  color: #FFCC00;
+  width: 100%;
+  text-align: center;
+  font-size: 5.2em;
+  font-weight: bold;
+  font-family: arial;
+}
+
+.footer {
+  clear: both;
+  color: #fff;
+  font-size: 11px;
+  /* margin: 0 0 40px 0; */
+  padding: 20px 0 20px 0;
 }
 
 #chart4 {
-  background-color: #bfbfbf;
-  border-radius: 10px;
+  background-color: #1b1921;
+  border-radius: 5px;
   padding-top: 10px;
-  margin-bottom: 50px;
 }
 
 .ct-vertical, .ct-horizontal {
-  font-size: 13px;
+  font-size: 10px;
   color: #505050;
 }
 
@@ -40,8 +93,9 @@ header .author {
 }
 
 .ct-series-a .ct-point {
-  stroke: #505050;
-  stroke-width: 4px;
+  /* stroke: #505050; */
+  stroke: rgba(0, 0, 0, 0.0);
+  /* stroke-width: 4px; */
 }
 
 .ct-series-b .ct-line {
@@ -50,8 +104,8 @@ header .author {
 }
 
 .ct-series-b .ct-point {
-  stroke: #505050;
-  stroke-width: 4px;
+  stroke: rgba(0, 0, 0, 0.0);
+  /* stroke-width: 4px; */
 }
 
 .ct-series-c .ct-line {
