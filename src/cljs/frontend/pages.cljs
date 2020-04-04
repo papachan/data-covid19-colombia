@@ -53,7 +53,7 @@
 
             labels-fechas (into [] (map #(first (clojure.string/split (first %) #"/")) contamined))
             _ (reset! state [(count (filter #(some #{"Fallecido"} %) data))
-                             (count (remove (fn [s] (= "recuperado" (clojure.string/lower-case (nth s 4)))) data))])]
+                             (count (remove (fn [s] (or (= "recuperado" s) (= "fallecido" s))) (map #(clojure.string/lower-case (nth % 4)) data)))])]
         (reagent/create-class
          {:component-did-mount #(show-chart {:labels labels-fechas
                                              :series [series1 series2]})
@@ -84,16 +84,14 @@
 
 (defn home
   []
-  (let [
-
-        [a b] @state]
+  (let [[deaths contamined] @state]
     [:div
      [:header
       [:h1
        "Colombia Covid19 Report"]
       [:div
        {:className "author"}
-       "Live report from colombian data using clojurescript"]]
+       "Live report from Colombian data using clojurescript"]]
      [:div
       {:className "container"}
       [:div
@@ -101,6 +99,6 @@
        [chart-component]]
       [:div
        {:id "stats"}
-       [block-stats {:title "Number of deaths" :value a}]
-       [block-stats {:title "Number of contamined" :value b}]]]
+       [block-stats {:title "Number of deaths" :value deaths}]
+       [block-stats {:title "Number of contamined" :value contamined}]]]
      [footer]]))
