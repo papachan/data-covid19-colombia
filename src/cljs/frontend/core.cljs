@@ -5,14 +5,6 @@
             [frontend.events :as events]
             [frontend.pages :as pages :refer [home]]))
 
-(defn fetching-data
-  []
-  (-> (js/fetch "https://e.infogram.com/api/live/flex/0e44ab71-9a20-43ab-89b3-0e73c594668f/832a1373-0724-4182-a188-b958f9bf0906?")
-      (.then #(.json %))
-      (.then (fn [j] (js->clj j :keywordize-keys true)))
-      (.then (fn [res]
-               (re-frame/dispatch [::events/set-data-db (:data res)])))))
-
 (defn start []
   (rd/render [home]
              (. js/document (getElementById "app"))))
@@ -27,5 +19,5 @@
   ;; this is called in the index.html and must be exported
   ;; so it is available even in :advanced release builds
   (re-frame/dispatch-sync [::events/initialize-db])
-  (fetching-data)
+  (re-frame/dispatch-sync [::events/load-data])
   (start))
