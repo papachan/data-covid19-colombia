@@ -31,14 +31,14 @@ header .author {
 }
 
 .graph {
-  width: 680px;
+  width: 70%;
   float: left;
 }
 
 #stats {
   float: left;
-  width: 200px;
-  margin-left: 20px;
+  width: 26%;
+  padding-left: 20px;
 }
 
 #block-stats-1 {
@@ -69,9 +69,13 @@ header .author {
 
 .footer {
   clear: both;
-  color: #fff;
+  color: #848384;
   font-size: 11px;
-  padding: 20px 0 20px 0;
+  padding: 10px 0 20px 0;
+}
+
+.footer .profile {
+  color: #0012ff;
 }
 
 #chart4 {

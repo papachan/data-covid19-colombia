@@ -1,6 +1,7 @@
 (ns frontend.core
   (:require [re-frame.core :as re-frame]
             [reagent.core :as reagent]
+            [reagent.dom :as rd]
             [frontend.events :as events]
             [frontend.pages :as pages :refer [home]]))
 
@@ -13,8 +14,8 @@
                (re-frame/dispatch [::events/set-data-db (:data res)])))))
 
 (defn start []
-  (reagent/render [home]
-                  (. js/document (getElementById "app"))))
+  (rd/render [home]
+             (. js/document (getElementById "app"))))
 
 (defn stop []
   ;; stop is called before any code is reloaded
@@ -26,6 +27,5 @@
   ;; this is called in the index.html and must be exported
   ;; so it is available even in :advanced release builds
   (re-frame/dispatch-sync [::events/initialize-db])
-  ;; (re-frame/dispatch [::events/initialize-db])
   (fetching-data)
   (start))

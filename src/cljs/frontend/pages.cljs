@@ -77,10 +77,10 @@
   []
   [:div
    {:className "footer"}
-   "© papachan - "
-   [:a {:href "https://twitter.com/papachan"} "Twitter"]
+   "© 2020 @papachan - "
+   [:a.profile {:href "https://twitter.com/papachan"} "Twitter"]
    " "
-   [:a {:href "https://github.com/papachan"} "Github"]])
+   [:a.profile {:href "https://github.com/papachan"} "Github"]])
 
 (defn home
   []

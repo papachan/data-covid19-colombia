@@ -62,14 +62,14 @@
   (sort (distinct (map #(nth % 2) rows)))
 
   ;; ;; count fallecidos en bogota
-  (count (filter #(= "fallecido" %) statuses)) ;; => 3 => 5 => 12
+  (count (filter #(= "fallecido" %) statuses)) ;; => 3 => 5 => 12 => 14
 
   (count rows) ;; => 491 => 539 => 608 => 702 => 798 => 906 => 1065 => 1267 => 1406
 
   (count (filter #{"Bogotá"}
-           (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587
+           (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587 => 725
 
-  (count (filter #{"04/04/2020"}
+  (count (filter #{"05/04/2020"}
                  (map #(nth % 1) rows))) ;; =>
   ;; 27/3/2020 => 48
   ;; 28/3/2020 => 69
@@ -80,6 +80,7 @@
   ;; 02/4/2020 => 96
   ;; 03/4/2020 => 106
   ;; 04/4/2020 => 139
+  ;; 05/4/2020 => 79
 
   ;; statuses to lower case
   ;; (map #(clojure.string/lower-case (nth % 4)) (filter #(some #{"Bogotá"} %) rows))
@@ -108,10 +109,10 @@
 
   ;; Fallecidos total
   (count (filter #{"Fallecido"}
-                 (map #(nth % 4) rows))) ;; => 14 ;; => 16 => 17 => 25 => 32
+                 (map #(nth % 4) rows))) ;; => 14 ;; => 16 => 17 => 25 => 32 => 35
 
   ;; fallecidos por regiones:
-  ;; => {"Cali" 4, "Pereira" 1, "Monteria" 1, "Neiva" 1, "Santander de Quilichao" 1, "Cartagena" 3, "Bogotá" 12, "Santa Marta" 1, "Cúcuta" 1, "Soledad" 1, "Tunja" 1, "Barranquilla" 2, "Villapinzón" 2, "Zipaquirá" 1}
+  ;; => {"Cali" 4, "Pereira" 1, "Monteria" 1, "Neiva" 1, "Santander de Quilichao" 1, "Cartagena" 3, "Bogotá" 14, "Santa Marta" 1, "Cúcuta" 1, "Soledad" 2, "Tunja" 1, "Barranquilla" 2, "Villapinzón" 2, "Zipaquirá" 1}
   (frequencies (into [] (map #(nth % 2) (filter #(some #{"Fallecido"} %) rows))))
 
   ;; timeseries
