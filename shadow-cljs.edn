@@ -19,4 +19,5 @@
          :preloads     [devtools.preload]}
 
         :release
-        {:output-dir "docs/js/compiled"}}}}
+        {:output-dir "docs/js/compiled"
+         :compiler-options {:optimizations :advanced}}}}}
