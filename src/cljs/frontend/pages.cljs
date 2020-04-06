@@ -85,7 +85,7 @@
 (defn home
   []
   (let [[deaths contamined] @state]
-    [:div
+    [:<>
      [:header
       [:h1
        "Colombia Covid19 Report"]
