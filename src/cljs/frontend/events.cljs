@@ -25,15 +25,15 @@
 (re-frame/reg-sub
  ::data
  (fn [{:keys [data]}]
-   (rest (first data))))
+   (when data
+     (rest (first data)))))
 
 ;;; Http calls ;;;
 (re-frame/reg-event-fx
  ::load-data
  (fn-traced
   [db _]
-  {:http-xhrio {:db (assoc db :data :loading)
-                :method :get
+  {:http-xhrio {:method :get
                 :uri "https://e.infogram.com/api/live/flex/0e44ab71-9a20-43ab-89b3-0e73c594668f/832a1373-0724-4182-a188-b958f9bf0906?"
                 :response-format (ajax/json-response-format {:keywords? true})
                 :on-success [::set-data-db]}}))

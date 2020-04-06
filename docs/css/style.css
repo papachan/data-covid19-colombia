@@ -19,11 +19,9 @@ header h1 {
   margin-bottom: 20px;
 }
 
-header .author {
-  font-size: 12px;
-  text-align: left;
+.description {
   margin-top: 10px;
-  color: #808080;
+  color: #656464;
 }
 
 .container {
@@ -80,7 +78,7 @@ header .author {
 
 #chart4 {
   background-color: #1b1921;
-  border-radius: 5px;
+  border-radius: 10px;
   padding-top: 10px;
 }
 
