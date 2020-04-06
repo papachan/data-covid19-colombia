@@ -81,6 +81,7 @@
   ;; 03/4/2020 => 106
   ;; 04/4/2020 => 139
   ;; 05/4/2020 => 79
+  ;; 06/4/2020 => 94
 
   ;; statuses to lower case
   ;; (map #(clojure.string/lower-case (nth % 4)) (filter #(some #{"Bogotá"} %) rows))
@@ -101,18 +102,17 @@
 
   ;; ;; suma por regiones
   (frequencies (map #(nth % 2) only-infected))
-  (by-regions "Bogotá") ;; => 294 => 350 => 371 => 451 => 566 => 651
+  (by-regions "Bogotá") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733
 
   ;; => {"recuperado" 21, "casa" 468, "hospital" 61, "hospital uci" 26, "fallecido" 11}
   (frequencies statuses)
-  ;; ;; by-regions
 
   ;; Fallecidos total
   (count (filter #{"Fallecido"}
-                 (map #(nth % 4) rows))) ;; => 14 ;; => 16 => 17 => 25 => 32 => 35
+                 (map #(nth % 4) rows))) ;; => 14 ;; => 16 => 17 => 25 => 32 => 35 => 46
 
   ;; fallecidos por regiones:
-  ;; => {"Cali" 4, "Pereira" 1, "Monteria" 1, "Neiva" 1, "Santander de Quilichao" 1, "Cartagena" 3, "Bogotá" 14, "Santa Marta" 1, "Cúcuta" 1, "Soledad" 2, "Tunja" 1, "Barranquilla" 2, "Villapinzón" 2, "Zipaquirá" 1}
+  ;; => => {"Villavicencio" 1, "Cali" 4, "Pereira" 1, "Monteria" 1, "Neiva" 1, "Santander de Quilichao" 1, "Cartagena" 3, "Bogotá" 22, "Santa Marta" 1, "Cúcuta" 1, "Soledad" 2, "Tunja" 1, "Barranquilla" 2, "Medellín" 1, "Popayán" 1, "Villapinzón" 2, "Zipaquirá" 1}
   (frequencies (into [] (map #(nth % 2) (filter #(some #{"Fallecido"} %) rows))))
 
   ;; timeseries
