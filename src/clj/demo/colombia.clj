@@ -67,8 +67,9 @@
   (count rows) ;; => 491 => 539 => 608 => 702 => 798 => 906 => 1065 => 1267 => 1406
 
   (count (filter #{"Bogotá"}
-           (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587 => 725
+           (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587 => 725 => 861
 
+  ;; number of rows per dates
   (count (filter #{"05/04/2020"}
                  (map #(nth % 1) rows))) ;; =>
   ;; 27/3/2020 => 48
@@ -82,6 +83,7 @@
   ;; 04/4/2020 => 139
   ;; 05/4/2020 => 79
   ;; 06/4/2020 => 94
+  ;; 07/4/2020 => 201
 
   ;; statuses to lower case
   ;; (map #(clojure.string/lower-case (nth % 4)) (filter #(some #{"Bogotá"} %) rows))
@@ -94,7 +96,7 @@
   (count (filter #(= "importado" %) types)) ;; => 126 => 139 => 154 => 178 => 183 => 195 => 222
 
   ;; ;; numero de casos relacionados y en estudio en bogota
-  (count (filter (fn [s] (or (= "relacionado" s) (= "en estudio" s))) types)) ;; => 207 => 277 => 365
+  (count (filter (fn [s] (or (= "relacionado" s) (= "en estudio" s))) types)) ;; => 207 => 277 => 365 => 589
 
   ;; por edades
   ;; => {"20 a 29" 67, "70 a 79" 18, "60 a 69" 44, "50 a 59" 64, "40 a 49" 72, "10 a 19" 10, "80 a 89" 7, "30 a 39" 104, "0 a 9" 4}
@@ -109,11 +111,10 @@
 
   ;; Fallecidos total
   (count (filter #{"Fallecido"}
-                 (map #(nth % 4) rows))) ;; => 14 ;; => 16 => 17 => 25 => 32 => 35 => 46
+                 (map #(nth % 4) rows))) ;; => 14 ;; => 16 => 17 => 25 => 32 => 35 => 46 => 50
 
   ;; fallecidos por regiones:
-  ;; => => {"Villavicencio" 1, "Cali" 4, "Pereira" 1, "Monteria" 1, "Neiva" 1, "Santander de Quilichao" 1, "Cartagena" 3, "Bogotá" 22, "Santa Marta" 1, "Cúcuta" 1, "Soledad" 2, "Tunja" 1, "Barranquilla" 2, "Medellín" 1, "Popayán" 1, "Villapinzón" 2, "Zipaquirá" 1}
+  ;; => {"Villavicencio" 1, "Cali" 5, "Montería" 1, "Pereira" 1, "Neiva" 2, "Santander de Quilichao" 1, "Cartagena" 3, "Bogotá" 24, "Santa Marta" 1, "Cúcuta" 1, "Soledad" 2, "Tunja" 1, "Barranquilla" 2, "Medellín" 1, "Popayán" 1, "Villapinzón" 2, "Zipaquirá" 1}
   (frequencies (into [] (map #(nth % 2) (filter #(some #{"Fallecido"} %) rows))))
-
   ;; timeseries
   (map (fn [[k v]] [(f/unparse fmt k) v]) (sort (map (fn [[k v]] [(f/parse fmt k) v]) result))))
