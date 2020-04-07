@@ -87,19 +87,19 @@ footer a {
   background-color: #1b1921;
   border-radius: 10px;
   padding-top: 10px;
+  margin-bottom: 13px;
 }
 
 #chart5 {
-  clear:both;
   display: block;
+  width: 400px;
   background-color: #1b1921;
   border-radius: 10px;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .ct-vertical, .ct-horizontal {
   font-size: 10px;
-  /* color: #505050; */
   color: #808080;
 }
 

@@ -2,6 +2,7 @@
   (:require [re-frame.core :as re-frame]
             [reagent.core :as reagent :refer [atom]]
             ["chartist" :as chartist]
+            ["react-chartist" :default react-graph]
             [frontend.events :as events]
             [frontend.date :as d])
   (:import goog.i18n.DateTimeFormat))
@@ -78,14 +79,15 @@
                   "fallecido" "fallecidos"}
           statuses (frequencies (into [] (map #(clojure.string/lower-case (nth % 4)) data)))
           labels-fechas (into [] (map #(labels (nth % 0)) statuses))
-          series1 (into [] (map #(nth % 1) statuses))]
-      (reagent/create-class
-       {:component-did-mount #(show-chart-bar {:labels labels-fechas
-                                               :series [series1]})
-        :display-name        "chart-component"
-        :reagent-render      (fn []
-                               [:div {:id "chart5"
-                                      :class "ct-chart"}])}))))
+          series1 (into [] (map #(nth % 1) statuses))
+          options {:height "220px"}]
+      [:div
+       {:id "chart5"}
+       [:> react-graph
+        {:data {:labels labels-fechas
+                :series [series1]}
+         :options options
+         :type "Bar"}]])))
 
 (defn block-stats
   [{:keys [title value]} data]
@@ -120,12 +122,10 @@
        "Live report from Colombian data using clojurescript"]]
      [:div
       {:className "container"}
-      ;; [:div
-      ;;  {:className "chart-bar"}
-      ;;  [chart-bars-component data]]
       [:div
        {:className "graph"}
-       [chart-component data]]
+       [chart-component data]
+       [chart-bars-component data]]
       [:div
        {:id "stats"}
        [block-stats {:title "Number of deaths"
@@ -140,5 +140,4 @@
        [block-stats {:title "Recovered"
                      :value
                      (when (count data) (count (filter #(some #{"Recuperado"} %) data)))}]]]
-
      [footer]]))
