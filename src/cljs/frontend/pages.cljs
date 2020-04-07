@@ -6,6 +6,7 @@
             [frontend.date :as d])
   (:import goog.i18n.DateTimeFormat))
 
+
 (defn sum
   [coll]
   (loop [in coll,
@@ -26,6 +27,21 @@
              (conj out {(first in) 0}))
       out)))
 
+(defn process-data
+  [data]
+  (let [formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy")
+        contamined (map (fn [[k v]] [(.format formatter k)
+                                     v]) (sort (map (fn [[k v]] [(d/parse-date k) v]) (frequencies (into [] (map #(nth % 1) data))))))
+
+        series-fechas (into {} (map (fn [[k v]] {k 0}) contamined))
+        deaths (frequencies (map #(.format formatter (d/parse-date (nth % 1))) (filter #(some #{"Fallecido"} %) data)))
+        series-deaths (sort (map (fn [[k v]] [(d/parse-date k) v]) (apply merge series-fechas deaths)))
+
+        labels-fechas (into [] (map #(first (clojure.string/split (first %) #"/")) contamined))
+        series1 (into [] (map #(nth % 1) (sum contamined)))
+        series2 (into [] (map (fn [[k v]] v) (sum series-deaths)))]
+    [labels-fechas series1 series2]))
+
 (defn show-chart
   [data]
   (let [options {:fullWidth true
@@ -33,23 +49,10 @@
                  :lineSmooth false}]
     (chartist/Line. ".ct-chart" (clj->js data) (clj->js options))))
 
-(defn process-data
+(defn show-chart-bar
   [data]
-  (let [formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy")
-
-        contamined (map (fn [[k v]] [(.format formatter k)
-                                     v]) (sort (map (fn [[k v]] [(d/parse-date k) v]) (frequencies (into [] (map #(nth % 1) data))))))
-        series-fechas (into {} (map (fn [[k v]] {k 0}) contamined))
-        res (sum contamined)
-
-        deaths (frequencies (into [] (map #(.format formatter (d/parse-date (nth % 1))) (filter #(some #{"Fallecido"} %) data))))
-        result (apply merge series-fechas deaths)
-
-        series1 (into [] (map #(nth % 1) res))
-        series2 (into [] (map (fn [[k v]] v) (sum (map (fn [[k v]] [k v]) (sort (map (fn [[k v]] [(d/parse-date k) v]) result))))))
-
-        labels-fechas (into [] (map #(first (clojure.string/split (first %) #"/")) contamined))]
-    [labels-fechas series1 series2]))
+  (let [options {:height "160px"}]
+    (chartist/Bar. ".ct-chart" (clj->js data) (clj->js options))))
 
 (defn chart-component
   [data]
@@ -65,10 +68,29 @@
                                [:div {:id "chart4"
                                       :class "ct-chart"}])}))))
 
+(defn chart-bars-component
+  [data]
+  (when-not (empty? data)
+    (let [labels {"recuperado" "recuperados"
+                  "casa" "en casa"
+                  "hospital" "internados"
+                  "hospital uci" "cuidados intensivos"
+                  "fallecido" "fallecidos"}
+          statuses (frequencies (into [] (map #(clojure.string/lower-case (nth % 4)) data)))
+          labels-fechas (into [] (map #(labels (nth % 0)) statuses))
+          series1 (into [] (map #(nth % 1) statuses))]
+      (reagent/create-class
+       {:component-did-mount #(show-chart-bar {:labels labels-fechas
+                                               :series [series1]})
+        :display-name        "chart-component"
+        :reagent-render      (fn []
+                               [:div {:id "chart5"
+                                      :class "ct-chart"}])}))))
+
 (defn block-stats
   [{:keys [title value]} data]
   [:div
-   {:id "block-stats-1"}
+   {:className "block-stats"}
    [:div
     {:className "title"}
     title]
@@ -78,14 +100,13 @@
 
 (defn footer
   []
-  [:div
-   {:className "footer"}
+  [:footer
    "©  "
    (.getFullYear (js/Date.))
    " @papachan - "
-   [:a.profile {:href "https://twitter.com/papachan"} "Twitter"]
+   [:a {:href "https://twitter.com/papachan"} "Twitter"]
    " "
-   [:a.profile {:href "https://github.com/papachan"} "Github"]])
+   [:a {:href "https://github.com/papachan/data-covid19-colombia"} "Github"]])
 
 (defn home
   []
@@ -99,11 +120,25 @@
        "Live report from Colombian data using clojurescript"]]
      [:div
       {:className "container"}
+      ;; [:div
+      ;;  {:className "chart-bar"}
+      ;;  [chart-bars-component data]]
       [:div
        {:className "graph"}
        [chart-component data]]
       [:div
        {:id "stats"}
-       [block-stats {:title "Number of deaths" :value (when (count data) (count (filter #(some #{"Fallecido"} %) data)))}]
-       [block-stats {:title "Number of contamined" :value (when (count data) (count (remove (fn [s] (or (= "recuperado" s) (= "fallecido" s))) (map #(clojure.string/lower-case (nth % 4)) data))))}]]]
+       [block-stats {:title "Number of deaths"
+                     :value
+                     (when (count data) (count (filter #(some #{"Fallecido"} %) data)))}]
+       [block-stats {:title "Number of contamined"
+                     :value
+                     (when (count data)
+                       (count (remove
+                               (fn [s] (or (= "recuperado" s) (= "fallecido" s)))
+                               (map #(clojure.string/lower-case (nth % 4)) data))))}]
+       [block-stats {:title "Recovered"
+                     :value
+                     (when (count data) (count (filter #(some #{"Recuperado"} %) data)))}]]]
+
      [footer]]))

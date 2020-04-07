@@ -33,13 +33,19 @@ header h1 {
   float: left;
 }
 
+.chart-bar {
+  width: 40%;
+  float: left;
+}
+
+
 #stats {
   float: left;
   width: 26%;
   padding-left: 20px;
 }
 
-#block-stats-1 {
+.block-stats {
   display: block;
   background-color: #1b1921;
   border-radius: 12px;
@@ -49,14 +55,14 @@ header h1 {
   margin-bottom: 20px;
 }
 
-#block-stats-1 .title {
+.block-stats .title {
   color: #828282;
   width: 100%;
   text-align: center;
   font-weight: bold;
 }
 
-#block-stats-1 .stats {
+.block-stats .stats {
   color: #FFCC00;
   width: 100%;
   text-align: center;
@@ -65,18 +71,27 @@ header h1 {
   font-family: arial;
 }
 
-.footer {
+footer {
   clear: both;
   color: #848384;
   font-size: 11px;
   padding: 10px 0 20px 0;
 }
 
-.footer .profile {
-  color: #0012ff;
+footer a {
+  color: #ef5e5d;
 }
 
 #chart4 {
+  display: block;
+  background-color: #1b1921;
+  border-radius: 10px;
+  padding-top: 10px;
+}
+
+#chart5 {
+  clear:both;
+  display: block;
   background-color: #1b1921;
   border-radius: 10px;
   padding-top: 10px;
@@ -84,7 +99,8 @@ header h1 {
 
 .ct-vertical, .ct-horizontal {
   font-size: 10px;
-  color: #505050;
+  /* color: #505050; */
+  color: #808080;
 }
 
 .ct-series-a .ct-line {
@@ -113,4 +129,8 @@ header h1 {
 .ct-series-c .ct-point {
   stroke: black;
   stroke-width: 3px;
+}
+
+.ct-grid {
+  stroke: rgba(165, 165, 165, 0.09);
 }
