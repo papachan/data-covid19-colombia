@@ -5,7 +5,9 @@
             [clojure.java.io :as io]
             [clojure.data.csv :as csv]
             [cheshire.core :as json]
-            [clj-time.format :as f])
+            [clj-time.format :as f]
+            [clj-time.core :as t]
+            [clj-time.coerce :as coerce])
   (:import java.net.URL
            java.net.HttpURLConnection))
 
@@ -45,6 +47,7 @@
       ages (into [] (map #(clojure.string/lower-case (nth % 5)) bogota))
       only-infected (remove (fn [s] (= "recuperado" (clojure.string/lower-case (nth s 4)))) rows)
       by-regions (frequencies (map #(nth % 2) only-infected))
+
       series-fechas (make-serie (sort (into #{} (map #(nth % 1) rows))))
       deaths (frequencies (into [] (map #(nth % 1) (filter #(some #{"Fallecido"} %) rows))))
       result (apply merge series-fechas deaths)]
@@ -66,11 +69,11 @@
 
   (count rows) ;; => 491 => 539 => 608 => 702 => 798 => 906 => 1065 => 1267 => 1406
 
-  (count (filter #{"Bogotá"}
-           (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587 => 725 => 861
+  ;; (count (filter #{"Bogotá"}
+  ;;          (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587 => 725 => 861
 
   ;; number of rows per dates
-  (count (filter #{"05/04/2020"}
+  (count (filter #{"08/04/2020"}
                  (map #(nth % 1) rows))) ;; =>
   ;; 27/3/2020 => 48
   ;; 28/3/2020 => 69
@@ -84,9 +87,10 @@
   ;; 05/4/2020 => 79
   ;; 06/4/2020 => 94
   ;; 07/4/2020 => 201
+  ;; 08/4/2020 => 274
 
   ;; statuses to lower case
-  ;; (map #(clojure.string/lower-case (nth % 4)) (filter #(some #{"Bogotá"} %) rows))
+  (map #(clojure.string/lower-case (nth % 4)) (filter #(some #{"Bogotá"} %) rows))
 
   ;; (map #(nth % 4)
   ;;      (filter #(some #{"Bogotá"} %) rows))
@@ -95,7 +99,7 @@
   (count (filter #(= "relacionado" %) types)) ;; => 71 ;; => 73 ;; => 89 ;; => 95 => 115 => 134 => 154
   (count (filter #(= "importado" %) types)) ;; => 126 => 139 => 154 => 178 => 183 => 195 => 222
 
-  ;; ;; numero de casos relacionados y en estudio en bogota
+  ;; numero de casos relacionados y en estudio en bogota
   (count (filter (fn [s] (or (= "relacionado" s) (= "en estudio" s))) types)) ;; => 207 => 277 => 365 => 589
 
   ;; por edades
@@ -104,17 +108,26 @@
 
   ;; ;; suma por regiones
   (frequencies (map #(nth % 2) only-infected))
-  (by-regions "Bogotá") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733
+  (by-regions "Bogotá") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733 => 926
 
-  ;; => {"recuperado" 21, "casa" 468, "hospital" 61, "hospital uci" 26, "fallecido" 11}
+  ;; => {"recuperado" 66, "casa" 749, "hospital" 114, "hospital uci" 38, "fallecido" 25}
   (frequencies statuses)
 
   ;; Fallecidos total
   (count (filter #{"Fallecido"}
-                 (map #(nth % 4) rows))) ;; => 14 ;; => 16 => 17 => 25 => 32 => 35 => 46 => 50
+                 (map #(nth % 4) rows))) ;; => 14 ;; => 16 => 17 => 25 => 32 => 35 => 46 => 50 => 54
 
   ;; fallecidos por regiones:
-  ;; => {"Villavicencio" 1, "Cali" 5, "Montería" 1, "Pereira" 1, "Neiva" 2, "Santander de Quilichao" 1, "Cartagena" 3, "Bogotá" 24, "Santa Marta" 1, "Cúcuta" 1, "Soledad" 2, "Tunja" 1, "Barranquilla" 2, "Medellín" 1, "Popayán" 1, "Villapinzón" 2, "Zipaquirá" 1}
+  ;; => {"Villavicencio" 1, "Cali" 5, "Montería" 1, "Pereira" 1, "Neiva" 2, "Ciénaga de Oro" 1, "Santander de Quilichao" 1, "Cartagena" 3, "Bogotá" 25, "Santa Marta" 2, "Cúcuta" 1, "Soledad" 2, "Tunja" 1, "Barranquilla" 2, "Medellín" 1, "Popayán" 1, "Villapinzón" 2, "Montenegro" 1, "Zipaquirá" 1}
   (frequencies (into [] (map #(nth % 2) (filter #(some #{"Fallecido"} %) rows))))
+
   ;; timeseries
-  (map (fn [[k v]] [(f/unparse fmt k) v]) (sort (map (fn [[k v]] [(f/parse fmt k) v]) result))))
+  (map (fn [[k v]] [(f/unparse fmt k) v]) (sort (map (fn [[k v]] [(f/parse fmt k) v]) result)))
+
+  ;; all rows from 3 days ago
+  ;; => {"06/04/02020" 94, "07/04/02020" 201, "08/04/02020" 274}
+  (into {} (map (fn [[k v]] [(f/unparse fmt k) v]) (frequencies (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (-> 3 t/days t/ago)))) (map #(f/parse fmt (nth % 1)) rows)))))
+
+  ;; all cases from 1 week ago
+  ;; => 1148
+  (count (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (-> 8 t/days t/ago)))) (map #(f/parse fmt (nth % 1)) rows))))
