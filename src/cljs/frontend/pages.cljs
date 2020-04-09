@@ -35,10 +35,11 @@
                                      v]) (sort (map (fn [[k v]] [(d/parse-date k) v]) (frequencies (into [] (map #(nth % 1) data))))))
 
         series-fechas (into {} (map (fn [[k v]] {k 0}) contamined))
-        deaths (frequencies (map #(.format formatter (d/parse-date (nth % 1))) (filter #(some #{"Fallecido"} %) data)))
+        deaths (frequencies (map #(.format formatter (d/parse-date (nth % 1))) (filter #(some #{"Fallecido" "fallecido"} %) data)))
         series-deaths (sort (map (fn [[k v]] [(d/parse-date k) v]) (apply merge series-fechas deaths)))
 
         labels-fechas (into [] (map #(first (clojure.string/split (first %) #"/")) contamined))
+
         series1 (into [] (map #(nth % 1) (sum contamined)))
         series2 (into [] (map (fn [[k v]] v) (sum series-deaths)))]
     [labels-fechas series1 series2]))
@@ -49,11 +50,6 @@
                  :height "420px"
                  :lineSmooth false}]
     (chartist/Line. ".ct-chart" (clj->js data) (clj->js options))))
-
-(defn show-chart-bar
-  [data]
-  (let [options {:height "160px"}]
-    (chartist/Bar. ".ct-chart" (clj->js data) (clj->js options))))
 
 (defn chart-component
   [data]
@@ -130,7 +126,7 @@
        {:id "stats"}
        [block-stats {:title "Number of deaths"
                      :value
-                     (when (count data) (count (filter #(some #{"Fallecido"} %) data)))}]
+                     (when (count data) (count (filter #(some #{"Fallecido" "fallecido"} %) data)))}]
        [block-stats {:title "Number of contamined"
                      :value
                      (when (count data)

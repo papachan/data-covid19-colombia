@@ -69,8 +69,8 @@
 
   (count rows) ;; => 491 => 539 => 608 => 702 => 798 => 906 => 1065 => 1267 => 1406
 
-  ;; (count (filter #{"Bogotá"}
-  ;;          (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587 => 725 => 861
+  (count (filter #{"Bogotá"}
+           (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587 => 725 => 861 => 1030
 
   ;; number of rows per dates
   (count (filter #{"08/04/2020"}
@@ -108,14 +108,15 @@
 
   ;; ;; suma por regiones
   (frequencies (map #(nth % 2) only-infected))
-  (by-regions "Bogotá") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733 => 926
+  (by-regions "Bogotá") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733 => 926 => 964
 
   ;; => {"recuperado" 66, "casa" 749, "hospital" 114, "hospital uci" 38, "fallecido" 25}
   (frequencies statuses)
 
   ;; Fallecidos total
-  (count (filter #{"Fallecido"}
-                 (map #(nth % 4) rows))) ;; => 14 ;; => 16 => 17 => 25 => 32 => 35 => 46 => 50 => 54
+  (count (filter #{"fallecido"}
+                 (map #(clojure.string/lower-case (nth % 4)) rows)))
+  ;; => 14 ;; => 16 => 17 => 25 => 32 => 35 => 46 => 50 => 54
 
   ;; fallecidos por regiones:
   ;; => {"Villavicencio" 1, "Cali" 5, "Montería" 1, "Pereira" 1, "Neiva" 2, "Ciénaga de Oro" 1, "Santander de Quilichao" 1, "Cartagena" 3, "Bogotá" 25, "Santa Marta" 2, "Cúcuta" 1, "Soledad" 2, "Tunja" 1, "Barranquilla" 2, "Medellín" 1, "Popayán" 1, "Villapinzón" 2, "Montenegro" 1, "Zipaquirá" 1}
@@ -125,9 +126,9 @@
   (map (fn [[k v]] [(f/unparse fmt k) v]) (sort (map (fn [[k v]] [(f/parse fmt k) v]) result)))
 
   ;; all rows from 3 days ago
-  ;; => {"06/04/02020" 94, "07/04/02020" 201, "08/04/02020" 274}
+  ;; => {"07/04/02020" 201, "08/04/02020" 274, "09/04/02020" 169}
   (into {} (map (fn [[k v]] [(f/unparse fmt k) v]) (frequencies (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (-> 3 t/days t/ago)))) (map #(f/parse fmt (nth % 1)) rows)))))
 
   ;; all cases from 1 week ago
-  ;; => 1148
+  ;; => 1158
   (count (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (-> 8 t/days t/ago)))) (map #(f/parse fmt (nth % 1)) rows))))
