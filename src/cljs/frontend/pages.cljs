@@ -31,17 +31,32 @@
 (defn process-data
   [data]
   (let [formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy")
-        contamined (map (fn [[k v]] [(.format formatter k)
-                                     v]) (sort (map (fn [[k v]] [(d/parse-date k) v]) (frequencies (into [] (map #(nth % 1) data))))))
-
-        series-fechas (into {} (map (fn [[k v]] {k 0}) contamined))
-        deaths (frequencies (map #(.format formatter (d/parse-date (nth % 1))) (filter #(some #{"Fallecido" "fallecido"} %) data)))
-        series-deaths (sort (map (fn [[k v]] [(d/parse-date k) v]) (apply merge series-fechas deaths)))
-
+        fn-parse (fn [[k v]] [(d/parse-date k) v])
+        fn-unparse (fn [[k v]] [(.format formatter k) v])
+        contamined (->> data
+                        (map #(nth % 1))
+                        vec
+                        frequencies
+                        (map fn-parse)
+                        sort
+                        (map fn-unparse))
+        series-fechas (->> contamined
+                           (map (fn [[k v]] {k 0}))
+                           (into {}))
+        deaths (->> data
+                    (filter #(some #{"Fallecido" "fallecido"} %))
+                    (map #(.format formatter (d/parse-date (nth % 1))))
+                    frequencies)
+        series-deaths (->> (apply merge series-fechas deaths)
+                           (map fn-parse)
+                           sort)
         labels-fechas (into [] (map #(first (clojure.string/split (first %) #"/")) contamined))
-
-        series1 (into [] (map #(nth % 1) (sum contamined)))
-        series2 (into [] (map (fn [[k v]] v) (sum series-deaths)))]
+        series1 (->> (sum contamined)
+                     (map #(nth % 1))
+                     vec)
+        series2 (->> (sum series-deaths)
+                     (map (fn [[k v]] v))
+                     vec)]
     [labels-fechas series1 series2]))
 
 (defn show-chart
@@ -72,10 +87,18 @@
                   "casa" "en casa"
                   "hospital" "internados"
                   "hospital uci" "cuidados intensivos"
-                  "fallecido" "fallecidos"}
-          statuses (frequencies (into [] (map #(clojure.string/lower-case (nth % 4)) data)))
-          labels-fechas (into [] (map #(labels (nth % 0)) statuses))
-          series1 (into [] (map #(nth % 1) statuses))
+                  "fallecido" "fallecidos"
+                  "recuperado (hospital)" "recuperados en hospital"}
+          statuses (->> data
+                        (map #(clojure.string/lower-case (nth % 4)))
+                        (into [])
+                        frequencies)
+          labels-fechas (->> statuses
+                             (map #(labels (nth % 0)))
+                             (into []))
+          series1 (->> statuses
+                       (map #(nth % 1))
+                       (into []))
           options {:height "220px"}]
       [:div
        {:id "chart5"}

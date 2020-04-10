@@ -90,12 +90,13 @@ footer a {
   margin-bottom: 13px;
 }
 
-#chart5 {
+#chart5, #chart6 {
   display: block;
   width: 400px;
   background-color: #1b1921;
   border-radius: 10px;
   padding-top: 20px;
+  margin-bottom: 13px;
 }
 
 .ct-vertical, .ct-horizontal {

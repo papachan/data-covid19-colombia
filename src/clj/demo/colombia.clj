@@ -41,19 +41,22 @@
 (def fmt (f/formatter "dd/MM/yyyyy"))
 
 (let [rows (into [] (rest (first data)))
-      bogota (filter #(some #{"Bogotá"} %) rows)
+      bogota (filter #(some #{"Bogotá" "Bogota"} %) rows)
       statuses (into [] (map #(clojure.string/lower-case (nth % 4)) bogota))
       types (into [] (map #(clojure.string/lower-case (nth % 7)) bogota))
       ages (into [] (map #(clojure.string/lower-case (nth % 5)) bogota))
       only-infected (remove (fn [s] (= "recuperado" (clojure.string/lower-case (nth s 4)))) rows)
       by-regions (frequencies (map #(nth % 2) only-infected))
-
+      ;; make timeseries
       series-fechas (make-serie (sort (into #{} (map #(nth % 1) rows))))
-      deaths (frequencies (into [] (map #(nth % 1) (filter #(some #{"Fallecido"} %) rows))))
-      result (apply merge series-fechas deaths)]
+      timeseries-deaths (frequencies (into [] (map #(nth % 1) (filter #(some #{"Fallecido" "fallecido"} %) rows))))
+      timeseries (->> (apply merge series-fechas timeseries-deaths)
+                      (map (fn [[k v]] [(f/parse fmt k) v]))
+                      sort
+                      (map (fn [[k v]] [(f/unparse fmt k) v])))]
 
   ;; all deaths by dates
-  (apply merge series-fechas deaths)
+  (apply merge series-fechas timeseries-deaths)
 
   ;; all cases per dates
   (sort (frequencies (into [] (map #(nth % 1) rows))))
@@ -108,7 +111,7 @@
 
   ;; ;; suma por regiones
   (frequencies (map #(nth % 2) only-infected))
-  (by-regions "Bogotá") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733 => 926 => 964
+  (by-regions "Bogota") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733 => 926 => 964 => 1060
 
   ;; => {"recuperado" 66, "casa" 749, "hospital" 114, "hospital uci" 38, "fallecido" 25}
   (frequencies statuses)
@@ -119,16 +122,22 @@
   ;; => 14 ;; => 16 => 17 => 25 => 32 => 35 => 46 => 50 => 54
 
   ;; fallecidos por regiones:
-  ;; => {"Villavicencio" 1, "Cali" 5, "Montería" 1, "Pereira" 1, "Neiva" 2, "Ciénaga de Oro" 1, "Santander de Quilichao" 1, "Cartagena" 3, "Bogotá" 25, "Santa Marta" 2, "Cúcuta" 1, "Soledad" 2, "Tunja" 1, "Barranquilla" 2, "Medellín" 1, "Popayán" 1, "Villapinzón" 2, "Montenegro" 1, "Zipaquirá" 1}
-  (frequencies (into [] (map #(nth % 2) (filter #(some #{"Fallecido"} %) rows))))
-
-  ;; timeseries
-  (map (fn [[k v]] [(f/unparse fmt k) v]) (sort (map (fn [[k v]] [(f/parse fmt k) v]) result)))
+  ;; => {"Bogota" 34, "Villavicencio" 2, "Cali" 9, "Pasto" 1, "Pereira" 2, "Zipaquira" 1, "Monteria" 1, "Neiva" 2, "Ocaña" 1, "Cartagena" 6, "Santander De Quilichao" 1, "Santa Marta" 4, "Barrancabermeja" 1, "Soledad" 2, "Popayan" 1, "Tunja" 1, "Cucuta" 2, "Cienaga De Oro" 1, "Barranquilla" 2, "Medellin" 1, "Ipiales" 1, "Villapinzon" 2, "Montenegro" 1, "Turbaco" 1}
+  (frequencies (into [] (map #(nth % 2) (filter #(some #{"Fallecido" "fallecido"} %) rows))))
 
   ;; all rows from 3 days ago
   ;; => {"07/04/02020" 201, "08/04/02020" 274, "09/04/02020" 169}
   (into {} (map (fn [[k v]] [(f/unparse fmt k) v]) (frequencies (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (-> 3 t/days t/ago)))) (map #(f/parse fmt (nth % 1)) rows)))))
 
   ;; all cases from 1 week ago
-  ;; => 1158
-  (count (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (-> 8 t/days t/ago)))) (map #(f/parse fmt (nth % 1)) rows))))
+  ;; => 1312
+  (count (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (-> 8 t/days t/ago)))) (map #(f/parse fmt (nth % 1)) rows)))
+
+  ;; deads between ages
+  ;; => => {"mayores de 40" 70, "menores de 40" 10}
+  (->> (filter #(some #{"Fallecido" "fallecido"} %) rows)
+       (map #(Integer/parseInt (nth % 5)))
+       (group-by (fn [v] (< v 40)))
+       vals
+       (map count)
+       (zipmap ["mayores de 40" "menores de 40"])))
