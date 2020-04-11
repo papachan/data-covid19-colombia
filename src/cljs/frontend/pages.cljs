@@ -104,23 +104,26 @@
 (defn chart-bars-component
   [data]
   (when-not (empty? data)
-    (let [labels {"recuperado" "recuperados"
-                  "casa" "en casa"
-                  "hospital" "internados"
-                  "hospital uci" "cuidados intensivos"
-                  "fallecido" "fallecidos"
-                  "recuperado (hospital)" "recuperados en hospital"}
+    (let [labels {"recuperado" "recovered"
+                  "casa" "at home"
+                  "hospital" "hospitalized"
+                  "hospital uci" "ICU hospitalization"
+                  "fallecido" "deads"
+                  "recuperado (hospital)" "recovered in hospital"}
           statuses (->> data
                         (map #(clojure.string/lower-case (nth % 4)))
-                        (into [])
+                        vec
                         frequencies)
           labels-fechas (->> statuses
                              (map #(labels (nth % 0)))
-                             (into []))
+                             vec)
           series1 (->> statuses
                        (map #(nth % 1))
-                       (into []))
-          options {:height "220px"}]
+                       vec)
+          options {:height "180px"
+                   :reverseData true
+                   :horizontalBars true
+                   :axisY {:offset 120}}]
       [:div
        {:id "chart5"}
        [:> react-graph
