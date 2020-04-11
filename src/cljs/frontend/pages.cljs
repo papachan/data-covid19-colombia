@@ -80,6 +80,27 @@
                                [:div {:id "chart4"
                                       :class "ct-chart"}])}))))
 
+(defn chart-bars-component2
+  [data]
+  (when-not (empty? data)
+    (let [series (->> data
+                      (filter #(some #{"Fallecido" "fallecido"} %))
+                      (map #(js/parseInt (nth % 5)))
+                      (group-by (fn [v] (< v 40)))
+                      vals
+                      (map count)
+                      (into []))
+          labels ["deads over 40 years old"
+                  "deads less than 40 years old"]
+          options {:height "220px"}]
+      [:div
+       {:id "chart6"}
+       [:> react-graph
+        {:data {:labels labels
+                :series [series]}
+         :options options
+         :type "Bar"}]])))
+
 (defn chart-bars-component
   [data]
   (when-not (empty? data)
@@ -144,7 +165,8 @@
       [:div
        {:className "graph"}
        [chart-component data]
-       [chart-bars-component data]]
+       [chart-bars-component data]
+       [chart-bars-component2 data]]
       [:div
        {:id "stats"}
        [block-stats {:title "Number of deaths"
