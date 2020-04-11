@@ -22,6 +22,14 @@
 (def json-data (json/parse-string content))
 (def data (json-data "data"))
 
+;; ultima fecha del archivo json
+(->> data
+     first
+     rest
+     vec
+     (map #(nth % 1))
+     last)
+
 (let [date (clojure.string/replace (last (map #(nth % 1) (rest (first data)))) #"/" "-")
       file-name (clojure.string/join ["data/" "Datos_" date ".csv"])]
   (spit file-name "" :append false)
@@ -55,6 +63,9 @@
                       sort
                       (map (fn [[k v]] [(f/unparse fmt k) v])))]
 
+  ;; ultima fecha del archivo json
+  (last (map #(nth % 1) rows))
+
   ;; all deaths by dates
   (apply merge series-fechas timeseries-deaths)
 
@@ -68,16 +79,16 @@
   (sort (distinct (map #(nth % 2) rows)))
 
   ;; ;; count fallecidos en bogota
-  (count (filter #(= "fallecido" %) statuses)) ;; => 3 => 5 => 12 => 14
+  (count (filter #(= "fallecido" %) statuses)) ;; => 3 => 5 => 12 => 14 => 45
 
   (count rows) ;; => 491 => 539 => 608 => 702 => 798 => 906 => 1065 => 1267 => 1406
 
   (count (filter #{"Bogotá"}
-           (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587 => 725 => 861 => 1030
+           (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587 => 725 => 861 => 1030 => 1164
 
-  ;; number of rows per dates
+  ;; count rows from a specific date
   (count (filter #{"08/04/2020"}
-                 (map #(nth % 1) rows))) ;; =>
+                 (map #(nth % 1) rows)))
   ;; 27/3/2020 => 48
   ;; 28/3/2020 => 69
   ;; 29/3/2020 => 94
@@ -92,6 +103,15 @@
   ;; 07/4/2020 => 201
   ;; 08/4/2020 => 274
 
+  ;; all results by dates
+  (->> rows
+       (map #(f/parse fmt (nth % 1)))
+       frequencies
+       vec
+       sort
+       (map (fn [[k v]] [(f/unparse fmt k) v])))
+  ;; => (["06/03/02020" 1] ["09/03/02020" 2] ["11/03/02020" 6] ["12/03/02020" 4] ["13/03/02020" 3] ["14/03/02020" 8] ["15/03/02020" 21] ["16/03/02020" 12] ["17/03/02020" 18] ["18/03/02020" 27] ["19/03/02020" 26] ["20/03/02020" 47] ["21/03/02020" 35] ["22/03/02020" 30] ["23/03/02020" 66] ["24/03/02020" 113] ["25/03/02020" 62] ["26/03/02020" 10] ["27/03/02020" 48] ["28/03/02020" 69] ["29/03/02020" 94] ["30/03/02020" 96] ["31/03/02020" 108] ["01/04/02020" 159] ["02/04/02020" 96] ["03/04/02020" 106] ["04/04/02020" 139] ["05/04/02020" 79] ["06/04/02020" 94] ["07/04/02020" 201] ["08/04/02020" 274] ["09/04/02020" 169] ["10/04/02020" 250] ["11/04/02020" 236])
+
   ;; statuses to lower case
   (map #(clojure.string/lower-case (nth % 4)) (filter #(some #{"Bogotá"} %) rows))
 
@@ -103,7 +123,7 @@
   (count (filter #(= "importado" %) types)) ;; => 126 => 139 => 154 => 178 => 183 => 195 => 222
 
   ;; numero de casos relacionados y en estudio en bogota
-  (count (filter (fn [s] (or (= "relacionado" s) (= "en estudio" s))) types)) ;; => 207 => 277 => 365 => 589
+  (count (filter (fn [s] (or (= "relacionado" s) (= "en estudio" s))) types)) ;; => 207 => 277 => 365 => 589 => 846
 
   ;; por edades
   ;; => {"20 a 29" 67, "70 a 79" 18, "60 a 69" 44, "50 a 59" 64, "40 a 49" 72, "10 a 19" 10, "80 a 89" 7, "30 a 39" 104, "0 a 9" 4}
@@ -111,9 +131,9 @@
 
   ;; ;; suma por regiones
   (frequencies (map #(nth % 2) only-infected))
-  (by-regions "Bogota") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733 => 926 => 964 => 1060
+  (by-regions "Bogota") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733 => 926 => 964 => 1060 => 1102
 
-  ;; => {"recuperado" 66, "casa" 749, "hospital" 114, "hospital uci" 38, "fallecido" 25}
+  ;; => {"recuperado" 62, "casa" 883, "hospital" 138, "hospital uci" 31, "fallecido" 45, "recuperado (hospital)" 5}
   (frequencies statuses)
 
   ;; Fallecidos total
@@ -126,16 +146,25 @@
   (frequencies (into [] (map #(nth % 2) (filter #(some #{"Fallecido" "fallecido"} %) rows))))
 
   ;; all rows from 3 days ago
-  ;; => {"07/04/02020" 201, "08/04/02020" 274, "09/04/02020" 169}
-  (into {} (map (fn [[k v]] [(f/unparse fmt k) v]) (frequencies (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (-> 3 t/days t/ago)))) (map #(f/parse fmt (nth % 1)) rows)))))
+  ;; => {"09/04/02020" 169, "10/04/02020" 250, "11/04/02020" 236}
+  (->> rows
+       (map #(f/parse fmt (nth % 1)))
+       (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (-> 3 t/days t/ago)))))
+       frequencies
+       (map (fn [[k v]] [(f/unparse fmt k) v]))
+       (into {}))
 
   ;; all cases from 1 week ago
-  ;; => 1312
-  (count (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (-> 8 t/days t/ago)))) (map #(f/parse fmt (nth % 1)) rows)))
+  ;; => 1312 => 1206 => 1442
+  (->> rows
+       (map #(f/parse fmt (nth % 1)))
+       (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (-> 8 t/days t/ago)))))
+       count)
 
   ;; deads between ages
-  ;; => => {"mayores de 40" 70, "menores de 40" 10}
-  (->> (filter #(some #{"Fallecido" "fallecido"} %) rows)
+  ;; => => {"mayores de 40" 89, "menores de 40" 11}
+  (->> rows
+       (filter #(some #{"Fallecido" "fallecido"} %))
        (map #(Integer/parseInt (nth % 5)))
        (group-by (fn [v] (< v 40)))
        vals

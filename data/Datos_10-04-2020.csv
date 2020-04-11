@@ -1450,7 +1450,7 @@ ID de caso,Fecha de diagnóstico,Ciudad de ubicación,Departamento o Distrito,At
 1449,05/04/2020,Cali,Valle del Cauca,Hospital,31,M,En estudio,Colombia
 1450,05/04/2020,Cali,Valle del Cauca,Hospital,35,M,En estudio,Colombia
 1451,05/04/2020,Cali,Valle del Cauca,Hospital,43,F,En estudio,Colombia
-1452,05/04/2020,Buenaventura,Valle del Cauca,Hospital,26,M,En estudio,Colombia
+1452,05/04/2020,Buenaventura,Buenaventura D.E.,Hospital,26,M,En estudio,Colombia
 1453,05/04/2020,Acacias,Meta,Casa,37,M,Relacionado,Colombia
 1454,05/04/2020,Bogota,Bogotá D.C.,Casa,34,M,Importado,Estados Unidos De América
 1455,05/04/2020,Bogota,Bogotá D.C.,Casa,59,F,En estudio,Colombia
@@ -1504,7 +1504,7 @@ ID de caso,Fecha de diagnóstico,Ciudad de ubicación,Departamento o Distrito,At
 1503,06/04/2020,Cali,Valle del Cauca,Casa,48,M,Relacionado,Colombia
 1504,06/04/2020,Cali,Valle del Cauca,Casa,49,M,Relacionado,Colombia
 1505,06/04/2020,Cali,Valle del Cauca,Hospital,59,M,Relacionado,Colombia
-1506,06/04/2020,Buenaventura,Valle del Cauca,Hospital UCI,39,M,Relacionado,Colombia
+1506,06/04/2020,Buenaventura,Buenaventura D.E.,Hospital UCI,39,M,Relacionado,Colombia
 1507,06/04/2020,Barranquilla,Barranquilla D.E.,Casa,20,M,Relacionado,Colombia
 1508,06/04/2020,Rionegro,Antioquia,Casa,69,M,Relacionado,Colombia
 1509,06/04/2020,Medellin,Antioquia,Casa,11,F,Relacionado,Colombia
@@ -1834,7 +1834,7 @@ ID de caso,Fecha de diagnóstico,Ciudad de ubicación,Departamento o Distrito,At
 1833,08/04/2020,Jamundi,Valle del Cauca,Casa,36,M,En estudio,Colombia
 1834,08/04/2020,Cali,Valle del Cauca,Casa,71,M,En estudio,Colombia
 1835,08/04/2020,Cali,Valle del Cauca,Casa,56,M,En estudio,Colombia
-1836,08/04/2020,Buenaventura,Valle del Cauca,Casa,71,F,Relacionado,Colombia
+1836,08/04/2020,Buenaventura,Buenaventura D.E.,Casa,71,F,Relacionado,Colombia
 1837,08/04/2020,Cali,Valle del Cauca,Hospital UCI,60,F,En estudio,Colombia
 1838,08/04/2020,Cali,Valle del Cauca,Casa,41,M,En estudio,Colombia
 1839,08/04/2020,Bogota,Bogotá D.C.,Casa,58,M,Relacionado,Colombia
@@ -2211,7 +2211,7 @@ ID de caso,Fecha de diagnóstico,Ciudad de ubicación,Departamento o Distrito,At
 2210,09/04/2020,Cali,Valle del Cauca,Hospital,37,M,En estudio,Colombia
 2211,09/04/2020,Cali,Valle del Cauca,Casa,65,F,En estudio,Colombia
 2212,09/04/2020,Miranda,Cauca,Hospital,50,M,En estudio,Colombia
-2213,09/04/2020,Buenaventura,Valle del Cauca,Casa,75,M,Relacionado,Colombia
+2213,09/04/2020,Buenaventura,Buenaventura D.E.,Casa,75,M,Relacionado,Colombia
 2214,09/04/2020,Cali,Valle del Cauca,Hospital,81,M,Relacionado,Colombia
 2215,09/04/2020,Neiva,Huila,Casa,77,M,Relacionado,Colombia
 2216,09/04/2020,Cali,Valle del Cauca,Hospital,45,M,Importado,Colombia
@@ -2242,7 +2242,7 @@ ID de caso,Fecha de diagnóstico,Ciudad de ubicación,Departamento o Distrito,At
 2241,10/04/2020,Medellin,Antioquia,Hospital,56,M,Relacionado,Colombia
 2242,10/04/2020,Medellin,Antioquia,Hospital,62,F,Relacionado,Colombia
 2243,10/04/2020,Puerto Colombia,Atlántico,Casa,68,F,En estudio,Colombia
-2244,10/04/2020,Barranquilla,Barranquilla D.E.,Casa,14,M,Relacionado,0
+2244,10/04/2020,Barranquilla,Barranquilla D.E.,Casa,14,M,Relacionado,Colombia
 2245,10/04/2020,Santa Marta,Santa Marta D.T. y C.,Hospital,48,M,Relacionado,Colombia
 2246,10/04/2020,Palmira,Valle del Cauca,Casa,39,F,Relacionado,Colombia
 2247,10/04/2020,Cali,Valle del Cauca,Casa,58,F,Importado,Estados Unidos De América
@@ -2356,7 +2356,7 @@ ID de caso,Fecha de diagnóstico,Ciudad de ubicación,Departamento o Distrito,At
 2355,10/04/2020,Cartagena,Cartagena D.T. y C,Casa,38,F,En estudio,Colombia
 2356,10/04/2020,Cartagena,Cartagena D.T. y C,Casa,56,M,En estudio,Colombia
 2357,10/04/2020,Cartagena,Cartagena D.T. y C,Casa,31,M,En estudio,Venezuela
-2358,10/04/2020,Cartagena,Cartagena D.T. y C,Casa,56,F,En estudio,0
+2358,10/04/2020,Cartagena,Cartagena D.T. y C,Casa,56,F,En estudio,Colombia
 2359,10/04/2020,Cartagena,Cartagena D.T. y C,Casa,45,F,En estudio,Colombia
 2360,10/04/2020,Cartagena,Cartagena D.T. y C,Casa,30,F,En estudio,Colombia
 2361,10/04/2020,Cartagena,Cartagena D.T. y C,Casa,31,F,En estudio,Colombia
@@ -2414,8 +2414,8 @@ ID de caso,Fecha de diagnóstico,Ciudad de ubicación,Departamento o Distrito,At
 2413,10/04/2020,Cali,Valle del Cauca,Casa,32,M,En estudio,Colombia
 2414,10/04/2020,Cali,Valle del Cauca,Hospital,53,M,En estudio,Colombia
 2415,10/04/2020,Cali,Valle del Cauca,Casa,63,F,En estudio,Colombia
-2416,10/04/2020,Cali,Valle del Cauca,Casa,54,M,En Estudio,Colombia
-2417,10/04/2020,Cali,Valle del Cauca,Casa,32,F,Relacionado,0
+2416,10/04/2020,Cali,Valle del Cauca,Casa,54,M,En estudio,Colombia
+2417,10/04/2020,Cali,Valle del Cauca,Casa,32,F,Relacionado,Colombia
 2418,10/04/2020,Cali,Valle del Cauca,Casa,32,M,Importado,México
 2419,10/04/2020,Cali,Valle del Cauca,Casa,32,F,En estudio,Colombia
 2420,10/04/2020,Cali,Valle del Cauca,Casa,43,F,Relacionado,Colombia
