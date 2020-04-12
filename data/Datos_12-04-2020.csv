@@ -1,0 +1,2777 @@
+ID de caso,Fecha de diagnóstico,Ciudad De Ubicación,Departamento o Distrito,Atención**,Edad,Sexo,Tipo*,País De Procedencia
+1,06/03/2020,Bogotá,Bogotá D.C.,recuperado,19,F,importado,Italia
+2,09/03/2020,Buga,Valle del Cauca,recuperado,34,M,importado,España
+3,09/03/2020,Medellin,Antioquia,recuperado,50,F,importado,España
+4,11/03/2020,Medellin,Antioquia,recuperado,55,M,relacionado,Colombia
+5,11/03/2020,Medellin,Antioquia,recuperado,25,M,relacionado,Colombia
+6,11/03/2020,Itagui,Antioquia,recuperado,27,F,relacionado,Colombia
+7,11/03/2020,Cartagena,Cartagena D.T. y C,recuperado,85,F,importado,Estados Unidos de América
+8,11/03/2020,Bogotá,Bogotá D.C.,recuperado,22,F,importado,España
+9,11/03/2020,Bogotá,Bogotá D.C.,recuperado,28,F,importado,España
+10,12/03/2020,Bogotá,Bogotá D.C.,recuperado,36,F,importado,España
+11,12/03/2020,Bogotá,Bogotá D.C.,recuperado,42,F,importado,España
+12,12/03/2020,Neiva,Huila,recuperado,74,F,importado,Italia
+13,12/03/2020,Neiva,Huila,recuperado,68,F,relacionado,Colombia
+14,13/03/2020,Palmira,Valle del Cauca,recuperado,48,M,importado,España
+15,13/03/2020,Villavicencio,Meta,recuperado,30,F,importado,España
+16,13/03/2020,Bogotá,Bogotá D.C.,recuperado,61,F,importado,Italia
+17,14/03/2020,Bogotá,Bogotá D.C.,recuperado,73,F,importado,España
+18,14/03/2020,Bogotá,Bogotá D.C.,recuperado,54,M,importado,España
+19,14/03/2020,Bogotá,Bogotá D.C.,recuperado,54,F,relacionado,Colombia
+20,14/03/2020,Medellin,Antioquia,recuperado,26,F,relacionado,Colombia
+21,14/03/2020,Medellin,Antioquia,recuperado,28,M,relacionado,Colombia
+22,14/03/2020,Rionegro,Antioquia,recuperado,36,M,importado,Estados Unidos de América
+23,14/03/2020,Bogotá,Bogotá D.C.,recuperado,23,M,relacionado,Colombia
+24,14/03/2020,Bogotá,Bogotá D.C.,recuperado,18,F,importado,España
+25,15/03/2020,Cali,Valle del Cauca,casa,49,M,importado,España
+26,15/03/2020,Cartagena,Cartagena D.T. y C,recuperado,30,F,relacionado,Colombia
+27,15/03/2020,Cartagena,Cartagena D.T. y C,recuperado,30,F,relacionado,Colombia
+28,15/03/2020,Dosquebradas,Risaralda,casa,22,M,importado,Estados Unidos de América
+29,15/03/2020,Neiva,Huila,recuperado,55,F,relacionado,Colombia
+30,15/03/2020,Cucuta,Norte de Santander,recuperado,48,F,importado,España
+31,15/03/2020,Manizales,Caldas,recuperado,65,M,importado,Estados Unidos de América
+32,15/03/2020,Medellin,Antioquia,recuperado,55,M,importado,España
+33,15/03/2020,Bogotá,Bogotá D.C.,casa,59,M,importado,España
+34,15/03/2020,Bogotá,Bogotá D.C.,recuperado,23,F,importado,España
+35,15/03/2020,Bogotá,Bogotá D.C.,recuperado,54,M,importado,España
+36,15/03/2020,Bogotá,Bogotá D.C.,recuperado,72,M,importado,Estados Unidos de América
+37,15/03/2020,Bogotá,Bogotá D.C.,recuperado,45,F,relacionado,Colombia
+38,15/03/2020,Bogotá,Bogotá D.C.,recuperado,29,M,importado,España
+39,15/03/2020,Bogotá,Bogotá D.C.,recuperado,21,M,importado,España
+40,15/03/2020,Bogotá,Bogotá D.C.,recuperado,23,F,importado,España
+41,15/03/2020,Neiva,Huila,recuperado,79,M,relacionado,Colombia
+42,15/03/2020,Neiva,Huila,recuperado,52,F,relacionado,Colombia
+43,15/03/2020,Neiva,Huila,recuperado,71,M,relacionado,Colombia
+44,15/03/2020,Neiva,Huila,recuperado,24,F,relacionado,Colombia
+45,15/03/2020,Subachoque,Cundinamarca,casa,29,M,importado,España
+46,16/03/2020,Bogotá,Bogotá D.C.,recuperado,44,F,relacionado,Colombia
+47,16/03/2020,Bogotá,Bogotá D.C.,recuperado,38,M,relacionado,Colombia
+48,16/03/2020,Bogotá,Bogotá D.C.,recuperado,31,M,relacionado,Colombia
+49,16/03/2020,Bogotá,Bogotá D.C.,recuperado,41,F,importado,España
+50,16/03/2020,Bogotá,Bogotá D.C.,recuperado,67,F,importado,España
+51,16/03/2020,Soacha,Cundinamarca,recuperado,24,M,importado,Ecuador
+52,16/03/2020,Bogotá,Bogotá D.C.,recuperado,29,M,importado,España
+53,16/03/2020,Bogotá,Bogotá D.C.,recuperado,62,M,importado,España
+54,16/03/2020,Bogotá,Bogotá D.C.,casa,42,F,importado,España
+55,16/03/2020,Bogotá,Bogotá D.C.,recuperado,58,F,relacionado,Colombia
+56,16/03/2020,Bogotá,Bogotá D.C.,recuperado,34,M,importado,España
+57,16/03/2020,Bogotá,Bogotá D.C.,recuperado,37,M,relacionado,Colombia
+58,17/03/2020,Cartagena,Cartagena D.T. y C,recuperado,27,M,relacionado,Colombia
+59,17/03/2020,Barranquilla,Barranquilla D.E.,recuperado,20,M,importado,España
+60,17/03/2020,Floridablanca,Santander,recuperado,24,M,importado,España
+61,17/03/2020,Barranquilla,Barranquilla D.E.,recuperado,21,M,importado,España
+62,17/03/2020,Cali,Valle del Cauca,recuperado,32,M,importado,Italia
+63,17/03/2020,Cali,Valle del Cauca,casa,26,F,importado,Francia
+64,17/03/2020,Bogotá,Bogotá D.C.,casa,31,M,importado,España
+65,17/03/2020,Bogotá,Bogotá D.C.,casa,64,M,relacionado,Colombia
+66,17/03/2020,Bogotá,Bogotá D.C.,recuperado,40,F,importado,España
+67,17/03/2020,Bogotá,Bogotá D.C.,casa,21,M,importado,España
+68,17/03/2020,Bogotá,Bogotá D.C.,recuperado,72,M,importado,España
+69,17/03/2020,Bogotá,Bogotá D.C.,recuperado,22,F,importado,Estados Unidos de América
+70,17/03/2020,Bogotá,Bogotá D.C.,casa,37,F,importado,Turquia
+71,17/03/2020,Cucuta,Norte de Santander,casa,54,M,relacionado,Colombia
+72,17/03/2020,Cucuta,Norte de Santander,recuperado,22,F,relacionado,Colombia
+73,17/03/2020,Cartagena,Cartagena D.T. y C,recuperado,54,F,relacionado,Colombia
+74,17/03/2020,Bogotá,Bogotá D.C.,casa,18,M,relacionado,Colombia
+75,17/03/2020,Bogotá,Bogotá D.C.,recuperado,49,F,relacionado,Colombia
+76,18/03/2020,Armenia,Quindío,recuperado,46,F,importado,Italia
+77,18/03/2020,Armenia,Quindío,recuperado,18,M,importado,España
+78,18/03/2020,Palmira,Valle del Cauca,recuperado,39,F,relacionado,Colombia
+79,18/03/2020,Palmira,Valle del Cauca,recuperado,9,M,relacionado,Colombia
+80,18/03/2020,Palmira,Valle del Cauca,recuperado,53,F,relacionado,Colombia
+81,18/03/2020,Cali,Valle del Cauca,recuperado,49,F,importado,Estados Unidos de América
+82,18/03/2020,Cali,Valle del Cauca,casa,54,M,importado,España
+83,18/03/2020,Cali,Valle del Cauca,recuperado,56,M,importado,Estados Unidos de América
+84,18/03/2020,Cali,Valle del Cauca,recuperado,51,M,importado,Ecuador
+85,18/03/2020,Cali,Valle del Cauca,casa,42,F,relacionado,Colombia
+86,18/03/2020,Pereira,Risaralda,recuperado,29,M,importado,Francia
+87,18/03/2020,Cajica,Cundinamarca,recuperado,45,M,importado,España
+88,18/03/2020,Ibague,Tolima,recuperado,36,M,relacionado,Colombia
+89,18/03/2020,Bucaramanga,Santander,casa,39,F,importado,España
+90,18/03/2020,Neiva,Huila,recuperado,53,F,relacionado,Colombia
+91,18/03/2020,Cajica,Cundinamarca,recuperado,32,M,importado,España
+92,18/03/2020,Bogotá,Bogotá D.C.,casa,50,M,relacionado,Colombia
+93,18/03/2020,Bogotá,Bogotá D.C.,recuperado,26,F,importado,España
+94,18/03/2020,Bogotá,Bogotá D.C.,recuperado,53,M,importado,Estados Unidos de América
+95,18/03/2020,Bogotá,Bogotá D.C.,hospital uci,69,M,importado,Turquia
+96,18/03/2020,Bogotá,Bogotá D.C.,casa,37,F,importado,Estados Unidos de América
+97,18/03/2020,Cartagena,Cartagena D.T. y C,casa,24,M,importado,Estados Unidos de América
+98,18/03/2020,Cartagena,Cartagena D.T. y C,recuperado,21,M,importado,España
+99,18/03/2020,Ibague,Tolima,casa,16,M,relacionado,Colombia
+100,18/03/2020,Pereira,Risaralda,casa,21,M,importado,España
+101,18/03/2020,Dosquebradas,Risaralda,recuperado,18,M,importado,España
+102,18/03/2020,Pereira,Risaralda,recuperado,79,M,importado,España
+103,19/03/2020,Cartagena,Cartagena D.T. y C,recuperado,24,F,importado,España
+104,19/03/2020,Barranquilla,Barranquilla D.E.,recuperado,48,F,importado,España
+105,19/03/2020,Palmira,Valle del Cauca,casa,23,F,importado,España
+106,19/03/2020,Medellin,Antioquia,recuperado,44,M,importado,España
+107,19/03/2020,Medellin,Antioquia,casa,56,M,importado,España
+108,19/03/2020,Medellin,Antioquia,casa,57,F,importado,España
+109,19/03/2020,Bogotá,Bogotá D.C.,casa,54,M,importado,España
+110,19/03/2020,Bogotá,Bogotá D.C.,casa,62,F,importado,Estados Unidos de América
+111,19/03/2020,Bogotá,Bogotá D.C.,casa,60,M,relacionado,Colombia
+112,19/03/2020,Bogotá,Bogotá D.C.,casa,30,M,importado,España
+113,19/03/2020,Bogotá,Bogotá D.C.,casa,33,M,importado,Italia
+114,19/03/2020,Bogotá,Bogotá D.C.,recuperado,49,M,importado,Estados Unidos de América
+115,19/03/2020,Bogotá,Bogotá D.C.,recuperado,29,M,importado,Ecuador
+116,19/03/2020,Bogotá,Bogotá D.C.,casa,40,F,relacionado,Colombia
+117,19/03/2020,Cucuta,Norte de Santander,casa,28,M,importado,España
+118,19/03/2020,Cucuta,Norte de Santander,recuperado,50,M,relacionado,Colombia
+119,19/03/2020,Cucuta,Norte de Santander,recuperado,24,M,relacionado,Colombia
+120,19/03/2020,Armenia,Quindío,recuperado,23,F,relacionado,Colombia
+121,19/03/2020,Popayan,Cauca,recuperado,61,M,importado,España
+122,19/03/2020,Popayan,Cauca,recuperado,32,F,importado,España
+123,19/03/2020,Viterbo,Caldas,recuperado,38,F,importado,España
+124,19/03/2020,Neiva,Huila,recuperado,76,F,relacionado,Colombia
+125,19/03/2020,Cartagena,Cartagena D.T. y C,recuperado,47,M,importado,España
+126,19/03/2020,Barranquilla,Barranquilla D.E.,recuperado,52,F,importado,Estados Unidos de América
+127,19/03/2020,Barranquilla,Barranquilla D.E.,recuperado,30,F,relacionado,Colombia
+128,19/03/2020,Soacha,Cundinamarca,recuperado,58,M,relacionado,Colombia
+129,20/03/2020,Pereira,Risaralda,recuperado,26,F,importado,España
+130,20/03/2020,Anapoima,Cundinamarca,recuperado,53,M,importado,Estados Unidos de América
+131,20/03/2020,Medellin,Antioquia,recuperado,22,F,importado,España
+132,20/03/2020,Cali,Valle del Cauca,recuperado,33,M,relacionado,Colombia
+133,20/03/2020,Rionegro,Antioquia,recuperado,51,M,relacionado,Colombia
+134,20/03/2020,La Estrella,Antioquia,casa,28,M,relacionado,Colombia
+135,20/03/2020,Medellin,Antioquia,casa,44,F,importado,Alemania
+136,20/03/2020,Medellin,Antioquia,casa,37,M,relacionado,Colombia
+137,20/03/2020,Envigado,Antioquia,casa,54,M,importado,España
+138,20/03/2020,Bogotá,Bogotá D.C.,casa,54,M,importado,Ecuador
+139,20/03/2020,Bogotá,Bogotá D.C.,recuperado,30,M,importado,España
+140,20/03/2020,Bogotá,Bogotá D.C.,casa,34,M,importado,Brasil
+141,20/03/2020,Medellin,Antioquia,recuperado,62,F,importado,Croacia
+142,20/03/2020,Medellin,Antioquia,recuperado,35,F,importado,Italia
+143,20/03/2020,Envigado,Antioquia,recuperado,46,M,importado,España
+144,20/03/2020,Medellin,Antioquia,casa,41,M,importado,Panama
+145,20/03/2020,Medellin,Antioquia,casa,18,F,relacionado,Colombia
+146,20/03/2020,Bogotá,Bogotá D.C.,casa,31,F,relacionado,Colombia
+147,20/03/2020,Bogotá,Bogotá D.C.,recuperado,25,F,relacionado,Colombia
+148,20/03/2020,Bogotá,Bogotá D.C.,casa,32,M,relacionado,Colombia
+149,20/03/2020,Bogotá,Bogotá D.C.,casa,37,M,importado,Alemania
+150,20/03/2020,Bogotá,Bogotá D.C.,recuperado,29,F,importado,Italia
+151,20/03/2020,Bogotá,Bogotá D.C.,casa,47,M,importado,Ecuador
+152,20/03/2020,Bogotá,Bogotá D.C.,fallecido,65,M,importado,Estados Unidos de América
+153,20/03/2020,Bogotá,Bogotá D.C.,fallecido,53,F,relacionado,Colombia
+154,20/03/2020,Bogotá,Bogotá D.C.,casa,40,M,importado,Jamaica
+155,20/03/2020,Santa Marta,Santa Marta D.T. y C.,casa,20,M,importado,España
+156,20/03/2020,Chia,Cundinamarca,recuperado,28,F,importado,España
+157,20/03/2020,Santa Marta,Santa Marta D.T. y C.,fallecido,88,M,relacionado,Colombia
+158,20/03/2020,Madrid,Cundinamarca,casa,32,M,relacionado,Colombia
+159,20/03/2020,Bogotá,Bogotá D.C.,recuperado,34,M,importado,Estados Unidos de América
+160,20/03/2020,Bogotá,Bogotá D.C.,recuperado,42,F,importado,Estados Unidos de América
+161,20/03/2020,Bogotá,Bogotá D.C.,recuperado,22,F,importado,Estados Unidos de América
+162,20/03/2020,Bogotá,Bogotá D.C.,recuperado,25,M,importado,Estados Unidos de América
+163,20/03/2020,Bogotá,Bogotá D.C.,hospital uci,28,M,relacionado,Colombia
+164,20/03/2020,Bogotá,Bogotá D.C.,recuperado,67,F,importado,España
+165,20/03/2020,Bogotá,Bogotá D.C.,casa,32,F,relacionado,Colombia
+166,20/03/2020,Bogotá,Bogotá D.C.,recuperado,45,F,relacionado,Colombia
+167,20/03/2020,Bogotá,Bogotá D.C.,casa,46,F,relacionado,Colombia
+168,20/03/2020,Bogotá,Bogotá D.C.,casa,25,F,importado,España
+169,20/03/2020,Bogotá,Bogotá D.C.,recuperado,42,F,relacionado,Colombia
+170,20/03/2020,Bogotá,Bogotá D.C.,recuperado,45,F,importado,Grecia
+171,20/03/2020,Bogotá,Bogotá D.C.,casa,21,F,relacionado,Colombia
+172,20/03/2020,Bogotá,Bogotá D.C.,casa,27,M,relacionado,Colombia
+173,20/03/2020,Bogotá,Bogotá D.C.,casa,65,F,importado,Mexico
+174,20/03/2020,Bogotá,Bogotá D.C.,recuperado,70,M,importado,Mexico
+175,20/03/2020,Bogotá,Bogotá D.C.,recuperado,23,F,importado,España
+176,21/03/2020,Ibague,Tolima,recuperado,26,F,importado,Estados Unidos de América
+177,21/03/2020,Cartagena,Cartagena D.T. y C,recuperado,28,M,relacionado,Colombia
+178,21/03/2020,Cartagena,Cartagena D.T. y C,recuperado,28,M,importado,Estados Unidos de América
+179,21/03/2020,Cartagena,Cartagena D.T. y C,casa,44,F,relacionado,Colombia
+180,21/03/2020,Villa Del Rosario,Norte de Santander,recuperado,27,M,importado,España
+181,21/03/2020,Manizales,Caldas,recuperado,22,F,importado,Estados Unidos de América
+182,21/03/2020,Cucuta,Norte de Santander,casa,44,F,relacionado,Colombia
+183,21/03/2020,Cali,Valle del Cauca,casa,48,F,importado,Ecuador
+184,21/03/2020,Cartago,Valle del Cauca,recuperado,41,F,importado,Estados Unidos de América
+185,21/03/2020,Palmira,Valle del Cauca,casa,58,F,relacionado,Colombia
+186,21/03/2020,Palmira,Valle del Cauca,casa,50,F,importado,España
+187,21/03/2020,Cali,Valle del Cauca,recuperado,74,M,relacionado,Colombia
+188,21/03/2020,Cali,Valle del Cauca,fallecido,70,F,relacionado,Colombia
+189,21/03/2020,Cali,Valle del Cauca,recuperado,81,F,importado,Estados Unidos de América
+190,21/03/2020,Cali,Valle del Cauca,casa,28,M,importado,España
+191,21/03/2020,Palmira,Valle del Cauca,casa,17,M,importado,Estados Unidos de América
+192,21/03/2020,Cali,Valle del Cauca,recuperado,30,F,relacionado,Colombia
+193,21/03/2020,Cali,Valle del Cauca,recuperado,53,F,importado,Italia
+194,21/03/2020,Palmira,Valle del Cauca,casa,63,F,importado,España
+195,21/03/2020,Pereira,Risaralda,recuperado,65,F,importado,Estados Unidos de América
+196,21/03/2020,Neiva,Huila,recuperado,50,F,importado,España
+197,21/03/2020,Cartagena,Cartagena D.T. y C,fallecido,58,M,relacionado,Colombia
+198,21/03/2020,Medellin,Antioquia,casa,39,M,importado,España
+199,21/03/2020,Guarne,Antioquia,recuperado,28,M,importado,Estados Unidos de América
+200,21/03/2020,Cartagena,Cartagena D.T. y C,recuperado,53,F,relacionado,Colombia
+201,21/03/2020,Chia,Cundinamarca,recuperado,50,F,importado,España
+202,21/03/2020,Bello,Antioquia,recuperado,26,M,importado,España
+203,21/03/2020,Barranquilla,Barranquilla D.E.,recuperado,24,F,importado,Estados Unidos de América
+204,21/03/2020,Barranquilla,Barranquilla D.E.,recuperado,35,M,importado,Estados Unidos de América
+205,21/03/2020,Bogotá,Bogotá D.C.,casa,28,M,relacionado,Colombia
+206,21/03/2020,Bogotá,Bogotá D.C.,recuperado,60,F,importado,España
+207,21/03/2020,Bogotá,Bogotá D.C.,recuperado,41,M,importado,Guatemala
+208,21/03/2020,Bogotá,Bogotá D.C.,casa,62,M,importado,España
+209,21/03/2020,Bogotá,Bogotá D.C.,recuperado,68,F,importado,Londres
+210,21/03/2020,Soacha,Cundinamarca,casa,55,M,importado,Turquia
+211,22/03/2020,Calarca,Quindío,casa,25,M,importado,España
+212,22/03/2020,Armenia,Quindío,casa,58,F,relacionado,Colombia
+213,22/03/2020,Valledupar,Cesar,recuperado,30,M,importado,España
+214,22/03/2020,Dosquebradas,Risaralda,casa,56,F,relacionado,Colombia
+215,22/03/2020,Dosquebradas,Risaralda,casa,57,F,importado,Grecia
+216,22/03/2020,Dosquebradas,Risaralda,hospital uci,45,M,importado,España
+217,22/03/2020,Pereira,Risaralda,casa,33,M,importado,España
+218,22/03/2020,La Dorada,Caldas,recuperado,24,F,relacionado,Colombia
+219,22/03/2020,Chinchina,Caldas,recuperado,51,M,importado,España
+220,22/03/2020,Chinchina,Caldas,recuperado,47,F,relacionado,Colombia
+221,22/03/2020,Bucaramanga,Santander,recuperado,49,F,importado,Republica Dominicana
+222,22/03/2020,San Andres,San Andrés,recuperado,36,M,relacionado,Colombia
+223,22/03/2020,Pereira,Risaralda,casa,73,F,importado,Estados Unidos de América
+224,22/03/2020,Ibague,Tolima,recuperado,19,M,relacionado,Colombia
+225,22/03/2020,Cali,Valle del Cauca,recuperado,22,M,relacionado,Colombia
+226,22/03/2020,Yumbo,Valle del Cauca,casa,41,F,relacionado,Colombia
+227,22/03/2020,Cali,Valle del Cauca,casa,28,M,importado,Estados Unidos de América
+228,22/03/2020,Cali,Valle del Cauca,casa,26,M,importado,España
+229,22/03/2020,Yopal,Casanare,recuperado,38,F,relacionado,Colombia
+230,22/03/2020,Armenia,Quindío,recuperado,38,F,relacionado,Colombia
+231,22/03/2020,Cali,Valle del Cauca,recuperado,46,F,relacionado,Colombia
+232,22/03/2020,Bogotá,Bogotá D.C.,fallecido,59,F,relacionado,Colombia
+233,22/03/2020,Bogotá,Bogotá D.C.,recuperado,64,M,relacionado,Colombia
+234,22/03/2020,Bogotá,Bogotá D.C.,casa,41,M,relacionado,Colombia
+235,22/03/2020,Bogotá,Bogotá D.C.,recuperado,47,M,importado,España
+236,22/03/2020,Guatape,Antioquia,recuperado,52,M,relacionado,Colombia
+237,22/03/2020,Medellin,Antioquia,recuperado,32,M,importado,España
+238,22/03/2020,Medellin,Antioquia,casa,61,F,importado,España
+239,22/03/2020,Rionegro,Antioquia,recuperado,41,M,importado,España
+240,22/03/2020,Bello,Antioquia,recuperado,41,M,importado,España
+241,23/03/2020,Bogotá,Bogotá D.C.,recuperado,58,F,relacionado,Colombia
+242,23/03/2020,Bogotá,Bogotá D.C.,casa,49,M,importado,Estados Unidos de América
+243,23/03/2020,Bogotá,Bogotá D.C.,casa,40,M,importado,España
+244,23/03/2020,Bogotá,Bogotá D.C.,casa,52,M,importado,Panama
+245,23/03/2020,Bogotá,Bogotá D.C.,casa,72,F,importado,Turquia
+246,23/03/2020,Bogotá,Bogotá D.C.,recuperado,28,M,relacionado,Colombia
+247,23/03/2020,Bogotá,Bogotá D.C.,casa,26,M,relacionado,Colombia
+248,23/03/2020,Bogotá,Bogotá D.C.,recuperado,30,F,importado,Republica Dominicana
+249,23/03/2020,Bogotá,Bogotá D.C.,casa,38,F,importado,España
+250,23/03/2020,Bogotá,Bogotá D.C.,fallecido,76,M,en estudio,Colombia
+251,23/03/2020,Bogotá,Bogotá D.C.,casa,55,M,importado,Estados Unidos de América
+252,23/03/2020,Bogotá,Bogotá D.C.,recuperado,32,F,relacionado,Colombia
+253,23/03/2020,Bogotá,Bogotá D.C.,recuperado,34,F,relacionado,Colombia
+254,23/03/2020,Bogotá,Bogotá D.C.,recuperado,45,F,importado,España
+255,23/03/2020,Bogotá,Bogotá D.C.,casa,19,F,importado,Estados Unidos de América
+256,23/03/2020,Bogotá,Bogotá D.C.,casa,57,F,importado,Turquia
+257,23/03/2020,Bogotá,Bogotá D.C.,casa,80,M,relacionado,Colombia
+258,23/03/2020,Bogotá,Bogotá D.C.,recuperado,26,M,importado,Turquia
+259,23/03/2020,Bogotá,Bogotá D.C.,recuperado,35,M,importado,España
+260,23/03/2020,Bogotá,Bogotá D.C.,recuperado,41,M,importado,Inglaterra
+261,23/03/2020,Bogotá,Bogotá D.C.,fallecido,61,M,relacionado,Colombia
+262,23/03/2020,Bogotá,Bogotá D.C.,casa,39,M,importado,Isla San Martin
+263,23/03/2020,Medellin,Antioquia,casa,59,M,importado,España
+264,23/03/2020,Envigado,Antioquia,recuperado,39,F,importado,España
+265,23/03/2020,Cajica,Cundinamarca,recuperado,54,M,importado,Ecuador
+266,23/03/2020,Cartagena,Cartagena D.T. y C,casa,84,F,relacionado,Colombia
+267,23/03/2020,Medellin,Antioquia,recuperado,21,M,importado,Estados Unidos de América
+268,23/03/2020,Medellin,Antioquia,casa,37,F,importado,España
+269,23/03/2020,Chia,Cundinamarca,recuperado,56,M,relacionado,Colombia
+270,23/03/2020,Cartagena,Cartagena D.T. y C,casa,58,F,relacionado,Colombia
+271,23/03/2020,Medellin,Antioquia,recuperado,21,F,importado,España
+272,23/03/2020,Medellin,Antioquia,recuperado,47,F,importado,España
+273,23/03/2020,Medellin,Antioquia,casa,87,M,importado,Panama
+274,23/03/2020,Medellin,Antioquia,casa,30,M,importado,Estados Unidos de América
+275,23/03/2020,Medellin,Antioquia,recuperado,21,F,importado,España
+276,23/03/2020,Cota,Cundinamarca,recuperado,52,M,importado,Puerto Rico
+277,23/03/2020,Sabaneta,Antioquia,casa,36,F,importado,Estados Unidos de América
+278,23/03/2020,Armenia,Quindío,recuperado,64,M,importado,España
+279,23/03/2020,Villamaria,Caldas,recuperado,29,M,importado,Ecuador
+280,23/03/2020,Palmira,Valle del Cauca,recuperado,63,F,importado,España
+281,23/03/2020,Trujillo,Valle del Cauca,casa,51,M,importado,España
+282,23/03/2020,Cali,Valle del Cauca,hospital uci,40,M,importado,Estados Unidos de América
+283,23/03/2020,Cali,Valle del Cauca,recuperado,56,M,relacionado,Colombia
+284,23/03/2020,Cali,Valle del Cauca,casa,65,F,importado,España
+285,23/03/2020,Palmira,Valle del Cauca,recuperado,42,F,relacionado,Colombia
+286,23/03/2020,Neiva,Huila,fallecido,83,F,relacionado,Colombia
+287,23/03/2020,Soacha,Cundinamarca,recuperado,25,M,en estudio,Colombia
+288,23/03/2020,Pacho,Cundinamarca,casa,29,M,importado,España
+289,23/03/2020,Dosquebradas,Risaralda,casa,49,F,importado,Grecia
+290,23/03/2020,Santa Marta,Santa Marta D.T. y C.,casa,63,F,relacionado,Colombia
+291,23/03/2020,El Retiro,Antioquia,recuperado,23,F,importado,España
+292,23/03/2020,Medellin,Antioquia,casa,43,F,importado,Estados Unidos de América
+293,23/03/2020,Medellin,Antioquia,casa,30,F,importado,Ecuador
+294,23/03/2020,Medellin,Antioquia,casa,30,F,importado,Estados Unidos de América
+295,23/03/2020,Medellin,Antioquia,casa,42,M,relacionado,Colombia
+296,23/03/2020,Medellin,Antioquia,casa,25,F,relacionado,Colombia
+297,23/03/2020,Envigado,Antioquia,casa,20,M,importado,Londres
+298,23/03/2020,Villavicencio,Meta,casa,58,M,importado,Ecuador
+299,23/03/2020,Villavicencio,Meta,recuperado,60,F,importado,Ecuador
+300,23/03/2020,Sabaneta,Antioquia,casa,29,F,importado,Turquia
+301,23/03/2020,Apartado,Antioquia,casa,29,F,importado,Turquia
+302,23/03/2020,Villavicencio,Meta,recuperado,33,F,importado,Estados Unidos de América
+303,23/03/2020,Itagui,Antioquia,hospital uci,74,F,importado,Estados Unidos de América
+304,23/03/2020,Bello,Antioquia,recuperado,30,M,importado,Estados Unidos de América
+305,23/03/2020,Villavicencio,Meta,recuperado,29,M,importado,Ecuador
+306,23/03/2020,Rionegro,Antioquia,recuperado,29,M,importado,Brasil
+307,24/03/2020,Bogotá,Bogotá D.C.,casa,31,M,importado,Chile
+308,24/03/2020,Bogotá,Bogotá D.C.,casa,21,F,en estudio,Colombia
+309,24/03/2020,Bogotá,Bogotá D.C.,casa,59,M,importado,Estados Unidos de América
+310,24/03/2020,Bogotá,Bogotá D.C.,casa,28,F,importado,Estados Unidos de América
+311,24/03/2020,Bogotá,Bogotá D.C.,recuperado,40,F,en estudio,Colombia
+312,24/03/2020,Bogotá,Bogotá D.C.,recuperado,18,F,en estudio,Colombia
+313,24/03/2020,Bogotá,Bogotá D.C.,recuperado,48,F,relacionado,Colombia
+314,24/03/2020,Ipiales,Nariño,fallecido,62,M,importado,Ecuador
+315,24/03/2020,Cucuta,Norte de Santander,casa,49,M,importado,Canada
+316,24/03/2020,Cucuta,Norte de Santander,casa,18,M,importado,Estados Unidos de América
+317,24/03/2020,Mosquera,Cundinamarca,recuperado,37,M,relacionado,Colombia
+318,24/03/2020,Cucuta,Norte de Santander,casa,77,M,relacionado,Colombia
+319,24/03/2020,Ibague,Tolima,recuperado,62,F,importado,España
+320,24/03/2020,Ibague,Tolima,casa,56,M,importado,España
+321,24/03/2020,Ibague,Tolima,recuperado,23,F,importado,Estados Unidos de América
+322,24/03/2020,Ibague,Tolima,casa,55,F,importado,España
+323,24/03/2020,Viterbo,Caldas,recuperado,15,F,relacionado,Colombia
+324,24/03/2020,Barranquilla,Barranquilla D.E.,recuperado,57,M,importado,Panama
+325,24/03/2020,Barranquilla,Barranquilla D.E.,casa,19,F,importado,España
+326,24/03/2020,Pereira,Risaralda,fallecido,61,M,relacionado,Colombia
+327,24/03/2020,Pereira,Risaralda,casa,32,F,relacionado,Colombia
+328,24/03/2020,Valledupar,Cesar,casa,33,M,relacionado,Colombia
+329,24/03/2020,Cartagena,Cartagena D.T. y C,casa,51,F,importado,España
+330,24/03/2020,Cartagena,Cartagena D.T. y C,casa,42,M,importado,Brasil
+331,24/03/2020,Cali,Valle del Cauca,casa,37,M,importado,Costa Rica
+332,24/03/2020,Cali,Valle del Cauca,hospital uci,38,F,importado,España
+333,24/03/2020,Pereira,Risaralda,casa,79,M,importado,España
+334,24/03/2020,Cali,Valle del Cauca,casa,23,M,relacionado,Colombia
+335,24/03/2020,Cali,Valle del Cauca,hospital uci,59,M,relacionado,Colombia
+336,24/03/2020,Cartagena,Cartagena D.T. y C,casa,24,M,relacionado,Colombia
+337,24/03/2020,Cali,Valle del Cauca,casa,22,M,relacionado,Colombia
+338,24/03/2020,La Union,Valle del Cauca,recuperado,56,F,importado,Londres
+339,24/03/2020,Cartago,Valle del Cauca,recuperado,34,F,importado,España
+340,24/03/2020,Cartagena,Cartagena D.T. y C,casa,36,M,relacionado,Colombia
+341,24/03/2020,Neiva,Huila,casa,68,M,relacionado,Colombia
+342,24/03/2020,Cali,Valle del Cauca,casa,47,F,relacionado,Colombia
+343,24/03/2020,Cali,Valle del Cauca,casa,26,F,importado,Estados Unidos de América
+344,24/03/2020,Cali,Valle del Cauca,casa,56,M,relacionado,Colombia
+345,24/03/2020,Cali,Valle del Cauca,casa,53,F,relacionado,Colombia
+346,24/03/2020,Cali,Valle del Cauca,casa,87,M,relacionado,Colombia
+347,24/03/2020,Villavicencio,Meta,casa,43,F,importado,España
+348,24/03/2020,Cali,Valle del Cauca,casa,36,F,relacionado,Colombia
+349,24/03/2020,Cali,Valle del Cauca,casa,33,F,relacionado,Colombia
+350,24/03/2020,Fusagasuga,Cundinamarca,recuperado,54,M,importado,Turquia
+351,24/03/2020,La Calera,Cundinamarca,hospital,58,M,relacionado,Colombia
+352,24/03/2020,Villeta,Cundinamarca,casa,33,M,importado,España
+353,24/03/2020,Palermo,Huila,casa,41,M,importado,Ecuador
+354,24/03/2020,San Pedro,Valle del Cauca,recuperado,29,F,relacionado,Colombia
+355,24/03/2020,Villeta,Cundinamarca,casa,44,F,importado,España
+356,24/03/2020,Anapoima,Cundinamarca,recuperado,32,M,importado,España
+357,24/03/2020,Cali,Valle del Cauca,recuperado,42,M,relacionado,Colombia
+358,24/03/2020,Cali,Valle del Cauca,recuperado,58,F,importado,España
+359,24/03/2020,Neiva,Huila,casa,42,F,relacionado,Colombia
+360,24/03/2020,Cali,Valle del Cauca,casa,33,M,relacionado,Colombia
+361,24/03/2020,Villavicencio,Meta,casa,80,F,importado,Estados Unidos de América
+362,24/03/2020,Cali,Valle del Cauca,casa,46,M,importado,Ecuador
+363,24/03/2020,Cali,Valle del Cauca,casa,23,M,importado,España
+364,24/03/2020,Cali,Valle del Cauca,recuperado,21,F,relacionado,Colombia
+365,24/03/2020,Cali,Valle del Cauca,casa,64,M,importado,España
+366,24/03/2020,Cali,Valle del Cauca,casa,34,M,relacionado,Colombia
+367,24/03/2020,Cali,Valle del Cauca,casa,28,F,relacionado,Colombia
+368,24/03/2020,Armenia,Quindío,casa,34,F,importado,España
+369,24/03/2020,Darien,Valle del Cauca,casa,41,M,importado,España
+370,24/03/2020,Funza,Cundinamarca,casa,61,F,relacionado,Colombia
+371,24/03/2020,Santa Marta,Santa Marta D.T. y C.,hospital,83,F,relacionado,Colombia
+372,24/03/2020,Manizales,Caldas,recuperado,70,M,importado,Estados Unidos de América
+373,24/03/2020,Cartagena,Cartagena D.T. y C,casa,39,M,importado,Estados Unidos de América
+374,24/03/2020,Cali,Valle del Cauca,hospital uci,29,M,relacionado,Colombia
+375,24/03/2020,Cali,Valle del Cauca,recuperado,28,M,relacionado,Colombia
+376,24/03/2020,Popayan,Cauca,casa,48,F,relacionado,Colombia
+377,24/03/2020,Tulua,Valle del Cauca,casa,52,M,importado,Ecuador
+378,24/03/2020,Tulua,Valle del Cauca,casa,45,M,importado,Estados Unidos de América
+379,24/03/2020,Bogotá,Bogotá D.C.,casa,23,F,relacionado,Colombia
+380,24/03/2020,Bogotá,Bogotá D.C.,casa,34,F,relacionado,Colombia
+381,24/03/2020,Bogotá,Bogotá D.C.,casa,48,F,importado,España
+382,24/03/2020,Bogotá,Bogotá D.C.,casa,58,F,importado,Puerto Rico
+383,24/03/2020,Bogotá,Bogotá D.C.,casa,61,M,importado,Puerto Rico
+384,24/03/2020,Bogotá,Bogotá D.C.,casa,63,M,relacionado,Colombia
+385,24/03/2020,Bogotá,Bogotá D.C.,recuperado,51,M,importado,Mexico
+386,24/03/2020,Bogotá,Bogotá D.C.,casa,59,M,importado,Venezuela
+387,24/03/2020,Bogotá,Bogotá D.C.,casa,43,F,relacionado,Colombia
+388,24/03/2020,Bogotá,Bogotá D.C.,casa,29,M,importado,Estados Unidos de América
+389,24/03/2020,Bogotá,Bogotá D.C.,fallecido,73,M,relacionado,Colombia
+390,24/03/2020,Bogotá,Bogotá D.C.,casa,74,F,relacionado,Colombia
+391,24/03/2020,Bogotá,Bogotá D.C.,recuperado,48,M,relacionado,Colombia
+392,24/03/2020,Bogotá,Bogotá D.C.,casa,45,F,importado,España
+393,24/03/2020,Bogotá,Bogotá D.C.,recuperado,34,M,importado,Mexico
+394,24/03/2020,Bogotá,Bogotá D.C.,recuperado,66,M,importado,Estados Unidos de América
+395,24/03/2020,Bogotá,Bogotá D.C.,recuperado,45,M,relacionado,Colombia
+396,24/03/2020,Bogotá,Bogotá D.C.,casa,44,F,importado,Canada
+397,24/03/2020,Bogotá,Bogotá D.C.,casa,27,F,relacionado,Colombia
+398,24/03/2020,Bogotá,Bogotá D.C.,casa,51,F,relacionado,Colombia
+399,24/03/2020,Bogotá,Bogotá D.C.,casa,21,M,importado,España
+400,24/03/2020,Bogotá,Bogotá D.C.,casa,60,F,importado,España
+401,24/03/2020,Bogotá,Bogotá D.C.,casa,30,F,importado,Londres
+402,24/03/2020,Bogotá,Bogotá D.C.,casa,70,F,importado,España
+403,24/03/2020,Bogotá,Bogotá D.C.,casa,21,M,importado,Mexico
+404,24/03/2020,Bogotá,Bogotá D.C.,casa,58,M,importado,Puerto Rico
+405,24/03/2020,Bogotá,Bogotá D.C.,casa,39,M,relacionado,Colombia
+406,24/03/2020,Bogotá,Bogotá D.C.,casa,25,M,importado,España
+407,24/03/2020,Bogotá,Bogotá D.C.,casa,25,F,importado,España
+408,24/03/2020,Bogotá,Bogotá D.C.,casa,45,M,importado,Ecuador
+409,24/03/2020,Bogotá,Bogotá D.C.,casa,43,F,relacionado,Colombia
+410,24/03/2020,Bogotá,Bogotá D.C.,casa,33,F,importado,Ecuador
+411,24/03/2020,Bogotá,Bogotá D.C.,casa,23,F,importado,Mexico
+412,24/03/2020,Bogotá,Bogotá D.C.,hospital uci,57,F,relacionado,Colombia
+413,24/03/2020,Bogotá,Bogotá D.C.,casa,63,M,relacionado,Colombia
+414,24/03/2020,Bogotá,Bogotá D.C.,casa,48,M,importado,Brasil
+415,24/03/2020,Bogotá,Bogotá D.C.,hospital uci,62,M,en estudio,Colombia
+416,24/03/2020,Bogotá,Bogotá D.C.,recuperado,35,M,importado,España
+417,24/03/2020,Bogotá,Bogotá D.C.,casa,52,F,relacionado,Colombia
+418,24/03/2020,Bogotá,Bogotá D.C.,casa,69,F,en estudio,Colombia
+419,24/03/2020,Bogotá,Bogotá D.C.,casa,35,M,relacionado,Colombia
+420,25/03/2020,Santa Marta,Santa Marta D.T. y C.,casa,58,M,relacionado,Colombia
+421,25/03/2020,Soledad,Atlántico,casa,21,F,relacionado,Colombia
+422,25/03/2020,Cartagena,Cartagena D.T. y C,casa,50,F,relacionado,Colombia
+423,25/03/2020,Pereira,Risaralda,recuperado,28,F,relacionado,Colombia
+424,25/03/2020,Pereira,Risaralda,casa,64,M,importado,Estados Unidos de América
+425,25/03/2020,Cali,Valle del Cauca,fallecido,80,F,relacionado,Colombia
+426,25/03/2020,Cartagena,Cartagena D.T. y C,casa,41,F,relacionado,Colombia
+427,25/03/2020,Cartagena,Cartagena D.T. y C,casa,54,M,relacionado,Colombia
+428,25/03/2020,Ibague,Tolima,casa,44,M,importado,Estados Unidos de América
+429,25/03/2020,El Dovio,Valle del Cauca,recuperado,48,M,importado,Italia
+430,25/03/2020,Cartagena,Cartagena D.T. y C,casa,38,M,relacionado,Colombia
+431,25/03/2020,Armenia,Quindío,casa,50,F,relacionado,Colombia
+432,25/03/2020,Palmira,Valle del Cauca,casa,9,M,relacionado,Colombia
+433,25/03/2020,Armenia,Quindío,casa,33,M,relacionado,Colombia
+434,25/03/2020,Barranquilla,Barranquilla D.E.,recuperado,25,M,importado,Estados Unidos de América
+435,25/03/2020,Armenia,Quindío,casa,19,M,relacionado,Colombia
+436,25/03/2020,Cartagena,Cartagena D.T. y C,casa,38,F,relacionado,Colombia
+437,25/03/2020,Cucuta,Norte de Santander,casa,28,F,relacionado,Colombia
+438,25/03/2020,Medellin,Antioquia,casa,36,F,relacionado,Colombia
+439,25/03/2020,La Dorada,Caldas,recuperado,28,M,relacionado,Colombia
+440,25/03/2020,Cucuta,Norte de Santander,casa,73,F,relacionado,Colombia
+441,25/03/2020,Bogotá,Bogotá D.C.,casa,43,F,relacionado,Colombia
+442,25/03/2020,Bogotá,Bogotá D.C.,casa,55,F,relacionado,Colombia
+443,25/03/2020,Bogotá,Bogotá D.C.,casa,34,F,relacionado,Colombia
+444,25/03/2020,Medellin,Antioquia,casa,37,M,importado,Brasil
+445,25/03/2020,Santana,Boyacá,recuperado,57,F,relacionado,Colombia
+446,25/03/2020,Bogotá,Bogotá D.C.,casa,35,F,relacionado,Colombia
+447,25/03/2020,Cota,Cundinamarca,casa,52,M,relacionado,Colombia
+448,25/03/2020,Bogotá,Bogotá D.C.,casa,40,M,relacionado,Colombia
+449,25/03/2020,Popayan,Cauca,recuperado,48,M,relacionado,Colombia
+450,25/03/2020,Medellin,Antioquia,casa,24,F,relacionado,Colombia
+451,25/03/2020,Bucaramanga,Santander,recuperado,33,F,importado,Mexico
+452,25/03/2020,Bello,Antioquia,casa,32,F,importado,España
+453,25/03/2020,Manizales,Caldas,recuperado,26,F,importado,España
+454,25/03/2020,Bogotá,Bogotá D.C.,casa,50,F,importado,España
+455,25/03/2020,Cali,Valle del Cauca,casa,35,F,importado,Estados Unidos de América
+456,25/03/2020,Palmira,Valle del Cauca,casa,58,M,relacionado,Colombia
+457,25/03/2020,Villavicencio,Meta,casa,29,M,importado,Estados Unidos de América
+458,25/03/2020,Popayan,Cauca,casa,45,F,relacionado,Colombia
+459,25/03/2020,Popayan,Cauca,casa,26,M,relacionado,Colombia
+460,25/03/2020,Armenia,Quindío,recuperado,72,M,relacionado,Colombia
+461,25/03/2020,Cucuta,Norte de Santander,casa,44,F,relacionado,Colombia
+462,25/03/2020,Frontino,Antioquia,casa,15,M,relacionado,Colombia
+463,25/03/2020,Barranquilla,Barranquilla D.E.,casa,19,F,importado,España
+464,25/03/2020,Medellin,Antioquia,casa,34,M,relacionado,Colombia
+465,25/03/2020,Medellin,Antioquia,casa,28,M,en estudio,Colombia
+466,25/03/2020,Medellin,Antioquia,casa,32,F,relacionado,Colombia
+467,25/03/2020,Cucuta,Norte de Santander,casa,33,M,en estudio,Colombia
+468,25/03/2020,Popayan,Cauca,casa,3,F,relacionado,Colombia
+469,25/03/2020,Popayan,Cauca,casa,32,F,relacionado,Colombia
+470,25/03/2020,Popayan,Cauca,recuperado,45,F,relacionado,Colombia
+471,25/03/2020,Barranquilla,Barranquilla D.E.,recuperado,50,F,importado,Estados Unidos de América
+472,25/03/2020,Bogotá,Bogotá D.C.,casa,19,F,importado,Alemania
+473,25/03/2020,Bogotá,Bogotá D.C.,recuperado,40,F,relacionado,Colombia
+474,25/03/2020,Bogotá,Bogotá D.C.,casa,33,F,relacionado,Colombia
+475,25/03/2020,Bogotá,Bogotá D.C.,casa,37,F,importado,Mexico
+476,25/03/2020,Bogotá,Bogotá D.C.,casa,41,M,importado,Mexico
+477,25/03/2020,Bogotá,Bogotá D.C.,casa,30,F,importado,Ecuador
+478,25/03/2020,Bogotá,Bogotá D.C.,casa,84,F,relacionado,Colombia
+479,25/03/2020,Bogotá,Bogotá D.C.,casa,61,F,relacionado,Colombia
+480,25/03/2020,Bogotá,Bogotá D.C.,casa,57,F,importado,Estados Unidos de América
+481,25/03/2020,Bogotá,Bogotá D.C.,casa,42,M,relacionado,Colombia
+482,26/03/2020,Bogotá,Bogotá D.C.,casa,50,M,importado,Ecuador
+483,26/03/2020,Bogotá,Bogotá D.C.,casa,51,M,en estudio,Colombia
+484,26/03/2020,Bogotá,Bogotá D.C.,casa,39,M,relacionado,Colombia
+485,26/03/2020,Bogotá,Bogotá D.C.,casa,30,M,relacionado,Colombia
+486,26/03/2020,Bogotá,Bogotá D.C.,casa,37,F,importado,España
+487,26/03/2020,Bogotá,Bogotá D.C.,casa,22,M,importado,España
+488,26/03/2020,Cali,Valle del Cauca,casa,27,M,relacionado,Colombia
+489,26/03/2020,Tunja,Boyacá,recuperado,69,M,importado,España
+490,26/03/2020,Cali,Valle del Cauca,casa,32,M,importado,Estados Unidos de América
+491,26/03/2020,Bogotá,Bogotá D.C.,fallecido,84,M,relacionado,Colombia
+492,27/3/2020,Bogotá,Bogotá D.C.,hospital uci,85,M,importado,España
+493,27/3/2020,Bogotá,Bogotá D.C.,casa,65,M,relacionado,Colombia
+494,27/3/2020,Bogotá,Bogotá D.C.,casa,23,F,en estudio,Colombia
+495,27/3/2020,Bogotá,Bogotá D.C.,casa,35,M,importado,Panama
+496,27/3/2020,Bogotá,Bogotá D.C.,casa,32,F,importado,Panama
+497,27/3/2020,Bogotá,Bogotá D.C.,casa,34,M,importado,Estados Unidos de América
+498,27/3/2020,Bogotá,Bogotá D.C.,casa,48,M,importado,España
+499,27/3/2020,Bogotá,Bogotá D.C.,recuperado,42,F,importado,España
+500,27/3/2020,Bogotá,Bogotá D.C.,casa,28,F,importado,Chile
+501,27/3/2020,Bogotá,Bogotá D.C.,casa,28,M,relacionado,Colombia
+502,27/3/2020,Bogotá,Bogotá D.C.,casa,31,M,relacionado,Colombia
+503,27/3/2020,Bogotá,Bogotá D.C.,casa,50,M,importado,Ecuador
+504,27/3/2020,Bogotá,Bogotá D.C.,casa,27,M,importado,Brasil
+505,27/3/2020,Bogotá,Bogotá D.C.,casa,52,M,importado,Francia
+506,27/3/2020,Tocancipa,Cundinamarca,casa,34,F,importado,España
+507,27/3/2020,Bogotá,Bogotá D.C.,casa,47,F,importado,España
+508,27/3/2020,Bogotá,Bogotá D.C.,casa,35,M,importado,España
+509,27/3/2020,Bogotá,Bogotá D.C.,casa,37,M,en estudio,Colombia
+510,27/3/2020,Bogotá,Bogotá D.C.,fallecido,72,M,en estudio,Colombia
+511,27/3/2020,Bogotá,Bogotá D.C.,hospital,74,F,en estudio,Colombia
+512,27/3/2020,Bogotá,Bogotá D.C.,casa,35,M,importado,España
+513,27/3/2020,Bogotá,Bogotá D.C.,casa,71,M,en estudio,Colombia
+514,27/3/2020,Bogotá,Bogotá D.C.,fallecido,71,M,relacionado,Colombia
+515,27/3/2020,Bogotá,Bogotá D.C.,recuperado,50,M,importado,España
+516,27/3/2020,Bogotá,Bogotá D.C.,casa,80,F,importado,España
+517,27/3/2020,Bogotá,Bogotá D.C.,casa,30,F,relacionado,Colombia
+518,27/3/2020,Bogotá,Bogotá D.C.,casa,24,F,relacionado,Colombia
+519,27/3/2020,Bogotá,Bogotá D.C.,casa,20,M,relacionado,Colombia
+520,27/3/2020,Bogotá,Bogotá D.C.,casa,47,M,relacionado,Colombia
+521,27/3/2020,Bogotá,Bogotá D.C.,casa,26,M,relacionado,Colombia
+522,27/3/2020,Bogotá,Bogotá D.C.,casa,24,F,relacionado,Colombia
+523,27/3/2020,Bogotá,Bogotá D.C.,casa,62,F,importado,Francia
+524,27/3/2020,Bogotá,Bogotá D.C.,casa,37,M,importado,Estados Unidos de América
+525,27/3/2020,Bogotá,Bogotá D.C.,casa,32,M,importado,Ecuador
+526,27/3/2020,Bogotá,Bogotá D.C.,casa,36,F,relacionado,Colombia
+527,27/3/2020,Bogotá,Bogotá D.C.,casa,56,F,relacionado,Colombia
+528,27/3/2020,Bogotá,Bogotá D.C.,casa,33,F,relacionado,Colombia
+529,27/3/2020,Bogotá,Bogotá D.C.,casa,51,M,relacionado,Colombia
+530,27/3/2020,Bogotá,Bogotá D.C.,casa,43,M,relacionado,Colombia
+531,27/3/2020,Santa Marta,Santa Marta D.T. y C.,casa,34,F,relacionado,Colombia
+532,27/3/2020,Puerto Colombia,Atlántico,casa,47,F,en estudio,Colombia
+533,27/3/2020,Barranquilla,Barranquilla D.E.,fallecido,25,M,importado,España
+534,27/3/2020,Armenia,Quindío,casa,26,M,importado,Estados Unidos de América
+535,27/3/2020,Soledad,Atlántico,fallecido,50,M,relacionado,Colombia
+536,27/3/2020,Armenia,Quindío,casa,24,M,importado,Francia
+537,27/3/2020,Armenia,Quindío,recuperado,34,F,relacionado,Colombia
+538,27/3/2020,Santa Marta,Santa Marta D.T. y C.,casa,49,F,relacionado,Colombia
+539,27/3/2020,Manizales,Caldas,casa,81,M,relacionado,Colombia
+540,28/3/2020,Mosquera,Cundinamarca,recuperado,37,M,importado,Egipto
+541,28/3/2020,Cali,Valle del Cauca,casa,57,F,relacionado,Colombia
+542,28/3/2020,Cali,Valle del Cauca,casa,30,M,importado,Costa Rica
+543,28/3/2020,Cali,Valle del Cauca,fallecido,51,M,relacionado,Colombia
+544,28/3/2020,Cali,Valle del Cauca,casa,27,F,relacionado,Colombia
+545,28/3/2020,Palmira,Valle del Cauca,casa,9,M,relacionado,Colombia
+546,28/3/2020,Palmira,Valle del Cauca,casa,60,F,relacionado,Colombia
+547,28/3/2020,Sahagun,Córdoba,recuperado,29,F,importado,España
+548,28/3/2020,Pasto,Nariño,recuperado,54,M,importado,Mexico
+549,28/3/2020,Valledupar,Cesar,casa,16,F,importado,Inglaterra
+550,28/3/2020,Polonuevo,Atlántico,recuperado,16,M,en estudio,Colombia
+551,28/3/2020,Bogotá,Bogotá D.C.,casa,29,M,en estudio,Colombia
+552,28/3/2020,Bogotá,Bogotá D.C.,casa,40,M,relacionado,Colombia
+553,28/3/2020,Bogotá,Bogotá D.C.,casa,33,M,importado,Ecuador
+554,28/3/2020,Bogotá,Bogotá D.C.,casa,42,M,en estudio,Colombia
+555,28/3/2020,Bogotá,Bogotá D.C.,casa,39,M,importado,Ecuador
+556,28/3/2020,Bogotá,Bogotá D.C.,casa,43,M,importado,Mexico
+557,28/3/2020,Bogotá,Bogotá D.C.,casa,82,F,en estudio,Colombia
+558,28/3/2020,Bogotá,Bogotá D.C.,recuperado,41,M,importado,Jamaica
+559,28/3/2020,Bogotá,Bogotá D.C.,recuperado,53,M,relacionado,Colombia
+560,28/3/2020,Bogotá,Bogotá D.C.,hospital uci,55,F,en estudio,Colombia
+561,28/3/2020,Bogotá,Bogotá D.C.,hospital uci,49,M,en estudio,Colombia
+562,28/3/2020,Bogotá,Bogotá D.C.,casa,58,F,relacionado,Colombia
+563,28/3/2020,Bogotá,Bogotá D.C.,casa,38,F,relacionado,Colombia
+564,28/3/2020,Bogotá,Bogotá D.C.,casa,31,F,relacionado,Colombia
+565,28/3/2020,Bogotá,Bogotá D.C.,casa,64,F,relacionado,Colombia
+566,28/3/2020,Bogotá,Bogotá D.C.,fallecido,48,F,en estudio,Colombia
+567,28/3/2020,Bogotá,Bogotá D.C.,casa,33,F,relacionado,Colombia
+568,28/3/2020,Bogotá,Bogotá D.C.,casa,35,M,relacionado,Colombia
+569,28/3/2020,Bogotá,Bogotá D.C.,fallecido,57,F,en estudio,Colombia
+570,28/3/2020,Bogotá,Bogotá D.C.,casa,30,M,relacionado,Colombia
+571,28/3/2020,Bogotá,Bogotá D.C.,casa,54,M,en estudio,Colombia
+572,28/3/2020,Bogotá,Bogotá D.C.,casa,53,F,relacionado,Colombia
+573,28/3/2020,Bogotá,Bogotá D.C.,recuperado,38,F,importado,Cuba
+574,28/3/2020,Bogotá,Bogotá D.C.,hospital,30,M,en estudio,Colombia
+575,28/3/2020,Bogotá,Bogotá D.C.,casa,38,M,importado,España
+576,28/3/2020,Bogotá,Bogotá D.C.,casa,31,F,importado,Europa
+577,28/3/2020,Bogotá,Bogotá D.C.,casa,38,M,relacionado,Colombia
+578,28/3/2020,Bogotá,Bogotá D.C.,casa,37,M,importado,España
+579,28/3/2020,Bogotá,Bogotá D.C.,hospital,68,F,importado,Estados Unidos de América
+580,28/3/2020,Bogotá,Bogotá D.C.,casa,43,M,relacionado,Colombia
+581,28/3/2020,Bogotá,Bogotá D.C.,casa,26,M,relacionado,Colombia
+582,28/3/2020,Bogotá,Bogotá D.C.,casa,62,M,relacionado,Colombia
+583,28/3/2020,Bogotá,Bogotá D.C.,casa,30,M,en estudio,Colombia
+584,28/3/2020,Bogotá,Bogotá D.C.,casa,37,M,importado,Mexico
+585,28/3/2020,Bogotá,Bogotá D.C.,casa,33,F,relacionado,Colombia
+586,28/3/2020,Bogotá,Bogotá D.C.,hospital uci,67,F,importado,Jamaica
+587,28/3/2020,Villapinzon,Cundinamarca,fallecido,67,F,relacionado,Colombia
+588,28/3/2020,Bogotá,Bogotá D.C.,casa,39,M,relacionado,Colombia
+589,28/3/2020,Bogotá,Bogotá D.C.,casa,50,F,importado,España
+590,28/3/2020,Cartago,Valle del Cauca,casa,58,M,importado,España
+591,28/3/2020,Cali,Valle del Cauca,casa,28,F,relacionado,Colombia
+592,28/3/2020,Cali,Valle del Cauca,hospital,72,M,importado,España
+593,28/3/2020,Cali,Valle del Cauca,casa,47,F,importado,España
+594,28/3/2020,Cali,Valle del Cauca,hospital,27,M,relacionado,Colombia
+595,28/3/2020,Medellin,Antioquia,recuperado,27,F,importado,Estados Unidos de América
+596,28/3/2020,Montebello,Antioquia,casa,52,F,importado,Panama
+597,28/3/2020,Sabaneta,Antioquia,recuperado,21,M,importado,Alemania
+598,28/3/2020,Medellin,Antioquia,casa,24,F,importado,Estados Unidos de América
+599,28/3/2020,Medellin,Antioquia,casa,32,F,importado,Estados Unidos de América
+600,28/3/2020,Chinchina,Caldas,casa,25,M,relacionado,Colombia
+601,28/3/2020,Armenia,Quindío,casa,59,M,importado,Estados Unidos de América
+602,28/3/2020,Medellin,Antioquia,recuperado,46,F,importado,España
+603,28/3/2020,Santa Rosa,Antioquia,casa,55,M,importado,Jamaica
+604,28/3/2020,Barranquilla,Barranquilla D.E.,casa,54,M,relacionado,Colombia
+605,28/3/2020,Barranquilla,Barranquilla D.E.,casa,37,F,relacionado,Colombia
+606,28/3/2020,Turbaco,Bolívar,casa,58,M,relacionado,Colombia
+607,28/3/2020,Cartagena,Cartagena D.T. y C,casa,31,M,relacionado,Colombia
+608,28/3/2020,Barranquilla,Barranquilla D.E.,recuperado,47,M,importado,España
+609,29/3/2020,Envigado,Antioquia,casa,51,F,importado,Turquia
+610,29/3/2020,Envigado,Antioquia,casa,60,M,en estudio,Colombia
+611,29/3/2020,Medellin,Antioquia,casa,82,F,importado,Panama
+612,29/3/2020,Medellin,Antioquia,hospital uci,42,M,importado,España
+613,29/3/2020,Bello,Antioquia,casa,73,M,importado,España
+614,29/3/2020,Cali,Valle del Cauca,casa,64,F,relacionado,Colombia
+615,29/3/2020,Cali,Valle del Cauca,casa,46,M,relacionado,Colombia
+616,29/3/2020,Cali,Valle del Cauca,casa,12,F,relacionado,Colombia
+617,29/3/2020,Cali,Valle del Cauca,casa,32,M,relacionado,Colombia
+618,29/3/2020,Cali,Valle del Cauca,casa,62,F,importado,Ecuador
+619,29/3/2020,Cali,Valle del Cauca,fallecido,36,M,relacionado,Colombia
+620,29/3/2020,Palmira,Valle del Cauca,casa,45,M,importado,Emiratos Arabes
+621,29/3/2020,Bogotá,Bogotá D.C.,casa,25,M,relacionado,Colombia
+622,29/3/2020,Bogotá,Bogotá D.C.,casa,42,F,importado,España
+623,29/3/2020,Bogotá,Bogotá D.C.,casa,62,F,importado,Alemania
+624,29/3/2020,Bogotá,Bogotá D.C.,casa,38,M,relacionado,Colombia
+625,29/3/2020,Bogotá,Bogotá D.C.,casa,45,F,relacionado,Colombia
+626,29/3/2020,Bogotá,Bogotá D.C.,casa,45,F,relacionado,Colombia
+627,29/3/2020,Bogotá,Bogotá D.C.,casa,45,M,importado,Isla San Martin
+628,29/3/2020,Bogotá,Bogotá D.C.,recuperado,42,F,relacionado,Colombia
+629,29/3/2020,Bogotá,Bogotá D.C.,casa,42,F,relacionado,Colombia
+630,29/3/2020,Bogotá,Bogotá D.C.,hospital uci,62,M,importado,Puerto Rico
+631,29/3/2020,Bogotá,Bogotá D.C.,casa,29,M,relacionado,Colombia
+632,29/3/2020,Bogotá,Bogotá D.C.,casa,70,M,relacionado,Colombia
+633,29/3/2020,Bogotá,Bogotá D.C.,casa,60,F,relacionado,Colombia
+634,29/3/2020,Bogotá,Bogotá D.C.,casa,50,F,importado,Panama
+635,29/3/2020,Bogotá,Bogotá D.C.,casa,29,M,relacionado,Colombia
+636,29/3/2020,Bogotá,Bogotá D.C.,casa,69,F,importado,España
+637,29/3/2020,Bogotá,Bogotá D.C.,casa,52,M,relacionado,Colombia
+638,29/3/2020,Bogotá,Bogotá D.C.,hospital uci,58,F,importado,Mexico
+639,29/3/2020,Bogotá,Bogotá D.C.,casa,46,M,relacionado,Colombia
+640,29/3/2020,Bogotá,Bogotá D.C.,hospital uci,68,M,en estudio,Colombia
+641,29/3/2020,Bogotá,Bogotá D.C.,casa,26,F,relacionado,Colombia
+642,29/3/2020,Bogotá,Bogotá D.C.,casa,38,M,relacionado,Colombia
+643,29/3/2020,Bogotá,Bogotá D.C.,casa,25,F,importado,Estados Unidos de América
+644,29/3/2020,Bogotá,Bogotá D.C.,casa,22,F,importado,Estados Unidos de América
+645,29/3/2020,Bogotá,Bogotá D.C.,casa,33,M,relacionado,Colombia
+646,29/3/2020,Bogotá,Bogotá D.C.,casa,34,F,importado,España
+647,29/3/2020,Bogotá,Bogotá D.C.,casa,28,F,importado,Belgica
+648,29/3/2020,Bogotá,Bogotá D.C.,casa,42,F,relacionado,Colombia
+649,29/3/2020,Bogotá,Bogotá D.C.,casa,51,M,importado,España
+650,29/3/2020,Bogotá,Bogotá D.C.,casa,65,M,relacionado,Colombia
+651,29/3/2020,Bogotá,Bogotá D.C.,casa,57,M,en estudio,Colombia
+652,29/3/2020,Bogotá,Bogotá D.C.,casa,34,M,relacionado,Colombia
+653,29/3/2020,Bogotá,Bogotá D.C.,casa,30,M,relacionado,Colombia
+654,29/3/2020,Bello,Antioquia,casa,33,F,importado,Jamaica
+655,29/3/2020,Bello,Antioquia,casa,29,M,importado,Panama
+656,29/3/2020,Medellin,Antioquia,casa,61,F,relacionado,Colombia
+657,29/3/2020,Medellin,Antioquia,casa,8,F,relacionado,Colombia
+658,29/3/2020,Medellin,Antioquia,casa,30,F,relacionado,Colombia
+659,29/3/2020,Neiva,Huila,casa,26,M,relacionado,Colombia
+660,29/3/2020,Neiva,Huila,casa,21,F,relacionado,Colombia
+661,29/3/2020,Cali,Valle del Cauca,casa,26,M,relacionado,Colombia
+662,29/3/2020,Valledupar,Cesar,casa,36,M,importado,España
+663,29/3/2020,Cartagena,Cartagena D.T. y C,casa,16,F,relacionado,Colombia
+664,29/3/2020,Cartagena,Cartagena D.T. y C,casa,42,F,relacionado,Colombia
+665,29/3/2020,Cartagena,Cartagena D.T. y C,casa,24,F,relacionado,Colombia
+666,29/3/2020,Cartagena,Cartagena D.T. y C,casa,24,F,relacionado,Colombia
+667,29/3/2020,Cartagena,Cartagena D.T. y C,casa,29,F,relacionado,Colombia
+668,29/3/2020,Barranquilla,Barranquilla D.E.,hospital uci,64,M,relacionado,Colombia
+669,29/3/2020,Sincelejo,Sucre,recuperado,21,F,relacionado,Colombia
+670,29/3/2020,Villamaria,Caldas,casa,39,F,importado,España
+671,29/3/2020,Barranquilla,Barranquilla D.E.,casa,28,F,relacionado,Colombia
+672,29/3/2020,Barranquilla,Barranquilla D.E.,casa,1,M,relacionado,Colombia
+673,29/3/2020,Barranquilla,Barranquilla D.E.,casa,35,M,relacionado,Colombia
+674,29/3/2020,Cartagena,Cartagena D.T. y C,fallecido,33,F,relacionado,Colombia
+675,29/3/2020,Cartagena,Cartagena D.T. y C,casa,41,M,importado,Estados Unidos de América
+676,29/3/2020,La Ceja,Antioquia,casa,24,M,en estudio,Colombia
+677,29/3/2020,San Francisco,Antioquia,hospital uci,80,M,en estudio,Colombia
+678,29/3/2020,Envigado,Antioquia,casa,40,F,relacionado,Colombia
+679,29/3/2020,Medellin,Antioquia,casa,24,F,importado,España
+680,29/3/2020,Envigado,Antioquia,casa,18,F,relacionado,Colombia
+681,29/3/2020,Medellin,Antioquia,casa,5,F,en estudio,Colombia
+682,29/3/2020,Envigado,Antioquia,casa,63,F,importado,España
+683,29/3/2020,Rionegro,Antioquia,casa,50,M,relacionado,Colombia
+684,29/3/2020,Medellin,Antioquia,casa,42,M,importado,Estados Unidos de América
+685,29/3/2020,Bucaramanga,Santander,casa,80,F,importado,Brasil
+686,29/3/2020,Bucaramanga,Santander,casa,58,M,importado,Brasil
+687,29/3/2020,Bucaramanga,Santander,casa,24,M,importado,Mexico
+688,29/3/2020,Floridablanca,Santander,casa,46,M,relacionado,Colombia
+689,29/3/2020,Lorica,Córdoba,casa,35,M,relacionado,Colombia
+690,29/3/2020,Oicata,Boyacá,casa,72,F,importado,Francia
+691,29/3/2020,Dosquebradas,Risaralda,recuperado,55,F,importado,Turquia
+692,29/3/2020,Pereira,Risaralda,casa,62,F,relacionado,Colombia
+693,29/3/2020,Pereira,Risaralda,casa,6,F,relacionado,Colombia
+694,29/3/2020,Pereira,Risaralda,casa,63,M,relacionado,Colombia
+695,29/3/2020,Pereira,Risaralda,casa,66,F,relacionado,Colombia
+696,29/3/2020,Pereira,Risaralda,casa,54,F,relacionado,Colombia
+697,29/3/2020,Pereira,Risaralda,casa,61,M,relacionado,Colombia
+698,29/3/2020,Pereira,Risaralda,casa,32,M,relacionado,Colombia
+699,29/3/2020,Dosquebradas,Risaralda,casa,47,M,importado,Panama
+700,29/3/2020,Pereira,Risaralda,recuperado,45,F,importado,Francia
+701,29/3/2020,Arjona,Bolívar,casa,25,M,relacionado,Colombia
+702,29/3/2020,Arjona,Bolívar,casa,22,F,importado,Turquia
+703,30/3/2020,Santana,Boyacá,casa,73,F,relacionado,Colombia
+704,30/3/2020,Cucuta,Norte de Santander,recuperado,21,F,importado,Panama
+705,30/3/2020,Sopo,Cundinamarca,hospital,60,M,importado,Estados Unidos de América
+706,30/3/2020,Chia,Cundinamarca,casa,35,M,importado,Ecuador
+707,30/3/2020,Villapinzon,Cundinamarca,fallecido,65,M,relacionado,Colombia
+708,30/3/2020,Soacha,Cundinamarca,casa,54,F,importado,Estados Unidos de América
+709,30/3/2020,Neiva,Huila,casa,32,F,relacionado,Colombia
+710,30/3/2020,Neiva,Huila,fallecido,64,F,relacionado,Colombia
+711,30/3/2020,Neiva,Huila,casa,27,F,importado,España
+712,30/3/2020,Palermo,Huila,casa,45,M,relacionado,Colombia
+713,30/3/2020,Palermo,Huila,casa,33,F,importado,Ecuador
+714,30/3/2020,Cartagena,Cartagena D.T. y C,fallecido,44,F,relacionado,Colombia
+715,30/3/2020,Cartagena,Cartagena D.T. y C,casa,36,F,importado,Mexico
+716,30/3/2020,Cartagena,Cartagena D.T. y C,hospital uci,49,F,relacionado,Colombia
+717,30/3/2020,Santa Marta,Santa Marta D.T. y C.,casa,28,F,relacionado,Colombia
+718,30/3/2020,La Dorada,Caldas,casa,65,F,relacionado,Colombia
+719,30/3/2020,Cali,Valle del Cauca,casa,26,F,importado,Ecuador
+720,30/3/2020,Cali,Valle del Cauca,casa,31,M,importado,Estados Unidos de América
+721,30/3/2020,Cali,Valle del Cauca,casa,45,F,importado,España
+722,30/3/2020,Cali,Valle del Cauca,fallecido,68,M,relacionado,Colombia
+723,30/3/2020,Medellin,Antioquia,casa,24,M,relacionado,Colombia
+724,30/3/2020,Medellin,Antioquia,casa,34,M,importado,España
+725,30/3/2020,Medellin,Antioquia,casa,37,F,relacionado,Colombia
+726,30/3/2020,Medellin,Antioquia,casa,36,M,en estudio,Colombia
+727,30/3/2020,Medellin,Antioquia,casa,25,M,importado,Londres
+728,30/3/2020,La Estrella,Antioquia,casa,53,M,relacionado,Colombia
+729,30/3/2020,Envigado,Antioquia,casa,64,M,relacionado,Colombia
+730,30/3/2020,Medellin,Antioquia,casa,19,F,relacionado,Colombia
+731,30/3/2020,Medellin,Antioquia,casa,82,M,importado,Estados Unidos de América
+732,30/3/2020,Medellin,Antioquia,casa,35,F,relacionado,Colombia
+733,30/3/2020,Barranquilla,Barranquilla D.E.,hospital uci,31,M,relacionado,Colombia
+734,30/3/2020,Bogotá,Bogotá D.C.,recuperado,50,M,en estudio,Colombia
+735,30/3/2020,Bogotá,Bogotá D.C.,recuperado,48,M,en estudio,Colombia
+736,30/3/2020,Bogotá,Bogotá D.C.,hospital,32,M,en estudio,Colombia
+737,30/3/2020,Bogotá,Bogotá D.C.,casa,26,M,importado,Estados Unidos de América
+738,30/3/2020,Bogotá,Bogotá D.C.,casa,47,F,relacionado,Colombia
+739,30/3/2020,Bogotá,Bogotá D.C.,casa,38,M,importado,Londres
+740,30/3/2020,Bogotá,Bogotá D.C.,casa,29,F,relacionado,Colombia
+741,30/3/2020,Bogotá,Bogotá D.C.,casa,36,F,importado,Londres
+742,30/3/2020,Bogotá,Bogotá D.C.,casa,38,M,relacionado,Colombia
+743,30/3/2020,Bogotá,Bogotá D.C.,hospital uci,75,F,en estudio,Colombia
+744,30/3/2020,Bogotá,Bogotá D.C.,casa,27,M,en estudio,Colombia
+745,30/3/2020,Bogotá,Bogotá D.C.,casa,51,F,importado,Estados Unidos de América
+746,30/3/2020,Bogotá,Bogotá D.C.,casa,54,F,en estudio,Colombia
+747,30/3/2020,Bogotá,Bogotá D.C.,casa,52,M,en estudio,Colombia
+748,30/3/2020,Bogotá,Bogotá D.C.,hospital,23,M,importado,Londres
+749,30/3/2020,Bogotá,Bogotá D.C.,casa,50,M,importado,Jamaica
+750,30/3/2020,Bogotá,Bogotá D.C.,casa,61,M,importado,Jamaica
+751,30/3/2020,Bogotá,Bogotá D.C.,casa,61,F,importado,Jamaica
+752,30/3/2020,Bogotá,Bogotá D.C.,casa,73,M,relacionado,Colombia
+753,30/3/2020,Bogotá,Bogotá D.C.,casa,51,F,relacionado,Colombia
+754,30/3/2020,Bogotá,Bogotá D.C.,casa,28,M,en estudio,Colombia
+755,30/3/2020,Bogotá,Bogotá D.C.,casa,33,F,importado,Isla San Martin
+756,30/3/2020,Bogotá,Bogotá D.C.,casa,38,M,importado,Isla San Martin
+757,30/3/2020,Bogotá,Bogotá D.C.,casa,38,F,importado,Isla San Martin
+758,30/3/2020,Bogotá,Bogotá D.C.,casa,31,M,importado,Isla San Martin
+759,30/3/2020,Bogotá,Bogotá D.C.,casa,74,M,importado,Isla San Martin
+760,30/3/2020,Bogotá,Bogotá D.C.,casa,29,M,importado,España
+761,30/3/2020,Bogotá,Bogotá D.C.,casa,51,F,relacionado,Colombia
+762,30/3/2020,Bogotá,Bogotá D.C.,casa,21,F,en estudio,Colombia
+763,30/3/2020,Bogotá,Bogotá D.C.,casa,57,M,importado,Argentina
+764,30/3/2020,Bogotá,Bogotá D.C.,hospital uci,61,F,en estudio,Colombia
+765,30/3/2020,Bogotá,Bogotá D.C.,casa,35,M,en estudio,Colombia
+766,30/3/2020,Bogotá,Bogotá D.C.,casa,30,M,relacionado,Colombia
+767,30/3/2020,Bogotá,Bogotá D.C.,casa,31,F,importado,Estados Unidos de América
+768,30/3/2020,Bogotá,Bogotá D.C.,casa,46,M,en estudio,Colombia
+769,30/3/2020,Bogotá,Bogotá D.C.,casa,84,M,importado,Argentina
+770,30/3/2020,Bogotá,Bogotá D.C.,hospital,47,F,en estudio,Colombia
+771,30/3/2020,Bogotá,Bogotá D.C.,fallecido,72,F,importado,Egipto
+772,30/3/2020,Bogotá,Bogotá D.C.,casa,65,M,importado,España
+773,30/3/2020,Bogotá,Bogotá D.C.,casa,33,F,importado,Turquia
+774,30/3/2020,Bogotá,Bogotá D.C.,casa,68,F,importado,Estados Unidos de América
+775,30/3/2020,Bogotá,Bogotá D.C.,casa,51,M,relacionado,Colombia
+776,30/3/2020,Bogotá,Bogotá D.C.,casa,2,M,relacionado,Colombia
+777,30/3/2020,Bogotá,Bogotá D.C.,casa,47,F,relacionado,Colombia
+778,30/3/2020,Bogotá,Bogotá D.C.,hospital uci,44,M,en estudio,Colombia
+779,30/3/2020,Bogotá,Bogotá D.C.,fallecido,50,M,en estudio,Colombia
+780,30/3/2020,Bogotá,Bogotá D.C.,casa,30,F,relacionado,Colombia
+781,30/3/2020,Bogotá,Bogotá D.C.,casa,27,F,en estudio,Colombia
+782,30/3/2020,Bogotá,Bogotá D.C.,casa,35,M,importado,España
+783,30/3/2020,Bogotá,Bogotá D.C.,casa,36,M,relacionado,Colombia
+784,30/3/2020,Bogotá,Bogotá D.C.,casa,28,M,importado,España
+785,30/3/2020,Bogotá,Bogotá D.C.,casa,25,F,relacionado,Colombia
+786,30/3/2020,Bogotá,Bogotá D.C.,casa,47,F,relacionado,Colombia
+787,30/3/2020,Bogotá,Bogotá D.C.,casa,2,F,relacionado,Colombia
+788,30/3/2020,Bogotá,Bogotá D.C.,hospital uci,64,F,en estudio,Colombia
+789,30/3/2020,Bogotá,Bogotá D.C.,casa,51,M,importado,Francia
+790,30/3/2020,Cali,Valle del Cauca,casa,66,M,relacionado,Colombia
+791,30/3/2020,Palmira,Valle del Cauca,casa,88,M,relacionado,Colombia
+792,30/3/2020,Cartago,Valle del Cauca,casa,26,F,relacionado,Colombia
+793,30/3/2020,Cali,Valle del Cauca,casa,27,M,relacionado,Colombia
+794,30/3/2020,Palmira,Valle del Cauca,casa,55,F,importado,España
+795,30/3/2020,Palmira,Valle del Cauca,casa,17,M,relacionado,Colombia
+796,30/3/2020,Palmira,Valle del Cauca,casa,22,M,importado,España
+797,30/3/2020,Cali,Valle del Cauca,hospital,83,M,relacionado,Colombia
+798,30/3/2020,Cartago,Valle del Cauca,casa,63,F,importado,Panama
+799,31/3/2020,Palmira,Valle del Cauca,casa,69,F,importado,España
+800,31/3/2020,Cartago,Valle del Cauca,recuperado,25,F,importado,España
+801,31/3/2020,Cali,Valle del Cauca,casa,44,M,en estudio,Colombia
+802,31/3/2020,Cali,Valle del Cauca,hospital,54,M,relacionado,Colombia
+803,31/3/2020,Cali,Valle del Cauca,casa,20,F,importado,España
+804,31/3/2020,Cali,Valle del Cauca,casa,28,M,importado,España
+805,31/3/2020,Cali,Valle del Cauca,casa,26,M,relacionado,Colombia
+806,31/3/2020,Cali,Valle del Cauca,hospital uci,26,M,en estudio,Colombia
+807,31/3/2020,Cali,Valle del Cauca,casa,32,M,importado,España
+808,31/3/2020,Cali,Valle del Cauca,casa,30,F,importado,España
+809,31/3/2020,Cali,Valle del Cauca,casa,38,M,importado,España
+810,31/3/2020,Tumaco,Nariño,recuperado,6,M,importado,Ecuador
+811,31/3/2020,Pasto,Nariño,casa,76,F,importado,España
+812,31/3/2020,Valledupar,Cesar,casa,46,M,relacionado,Colombia
+813,31/3/2020,Valledupar,Cesar,recuperado,41,M,relacionado,Colombia
+814,31/3/2020,Valledupar,Cesar,recuperado,38,M,relacionado,Colombia
+815,31/3/2020,Valledupar,Cesar,recuperado,31,M,importado,Estados Unidos de América
+816,31/3/2020,Valledupar,Cesar,casa,27,M,relacionado,Colombia
+817,31/3/2020,Valledupar,Cesar,casa,40,M,relacionado,Colombia
+818,31/3/2020,Valledupar,Cesar,recuperado,21,M,relacionado,Colombia
+819,31/3/2020,Barranquilla,Barranquilla D.E.,casa,26,M,importado,Estados Unidos de América
+820,31/3/2020,Riohacha,La Guajira,recuperado,42,M,importado,Estados Unidos de América
+821,31/3/2020,Santa Marta,Santa Marta D.T. y C.,casa,70,M,relacionado,Colombia
+822,31/3/2020,Santa Marta,Santa Marta D.T. y C.,casa,43,M,relacionado,Colombia
+823,31/3/2020,Barranquilla,Barranquilla D.E.,casa,57,F,relacionado,Colombia
+824,31/3/2020,Barranquilla,Barranquilla D.E.,recuperado,32,F,relacionado,Colombia
+825,31/3/2020,Barranquilla,Barranquilla D.E.,casa,44,M,importado,España
+826,31/3/2020,Barranquilla,Barranquilla D.E.,casa,24,M,importado,Estados Unidos de América
+827,31/3/2020,Barranquilla,Barranquilla D.E.,casa,25,M,importado,Estados Unidos de América
+828,31/3/2020,Barranquilla,Barranquilla D.E.,fallecido,77,M,importado,Turquia
+829,31/3/2020,Barranquilla,Barranquilla D.E.,casa,30,F,relacionado,Colombia
+830,31/3/2020,Cartagena,Cartagena D.T. y C,recuperado,55,F,relacionado,Colombia
+831,31/3/2020,Cartagena,Cartagena D.T. y C,casa,30,F,relacionado,Colombia
+832,31/3/2020,Sabaneta,Antioquia,casa,59,M,importado,Estados Unidos de América
+833,31/3/2020,Medellin,Antioquia,hospital uci,67,F,relacionado,Colombia
+834,31/3/2020,Medellin,Antioquia,casa,66,M,importado,Marruecos
+835,31/3/2020,Medellin,Antioquia,casa,56,F,relacionado,Colombia
+836,31/3/2020,Medellin,Antioquia,hospital uci,67,M,en estudio,Colombia
+837,31/3/2020,Chia,Cundinamarca,casa,57,M,importado,Mexico
+838,31/3/2020,Cota,Cundinamarca,casa,19,M,importado,Puerto Rico
+839,31/3/2020,Cota,Cundinamarca,casa,50,F,importado,Puerto Rico
+840,31/3/2020,Cota,Cundinamarca,casa,57,M,importado,Puerto Rico
+841,31/3/2020,Cota,Cundinamarca,casa,42,F,importado,Puerto Rico
+842,31/3/2020,Cajica,Cundinamarca,casa,25,F,en estudio,Colombia
+843,31/3/2020,Cota,Cundinamarca,casa,50,F,relacionado,Colombia
+844,31/3/2020,Zipaquira,Cundinamarca,fallecido,81,F,en estudio,Colombia
+845,31/3/2020,Cajica,Cundinamarca,casa,47,F,importado,Mexico
+846,31/3/2020,Villavicencio,Meta,casa,31,F,importado,Estados Unidos de América
+847,31/3/2020,Villavicencio,Meta,casa,29,F,importado,Estados Unidos de América
+848,31/3/2020,Villavicencio,Meta,casa,29,F,importado,Estados Unidos de América
+849,31/3/2020,Cucuta,Norte de Santander,casa,42,M,en estudio,Colombia
+850,31/3/2020,Puerto Santander,Norte de Santander,casa,26,M,relacionado,Colombia
+851,31/3/2020,Cucuta,Norte de Santander,casa,50,F,importado,Canada
+852,31/3/2020,Bucaramanga,Santander,casa,25,M,importado,Mexico
+853,31/3/2020,Bucaramanga,Santander,casa,34,M,importado,Estados Unidos de América
+854,31/3/2020,Floridablanca,Santander,casa,57,M,importado,Estados Unidos de América
+855,31/3/2020,Neiva,Huila,casa,36,M,relacionado,Colombia
+856,31/3/2020,Neiva,Huila,casa,33,F,relacionado,Colombia
+857,31/3/2020,Neiva,Huila,casa,61,F,relacionado,Colombia
+858,31/3/2020,Pereira,Risaralda,casa,18,F,relacionado,Colombia
+859,31/3/2020,Pereira,Risaralda,casa,9,M,importado,España
+860,31/3/2020,Pereira,Risaralda,casa,30,F,importado,España
+861,31/3/2020,Pereira,Risaralda,hospital,32,F,relacionado,Colombia
+862,31/3/2020,Pereira,Risaralda,casa,32,M,importado,España
+863,31/3/2020,Pereira,Risaralda,casa,22,F,importado,Estados Unidos de América
+864,31/3/2020,Tunja,Boyacá,fallecido,84,M,en estudio,Colombia
+865,31/3/2020,Togui,Boyacá,casa,70,F,relacionado,Colombia
+866,31/3/2020,Bogotá,Bogotá D.C.,casa,49,M,relacionado,Colombia
+867,31/3/2020,Bogotá,Bogotá D.C.,casa,28,M,relacionado,Colombia
+868,31/3/2020,Bogotá,Bogotá D.C.,hospital,33,M,relacionado,Colombia
+869,31/3/2020,Bogotá,Bogotá D.C.,casa,69,M,relacionado,Colombia
+870,31/3/2020,Bogotá,Bogotá D.C.,casa,2,F,relacionado,Colombia
+871,31/3/2020,Bogotá,Bogotá D.C.,casa,39,F,relacionado,Colombia
+872,31/3/2020,Bogotá,Bogotá D.C.,casa,50,M,importado,Ecuador
+873,31/3/2020,Bogotá,Bogotá D.C.,casa,15,F,importado,Estados Unidos de América
+874,31/3/2020,Bogotá,Bogotá D.C.,casa,30,M,importado,Estados Unidos de América
+875,31/3/2020,Bogotá,Bogotá D.C.,casa,27,M,relacionado,Colombia
+876,31/3/2020,Bogotá,Bogotá D.C.,hospital,32,M,relacionado,Colombia
+877,31/3/2020,Bogotá,Bogotá D.C.,casa,58,F,importado,Turquia
+878,31/3/2020,Bogotá,Bogotá D.C.,casa,56,F,relacionado,Colombia
+879,31/3/2020,Bogotá,Bogotá D.C.,casa,13,M,relacionado,Colombia
+880,31/3/2020,Bogotá,Bogotá D.C.,hospital uci,66,F,relacionado,Colombia
+881,31/3/2020,Bogotá,Bogotá D.C.,hospital,45,M,relacionado,Colombia
+882,31/3/2020,Bogotá,Bogotá D.C.,recuperado,40,F,importado,Mexico
+883,31/3/2020,Bogotá,Bogotá D.C.,casa,55,F,relacionado,Colombia
+884,31/3/2020,Bogotá,Bogotá D.C.,casa,18,M,importado,Inglaterra
+885,31/3/2020,Bogotá,Bogotá D.C.,casa,56,M,relacionado,Colombia
+886,31/3/2020,Bogotá,Bogotá D.C.,hospital uci,65,F,relacionado,Colombia
+887,31/3/2020,Bogotá,Bogotá D.C.,casa,36,M,relacionado,Colombia
+888,31/3/2020,Bogotá,Bogotá D.C.,casa,35,M,importado,España
+889,31/3/2020,Bogotá,Bogotá D.C.,casa,31,M,en estudio,Colombia
+890,31/3/2020,Bogotá,Bogotá D.C.,fallecido,49,M,en estudio,Colombia
+891,31/3/2020,Bogotá,Bogotá D.C.,casa,43,F,en estudio,Colombia
+892,31/3/2020,Bogotá,Bogotá D.C.,casa,28,F,en estudio,Colombia
+893,31/3/2020,Bogotá,Bogotá D.C.,casa,32,M,importado,Inglaterra
+894,31/3/2020,Bogotá,Bogotá D.C.,casa,41,M,en estudio,Colombia
+895,31/3/2020,Bogotá,Bogotá D.C.,casa,38,F,relacionado,Colombia
+896,31/3/2020,Bogotá,Bogotá D.C.,casa,18,M,en estudio,Colombia
+897,31/3/2020,Bogotá,Bogotá D.C.,hospital uci,35,M,en estudio,Colombia
+898,31/3/2020,Bogotá,Bogotá D.C.,casa,31,F,relacionado,Colombia
+899,31/3/2020,Bogotá,Bogotá D.C.,casa,20,F,importado,Estados Unidos de América
+900,31/3/2020,Bogotá,Bogotá D.C.,casa,2,M,en estudio,Colombia
+901,31/3/2020,Bogotá,Bogotá D.C.,casa,37,M,importado,Panama
+902,31/3/2020,Bogotá,Bogotá D.C.,casa,29,F,en estudio,Colombia
+903,31/3/2020,Bogotá,Bogotá D.C.,casa,38,M,en estudio,Colombia
+904,31/3/2020,Bogotá,Bogotá D.C.,casa,54,F,en estudio,Colombia
+905,31/3/2020,Bogotá,Bogotá D.C.,casa,30,F,en estudio,Colombia
+906,31/3/2020,Bogotá,Bogotá D.C.,casa,44,F,en estudio,Colombia
+907,01/04/2020,Montenegro,Quindío,casa,9,F,relacionado,Colombia
+908,01/04/2020,Montenegro,Quindío,casa,35,F,relacionado,Colombia
+909,01/04/2020,Bello,Antioquia,casa,51,F,relacionado,Colombia
+910,01/04/2020,Envigado,Antioquia,casa,21,F,importado,España
+911,01/04/2020,Bello,Antioquia,casa,29,M,relacionado,Colombia
+912,01/04/2020,Medellin,Antioquia,casa,45,F,relacionado,Colombia
+913,01/04/2020,Envigado,Antioquia,hospital uci,82,M,en estudio,Colombia
+914,01/04/2020,Ibague,Tolima,casa,48,F,importado,Estados Unidos de América
+915,01/04/2020,Floridablanca,Santander,casa,25,M,relacionado,Colombia
+916,01/04/2020,Barranquilla,Barranquilla D.E.,casa,61,M,relacionado,Colombia
+917,01/04/2020,Cumbal,Nariño,casa,57,F,importado,Ecuador
+918,01/04/2020,Cumbal,Nariño,casa,58,M,importado,Ecuador
+919,01/04/2020,Cartago,Valle del Cauca,casa,16,F,importado,Francia
+920,01/04/2020,Cali,Valle del Cauca,casa,41,M,relacionado,Colombia
+921,01/04/2020,Ulloa,Valle del Cauca,casa,58,M,importado,Estados Unidos de América
+922,01/04/2020,Yumbo,Valle del Cauca,casa,68,F,importado,España
+923,01/04/2020,Santander De Quilichao,Cauca,fallecido,19,F,en estudio,Colombia
+924,01/04/2020,Cali,Valle del Cauca,casa,16,F,en estudio,Colombia
+925,01/04/2020,San Andres,San Andrés,casa,31,M,relacionado,Colombia
+926,01/04/2020,Cota,Cundinamarca,casa,26,F,relacionado,Colombia
+927,01/04/2020,Soacha,Cundinamarca,casa,15,M,en estudio,Colombia
+928,01/04/2020,Funza,Cundinamarca,casa,43,F,relacionado,Colombia
+929,01/04/2020,Tocancipa,Cundinamarca,hospital,39,M,en estudio,Colombia
+930,01/04/2020,Cali,Valle del Cauca,casa,35,M,importado,Mexico
+931,01/04/2020,Cali,Valle del Cauca,hospital,57,M,en estudio,Colombia
+932,01/04/2020,Cali,Valle del Cauca,casa,47,F,en estudio,Colombia
+933,01/04/2020,Cali,Valle del Cauca,casa,23,F,relacionado,Colombia
+934,01/04/2020,Tulua,Valle del Cauca,casa,47,F,relacionado,Colombia
+935,01/04/2020,Yumbo,Valle del Cauca,casa,31,F,relacionado,Colombia
+936,01/04/2020,Yumbo,Valle del Cauca,casa,4,M,relacionado,Colombia
+937,01/04/2020,Cali,Valle del Cauca,casa,50,M,importado,Estados Unidos de América
+938,01/04/2020,Cali,Valle del Cauca,casa,21,F,importado,Republica Dominicana
+939,01/04/2020,Cali,Valle del Cauca,casa,42,F,relacionado,Colombia
+940,01/04/2020,Cali,Valle del Cauca,casa,61,F,importado,España
+941,01/04/2020,Neiva,Huila,casa,26,F,relacionado,Colombia
+942,01/04/2020,Neiva,Huila,casa,45,M,relacionado,Colombia
+943,01/04/2020,Neiva,Huila,casa,39,F,relacionado,Colombia
+944,01/04/2020,Neiva,Huila,casa,50,F,relacionado,Colombia
+945,01/04/2020,Neiva,Huila,hospital uci,47,M,en estudio,Colombia
+946,01/04/2020,Neiva,Huila,hospital uci,59,M,relacionado,Colombia
+947,01/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,43,F,relacionado,Colombia
+948,01/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,41,M,en estudio,Colombia
+949,01/04/2020,Villavicencio,Meta,casa,31,M,importado,Mexico
+950,01/04/2020,Yopal,Casanare,casa,26,M,relacionado,Colombia
+951,01/04/2020,Valledupar,Cesar,casa,36,M,relacionado,Colombia
+952,01/04/2020,Valledupar,Cesar,recuperado,70,M,relacionado,Colombia
+953,01/04/2020,Valledupar,Cesar,recuperado,33,M,relacionado,Colombia
+954,01/04/2020,Valledupar,Cesar,recuperado,33,M,relacionado,Colombia
+955,01/04/2020,Valledupar,Cesar,recuperado,27,M,relacionado,Colombia
+956,01/04/2020,Cali,Valle del Cauca,casa,64,F,importado,Aruba
+957,01/04/2020,Cali,Valle del Cauca,casa,46,F,relacionado,Colombia
+958,01/04/2020,Yumbo,Valle del Cauca,casa,19,F,relacionado,Colombia
+959,01/04/2020,Cali,Valle del Cauca,casa,39,F,relacionado,Colombia
+960,01/04/2020,Palmira,Valle del Cauca,casa,12,M,relacionado,Colombia
+961,01/04/2020,Cali,Valle del Cauca,hospital uci,64,M,en estudio,Colombia
+962,01/04/2020,Cali,Valle del Cauca,casa,68,F,importado,Suiza
+963,01/04/2020,Cali,Valle del Cauca,casa,36,M,relacionado,Colombia
+964,01/04/2020,Cali,Valle del Cauca,casa,45,M,relacionado,Colombia
+965,01/04/2020,Cali,Valle del Cauca,casa,32,M,importado,Estados Unidos de América
+966,01/04/2020,Cali,Valle del Cauca,casa,51,M,importado,Aruba
+967,01/04/2020,Cali,Valle del Cauca,casa,44,F,importado,Mexico
+968,01/04/2020,Cali,Valle del Cauca,casa,46,M,importado,Estados Unidos de América
+969,01/04/2020,Cali,Valle del Cauca,casa,39,F,relacionado,Colombia
+970,01/04/2020,Cali,Valle del Cauca,casa,35,F,importado,Estados Unidos de América
+971,01/04/2020,Popayan,Cauca,hospital,33,M,en estudio,Colombia
+972,01/04/2020,Popayan,Cauca,casa,32,F,relacionado,Colombia
+973,01/04/2020,Armenia,Quindío,casa,37,M,relacionado,Colombia
+974,01/04/2020,Armenia,Quindío,casa,58,F,relacionado,Colombia
+975,01/04/2020,Filandia,Quindío,casa,22,M,importado,Estados Unidos de América
+976,01/04/2020,Ibague,Tolima,casa,55,F,importado,Jamaica
+977,01/04/2020,Ibague,Tolima,casa,63,F,importado,España
+978,01/04/2020,Ibague,Tolima,casa,26,F,importado,Estados Unidos de América
+979,01/04/2020,Ibague,Tolima,casa,31,M,en estudio,Colombia
+980,01/04/2020,Barranquilla,Barranquilla D.E.,casa,57,M,importado,Estados Unidos de América
+981,01/04/2020,Circasia,Quindío,casa,40,M,importado,Estados Unidos de América
+982,01/04/2020,Circasia,Quindío,casa,41,F,importado,Estados Unidos de América
+983,01/04/2020,Bogotá,Bogotá D.C.,casa,63,M,relacionado,Colombia
+984,01/04/2020,Bogotá,Bogotá D.C.,casa,15,F,relacionado,Colombia
+985,01/04/2020,Bogotá,Bogotá D.C.,casa,39,F,en estudio,Colombia
+986,01/04/2020,Bogotá,Bogotá D.C.,casa,49,F,importado,Estados Unidos de América
+987,01/04/2020,Bogotá,Bogotá D.C.,fallecido,73,M,en estudio,Colombia
+988,01/04/2020,Bogotá,Bogotá D.C.,fallecido,72,M,en estudio,Colombia
+989,01/04/2020,Bogotá,Bogotá D.C.,casa,35,M,en estudio,Colombia
+990,01/04/2020,Bogotá,Bogotá D.C.,fallecido,50,M,en estudio,Colombia
+991,01/04/2020,Bogotá,Bogotá D.C.,casa,51,F,relacionado,Colombia
+992,01/04/2020,Bogotá,Bogotá D.C.,casa,60,M,en estudio,Colombia
+993,01/04/2020,Bogotá,Bogotá D.C.,casa,31,F,en estudio,Colombia
+994,01/04/2020,Bogotá,Bogotá D.C.,casa,32,M,en estudio,Colombia
+995,01/04/2020,Bogotá,Bogotá D.C.,casa,23,F,en estudio,Colombia
+996,01/04/2020,Bogotá,Bogotá D.C.,casa,30,F,en estudio,Colombia
+997,01/04/2020,Bogotá,Bogotá D.C.,casa,44,F,en estudio,Colombia
+998,01/04/2020,Bogotá,Bogotá D.C.,casa,17,F,en estudio,Colombia
+999,01/04/2020,Bogotá,Bogotá D.C.,casa,39,F,en estudio,Colombia
+1000,01/04/2020,Bogotá,Bogotá D.C.,casa,30,F,en estudio,Colombia
+1001,01/04/2020,Bogotá,Bogotá D.C.,casa,56,M,en estudio,Colombia
+1002,01/04/2020,Bogotá,Bogotá D.C.,casa,24,M,importado,Estados Unidos de América
+1003,01/04/2020,Bogotá,Bogotá D.C.,casa,54,M,en estudio,Colombia
+1004,01/04/2020,Bogotá,Bogotá D.C.,casa,29,M,en estudio,Colombia
+1005,01/04/2020,Bogotá,Bogotá D.C.,casa,26,F,en estudio,Colombia
+1006,01/04/2020,Bogotá,Bogotá D.C.,casa,32,F,relacionado,Colombia
+1007,01/04/2020,Bogotá,Bogotá D.C.,hospital,66,F,en estudio,Colombia
+1008,01/04/2020,Bogotá,Bogotá D.C.,hospital,54,F,en estudio,Colombia
+1009,01/04/2020,Bogotá,Bogotá D.C.,casa,56,F,en estudio,Colombia
+1010,01/04/2020,Bogotá,Bogotá D.C.,casa,42,F,en estudio,Colombia
+1011,01/04/2020,Bogotá,Bogotá D.C.,casa,23,M,en estudio,Colombia
+1012,01/04/2020,Bogotá,Bogotá D.C.,casa,24,M,en estudio,Colombia
+1013,01/04/2020,Bogotá,Bogotá D.C.,hospital,12,M,en estudio,Colombia
+1014,01/04/2020,Bogotá,Bogotá D.C.,casa,64,F,en estudio,Colombia
+1015,01/04/2020,Bogotá,Bogotá D.C.,casa,29,F,relacionado,Colombia
+1016,01/04/2020,Bogotá,Bogotá D.C.,casa,32,M,relacionado,Colombia
+1017,01/04/2020,Bogotá,Bogotá D.C.,casa,21,F,en estudio,Colombia
+1018,01/04/2020,Bogotá,Bogotá D.C.,casa,22,F,relacionado,Colombia
+1019,01/04/2020,Bogotá,Bogotá D.C.,casa,58,F,en estudio,Colombia
+1020,01/04/2020,Bogotá,Bogotá D.C.,hospital,53,F,en estudio,Colombia
+1021,01/04/2020,Bogotá,Bogotá D.C.,casa,56,F,relacionado,Colombia
+1022,01/04/2020,Bogotá,Bogotá D.C.,casa,56,M,relacionado,Colombia
+1023,01/04/2020,Bogotá,Bogotá D.C.,casa,41,M,relacionado,Colombia
+1024,01/04/2020,Bogotá,Bogotá D.C.,casa,31,F,relacionado,Colombia
+1025,01/04/2020,Bogotá,Bogotá D.C.,casa,31,M,relacionado,Colombia
+1026,01/04/2020,Bogotá,Bogotá D.C.,casa,40,F,importado,Ecuador
+1027,01/04/2020,Bogotá,Bogotá D.C.,casa,27,F,relacionado,Colombia
+1028,01/04/2020,Bogotá,Bogotá D.C.,casa,39,F,relacionado,Colombia
+1029,01/04/2020,Bogotá,Bogotá D.C.,casa,26,M,relacionado,Colombia
+1030,01/04/2020,Bogotá,Bogotá D.C.,hospital,39,M,importado,Estados Unidos de América
+1031,01/04/2020,Bogotá,Bogotá D.C.,casa,59,F,en estudio,Colombia
+1032,01/04/2020,Bogotá,Bogotá D.C.,hospital uci,71,F,en estudio,Colombia
+1033,01/04/2020,Bogotá,Bogotá D.C.,hospital,44,F,en estudio,Colombia
+1034,01/04/2020,Bogotá,Bogotá D.C.,casa,24,F,relacionado,Colombia
+1035,01/04/2020,Soacha,Cundinamarca,casa,2,F,en estudio,Colombia
+1036,01/04/2020,Bogotá,Bogotá D.C.,casa,20,M,en estudio,Colombia
+1037,01/04/2020,Bogotá,Bogotá D.C.,casa,31,M,importado,Francia
+1038,01/04/2020,Bogotá,Bogotá D.C.,casa,40,M,importado,Mexico
+1039,01/04/2020,Bogotá,Bogotá D.C.,casa,34,F,importado,Francia
+1040,01/04/2020,Bogotá,Bogotá D.C.,recuperado,70,M,importado,Estados Unidos de América
+1041,01/04/2020,Bogotá,Bogotá D.C.,fallecido,74,F,relacionado,Colombia
+1042,01/04/2020,Bogotá,Bogotá D.C.,casa,30,M,importado,Brasil
+1043,01/04/2020,Bogotá,Bogotá D.C.,casa,23,M,en estudio,Colombia
+1044,01/04/2020,Bogotá,Bogotá D.C.,recuperado,31,F,relacionado,Colombia
+1045,01/04/2020,Bogotá,Bogotá D.C.,casa,26,F,relacionado,Colombia
+1046,01/04/2020,Bogotá,Bogotá D.C.,casa,38,M,relacionado,Colombia
+1047,01/04/2020,Bogotá,Bogotá D.C.,casa,49,M,importado,Turquia
+1048,01/04/2020,Bogotá,Bogotá D.C.,casa,36,F,importado,Turquia
+1049,01/04/2020,Bogotá,Bogotá D.C.,casa,27,F,en estudio,Colombia
+1050,01/04/2020,Bogotá,Bogotá D.C.,casa,26,M,importado,España
+1051,01/04/2020,Bogotá,Bogotá D.C.,hospital,75,M,relacionado,Colombia
+1052,01/04/2020,Bogotá,Bogotá D.C.,hospital uci,79,F,relacionado,Colombia
+1053,01/04/2020,Bogotá,Bogotá D.C.,casa,33,F,relacionado,Colombia
+1054,01/04/2020,Bogotá,Bogotá D.C.,casa,37,F,importado,Alemania
+1055,01/04/2020,Bogotá,Bogotá D.C.,casa,61,F,importado,Israel - Egipto
+1056,01/04/2020,Bogotá,Bogotá D.C.,casa,25,F,importado,Estados Unidos de América
+1057,01/04/2020,Bogotá,Bogotá D.C.,hospital,38,F,en estudio,Colombia
+1058,01/04/2020,Bogotá,Bogotá D.C.,fallecido,39,F,relacionado,Colombia
+1059,01/04/2020,Bogotá,Bogotá D.C.,casa,45,F,relacionado,Colombia
+1060,01/04/2020,Bogotá,Bogotá D.C.,casa,47,M,relacionado,Colombia
+1061,01/04/2020,Bogotá,Bogotá D.C.,hospital,47,F,en estudio,Colombia
+1062,01/04/2020,Bogotá,Bogotá D.C.,hospital uci,60,F,en estudio,Colombia
+1063,01/04/2020,Bogotá,Bogotá D.C.,casa,33,F,relacionado,Colombia
+1064,01/04/2020,Bogotá,Bogotá D.C.,fallecido,33,M,en estudio,Colombia
+1065,01/04/2020,Santa Rosa,Antioquia,casa,32,F,importado,Panama
+1066,02/04/2020,Rionegro,Antioquia,casa,40,F,importado,Estados Unidos de América
+1067,02/04/2020,Envigado,Antioquia,casa,51,F,importado,Panama
+1068,02/04/2020,Medellin,Antioquia,casa,43,M,relacionado,Colombia
+1069,02/04/2020,Medellin,Antioquia,recuperado,63,F,importado,España
+1070,02/04/2020,Medellin,Antioquia,recuperado,52,F,importado,Turquia
+1071,02/04/2020,Medellin,Antioquia,recuperado,41,F,en estudio,Colombia
+1072,02/04/2020,Rionegro,Antioquia,casa,51,M,importado,Estados Unidos de América
+1073,02/04/2020,Medellin,Antioquia,recuperado,37,F,importado,Turquia
+1074,02/04/2020,Rionegro,Antioquia,casa,39,F,importado,Estados Unidos de América
+1075,02/04/2020,Itagui,Antioquia,casa,68,M,importado,Estados Unidos de América
+1076,02/04/2020,Medellin,Antioquia,casa,30,F,relacionado,Colombia
+1077,02/04/2020,Medellin,Antioquia,casa,38,F,importado,España
+1078,02/04/2020,Bogotá,Bogotá D.C.,fallecido,33,M,en estudio,Colombia
+1079,02/04/2020,Anserma,Caldas,casa,40,F,importado,España
+1080,02/04/2020,Cali,Valle del Cauca,hospital,57,F,en estudio,Colombia
+1081,02/04/2020,Cali,Valle del Cauca,hospital,50,M,en estudio,Colombia
+1082,02/04/2020,Palmira,Valle del Cauca,casa,44,F,importado,Estados Unidos de América
+1083,02/04/2020,Cucuta,Norte de Santander,casa,46,M,importado,España
+1084,02/04/2020,Cucuta,Norte de Santander,casa,42,M,importado,Peru
+1085,02/04/2020,Medellin,Antioquia,casa,70,F,en estudio,Colombia
+1086,02/04/2020,Medellin,Antioquia,casa,30,F,importado,España
+1087,02/04/2020,Envigado,Antioquia,casa,26,M,importado,Mexico
+1088,02/04/2020,Bello,Antioquia,casa,30,F,relacionado,Colombia
+1089,02/04/2020,Don Matias,Antioquia,casa,50,M,importado,Estados Unidos de América
+1090,02/04/2020,Caldas,Antioquia,casa,78,M,relacionado,Colombia
+1091,02/04/2020,Bello,Antioquia,casa,37,M,importado,España
+1092,02/04/2020,Medellin,Antioquia,casa,22,F,relacionado,Colombia
+1093,02/04/2020,Bogotá,Bogotá D.C.,hospital,55,M,importado,Peru
+1094,02/04/2020,Bogotá,Bogotá D.C.,casa,41,F,en estudio,Colombia
+1095,02/04/2020,Bogotá,Bogotá D.C.,hospital,60,M,en estudio,Colombia
+1096,02/04/2020,Bogotá,Bogotá D.C.,fallecido,59,M,relacionado,Colombia
+1097,02/04/2020,Bogotá,Bogotá D.C.,casa,60,F,importado,España
+1098,02/04/2020,Bogotá,Bogotá D.C.,casa,23,M,en estudio,Colombia
+1099,02/04/2020,Bogotá,Bogotá D.C.,casa,35,M,importado,Turquia
+1100,02/04/2020,Bogotá,Bogotá D.C.,casa,59,F,importado,Estados Unidos de América
+1101,02/04/2020,Bogotá,Bogotá D.C.,casa,36,M,en estudio,Colombia
+1102,02/04/2020,Bogotá,Bogotá D.C.,casa,66,F,en estudio,Colombia
+1103,02/04/2020,Bogotá,Bogotá D.C.,casa,39,M,importado,Francia
+1104,02/04/2020,Bogotá,Bogotá D.C.,casa,62,M,importado,España
+1105,02/04/2020,Bogotá,Bogotá D.C.,casa,30,F,en estudio,Colombia
+1106,02/04/2020,Bogotá,Bogotá D.C.,casa,71,M,importado,Estados Unidos de América
+1107,02/04/2020,Bogotá,Bogotá D.C.,casa,66,F,importado,Estados Unidos de América
+1108,02/04/2020,Bogotá,Bogotá D.C.,casa,60,F,en estudio,Colombia
+1109,02/04/2020,Bogotá,Bogotá D.C.,casa,57,M,importado,Brasil
+1110,02/04/2020,Bogotá,Bogotá D.C.,casa,21,F,en estudio,Colombia
+1111,02/04/2020,Bogotá,Bogotá D.C.,casa,24,M,en estudio,Colombia
+1112,02/04/2020,Bogotá,Bogotá D.C.,casa,29,M,importado,Estados Unidos de América
+1113,02/04/2020,Bogotá,Bogotá D.C.,hospital,44,M,en estudio,Colombia
+1114,02/04/2020,Bogotá,Bogotá D.C.,casa,28,F,relacionado,Colombia
+1115,02/04/2020,Bogotá,Bogotá D.C.,casa,50,F,en estudio,Colombia
+1116,02/04/2020,Bogotá,Bogotá D.C.,casa,38,F,importado,Brasil
+1117,02/04/2020,Bogotá,Bogotá D.C.,casa,39,F,en estudio,Colombia
+1118,02/04/2020,Bogotá,Bogotá D.C.,casa,52,F,en estudio,Colombia
+1119,02/04/2020,Bogotá,Bogotá D.C.,casa,74,F,en estudio,Colombia
+1120,02/04/2020,Bogotá,Bogotá D.C.,casa,50,M,importado,Brasil
+1121,02/04/2020,Bogotá,Bogotá D.C.,casa,62,M,relacionado,Colombia
+1122,02/04/2020,Bogotá,Bogotá D.C.,casa,39,F,importado,España
+1123,02/04/2020,Bogotá,Bogotá D.C.,hospital,84,F,relacionado,Colombia
+1124,02/04/2020,Bogotá,Bogotá D.C.,casa,55,F,importado,Francia
+1125,02/04/2020,Bogotá,Bogotá D.C.,casa,59,F,importado,Francia
+1126,02/04/2020,Bogotá,Bogotá D.C.,casa,5,F,en estudio,Colombia
+1127,02/04/2020,Bogotá,Bogotá D.C.,casa,25,M,importado,España
+1128,02/04/2020,Bogotá,Bogotá D.C.,casa,47,F,importado,Mexico
+1129,02/04/2020,Bogotá,Bogotá D.C.,casa,60,M,en estudio,Colombia
+1130,02/04/2020,Bogotá,Bogotá D.C.,casa,37,F,en estudio,Colombia
+1131,02/04/2020,Bogotá,Bogotá D.C.,hospital uci,69,M,en estudio,Colombia
+1132,02/04/2020,Bogotá,Bogotá D.C.,fallecido,67,F,en estudio,Colombia
+1133,02/04/2020,Bogotá,Bogotá D.C.,hospital,59,M,en estudio,Colombia
+1134,02/04/2020,Bogotá,Bogotá D.C.,casa,28,F,relacionado,Colombia
+1135,02/04/2020,Bogotá,Bogotá D.C.,casa,67,F,importado,Estados Unidos de América
+1136,02/04/2020,Bogotá,Bogotá D.C.,casa,29,F,relacionado,Colombia
+1137,02/04/2020,Bogotá,Bogotá D.C.,casa,32,F,en estudio,Colombia
+1138,02/04/2020,Bogotá,Bogotá D.C.,hospital uci,40,M,importado,Arabia
+1139,02/04/2020,Bogotá,Bogotá D.C.,casa,25,F,en estudio,Colombia
+1140,02/04/2020,Bogotá,Bogotá D.C.,casa,22,F,en estudio,Colombia
+1141,02/04/2020,Bogotá,Bogotá D.C.,casa,69,M,en estudio,Colombia
+1142,02/04/2020,Bogotá,Bogotá D.C.,casa,10,M,en estudio,Colombia
+1143,02/04/2020,Bogotá,Bogotá D.C.,casa,47,F,en estudio,Colombia
+1144,02/04/2020,Bogotá,Bogotá D.C.,casa,60,M,en estudio,Colombia
+1145,02/04/2020,Bogotá,Bogotá D.C.,casa,29,F,en estudio,Colombia
+1146,02/04/2020,Bogotá,Bogotá D.C.,casa,10,M,relacionado,Colombia
+1147,02/04/2020,Bogotá,Bogotá D.C.,casa,27,F,relacionado,Colombia
+1148,02/04/2020,Bogotá,Bogotá D.C.,casa,52,M,relacionado,Colombia
+1149,02/04/2020,Bogotá,Bogotá D.C.,casa,49,F,relacionado,Colombia
+1150,02/04/2020,Bogotá,Bogotá D.C.,hospital uci,50,M,en estudio,Colombia
+1151,02/04/2020,Bogotá,Bogotá D.C.,casa,47,F,en estudio,Colombia
+1152,02/04/2020,Bogotá,Bogotá D.C.,casa,34,F,relacionado,Colombia
+1153,02/04/2020,Bogotá,Bogotá D.C.,casa,34,M,en estudio,Colombia
+1154,02/04/2020,Bogotá,Bogotá D.C.,casa,20,M,importado,Estados Unidos de América
+1155,02/04/2020,Bogotá,Bogotá D.C.,casa,42,F,en estudio,Colombia
+1156,02/04/2020,Bogotá,Bogotá D.C.,casa,32,M,importado,Mexico
+1157,02/04/2020,Bogotá,Bogotá D.C.,casa,28,M,importado,Estados Unidos de América
+1158,02/04/2020,Bogotá,Bogotá D.C.,casa,38,F,en estudio,Colombia
+1159,02/04/2020,Bogotá,Bogotá D.C.,casa,3,M,en estudio,Colombia
+1160,02/04/2020,Bogotá,Bogotá D.C.,casa,48,M,en estudio,Colombia
+1161,02/04/2020,Bogotá,Bogotá D.C.,casa,22,M,importado,España
+1162,03/04/2020,Cali,Valle del Cauca,hospital,43,M,en estudio,Colombia
+1163,03/04/2020,Cali,Valle del Cauca,casa,54,F,relacionado,Colombia
+1164,03/04/2020,Cali,Valle del Cauca,hospital uci,57,M,en estudio,Colombia
+1165,03/04/2020,Cali,Valle del Cauca,hospital,57,M,en estudio,Colombia
+1166,03/04/2020,Cali,Valle del Cauca,casa,28,F,relacionado,Colombia
+1167,03/04/2020,Cali,Valle del Cauca,casa,58,M,relacionado,Colombia
+1168,03/04/2020,Cali,Valle del Cauca,casa,26,F,en estudio,Colombia
+1169,03/04/2020,Palmira,Valle del Cauca,hospital uci,75,M,importado,Estados Unidos de América
+1170,03/04/2020,Cali,Valle del Cauca,fallecido,85,F,en estudio,Colombia
+1171,03/04/2020,Cali,Valle del Cauca,hospital,62,F,en estudio,Colombia
+1172,03/04/2020,Cali,Valle del Cauca,hospital,49,M,importado,España
+1173,03/04/2020,Barranquilla,Barranquilla D.E.,casa,67,F,relacionado,Colombia
+1174,03/04/2020,Barranquilla,Barranquilla D.E.,casa,25,M,relacionado,Colombia
+1175,03/04/2020,Soledad,Atlántico,casa,13,M,relacionado,Colombia
+1176,03/04/2020,Soledad,Atlántico,casa,48,F,relacionado,Colombia
+1177,03/04/2020,Barranquilla,Barranquilla D.E.,casa,23,F,relacionado,Colombia
+1178,03/04/2020,Barranquilla,Barranquilla D.E.,casa,62,F,relacionado,Colombia
+1179,03/04/2020,Cali,Valle del Cauca,hospital,72,M,relacionado,Colombia
+1180,03/04/2020,Cali,Valle del Cauca,casa,23,F,en estudio,Colombia
+1181,03/04/2020,Cali,Valle del Cauca,hospital,57,M,en estudio,Colombia
+1182,03/04/2020,Cali,Valle del Cauca,casa,25,M,en estudio,Colombia
+1183,03/04/2020,Cartagena,Cartagena D.T. y C,casa,38,F,relacionado,Colombia
+1184,03/04/2020,Neiva,Huila,casa,56,M,relacionado,Colombia
+1185,03/04/2020,Neiva,Huila,casa,47,M,relacionado,Colombia
+1186,03/04/2020,Medellin,Antioquia,casa,37,F,relacionado,Colombia
+1187,03/04/2020,Medellin,Antioquia,casa,33,F,en estudio,Colombia
+1188,03/04/2020,Medellin,Antioquia,casa,46,M,importado,España
+1189,03/04/2020,Envigado,Antioquia,casa,29,F,importado,España
+1190,03/04/2020,Medellin,Antioquia,casa,58,M,en estudio,Colombia
+1191,03/04/2020,Medellin,Antioquia,casa,23,F,importado,Turquia
+1192,03/04/2020,Sabaneta,Antioquia,casa,52,F,importado,Estados Unidos de América
+1193,03/04/2020,Medellin,Antioquia,casa,53,M,en estudio,Colombia
+1194,03/04/2020,Medellin,Antioquia,casa,34,F,relacionado,Colombia
+1195,03/04/2020,Medellin,Antioquia,casa,43,M,relacionado,Colombia
+1196,03/04/2020,Pereira,Risaralda,hospital,73,F,relacionado,Colombia
+1197,03/04/2020,Pereira,Risaralda,casa,6,M,relacionado,Colombia
+1198,03/04/2020,Ibague,Tolima,casa,47,F,importado,Estados Unidos de América
+1199,03/04/2020,Cucuta,Norte de Santander,casa,24,F,relacionado,Colombia
+1200,03/04/2020,Villavicencio,Meta,fallecido,94,F,relacionado,Colombia
+1201,03/04/2020,Cartagena,Cartagena D.T. y C,casa,31,F,importado,Alemania
+1202,03/04/2020,Cartagena,Cartagena D.T. y C,casa,55,M,en estudio,Colombia
+1203,03/04/2020,Cucuta,Norte de Santander,fallecido,74,F,importado,Venezuela
+1204,03/04/2020,Choachi,Cundinamarca,hospital,44,F,en estudio,Colombia
+1205,03/04/2020,Soacha,Cundinamarca,casa,34,M,en estudio,Colombia
+1206,03/04/2020,Barranquilla,Barranquilla D.E.,casa,27,F,relacionado,Colombia
+1207,03/04/2020,Barranquilla,Barranquilla D.E.,casa,24,F,relacionado,Colombia
+1208,03/04/2020,Barranquilla,Barranquilla D.E.,casa,1,F,en estudio,Colombia
+1209,03/04/2020,Barranquilla,Barranquilla D.E.,casa,11,F,relacionado,Colombia
+1210,03/04/2020,Barranquilla,Barranquilla D.E.,casa,40,F,relacionado,Colombia
+1211,03/04/2020,Cucuta,Norte de Santander,casa,31,F,en estudio,Colombia
+1212,03/04/2020,Cucuta,Norte de Santander,hospital uci,54,M,en estudio,Colombia
+1213,03/04/2020,Medellin,Antioquia,recuperado,28,F,en estudio,Colombia
+1214,03/04/2020,Medellin,Antioquia,casa,47,M,importado,Mexico
+1215,03/04/2020,Bogotá,Bogotá D.C.,hospital uci,71,M,en estudio,Colombia
+1216,03/04/2020,Bogotá,Bogotá D.C.,casa,45,M,en estudio,Colombia
+1217,03/04/2020,Bogotá,Bogotá D.C.,casa,35,M,en estudio,Colombia
+1218,03/04/2020,Bogotá,Bogotá D.C.,hospital,70,M,en estudio,Colombia
+1219,03/04/2020,Bogotá,Bogotá D.C.,casa,88,F,en estudio,Colombia
+1220,03/04/2020,Bogotá,Bogotá D.C.,casa,52,F,en estudio,Colombia
+1221,03/04/2020,Bogotá,Bogotá D.C.,hospital,27,M,importado,Estados Unidos de América
+1222,03/04/2020,Bogotá,Bogotá D.C.,fallecido,71,F,en estudio,Colombia
+1223,03/04/2020,Bogotá,Bogotá D.C.,casa,21,F,en estudio,Colombia
+1224,03/04/2020,Bogotá,Bogotá D.C.,casa,41,M,en estudio,Colombia
+1225,03/04/2020,Bogotá,Bogotá D.C.,casa,29,M,relacionado,Colombia
+1226,03/04/2020,Bogotá,Bogotá D.C.,hospital,46,M,en estudio,Colombia
+1227,03/04/2020,Bogotá,Bogotá D.C.,casa,70,F,en estudio,Colombia
+1228,03/04/2020,Bogotá,Bogotá D.C.,fallecido,36,M,relacionado,Colombia
+1229,03/04/2020,Bogotá,Bogotá D.C.,casa,33,M,relacionado,Colombia
+1230,03/04/2020,Bogotá,Bogotá D.C.,casa,26,M,relacionado,Colombia
+1231,03/04/2020,Bogotá,Bogotá D.C.,hospital uci,66,F,en estudio,Colombia
+1232,03/04/2020,Bogotá,Bogotá D.C.,hospital,83,F,en estudio,Colombia
+1233,03/04/2020,Bogotá,Bogotá D.C.,casa,44,F,importado,España
+1234,03/04/2020,Bogotá,Bogotá D.C.,casa,34,F,en estudio,Colombia
+1235,03/04/2020,Bogotá,Bogotá D.C.,casa,62,F,en estudio,Colombia
+1236,03/04/2020,Bogotá,Bogotá D.C.,hospital,53,M,en estudio,Colombia
+1237,03/04/2020,Bogotá,Bogotá D.C.,casa,64,M,en estudio,Colombia
+1238,03/04/2020,Bogotá,Bogotá D.C.,fallecido,82,M,en estudio,Colombia
+1239,03/04/2020,Bogotá,Bogotá D.C.,casa,26,F,en estudio,Colombia
+1240,03/04/2020,Bogotá,Bogotá D.C.,casa,7,F,en estudio,Colombia
+1241,03/04/2020,Bogotá,Bogotá D.C.,casa,41,F,relacionado,Colombia
+1242,03/04/2020,Bogotá,Bogotá D.C.,casa,51,F,en estudio,Colombia
+1243,03/04/2020,Bogotá,Bogotá D.C.,casa,58,M,importado,Estados Unidos de América
+1244,03/04/2020,Bogotá,Bogotá D.C.,casa,45,F,en estudio,Colombia
+1245,03/04/2020,Bogotá,Bogotá D.C.,fallecido,26,M,en estudio,Colombia
+1246,03/04/2020,Bogotá,Bogotá D.C.,casa,95,F,en estudio,Colombia
+1247,03/04/2020,Bogotá,Bogotá D.C.,hospital,19,M,en estudio,Colombia
+1248,03/04/2020,Bogotá,Bogotá D.C.,casa,48,M,en estudio,Colombia
+1249,03/04/2020,Bogotá,Bogotá D.C.,casa,71,F,en estudio,Colombia
+1250,03/04/2020,Bogotá,Bogotá D.C.,casa,30,F,importado,Estados Unidos de América
+1251,03/04/2020,Bogotá,Bogotá D.C.,casa,45,F,en estudio,Colombia
+1252,03/04/2020,Bogotá,Bogotá D.C.,casa,76,M,en estudio,Colombia
+1253,03/04/2020,Bogotá,Bogotá D.C.,casa,34,F,en estudio,Colombia
+1254,03/04/2020,Madrid,Cundinamarca,casa,31,F,en estudio,Colombia
+1255,03/04/2020,Bogotá,Bogotá D.C.,hospital,48,M,en estudio,Colombia
+1256,03/04/2020,Bogotá,Bogotá D.C.,casa,46,M,importado,Estados Unidos
+1257,03/04/2020,Bogotá,Bogotá D.C.,casa,11,M,en estudio,Colombia
+1258,03/04/2020,Bogotá,Bogotá D.C.,casa,46,M,en estudio,Colombia
+1259,03/04/2020,Bogotá,Bogotá D.C.,casa,64,F,relacionado,Colombia
+1260,03/04/2020,Soledad,Atlántico,casa,55,M,relacionado,Colombia
+1261,03/04/2020,Envigado,Antioquia,casa,39,F,relacionado,Colombia
+1262,03/04/2020,Itagui,Antioquia,casa,78,M,importado,Jamaica
+1263,03/04/2020,Medellin,Antioquia,casa,26,M,importado,Estados Unidos de América
+1264,03/04/2020,Itagui,Antioquia,casa,59,F,importado,Jamaica
+1265,03/04/2020,Itagui,Antioquia,casa,9,F,importado,Jamaica
+1266,03/04/2020,Itagui,Antioquia,casa,54,F,importado,Jamaica
+1267,03/04/2020,Cocorna,Antioquia,casa,25,M,importado,Australia
+1268,04/04/2020,Medellin,Antioquia,recuperado,31,F,relacionado,Colombia
+1269,04/04/2020,Cali,Valle del Cauca,hospital uci,81,M,importado,Panama
+1270,04/04/2020,Cali,Valle del Cauca,hospital,54,M,en estudio,Colombia
+1271,04/04/2020,Cali,Valle del Cauca,casa,44,F,relacionado,Colombia
+1272,04/04/2020,Cali,Valle del Cauca,hospital,50,M,en estudio,Colombia
+1273,04/04/2020,Cali,Valle del Cauca,hospital uci,57,F,en estudio,Colombia
+1274,04/04/2020,Cali,Valle del Cauca,hospital,62,M,en estudio,Colombia
+1275,04/04/2020,Cali,Valle del Cauca,hospital,55,F,en estudio,Colombia
+1276,04/04/2020,Cali,Valle del Cauca,hospital uci,31,F,relacionado,Colombia
+1277,04/04/2020,Medellin,Antioquia,casa,41,M,en estudio,Colombia
+1278,04/04/2020,Sabaneta,Antioquia,casa,51,M,en estudio,Colombia
+1279,04/04/2020,Monteria,Córdoba,fallecido,64,M,relacionado,Colombia
+1280,04/04/2020,La Estrella,Antioquia,casa,53,F,relacionado,Colombia
+1281,04/04/2020,Togui,Boyacá,casa,42,M,relacionado,Colombia
+1282,04/04/2020,Togui,Boyacá,casa,40,F,relacionado,Colombia
+1283,04/04/2020,Togui,Boyacá,casa,29,F,relacionado,Colombia
+1284,04/04/2020,Togui,Boyacá,casa,72,M,relacionado,Colombia
+1285,04/04/2020,Togui,Boyacá,casa,50,M,relacionado,Colombia
+1286,04/04/2020,Togui,Boyacá,casa,20,M,relacionado,Colombia
+1287,04/04/2020,Togui,Boyacá,casa,2,M,relacionado,Colombia
+1288,04/04/2020,Neiva,Huila,casa,41,F,relacionado,Colombia
+1289,04/04/2020,Neiva,Huila,casa,53,M,relacionado,Colombia
+1290,04/04/2020,Mosquera,Cundinamarca,hospital uci,58,F,en estudio,Colombia
+1291,04/04/2020,Cajica,Cundinamarca,casa,36,F,en estudio,Colombia
+1292,04/04/2020,Chia,Cundinamarca,casa,36,F,relacionado,Colombia
+1293,04/04/2020,Cali,Valle del Cauca,casa,28,F,importado,Ecuador
+1294,04/04/2020,Bogotá,Bogotá D.C.,casa,54,M,importado,España
+1295,04/04/2020,Bogotá,Bogotá D.C.,casa,42,M,en estudio,Colombia
+1296,04/04/2020,Bogotá,Bogotá D.C.,casa,28,M,en estudio,Colombia
+1297,04/04/2020,Bogotá,Bogotá D.C.,casa,60,F,en estudio,Colombia
+1298,04/04/2020,Bogotá,Bogotá D.C.,casa,42,F,en estudio,Colombia
+1299,04/04/2020,Bogotá,Bogotá D.C.,fallecido,93,F,en estudio,Colombia
+1300,04/04/2020,Bogotá,Bogotá D.C.,fallecido,57,F,en estudio,Colombia
+1301,04/04/2020,Bogotá,Bogotá D.C.,casa,60,M,en estudio,Colombia
+1302,04/04/2020,Bogotá,Bogotá D.C.,casa,37,F,en estudio,Colombia
+1303,04/04/2020,Bogotá,Bogotá D.C.,casa,21,F,en estudio,Colombia
+1304,04/04/2020,Bogotá,Bogotá D.C.,casa,26,F,importado,Dubai
+1305,04/04/2020,Bogotá,Bogotá D.C.,casa,36,F,en estudio,Colombia
+1306,04/04/2020,Bogotá,Bogotá D.C.,fallecido,57,M,en estudio,Colombia
+1307,04/04/2020,Bogotá,Bogotá D.C.,casa,54,F,en estudio,Colombia
+1308,04/04/2020,Bogotá,Bogotá D.C.,casa,32,F,en estudio,Colombia
+1309,04/04/2020,Bogotá,Bogotá D.C.,casa,27,M,importado,Estados Unidos de América
+1310,04/04/2020,Bogotá,Bogotá D.C.,casa,25,F,importado,Estados Unidos de América
+1311,04/04/2020,Bogotá,Bogotá D.C.,casa,48,M,en estudio,Colombia
+1312,04/04/2020,Bogotá,Bogotá D.C.,casa,76,F,en estudio,Colombia
+1313,04/04/2020,Bogotá,Bogotá D.C.,casa,28,M,importado,España
+1314,04/04/2020,Bogotá,Bogotá D.C.,casa,12,F,en estudio,Colombia
+1315,04/04/2020,Bogotá,Bogotá D.C.,casa,23,M,importado,Estados Unidos de América
+1316,04/04/2020,Bogotá,Bogotá D.C.,casa,41,F,en estudio,Colombia
+1317,04/04/2020,Bogotá,Bogotá D.C.,hospital uci,73,M,en estudio,Colombia
+1318,04/04/2020,Bogotá,Bogotá D.C.,hospital,58,F,relacionado,Colombia
+1319,04/04/2020,Bogotá,Bogotá D.C.,casa,32,M,importado,Ecuador
+1320,04/04/2020,Bogotá,Bogotá D.C.,casa,26,F,en estudio,Colombia
+1321,04/04/2020,Bogotá,Bogotá D.C.,casa,26,F,importado,Estados Unidos de América
+1322,04/04/2020,Bogotá,Bogotá D.C.,casa,66,F,en estudio,Colombia
+1323,04/04/2020,Bogotá,Bogotá D.C.,casa,55,M,importado,Panama
+1324,04/04/2020,Bogotá,Bogotá D.C.,casa,30,M,en estudio,Colombia
+1325,04/04/2020,Bogotá,Bogotá D.C.,casa,12,M,relacionado,Colombia
+1326,04/04/2020,Bogotá,Bogotá D.C.,casa,67,F,importado,España
+1327,04/04/2020,Bogotá,Bogotá D.C.,casa,39,F,en estudio,Colombia
+1328,04/04/2020,Bogotá,Bogotá D.C.,casa,92,M,en estudio,Colombia
+1329,04/04/2020,Bogotá,Bogotá D.C.,casa,36,F,en estudio,Colombia
+1330,04/04/2020,Bogotá,Bogotá D.C.,casa,67,F,en estudio,Colombia
+1331,04/04/2020,Bogotá,Bogotá D.C.,casa,29,F,importado,Estados Unidos de América
+1332,04/04/2020,Bogotá,Bogotá D.C.,hospital,52,M,en estudio,Colombia
+1333,04/04/2020,Bogotá,Bogotá D.C.,casa,5,M,relacionado,Colombia
+1334,04/04/2020,Bogotá,Bogotá D.C.,casa,38,F,relacionado,Colombia
+1335,04/04/2020,Bogotá,Bogotá D.C.,casa,32,F,en estudio,Colombia
+1336,04/04/2020,Bogotá,Bogotá D.C.,casa,48,F,importado,España
+1337,04/04/2020,Bogotá,Bogotá D.C.,casa,34,M,importado,Estados Unidos de América
+1338,04/04/2020,Bogotá,Bogotá D.C.,casa,32,F,en estudio,Colombia
+1339,04/04/2020,Bogotá,Bogotá D.C.,casa,35,M,en estudio,Colombia
+1340,04/04/2020,Bogotá,Bogotá D.C.,casa,28,F,en estudio,Colombia
+1341,04/04/2020,Bogotá,Bogotá D.C.,casa,18,M,en estudio,Colombia
+1342,04/04/2020,Chia,Cundinamarca,hospital,46,M,importado,Republica Dominicana
+1343,04/04/2020,Bogotá,Bogotá D.C.,casa,41,M,en estudio,Colombia
+1344,04/04/2020,Bogotá,Bogotá D.C.,casa,67,F,relacionado,Colombia
+1345,04/04/2020,Bogotá,Bogotá D.C.,fallecido,85,M,en estudio,Colombia
+1346,04/04/2020,Bogotá,Bogotá D.C.,casa,26,M,en estudio,Colombia
+1347,04/04/2020,Bogotá,Bogotá D.C.,casa,58,M,en estudio,Colombia
+1348,04/04/2020,Bogotá,Bogotá D.C.,casa,32,F,importado,Estados Unidos de América
+1349,04/04/2020,Bogotá,Bogotá D.C.,casa,61,M,importado,Ecuador
+1350,04/04/2020,Bogotá,Bogotá D.C.,casa,32,M,en estudio,Colombia
+1351,04/04/2020,Bogotá,Bogotá D.C.,casa,64,F,en estudio,Colombia
+1352,04/04/2020,Bogotá,Bogotá D.C.,casa,28,M,importado,España
+1353,04/04/2020,Bogotá,Bogotá D.C.,casa,30,M,en estudio,Colombia
+1354,04/04/2020,Bogotá,Bogotá D.C.,casa,29,F,en estudio,Colombia
+1355,04/04/2020,Bogotá,Bogotá D.C.,casa,37,F,en estudio,Colombia
+1356,04/04/2020,Bogotá,Bogotá D.C.,casa,41,F,en estudio,Colombia
+1357,04/04/2020,Bogotá,Bogotá D.C.,casa,62,M,en estudio,Colombia
+1358,04/04/2020,Bogotá,Bogotá D.C.,casa,42,F,en estudio,Colombia
+1359,04/04/2020,Bogotá,Bogotá D.C.,hospital,66,M,importado,Jamaica
+1360,04/04/2020,Bogotá,Bogotá D.C.,hospital,57,M,en estudio,Colombia
+1361,04/04/2020,Bogotá,Bogotá D.C.,casa,22,F,relacionado,Colombia
+1362,04/04/2020,Bogotá,Bogotá D.C.,casa,51,M,en estudio,Colombia
+1363,04/04/2020,Bogotá,Bogotá D.C.,casa,54,M,en estudio,Colombia
+1364,04/04/2020,Bogotá,Bogotá D.C.,hospital uci,63,M,en estudio,Colombia
+1365,04/04/2020,Bogotá,Bogotá D.C.,casa,29,F,en estudio,Colombia
+1366,04/04/2020,Bogotá,Bogotá D.C.,casa,59,M,en estudio,Colombia
+1367,04/04/2020,Bogotá,Bogotá D.C.,casa,75,M,importado,Egipto
+1368,04/04/2020,Bogotá,Bogotá D.C.,casa,33,M,en estudio,Colombia
+1369,04/04/2020,Bogotá,Bogotá D.C.,casa,24,M,en estudio,Colombia
+1370,04/04/2020,Bogotá,Bogotá D.C.,casa,31,M,en estudio,Colombia
+1371,04/04/2020,Bogotá,Bogotá D.C.,casa,25,F,en estudio,Colombia
+1372,04/04/2020,Bogotá,Bogotá D.C.,fallecido,72,M,en estudio,Colombia
+1373,04/04/2020,Bogotá,Bogotá D.C.,casa,18,M,en estudio,Colombia
+1374,04/04/2020,Bogotá,Bogotá D.C.,casa,61,F,en estudio,Colombia
+1375,04/04/2020,Bogotá,Bogotá D.C.,casa,32,M,importado,España
+1376,04/04/2020,Bogotá,Bogotá D.C.,casa,36,M,en estudio,Colombia
+1377,04/04/2020,Bogotá,Bogotá D.C.,casa,65,M,en estudio,Colombia
+1378,04/04/2020,Bogotá,Bogotá D.C.,casa,29,F,en estudio,Colombia
+1379,04/04/2020,Bogotá,Bogotá D.C.,casa,35,F,en estudio,Colombia
+1380,04/04/2020,Bogotá,Bogotá D.C.,casa,33,F,en estudio,Colombia
+1381,04/04/2020,Bogotá,Bogotá D.C.,casa,35,M,en estudio,Colombia
+1382,04/04/2020,Bogotá,Bogotá D.C.,casa,52,F,en estudio,Colombia
+1383,04/04/2020,Bogotá,Bogotá D.C.,hospital uci,59,M,importado,Panama
+1384,04/04/2020,Bogotá,Bogotá D.C.,hospital,55,M,en estudio,Colombia
+1385,04/04/2020,Bogotá,Bogotá D.C.,casa,27,F,en estudio,Colombia
+1386,04/04/2020,Bogotá,Bogotá D.C.,fallecido,63,F,relacionado,Colombia
+1387,04/04/2020,Bogotá,Bogotá D.C.,casa,43,M,en estudio,Colombia
+1388,04/04/2020,Bogotá,Bogotá D.C.,hospital,46,M,en estudio,Colombia
+1389,04/04/2020,Bogotá,Bogotá D.C.,fallecido,90,M,en estudio,Colombia
+1390,04/04/2020,Bogotá,Bogotá D.C.,casa,78,M,en estudio,Colombia
+1391,04/04/2020,Bogotá,Bogotá D.C.,casa,29,F,en estudio,Colombia
+1392,04/04/2020,Bogotá,Bogotá D.C.,casa,27,F,en estudio,Colombia
+1393,04/04/2020,Bogotá,Bogotá D.C.,casa,73,F,importado,Mexico
+1394,04/04/2020,Bogotá,Bogotá D.C.,casa,23,F,en estudio,Colombia
+1395,04/04/2020,Bogotá,Bogotá D.C.,hospital,48,M,importado,Honduras
+1396,04/04/2020,Bogotá,Bogotá D.C.,casa,36,M,relacionado,Colombia
+1397,04/04/2020,Bogotá,Bogotá D.C.,casa,20,M,en estudio,Colombia
+1398,04/04/2020,Bogotá,Bogotá D.C.,casa,34,F,en estudio,Colombia
+1399,04/04/2020,Bogotá,Bogotá D.C.,casa,33,F,en estudio,Colombia
+1400,04/04/2020,Bogotá,Bogotá D.C.,casa,29,F,importado,Republica Dominicana
+1401,04/04/2020,Bogotá,Bogotá D.C.,hospital,48,M,importado,Canada
+1402,04/04/2020,Cali,Valle del Cauca,casa,29,F,importado,Estados Unidos de América
+1403,04/04/2020,Cali,Valle del Cauca,casa,40,M,en estudio,Colombia
+1404,04/04/2020,Cali,Valle del Cauca,casa,32,M,relacionado,Colombia
+1405,04/04/2020,Cali,Valle del Cauca,casa,41,M,importado,Panama
+1406,04/04/2020,Cali,Valle del Cauca,casa,45,F,relacionado,Colombia
+1407,05/04/2020,Barranquilla,Barranquilla D.E.,hospital,70,M,relacionado,Colombia
+1408,05/04/2020,Medellin,Antioquia,casa,34,M,importado,Peru
+1409,05/04/2020,Medellin,Antioquia,casa,37,F,relacionado,Colombia
+1410,05/04/2020,Envigado,Antioquia,casa,51,M,importado,Estados Unidos de América
+1411,05/04/2020,Medellin,Antioquia,casa,40,M,relacionado,Colombia
+1412,05/04/2020,Envigado,Antioquia,casa,28,F,relacionado,Colombia
+1413,05/04/2020,Guarne,Antioquia,casa,25,F,importado,Mexico
+1414,05/04/2020,Itagui,Antioquia,casa,43,M,relacionado,Colombia
+1415,05/04/2020,Medellin,Antioquia,casa,55,M,importado,Estados Unidos de América
+1416,05/04/2020,Montebello,Antioquia,casa,47,M,relacionado,Colombia
+1417,05/04/2020,Montebello,Antioquia,casa,78,F,relacionado,Colombia
+1418,05/04/2020,Cali,Valle del Cauca,hospital uci,64,M,en estudio,Colombia
+1419,05/04/2020,Cali,Valle del Cauca,hospital,47,M,en estudio,Colombia
+1420,05/04/2020,Guacari,Valle del Cauca,casa,38,M,en estudio,Colombia
+1421,05/04/2020,Barranquilla,Barranquilla D.E.,casa,38,F,importado,Estados Unidos
+1422,05/04/2020,Soledad,Atlántico,fallecido,43,M,en estudio,Colombia
+1423,05/04/2020,Cali,Valle del Cauca,hospital uci,44,F,en estudio,Colombia
+1424,05/04/2020,Cali,Valle del Cauca,hospital,34,F,en estudio,Colombia
+1425,05/04/2020,Cali,Valle del Cauca,hospital uci,25,F,en estudio,Colombia
+1426,05/04/2020,Itagui,Antioquia,casa,53,F,relacionado,Colombia
+1427,05/04/2020,Apartado,Antioquia,casa,37,M,en estudio,Colombia
+1428,05/04/2020,Medellin,Antioquia,hospital uci,58,M,en estudio,Colombia
+1429,05/04/2020,Bello,Antioquia,casa,32,F,relacionado,Colombia
+1430,05/04/2020,Cota,Cundinamarca,casa,8,F,relacionado,Colombia
+1431,05/04/2020,Zipaquira,Cundinamarca,hospital uci,45,F,importado,Estados Unidos de América
+1432,05/04/2020,Tenjo,Cundinamarca,hospital uci,52,M,en estudio,Colombia
+1433,05/04/2020,Bello,Antioquia,casa,51,M,en estudio,Colombia
+1434,05/04/2020,Apartado,Antioquia,casa,37,M,importado,Turquia
+1435,05/04/2020,Medellin,Antioquia,casa,54,F,relacionado,Colombia
+1436,05/04/2020,Bello,Antioquia,casa,49,F,relacionado,Colombia
+1437,05/04/2020,Cali,Valle del Cauca,casa,40,M,en estudio,Colombia
+1438,05/04/2020,Cali,Valle del Cauca,casa,25,M,relacionado,Colombia
+1439,05/04/2020,Cali,Valle del Cauca,casa,49,F,relacionado,Colombia
+1440,05/04/2020,Palmira,Valle del Cauca,casa,38,F,relacionado,Colombia
+1441,05/04/2020,Cali,Valle del Cauca,casa,40,F,relacionado,Colombia
+1442,05/04/2020,Cali,Valle del Cauca,casa,53,M,importado,España
+1443,05/04/2020,Medellin,Antioquia,recuperado,34,F,en estudio,Colombia
+1444,05/04/2020,Soledad,Atlántico,casa,50,F,relacionado,Colombia
+1445,05/04/2020,Medellin,Antioquia,recuperado,23,F,relacionado,Colombia
+1446,05/04/2020,Caldas,Antioquia,casa,27,M,relacionado,Colombia
+1447,05/04/2020,Medellin,Antioquia,casa,63,F,importado,Republica Dominicana
+1448,05/04/2020,Cali,Valle del Cauca,casa,26,F,en estudio,Colombia
+1449,05/04/2020,Cali,Valle del Cauca,hospital,31,M,en estudio,Colombia
+1450,05/04/2020,Cali,Valle del Cauca,hospital,35,M,en estudio,Colombia
+1451,05/04/2020,Cali,Valle del Cauca,hospital,43,F,en estudio,Colombia
+1452,05/04/2020,Buenaventura,Valle del Cauca,hospital,26,M,en estudio,Colombia
+1453,05/04/2020,Acacias,Meta,casa,37,M,relacionado,Colombia
+1454,05/04/2020,Bogotá,Bogotá D.C.,casa,34,M,importado,Estados Unidos de América
+1455,05/04/2020,Bogotá,Bogotá D.C.,casa,59,F,en estudio,Colombia
+1456,05/04/2020,Bogotá,Bogotá D.C.,fallecido,57,M,en estudio,Colombia
+1457,05/04/2020,Bogotá,Bogotá D.C.,casa,37,M,importado,Estados Unidos de América
+1458,05/04/2020,Bogotá,Bogotá D.C.,casa,34,F,importado,España
+1459,05/04/2020,Bogotá,Bogotá D.C.,casa,45,F,importado,Estados Unidos de América
+1460,05/04/2020,Bogotá,Bogotá D.C.,casa,49,F,en estudio,Colombia
+1461,05/04/2020,Bogotá,Bogotá D.C.,hospital,31,M,en estudio,Colombia
+1462,05/04/2020,Bogotá,Bogotá D.C.,hospital,66,M,en estudio,Colombia
+1463,05/04/2020,Bogotá,Bogotá D.C.,hospital uci,62,M,en estudio,Colombia
+1464,05/04/2020,Bogotá,Bogotá D.C.,casa,22,F,relacionado,Colombia
+1465,05/04/2020,Bogotá,Bogotá D.C.,casa,33,F,en estudio,Colombia
+1466,05/04/2020,Bogotá,Bogotá D.C.,hospital uci,50,M,en estudio,Colombia
+1467,05/04/2020,Bogotá,Bogotá D.C.,casa,36,M,en estudio,Colombia
+1468,05/04/2020,Bogotá,Bogotá D.C.,casa,28,M,en estudio,Colombia
+1469,05/04/2020,Bogotá,Bogotá D.C.,casa,31,M,importado,Estados Unidos de América
+1470,05/04/2020,Bogotá,Bogotá D.C.,casa,48,M,en estudio,Colombia
+1471,05/04/2020,Bogotá,Bogotá D.C.,casa,50,F,en estudio,Colombia
+1472,05/04/2020,Bogotá,Bogotá D.C.,casa,84,F,en estudio,Colombia
+1473,05/04/2020,Bogotá,Bogotá D.C.,casa,45,F,en estudio,Colombia
+1474,05/04/2020,Bogotá,Bogotá D.C.,casa,48,M,en estudio,Colombia
+1475,05/04/2020,Bogotá,Bogotá D.C.,casa,37,M,en estudio,Colombia
+1476,05/04/2020,Bogotá,Bogotá D.C.,casa,42,M,en estudio,Colombia
+1477,05/04/2020,Bogotá,Bogotá D.C.,casa,44,M,en estudio,Colombia
+1478,05/04/2020,Bogotá,Bogotá D.C.,casa,32,F,en estudio,Colombia
+1479,05/04/2020,Bogotá,Bogotá D.C.,hospital,38,M,en estudio,Colombia
+1480,05/04/2020,Bogotá,Bogotá D.C.,hospital uci,71,M,en estudio,Colombia
+1481,05/04/2020,Bogotá,Bogotá D.C.,casa,49,F,en estudio,Colombia
+1482,05/04/2020,Bogotá,Bogotá D.C.,hospital,19,M,en estudio,Colombia
+1483,05/04/2020,Bogotá,Bogotá D.C.,hospital,97,F,en estudio,Colombia
+1484,05/04/2020,Bogotá,Bogotá D.C.,hospital,75,M,en estudio,Colombia
+1485,05/04/2020,Bogotá,Bogotá D.C.,hospital,56,F,en estudio,Colombia
+1486,06/04/2020,Barrancabermeja,Santander,fallecido,49,M,relacionado,Colombia
+1487,06/04/2020,Floridablanca,Santander,hospital uci,65,M,relacionado,Colombia
+1488,06/04/2020,Cartagena,Cartagena D.T. y C,hospital,87,F,en estudio,Colombia
+1489,06/04/2020,Cartagena,Cartagena D.T. y C,casa,25,M,en estudio,Colombia
+1490,06/04/2020,Cartagena,Cartagena D.T. y C,casa,29,M,en estudio,Colombia
+1491,06/04/2020,Cartagena,Cartagena D.T. y C,hospital,52,M,en estudio,Colombia
+1492,06/04/2020,Cartagena,Cartagena D.T. y C,casa,37,M,en estudio,Colombia
+1493,06/04/2020,Cartagena,Cartagena D.T. y C,casa,52,M,en estudio,Colombia
+1494,06/04/2020,Bello,Antioquia,casa,23,M,en estudio,Colombia
+1495,06/04/2020,Sabaneta,Antioquia,casa,32,M,relacionado,Colombia
+1496,06/04/2020,Caldas,Antioquia,casa,33,F,relacionado,Colombia
+1497,06/04/2020,Sabaneta,Antioquia,recuperado,63,M,relacionado,Colombia
+1498,06/04/2020,Cali,Valle del Cauca,hospital,42,F,en estudio,Colombia
+1499,06/04/2020,Cali,Valle del Cauca,casa,39,M,relacionado,Colombia
+1500,06/04/2020,El Dovio,Valle del Cauca,casa,88,M,en estudio,Colombia
+1501,06/04/2020,El Dovio,Valle del Cauca,casa,64,M,en estudio,Colombia
+1502,06/04/2020,Yumbo,Valle del Cauca,casa,22,M,importado,Estados Unidos de América
+1503,06/04/2020,Cali,Valle del Cauca,casa,48,M,relacionado,Colombia
+1504,06/04/2020,Cali,Valle del Cauca,casa,49,M,relacionado,Colombia
+1505,06/04/2020,Cali,Valle del Cauca,fallecido,59,M,relacionado,Colombia
+1506,06/04/2020,Buenaventura,Valle del Cauca,hospital uci,39,M,relacionado,Colombia
+1507,06/04/2020,Barranquilla,Barranquilla D.E.,casa,20,M,relacionado,Colombia
+1508,06/04/2020,Rionegro,Antioquia,casa,69,M,relacionado,Colombia
+1509,06/04/2020,Medellin,Antioquia,casa,11,F,relacionado,Colombia
+1510,06/04/2020,Sabaneta,Antioquia,casa,55,F,en estudio,Colombia
+1511,06/04/2020,Medellin,Antioquia,casa,55,F,en estudio,Colombia
+1512,06/04/2020,Medellin,Antioquia,hospital uci,59,M,relacionado,Colombia
+1513,06/04/2020,Medellin,Antioquia,casa,52,M,relacionado,Colombia
+1514,06/04/2020,Medellin,Antioquia,fallecido,91,F,en estudio,Colombia
+1515,06/04/2020,Cali,Valle del Cauca,hospital,48,M,en estudio,Colombia
+1516,06/04/2020,Cali,Valle del Cauca,hospital,61,F,en estudio,Colombia
+1517,06/04/2020,Cali,Valle del Cauca,hospital uci,57,F,en estudio,Colombia
+1518,06/04/2020,Bogotá,Bogotá D.C.,casa,54,F,importado,Estados Unidos de América
+1519,06/04/2020,Bogotá,Bogotá D.C.,hospital uci,66,M,importado,Turquia
+1520,06/04/2020,Bogotá,Bogotá D.C.,casa,39,F,relacionado,Colombia
+1521,06/04/2020,Bogotá,Bogotá D.C.,casa,70,F,importado,Egipto
+1522,06/04/2020,Bogotá,Bogotá D.C.,hospital uci,55,M,en estudio,Colombia
+1523,06/04/2020,Bogotá,Bogotá D.C.,hospital,31,M,en estudio,Colombia
+1524,06/04/2020,Bogotá,Bogotá D.C.,casa,27,F,en estudio,Colombia
+1525,06/04/2020,Bogotá,Bogotá D.C.,casa,27,F,en estudio,Colombia
+1526,06/04/2020,Bogotá,Bogotá D.C.,casa,21,F,en estudio,Colombia
+1527,06/04/2020,Bogotá,Bogotá D.C.,casa,35,F,en estudio,Colombia
+1528,06/04/2020,Bogotá,Bogotá D.C.,casa,31,F,en estudio,Colombia
+1529,06/04/2020,Chia,Cundinamarca,casa,46,F,en estudio,Colombia
+1530,06/04/2020,Bogotá,Bogotá D.C.,casa,33,F,en estudio,Colombia
+1531,06/04/2020,Bogotá,Bogotá D.C.,casa,61,M,en estudio,Colombia
+1532,06/04/2020,Bogotá,Bogotá D.C.,hospital uci,76,M,en estudio,Colombia
+1533,06/04/2020,Subachoque,Cundinamarca,hospital,57,M,relacionado,Colombia
+1534,06/04/2020,Bogotá,Bogotá D.C.,casa,87,F,en estudio,Colombia
+1535,06/04/2020,Bogotá,Bogotá D.C.,casa,44,F,en estudio,Colombia
+1536,06/04/2020,Bogotá,Bogotá D.C.,casa,30,M,en estudio,Colombia
+1537,06/04/2020,Bogotá,Bogotá D.C.,casa,50,M,en estudio,Colombia
+1538,06/04/2020,Bogotá,Bogotá D.C.,hospital,15,F,en estudio,Colombia
+1539,06/04/2020,Bogotá,Bogotá D.C.,fallecido,86,M,en estudio,Colombia
+1540,06/04/2020,Bogotá,Bogotá D.C.,casa,30,F,en estudio,Colombia
+1541,06/04/2020,Bogotá,Bogotá D.C.,casa,42,M,en estudio,Colombia
+1542,06/04/2020,Bogotá,Bogotá D.C.,casa,37,M,importado,Estados Unidos de América
+1543,06/04/2020,Bogotá,Bogotá D.C.,casa,45,F,en estudio,Colombia
+1544,06/04/2020,Bogotá,Bogotá D.C.,casa,34,F,importado,Peru
+1545,06/04/2020,Bogotá,Bogotá D.C.,casa,52,F,en estudio,Colombia
+1546,06/04/2020,Bogotá,Bogotá D.C.,casa,47,M,en estudio,Colombia
+1547,06/04/2020,Bogotá,Bogotá D.C.,casa,59,F,en estudio,Colombia
+1548,06/04/2020,Bogotá,Bogotá D.C.,hospital,50,F,en estudio,Colombia
+1549,06/04/2020,Bogotá,Bogotá D.C.,hospital,63,M,en estudio,Colombia
+1550,06/04/2020,Bogotá,Bogotá D.C.,hospital uci,74,F,en estudio,Colombia
+1551,06/04/2020,Bogotá,Bogotá D.C.,hospital,8,F,en estudio,Colombia
+1552,06/04/2020,Bogotá,Bogotá D.C.,hospital,66,F,en estudio,Colombia
+1553,06/04/2020,Bogotá,Bogotá D.C.,casa,85,F,importado,España
+1554,06/04/2020,Bogotá,Bogotá D.C.,casa,55,M,en estudio,Colombia
+1555,06/04/2020,Bogotá,Bogotá D.C.,casa,26,F,en estudio,Colombia
+1556,06/04/2020,Bogotá,Bogotá D.C.,casa,29,F,en estudio,Colombia
+1557,06/04/2020,Bogotá,Bogotá D.C.,casa,31,F,en estudio,Colombia
+1558,06/04/2020,San Juan De Rio Seco,Cundinamarca,casa,23,M,relacionado,Colombia
+1559,06/04/2020,Bogotá,Bogotá D.C.,casa,35,M,en estudio,Colombia
+1560,06/04/2020,Bogotá,Bogotá D.C.,casa,15,M,en estudio,Colombia
+1561,06/04/2020,Bogotá,Bogotá D.C.,casa,16,F,en estudio,Colombia
+1562,06/04/2020,Bogotá,Bogotá D.C.,casa,1,F,en estudio,Colombia
+1563,06/04/2020,Bogotá,Bogotá D.C.,casa,31,F,en estudio,Colombia
+1564,06/04/2020,Bogotá,Bogotá D.C.,casa,34,M,en estudio,Colombia
+1565,06/04/2020,Bogotá,Bogotá D.C.,casa,67,F,importado,Egipto
+1566,06/04/2020,Bogotá,Bogotá D.C.,casa,53,F,en estudio,Colombia
+1567,06/04/2020,Bogotá,Bogotá D.C.,casa,51,F,en estudio,Colombia
+1568,06/04/2020,Bogotá,Bogotá D.C.,casa,82,M,en estudio,Colombia
+1569,06/04/2020,Bogotá,Bogotá D.C.,casa,50,M,en estudio,Colombia
+1570,06/04/2020,Bogotá,Bogotá D.C.,casa,45,M,en estudio,Colombia
+1571,06/04/2020,Bogotá,Bogotá D.C.,casa,45,F,en estudio,Colombia
+1572,06/04/2020,Bogotá,Bogotá D.C.,hospital,66,F,en estudio,Colombia
+1573,06/04/2020,Cali,Valle del Cauca,hospital uci,55,M,en estudio,Colombia
+1574,06/04/2020,Popayan,Cauca,fallecido,3,F,relacionado,Colombia
+1575,06/04/2020,Cartagena,Cartagena D.T. y C,casa,42,F,en estudio,Colombia
+1576,06/04/2020,Cartagena,Cartagena D.T. y C,casa,15,M,relacionado,Colombia
+1577,06/04/2020,Cartagena,Cartagena D.T. y C,casa,30,F,en estudio,Colombia
+1578,06/04/2020,Cartagena,Cartagena D.T. y C,casa,55,F,relacionado,Colombia
+1579,06/04/2020,Cartagena,Cartagena D.T. y C,hospital uci,73,M,en estudio,Colombia
+1580,07/04/2020,Medellin,Antioquia,casa,31,F,importado,Panama
+1581,07/04/2020,Cartagena,Cartagena D.T. y C,casa,29,M,en estudio,Colombia
+1582,07/04/2020,Cartagena,Cartagena D.T. y C,casa,76,F,en estudio,Colombia
+1583,07/04/2020,Cartagena,Cartagena D.T. y C,fallecido,68,M,en estudio,Colombia
+1584,07/04/2020,Medellin,Antioquia,casa,65,M,relacionado,Colombia
+1585,07/04/2020,Medellin,Antioquia,casa,59,M,importado,Brasil
+1586,07/04/2020,Medellin,Antioquia,casa,69,F,relacionado,Colombia
+1587,07/04/2020,Medellin,Antioquia,casa,44,M,relacionado,Colombia
+1588,07/04/2020,Angostura,Antioquia,casa,28,M,importado,Curazao
+1589,07/04/2020,Medellin,Antioquia,casa,15,F,importado,Estados Unidos de América
+1590,07/04/2020,Medellin,Antioquia,casa,59,M,relacionado,Colombia
+1591,07/04/2020,Medellin,Antioquia,casa,40,F,relacionado,Colombia
+1592,07/04/2020,Soledad,Atlántico,casa,37,F,en estudio,Colombia
+1593,07/04/2020,Soledad,Atlántico,casa,8,F,en estudio,Colombia
+1594,07/04/2020,Barranquilla,Barranquilla D.E.,casa,43,M,en estudio,Colombia
+1595,07/04/2020,Soledad,Atlántico,casa,9,F,en estudio,Colombia
+1596,07/04/2020,Soledad,Atlántico,casa,63,F,en estudio,Colombia
+1597,07/04/2020,Soledad,Atlántico,casa,6,M,en estudio,Colombia
+1598,07/04/2020,Barranquilla,Barranquilla D.E.,hospital,62,M,en estudio,Colombia
+1599,07/04/2020,Barranquilla,Barranquilla D.E.,casa,72,F,en estudio,Colombia
+1600,07/04/2020,Cali,Valle del Cauca,fallecido,68,F,en estudio,Colombia
+1601,07/04/2020,Cali,Valle del Cauca,casa,35,M,en estudio,Colombia
+1602,07/04/2020,Cali,Valle del Cauca,casa,28,M,en estudio,Colombia
+1603,07/04/2020,Soacha,Cundinamarca,casa,56,F,relacionado,Colombia
+1604,07/04/2020,Madrid,Cundinamarca,hospital,35,M,en estudio,Colombia
+1605,07/04/2020,Zipaquira,Cundinamarca,casa,20,F,relacionado,Colombia
+1606,07/04/2020,Bogotá,Bogotá D.C.,casa,32,F,relacionado,Colombia
+1607,07/04/2020,Bogotá,Bogotá D.C.,hospital,50,M,en estudio,Colombia
+1608,07/04/2020,Bogotá,Bogotá D.C.,casa,29,M,relacionado,Colombia
+1609,07/04/2020,Bogotá,Bogotá D.C.,casa,55,M,en estudio,Colombia
+1610,07/04/2020,Bogotá,Bogotá D.C.,casa,47,F,importado,España
+1611,07/04/2020,Bogotá,Bogotá D.C.,casa,57,F,importado,España
+1612,07/04/2020,Bogotá,Bogotá D.C.,casa,60,F,importado,Republica Dominicana
+1613,07/04/2020,Bogotá,Bogotá D.C.,casa,40,M,en estudio,Colombia
+1614,07/04/2020,Bogotá,Bogotá D.C.,casa,42,F,en estudio,Colombia
+1615,07/04/2020,Bogotá,Bogotá D.C.,casa,53,F,en estudio,Colombia
+1616,07/04/2020,Bogotá,Bogotá D.C.,casa,21,F,en estudio,Colombia
+1617,07/04/2020,Bogotá,Bogotá D.C.,casa,28,M,en estudio,Colombia
+1618,07/04/2020,Bogotá,Bogotá D.C.,casa,29,M,relacionado,Colombia
+1619,07/04/2020,Bogotá,Bogotá D.C.,casa,23,F,relacionado,Colombia
+1620,07/04/2020,Bogotá,Bogotá D.C.,casa,51,M,importado,Estados Unidos de América
+1621,07/04/2020,Bogotá,Bogotá D.C.,casa,27,F,en estudio,Colombia
+1622,07/04/2020,Bogotá,Bogotá D.C.,casa,29,M,en estudio,Colombia
+1623,07/04/2020,Bogotá,Bogotá D.C.,casa,45,F,en estudio,Colombia
+1624,07/04/2020,Bogotá,Bogotá D.C.,casa,39,F,en estudio,Colombia
+1625,07/04/2020,Bogotá,Bogotá D.C.,casa,30,M,importado,Puerto Rico
+1626,07/04/2020,Bogotá,Bogotá D.C.,hospital,77,M,en estudio,Colombia
+1627,07/04/2020,Bogotá,Bogotá D.C.,hospital,73,F,en estudio,Colombia
+1628,07/04/2020,Bogotá,Bogotá D.C.,fallecido,73,F,en estudio,Colombia
+1629,07/04/2020,Bogotá,Bogotá D.C.,hospital,48,F,en estudio,Colombia
+1630,07/04/2020,Bogotá,Bogotá D.C.,casa,69,F,en estudio,Colombia
+1631,07/04/2020,Bogotá,Bogotá D.C.,casa,38,F,en estudio,Colombia
+1632,07/04/2020,Bogotá,Bogotá D.C.,casa,43,F,relacionado,Colombia
+1633,07/04/2020,Bogotá,Bogotá D.C.,casa,46,F,relacionado,Colombia
+1634,07/04/2020,Bogotá,Bogotá D.C.,casa,36,M,relacionado,Colombia
+1635,07/04/2020,Bogotá,Bogotá D.C.,casa,34,M,relacionado,Colombia
+1636,07/04/2020,Bogotá,Bogotá D.C.,casa,31,F,relacionado,Colombia
+1637,07/04/2020,Bogotá,Bogotá D.C.,casa,22,F,importado,Estados Unidos de América
+1638,07/04/2020,Bogotá,Bogotá D.C.,hospital,48,F,en estudio,Colombia
+1639,07/04/2020,Bogotá,Bogotá D.C.,hospital,62,M,en estudio,Colombia
+1640,07/04/2020,Bogotá,Bogotá D.C.,casa,54,F,relacionado,Colombia
+1641,07/04/2020,Bogotá,Bogotá D.C.,casa,53,F,relacionado,Colombia
+1642,07/04/2020,Bogotá,Bogotá D.C.,casa,44,M,relacionado,Colombia
+1643,07/04/2020,Bogotá,Bogotá D.C.,casa,36,M,en estudio,Colombia
+1644,07/04/2020,Bogotá,Bogotá D.C.,casa,61,F,relacionado,Colombia
+1645,07/04/2020,Bogotá,Bogotá D.C.,casa,24,M,importado,España
+1646,07/04/2020,Bogotá,Bogotá D.C.,casa,52,F,importado,Peru
+1647,07/04/2020,Bogotá,Bogotá D.C.,casa,39,F,relacionado,Colombia
+1648,07/04/2020,Bogotá,Bogotá D.C.,casa,49,F,relacionado,Colombia
+1649,07/04/2020,Bogotá,Bogotá D.C.,casa,29,M,relacionado,Colombia
+1650,07/04/2020,Bogotá,Bogotá D.C.,casa,51,M,relacionado,Colombia
+1651,07/04/2020,Bogotá,Bogotá D.C.,casa,70,M,relacionado,Colombia
+1652,07/04/2020,Bogotá,Bogotá D.C.,casa,64,M,relacionado,Colombia
+1653,07/04/2020,Bogotá,Bogotá D.C.,casa,31,F,en estudio,Colombia
+1654,07/04/2020,Bogotá,Bogotá D.C.,casa,35,M,en estudio,Colombia
+1655,07/04/2020,Bogotá,Bogotá D.C.,casa,53,F,importado,Estados Unidos de América
+1656,07/04/2020,Bogotá,Bogotá D.C.,casa,37,M,en estudio,Colombia
+1657,07/04/2020,Bogotá,Bogotá D.C.,casa,49,M,en estudio,Colombia
+1658,07/04/2020,Bogotá,Bogotá D.C.,casa,28,M,importado,Argentina
+1659,07/04/2020,Bogotá,Bogotá D.C.,casa,44,M,relacionado,Colombia
+1660,07/04/2020,Bogotá,Bogotá D.C.,casa,28,F,en estudio,Colombia
+1661,07/04/2020,Bogotá,Bogotá D.C.,casa,50,M,relacionado,Colombia
+1662,07/04/2020,Bogotá,Bogotá D.C.,casa,24,F,relacionado,Colombia
+1663,07/04/2020,Bogotá,Bogotá D.C.,casa,37,F,relacionado,Colombia
+1664,07/04/2020,Bogotá,Bogotá D.C.,casa,31,F,en estudio,Colombia
+1665,07/04/2020,Bogotá,Bogotá D.C.,casa,58,M,relacionado,Colombia
+1666,07/04/2020,Bogotá,Bogotá D.C.,casa,29,F,en estudio,Colombia
+1667,07/04/2020,Bogotá,Bogotá D.C.,hospital uci,79,F,en estudio,Colombia
+1668,07/04/2020,Bogotá,Bogotá D.C.,casa,38,M,relacionado,Colombia
+1669,07/04/2020,Bogotá,Bogotá D.C.,casa,34,F,relacionado,Colombia
+1670,07/04/2020,Bogotá,Bogotá D.C.,casa,60,F,importado,España
+1671,07/04/2020,Bogotá,Bogotá D.C.,casa,30,M,relacionado,Colombia
+1672,07/04/2020,Bogotá,Bogotá D.C.,casa,35,M,relacionado,Colombia
+1673,07/04/2020,Bogotá,Bogotá D.C.,casa,62,F,relacionado,Colombia
+1674,07/04/2020,Bogotá,Bogotá D.C.,casa,56,F,relacionado,Colombia
+1675,07/04/2020,Bogotá,Bogotá D.C.,hospital,42,M,relacionado,Colombia
+1676,07/04/2020,Bogotá,Bogotá D.C.,casa,59,M,relacionado,Colombia
+1677,07/04/2020,Bogotá,Bogotá D.C.,fallecido,61,M,en estudio,Colombia
+1678,07/04/2020,Bogotá,Bogotá D.C.,casa,24,M,relacionado,Colombia
+1679,07/04/2020,Bogotá,Bogotá D.C.,casa,54,F,relacionado,Colombia
+1680,07/04/2020,Bogotá,Bogotá D.C.,hospital,48,F,relacionado,Colombia
+1681,07/04/2020,Bogotá,Bogotá D.C.,casa,28,F,importado,Irlanda
+1682,07/04/2020,Bogotá,Bogotá D.C.,casa,61,M,importado,Puerto Rico
+1683,07/04/2020,Bogotá,Bogotá D.C.,casa,30,F,relacionado,Colombia
+1684,07/04/2020,Bogotá,Bogotá D.C.,casa,31,M,relacionado,Colombia
+1685,07/04/2020,Bogotá,Bogotá D.C.,casa,31,F,en estudio,Colombia
+1686,07/04/2020,Bogotá,Bogotá D.C.,casa,32,F,en estudio,Colombia
+1687,07/04/2020,Bogotá,Bogotá D.C.,hospital,53,M,en estudio,Colombia
+1688,07/04/2020,Bogotá,Bogotá D.C.,hospital,74,M,en estudio,Colombia
+1689,07/04/2020,Bogotá,Bogotá D.C.,hospital,28,M,en estudio,Colombia
+1690,07/04/2020,Bogotá,Bogotá D.C.,casa,43,M,en estudio,Colombia
+1691,07/04/2020,Cali,Valle del Cauca,casa,48,F,en estudio,Colombia
+1692,07/04/2020,Cali,Valle del Cauca,casa,48,F,en estudio,Colombia
+1693,07/04/2020,Cali,Valle del Cauca,hospital,68,F,en estudio,Colombia
+1694,07/04/2020,Cali,Valle del Cauca,casa,29,F,en estudio,Colombia
+1695,07/04/2020,Puerto Tejada,Cauca,hospital,54,M,en estudio,Colombia
+1696,07/04/2020,Cali,Valle del Cauca,hospital uci,58,M,en estudio,Colombia
+1697,07/04/2020,Cali,Valle del Cauca,hospital uci,67,F,en estudio,Colombia
+1698,07/04/2020,Cali,Valle del Cauca,hospital,64,M,relacionado,Colombia
+1699,07/04/2020,Cali,Valle del Cauca,hospital uci,36,M,relacionado,Colombia
+1700,07/04/2020,Cali,Valle del Cauca,casa,5,M,en estudio,Colombia
+1701,07/04/2020,Cali,Valle del Cauca,hospital,14,M,en estudio,Colombia
+1702,07/04/2020,Medellin,Antioquia,casa,45,M,relacionado,Colombia
+1703,07/04/2020,Medellin,Antioquia,casa,51,F,importado,Republica Dominicana
+1704,07/04/2020,Soacha,Cundinamarca,casa,45,M,relacionado,Colombia
+1705,07/04/2020,Medellin,Antioquia,hospital,55,M,en estudio,Colombia
+1706,07/04/2020,Medellin,Antioquia,casa,48,F,importado,Panama
+1707,07/04/2020,Medellin,Antioquia,casa,58,M,en estudio,Colombia
+1708,07/04/2020,Itagui,Antioquia,casa,62,F,relacionado,Colombia
+1709,07/04/2020,Medellin,Antioquia,casa,57,M,relacionado,Colombia
+1710,07/04/2020,Medellin,Antioquia,casa,55,F,importado,España
+1711,07/04/2020,Medellin,Antioquia,casa,56,M,relacionado,Colombia
+1712,07/04/2020,Medellin,Antioquia,casa,61,F,en estudio,Colombia
+1713,07/04/2020,Medellin,Antioquia,casa,59,F,importado,Marruecos
+1714,07/04/2020,Medellin,Antioquia,casa,53,M,importado,España
+1715,07/04/2020,Medellin,Antioquia,casa,49,M,relacionado,Colombia
+1716,07/04/2020,Medellin,Antioquia,casa,34,F,importado,Estados Unidos de América
+1717,07/04/2020,Medellin,Antioquia,casa,31,F,importado,Estados Unidos de América
+1718,07/04/2020,Ponedera,Atlántico,casa,41,F,en estudio,Colombia
+1719,07/04/2020,Santo Tomas,Atlántico,casa,35,M,en estudio,Colombia
+1720,07/04/2020,Galapa,Atlántico,casa,59,M,en estudio,Colombia
+1721,07/04/2020,Cartagena,Cartagena D.T. y C,hospital,56,F,en estudio,Colombia
+1722,07/04/2020,Cartagena,Cartagena D.T. y C,hospital,60,F,en estudio,Colombia
+1723,07/04/2020,Turbaco,Bolívar,hospital,43,M,en estudio,Colombia
+1724,07/04/2020,Cartagena,Cartagena D.T. y C,casa,17,M,en estudio,Colombia
+1725,07/04/2020,Valledupar,Cesar,recuperado,43,M,relacionado,Colombia
+1726,07/04/2020,Monteria,Córdoba,hospital,28,F,en estudio,Colombia
+1727,07/04/2020,Monteria,Córdoba,hospital,6,M,en estudio,Colombia
+1728,07/04/2020,Cienaga De Oro,Córdoba,fallecido,74,F,en estudio,Colombia
+1729,07/04/2020,Monteria,Córdoba,hospital,47,F,en estudio,Colombia
+1730,07/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital,40,F,en estudio,Colombia
+1731,07/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,42,M,en estudio,Colombia
+1732,07/04/2020,Pasto,Nariño,hospital uci,69,M,importado,España
+1733,07/04/2020,Circasia,Quindío,casa,4,F,relacionado,Colombia
+1734,07/04/2020,Armenia,Quindío,casa,25,F,en estudio,Colombia
+1735,07/04/2020,Armenia,Quindío,casa,57,F,relacionado,Colombia
+1736,07/04/2020,Armenia,Quindío,casa,66,F,relacionado,Colombia
+1737,07/04/2020,Armenia,Quindío,casa,42,M,relacionado,Colombia
+1738,07/04/2020,Armenia,Quindío,casa,40,M,en estudio,Colombia
+1739,07/04/2020,Armenia,Quindío,casa,27,F,importado,Panama
+1740,07/04/2020,Armenia,Quindío,casa,21,M,relacionado,Colombia
+1741,07/04/2020,Calarca,Quindío,casa,63,F,relacionado,Colombia
+1742,07/04/2020,Calarca,Quindío,casa,72,M,relacionado,Colombia
+1743,07/04/2020,Calarca,Quindío,casa,18,F,relacionado,Colombia
+1744,07/04/2020,Calarca,Quindío,casa,33,M,relacionado,Colombia
+1745,07/04/2020,Pereira,Risaralda,casa,33,F,en estudio,Colombia
+1746,07/04/2020,Pereira,Risaralda,casa,34,F,en estudio,Colombia
+1747,07/04/2020,Santa Rosa De Cabal,Risaralda,casa,45,M,en estudio,Colombia
+1748,07/04/2020,Dosquebradas,Risaralda,casa,33,F,importado,Estados Unidos de América
+1749,07/04/2020,Pereira,Risaralda,hospital,30,F,importado,España
+1750,07/04/2020,Pereira,Risaralda,casa,32,M,en estudio,Colombia
+1751,07/04/2020,Pereira,Risaralda,casa,57,F,en estudio,Colombia
+1752,07/04/2020,Pereira,Risaralda,hospital uci,67,F,importado,España
+1753,07/04/2020,Cali,Valle del Cauca,hospital,29,F,en estudio,Colombia
+1754,07/04/2020,Cali,Valle del Cauca,hospital,80,M,en estudio,Colombia
+1755,07/04/2020,Cali,Valle del Cauca,casa,31,M,en estudio,Colombia
+1756,07/04/2020,Cartago,Valle del Cauca,casa,53,F,importado,Panama
+1757,07/04/2020,Cali,Valle del Cauca,hospital,52,M,en estudio,Colombia
+1758,07/04/2020,Cali,Valle del Cauca,fallecido,59,F,en estudio,Colombia
+1759,07/04/2020,Cali,Valle del Cauca,hospital,23,M,en estudio,Colombia
+1760,07/04/2020,Cali,Valle del Cauca,casa,25,F,en estudio,Colombia
+1761,07/04/2020,Cali,Valle del Cauca,casa,34,M,importado,Ecuador
+1762,07/04/2020,Cali,Valle del Cauca,casa,43,M,en estudio,Colombia
+1763,07/04/2020,Cali,Valle del Cauca,casa,25,M,en estudio,Colombia
+1764,07/04/2020,Cali,Valle del Cauca,casa,58,F,importado,Estados Unidos de América
+1765,07/04/2020,Cali,Valle del Cauca,casa,21,M,en estudio,Colombia
+1766,07/04/2020,Buga,Valle del Cauca,casa,32,M,en estudio,Colombia
+1767,07/04/2020,Cali,Valle del Cauca,casa,51,M,en estudio,Colombia
+1768,07/04/2020,Cali,Valle del Cauca,casa,49,F,en estudio,Colombia
+1769,07/04/2020,Cali,Valle del Cauca,hospital,49,M,en estudio,Colombia
+1770,07/04/2020,Cali,Valle del Cauca,casa,40,F,en estudio,Colombia
+1771,07/04/2020,Cali,Valle del Cauca,casa,29,M,en estudio,Colombia
+1772,07/04/2020,Cali,Valle del Cauca,casa,35,M,en estudio,Colombia
+1773,07/04/2020,Cali,Valle del Cauca,casa,23,M,relacionado,Colombia
+1774,07/04/2020,Cali,Valle del Cauca,casa,32,F,relacionado,Colombia
+1775,07/04/2020,Cali,Valle del Cauca,casa,49,M,en estudio,Colombia
+1776,07/04/2020,Tulua,Valle del Cauca,casa,25,M,importado,Panama
+1777,07/04/2020,Tulua,Valle del Cauca,casa,29,M,importado,Panama
+1778,07/04/2020,Palmira,Valle del Cauca,casa,12,M,en estudio,Colombia
+1779,07/04/2020,Palmira,Valle del Cauca,casa,36,M,importado,Ecuador
+1780,07/04/2020,Medellin,Antioquia,casa,15,F,en estudio,Colombia
+1781,08/04/2020,Medellin,Antioquia,casa,37,M,relacionado,Colombia
+1782,08/04/2020,Envigado,Antioquia,casa,47,F,importado,España
+1783,08/04/2020,Medellin,Antioquia,casa,29,M,relacionado,Colombia
+1784,08/04/2020,Cali,Valle del Cauca,casa,32,M,en estudio,Colombia
+1785,08/04/2020,Cali,Valle del Cauca,casa,35,M,importado,Cuba
+1786,08/04/2020,Cali,Valle del Cauca,hospital,31,M,en estudio,Colombia
+1787,08/04/2020,Cali,Valle del Cauca,hospital,71,M,en estudio,Colombia
+1788,08/04/2020,Cali,Valle del Cauca,casa,31,M,importado,Ecuador
+1789,08/04/2020,Cali,Valle del Cauca,hospital,50,F,en estudio,Colombia
+1790,08/04/2020,El Dovio,Valle del Cauca,casa,43,F,relacionado,Colombia
+1791,08/04/2020,Cali,Valle del Cauca,hospital,32,F,importado,España
+1792,08/04/2020,Cali,Valle del Cauca,hospital,68,M,en estudio,Colombia
+1793,08/04/2020,Cali,Valle del Cauca,hospital,62,M,en estudio,Colombia
+1794,08/04/2020,Cali,Valle del Cauca,casa,22,F,en estudio,Colombia
+1795,08/04/2020,Cali,Valle del Cauca,casa,40,M,en estudio,Colombia
+1796,08/04/2020,Cali,Valle del Cauca,casa,27,M,en estudio,Colombia
+1797,08/04/2020,Cali,Valle del Cauca,hospital,48,F,relacionado,Colombia
+1798,08/04/2020,Cali,Valle del Cauca,hospital,65,F,en estudio,Colombia
+1799,08/04/2020,Cali,Valle del Cauca,casa,39,F,relacionado,Colombia
+1800,08/04/2020,Cali,Valle del Cauca,casa,26,F,importado,España
+1801,08/04/2020,Cali,Valle del Cauca,casa,70,M,en estudio,Colombia
+1802,08/04/2020,Cali,Valle del Cauca,casa,51,F,en estudio,Colombia
+1803,08/04/2020,Cali,Valle del Cauca,casa,59,M,en estudio,Colombia
+1804,08/04/2020,Cali,Valle del Cauca,hospital,34,F,relacionado,Colombia
+1805,08/04/2020,Barranquilla,Barranquilla D.E.,casa,54,F,en estudio,Colombia
+1806,08/04/2020,Barranquilla,Barranquilla D.E.,casa,27,F,relacionado,Colombia
+1807,08/04/2020,Barranquilla,Barranquilla D.E.,casa,49,F,relacionado,Colombia
+1808,08/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital,36,F,en estudio,Colombia
+1809,08/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital uci,47,M,en estudio,Colombia
+1810,08/04/2020,Santa Marta,Santa Marta D.T. y C.,fallecido,96,F,en estudio,Colombia
+1811,08/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital,55,F,en estudio,Colombia
+1812,08/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,33,F,en estudio,Colombia
+1813,08/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,37,F,en estudio,Colombia
+1814,08/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,48,F,en estudio,Colombia
+1815,08/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,24,M,en estudio,Colombia
+1816,08/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital uci,30,M,en estudio,Colombia
+1817,08/04/2020,Medellin,Antioquia,casa,34,F,importado,Estados Unidos
+1818,08/04/2020,Medellin,Antioquia,casa,63,F,en estudio,Colombia
+1819,08/04/2020,Manizales,Caldas,casa,18,F,relacionado,Colombia
+1820,08/04/2020,La Dorada,Caldas,fallecido,91,F,en estudio,Colombia
+1821,08/04/2020,Manizales,Caldas,casa,26,F,relacionado,Colombia
+1822,08/04/2020,Cucuta,Norte de Santander,casa,42,F,importado,España
+1823,08/04/2020,Pereira,Risaralda,casa,49,F,relacionado,Colombia
+1824,08/04/2020,Dosquebradas,Risaralda,hospital uci,77,M,relacionado,Colombia
+1825,08/04/2020,Armenia,Quindío,casa,40,F,importado,Estados Unidos de América
+1826,08/04/2020,Armenia,Quindío,casa,35,M,importado,Estados Unidos de América
+1827,08/04/2020,La Tebaida,Quindío,casa,35,M,importado,España
+1828,08/04/2020,Armenia,Quindío,hospital,70,M,en estudio,Colombia
+1829,08/04/2020,Cali,Valle del Cauca,hospital,44,M,en estudio,Colombia
+1830,08/04/2020,Cali,Valle del Cauca,hospital,65,M,en estudio,Colombia
+1831,08/04/2020,Cali,Valle del Cauca,hospital,33,F,en estudio,Colombia
+1832,08/04/2020,Miranda,Cauca,casa,43,M,en estudio,Colombia
+1833,08/04/2020,Jamundi,Valle del Cauca,casa,36,M,en estudio,Colombia
+1834,08/04/2020,Cali,Valle del Cauca,casa,71,M,en estudio,Colombia
+1835,08/04/2020,Cali,Valle del Cauca,casa,56,M,en estudio,Colombia
+1836,08/04/2020,Buenaventura,Valle del Cauca,casa,71,F,relacionado,Colombia
+1837,08/04/2020,Cali,Valle del Cauca,hospital uci,60,F,en estudio,Colombia
+1838,08/04/2020,Cali,Valle del Cauca,casa,41,M,en estudio,Colombia
+1839,08/04/2020,Bogotá,Bogotá D.C.,casa,58,M,relacionado,Colombia
+1840,08/04/2020,Bogotá,Bogotá D.C.,casa,38,F,importado,Brasil
+1841,08/04/2020,Bogotá,Bogotá D.C.,casa,61,F,en estudio,Colombia
+1842,08/04/2020,Bogotá,Bogotá D.C.,hospital uci,62,M,en estudio,Colombia
+1843,08/04/2020,Bogotá,Bogotá D.C.,casa,34,F,importado,Israel
+1844,08/04/2020,Bogotá,Bogotá D.C.,casa,62,F,importado,Israel
+1845,08/04/2020,Bogotá,Bogotá D.C.,casa,34,M,en estudio,Colombia
+1846,08/04/2020,Bogotá,Bogotá D.C.,casa,45,M,importado,Brasil
+1847,08/04/2020,Bogotá,Bogotá D.C.,casa,52,F,en estudio,Colombia
+1848,08/04/2020,Bogotá,Bogotá D.C.,casa,27,M,en estudio,Colombia
+1849,08/04/2020,Bogotá,Bogotá D.C.,fallecido,83,M,en estudio,Colombia
+1850,08/04/2020,Bogotá,Bogotá D.C.,casa,14,M,en estudio,Colombia
+1851,08/04/2020,Bogotá,Bogotá D.C.,casa,64,M,en estudio,Colombia
+1852,08/04/2020,Bogotá,Bogotá D.C.,casa,48,F,en estudio,Colombia
+1853,08/04/2020,Bogotá,Bogotá D.C.,hospital,52,M,en estudio,Colombia
+1854,08/04/2020,Bogotá,Bogotá D.C.,hospital,28,F,relacionado,Colombia
+1855,08/04/2020,Bogotá,Bogotá D.C.,casa,30,F,relacionado,Colombia
+1856,08/04/2020,Bogotá,Bogotá D.C.,casa,41,M,relacionado,Colombia
+1857,08/04/2020,Bogotá,Bogotá D.C.,hospital,27,F,relacionado,Colombia
+1858,08/04/2020,Bogotá,Bogotá D.C.,casa,45,M,importado,Estados Unidos de América
+1859,08/04/2020,Bogotá,Bogotá D.C.,casa,29,F,relacionado,Colombia
+1860,08/04/2020,Bogotá,Bogotá D.C.,casa,39,F,en estudio,Colombia
+1861,08/04/2020,Bogotá,Bogotá D.C.,hospital,72,M,en estudio,Colombia
+1862,08/04/2020,Bogotá,Bogotá D.C.,casa,49,M,en estudio,Colombia
+1863,08/04/2020,Bogotá,Bogotá D.C.,hospital,49,M,en estudio,Colombia
+1864,08/04/2020,Bogotá,Bogotá D.C.,hospital uci,51,M,en estudio,Colombia
+1865,08/04/2020,Bogotá,Bogotá D.C.,casa,26,M,en estudio,Colombia
+1866,08/04/2020,Bogotá,Bogotá D.C.,casa,52,F,en estudio,Colombia
+1867,08/04/2020,Bogotá,Bogotá D.C.,hospital uci,72,M,en estudio,Colombia
+1868,08/04/2020,Bogotá,Bogotá D.C.,hospital,60,M,en estudio,Colombia
+1869,08/04/2020,Bogotá,Bogotá D.C.,hospital,65,F,en estudio,Colombia
+1870,08/04/2020,Bogotá,Bogotá D.C.,casa,2,F,en estudio,Colombia
+1871,08/04/2020,Bogotá,Bogotá D.C.,casa,35,F,en estudio,Colombia
+1872,08/04/2020,Bogotá,Bogotá D.C.,casa,36,M,en estudio,Colombia
+1873,08/04/2020,Bogotá,Bogotá D.C.,hospital,52,F,en estudio,Colombia
+1874,08/04/2020,Bogotá,Bogotá D.C.,casa,19,M,relacionado,Colombia
+1875,08/04/2020,Bogotá,Bogotá D.C.,casa,49,F,importado,Israel
+1876,08/04/2020,Bogotá,Bogotá D.C.,hospital,57,M,en estudio,Colombia
+1877,08/04/2020,Bogotá,Bogotá D.C.,casa,59,M,en estudio,Colombia
+1878,08/04/2020,Bogotá,Bogotá D.C.,fallecido,82,M,en estudio,Colombia
+1879,08/04/2020,Bogotá,Bogotá D.C.,hospital,62,M,en estudio,Colombia
+1880,08/04/2020,Bogotá,Bogotá D.C.,casa,70,M,importado,Estados Unidos de América
+1881,08/04/2020,Bogotá,Bogotá D.C.,casa,40,F,en estudio,Colombia
+1882,08/04/2020,Bogotá,Bogotá D.C.,casa,30,F,importado,Brasil
+1883,08/04/2020,Bogotá,Bogotá D.C.,casa,43,F,relacionado,Colombia
+1884,08/04/2020,Bogotá,Bogotá D.C.,casa,64,F,en estudio,Colombia
+1885,08/04/2020,Bogotá,Bogotá D.C.,casa,61,M,importado,Mexico
+1886,08/04/2020,Bogotá,Bogotá D.C.,casa,59,F,importado,Alemania
+1887,08/04/2020,Bogotá,Bogotá D.C.,casa,52,F,en estudio,Colombia
+1888,08/04/2020,Bogotá,Bogotá D.C.,casa,77,F,relacionado,Colombia
+1889,08/04/2020,Bogotá,Bogotá D.C.,casa,54,F,relacionado,Colombia
+1890,08/04/2020,Bogotá,Bogotá D.C.,casa,22,F,relacionado,Colombia
+1891,08/04/2020,Bogotá,Bogotá D.C.,casa,45,F,relacionado,Colombia
+1892,08/04/2020,Bogotá,Bogotá D.C.,casa,73,F,relacionado,Colombia
+1893,08/04/2020,Bogotá,Bogotá D.C.,casa,8,F,relacionado,Colombia
+1894,08/04/2020,Bogotá,Bogotá D.C.,casa,55,M,relacionado,Colombia
+1895,08/04/2020,Bogotá,Bogotá D.C.,casa,34,M,en estudio,Colombia
+1896,08/04/2020,Bogotá,Bogotá D.C.,casa,26,F,relacionado,Colombia
+1897,08/04/2020,Bogotá,Bogotá D.C.,casa,49,F,relacionado,Colombia
+1898,08/04/2020,Bogotá,Bogotá D.C.,hospital,62,M,importado,Mexico
+1899,08/04/2020,Bogotá,Bogotá D.C.,casa,37,F,relacionado,Colombia
+1900,08/04/2020,Bogotá,Bogotá D.C.,casa,38,M,relacionado,Colombia
+1901,08/04/2020,Bogotá,Bogotá D.C.,casa,53,F,en estudio,Colombia
+1902,08/04/2020,Bogotá,Bogotá D.C.,hospital uci,69,F,importado,Alemania
+1903,08/04/2020,Bogotá,Bogotá D.C.,casa,32,M,relacionado,Colombia
+1904,08/04/2020,Bogotá,Bogotá D.C.,casa,61,M,importado,España
+1905,08/04/2020,Bogotá,Bogotá D.C.,casa,34,M,relacionado,Colombia
+1906,08/04/2020,Bogotá,Bogotá D.C.,casa,26,M,relacionado,Colombia
+1907,08/04/2020,Bogotá,Bogotá D.C.,casa,37,F,relacionado,Colombia
+1908,08/04/2020,Bogotá,Bogotá D.C.,casa,34,M,relacionado,Colombia
+1909,08/04/2020,Bogotá,Bogotá D.C.,hospital,73,M,en estudio,Colombia
+1910,08/04/2020,Bogotá,Bogotá D.C.,casa,23,F,en estudio,Colombia
+1911,08/04/2020,Bogotá,Bogotá D.C.,hospital,67,F,en estudio,Colombia
+1912,08/04/2020,Bogotá,Bogotá D.C.,casa,36,M,en estudio,Colombia
+1913,08/04/2020,Bogotá,Bogotá D.C.,hospital,46,M,en estudio,Colombia
+1914,08/04/2020,Bogotá,Bogotá D.C.,hospital uci,78,F,en estudio,Colombia
+1915,08/04/2020,Bogotá,Bogotá D.C.,fallecido,64,M,en estudio,Colombia
+1916,08/04/2020,Bogotá,Bogotá D.C.,hospital,50,M,en estudio,Colombia
+1917,08/04/2020,Bogotá,Bogotá D.C.,casa,64,M,relacionado,Colombia
+1918,08/04/2020,Bogotá,Bogotá D.C.,fallecido,37,F,en estudio,Colombia
+1919,08/04/2020,Bogotá,Bogotá D.C.,casa,32,F,en estudio,Colombia
+1920,08/04/2020,Bogotá,Bogotá D.C.,casa,26,F,importado,Estados Unidos de América
+1921,08/04/2020,Bogotá,Bogotá D.C.,casa,27,M,importado,España
+1922,08/04/2020,Bogotá,Bogotá D.C.,casa,62,F,en estudio,Colombia
+1923,08/04/2020,Bogotá,Bogotá D.C.,casa,48,M,en estudio,Colombia
+1924,08/04/2020,Bogotá,Bogotá D.C.,casa,5,M,importado,Mexico
+1925,08/04/2020,Bogotá,Bogotá D.C.,casa,14,M,importado,Mexico
+1926,08/04/2020,Bogotá,Bogotá D.C.,casa,33,F,en estudio,Colombia
+1927,08/04/2020,Bogotá,Bogotá D.C.,hospital,66,M,en estudio,Colombia
+1928,08/04/2020,Bogotá,Bogotá D.C.,fallecido,48,M,en estudio,Colombia
+1929,08/04/2020,Bogotá,Bogotá D.C.,fallecido,74,F,en estudio,Colombia
+1930,08/04/2020,Bogotá,Bogotá D.C.,casa,56,M,en estudio,Colombia
+1931,08/04/2020,Bogotá,Bogotá D.C.,hospital,67,M,en estudio,Colombia
+1932,08/04/2020,Bogotá,Bogotá D.C.,casa,13,M,en estudio,Colombia
+1933,08/04/2020,Bogotá,Bogotá D.C.,casa,12,M,en estudio,Colombia
+1934,08/04/2020,Bogotá,Bogotá D.C.,casa,19,F,en estudio,Colombia
+1935,08/04/2020,Bogotá,Bogotá D.C.,casa,49,M,en estudio,Colombia
+1936,08/04/2020,Bogotá,Bogotá D.C.,casa,27,M,en estudio,Colombia
+1937,08/04/2020,Bogotá,Bogotá D.C.,casa,30,M,importado,España
+1938,08/04/2020,Bogotá,Bogotá D.C.,casa,44,F,en estudio,Colombia
+1939,08/04/2020,Bogotá,Bogotá D.C.,hospital,28,M,en estudio,Colombia
+1940,08/04/2020,Bogotá,Bogotá D.C.,casa,33,M,en estudio,Colombia
+1941,08/04/2020,Bogotá,Bogotá D.C.,casa,48,F,en estudio,Colombia
+1942,08/04/2020,Bogotá,Bogotá D.C.,casa,45,M,importado,Peru
+1943,08/04/2020,Bogotá,Bogotá D.C.,casa,7,M,en estudio,Colombia
+1944,08/04/2020,Bogotá,Bogotá D.C.,casa,19,M,importado,España
+1945,08/04/2020,Bogotá,Bogotá D.C.,casa,54,M,importado,Estados Unidos de América
+1946,08/04/2020,Bogotá,Bogotá D.C.,hospital,75,F,en estudio,Colombia
+1947,08/04/2020,Bogotá,Bogotá D.C.,casa,32,F,en estudio,Colombia
+1948,08/04/2020,Bogotá,Bogotá D.C.,casa,55,M,relacionado,Colombia
+1949,08/04/2020,Bogotá,Bogotá D.C.,casa,48,F,relacionado,Colombia
+1950,08/04/2020,Bogotá,Bogotá D.C.,casa,47,F,en estudio,Colombia
+1951,08/04/2020,Bogotá,Bogotá D.C.,casa,45,F,en estudio,Colombia
+1952,08/04/2020,Bogotá,Bogotá D.C.,casa,22,M,en estudio,Colombia
+1953,08/04/2020,Bogotá,Bogotá D.C.,casa,72,M,en estudio,Colombia
+1954,08/04/2020,Bogotá,Bogotá D.C.,casa,64,M,en estudio,Colombia
+1955,08/04/2020,Bogotá,Bogotá D.C.,casa,67,M,importado,Puerto Rico
+1956,08/04/2020,Bogotá,Bogotá D.C.,casa,44,F,en estudio,Colombia
+1957,08/04/2020,Bogotá,Bogotá D.C.,casa,24,F,en estudio,Colombia
+1958,08/04/2020,Bogotá,Bogotá D.C.,casa,58,M,importado,Estados Unidos de América
+1959,08/04/2020,Bogotá,Bogotá D.C.,casa,71,M,en estudio,Colombia
+1960,08/04/2020,Bogotá,Bogotá D.C.,hospital,30,M,en estudio,Colombia
+1961,08/04/2020,Bogotá,Bogotá D.C.,casa,34,F,en estudio,Colombia
+1962,08/04/2020,Bogotá,Bogotá D.C.,casa,48,F,en estudio,Colombia
+1963,08/04/2020,Bogotá,Bogotá D.C.,casa,48,M,en estudio,Colombia
+1964,08/04/2020,Bogotá,Bogotá D.C.,casa,10,M,en estudio,Colombia
+1965,08/04/2020,Bogotá,Bogotá D.C.,casa,36,F,importado,Egipto
+1966,08/04/2020,Bogotá,Bogotá D.C.,casa,2,F,en estudio,Colombia
+1967,08/04/2020,Bogotá,Bogotá D.C.,casa,38,F,en estudio,Colombia
+1968,08/04/2020,Bogotá,Bogotá D.C.,casa,76,F,en estudio,Colombia
+1969,08/04/2020,Bogotá,Bogotá D.C.,casa,47,F,importado,Estados Unidos de América
+1970,08/04/2020,Cali,Valle del Cauca,casa,39,M,en estudio,Colombia
+1971,08/04/2020,Cali,Valle del Cauca,casa,23,M,en estudio,Colombia
+1972,08/04/2020,Cali,Valle del Cauca,fallecido,57,M,en estudio,Colombia
+1973,08/04/2020,Cali,Valle del Cauca,hospital,66,M,en estudio,Colombia
+1974,08/04/2020,Jamundi,Valle del Cauca,casa,22,F,en estudio,Colombia
+1975,08/04/2020,Cartagena,Cartagena D.T. y C,casa,47,F,en estudio,Colombia
+1976,08/04/2020,Cartagena,Cartagena D.T. y C,casa,30,M,relacionado,Colombia
+1977,08/04/2020,Bello,Antioquia,casa,50,F,relacionado,Colombia
+1978,08/04/2020,Medellin,Antioquia,casa,54,M,relacionado,Colombia
+1979,08/04/2020,Medellin,Antioquia,casa,55,M,importado,Mexico
+1980,08/04/2020,Medellin,Antioquia,casa,56,M,en estudio,Colombia
+1981,08/04/2020,Medellin,Antioquia,hospital,25,M,en estudio,Colombia
+1982,08/04/2020,Apartado,Antioquia,casa,36,F,relacionado,Colombia
+1983,08/04/2020,Medellin,Antioquia,casa,31,F,relacionado,Colombia
+1984,08/04/2020,Medellin,Antioquia,casa,54,F,importado,Jamaica
+1985,08/04/2020,Medellin,Antioquia,casa,42,F,importado,Estados Unidos de América
+1986,08/04/2020,Medellin,Antioquia,casa,30,F,importado,Estados Unidos de América
+1987,08/04/2020,Medellin,Antioquia,casa,30,F,importado,España
+1988,08/04/2020,Medellin,Antioquia,casa,30,M,importado,España
+1989,08/04/2020,Envigado,Antioquia,casa,29,M,importado,Estados Unidos de América
+1990,08/04/2020,La Estrella,Antioquia,casa,39,F,importado,España
+1991,08/04/2020,Medellin,Antioquia,casa,28,F,en estudio,Colombia
+1992,08/04/2020,Bello,Antioquia,casa,55,F,importado,Mexico
+1993,08/04/2020,Rionegro,Antioquia,casa,30,F,relacionado,Colombia
+1994,08/04/2020,Medellin,Antioquia,casa,41,F,importado,Peru
+1995,08/04/2020,Medellin,Antioquia,casa,55,M,relacionado,Colombia
+1996,08/04/2020,Medellin,Antioquia,casa,54,M,relacionado,Colombia
+1997,08/04/2020,Bello,Antioquia,casa,36,F,importado,Jamaica
+1998,08/04/2020,Medellin,Antioquia,casa,60,M,importado,Estados Unidos de América
+1999,08/04/2020,Santa Marta,Santa Marta D.T. y C.,fallecido,65,M,en estudio,Colombia
+2000,08/04/2020,Soledad,Atlántico,casa,24,F,relacionado,Colombia
+2001,08/04/2020,Cartagena,Cartagena D.T. y C,hospital,45,M,en estudio,Colombia
+2002,08/04/2020,Cartagena,Cartagena D.T. y C,casa,20,F,en estudio,Colombia
+2003,08/04/2020,Cartagena,Cartagena D.T. y C,casa,32,M,en estudio,Colombia
+2004,08/04/2020,Cartagena,Cartagena D.T. y C,casa,32,F,importado,Estados Unidos
+2005,08/04/2020,Turbaco,Bolívar,casa,39,F,relacionado,Colombia
+2006,08/04/2020,Turbaco,Bolívar,casa,69,F,relacionado,Colombia
+2007,08/04/2020,Tenza,Boyacá,casa,58,F,en estudio,Colombia
+2008,08/04/2020,Tenza,Boyacá,casa,60,M,en estudio,Colombia
+2009,08/04/2020,Santana,Boyacá,casa,15,M,relacionado,Colombia
+2010,08/04/2020,Santana,Boyacá,casa,42,M,relacionado,Colombia
+2011,08/04/2020,Tunja,Boyacá,casa,25,F,en estudio,Colombia
+2012,08/04/2020,Tunja,Boyacá,casa,36,F,en estudio,Colombia
+2013,08/04/2020,Chia,Cundinamarca,casa,55,F,importado,Estados Unidos de América
+2014,08/04/2020,Chia,Cundinamarca,casa,56,M,relacionado,Colombia
+2015,08/04/2020,Cajica,Cundinamarca,casa,37,M,importado,Estados Unidos de América
+2016,08/04/2020,Choconta,Cundinamarca,casa,28,F,relacionado,Colombia
+2017,08/04/2020,Neiva,Huila,casa,31,F,relacionado,Colombia
+2018,08/04/2020,Neiva,Huila,casa,68,F,importado,España
+2019,08/04/2020,Neiva,Huila,casa,74,M,importado,Ecuador
+2020,08/04/2020,Neiva,Huila,casa,54,M,importado,Ecuador
+2021,08/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital,38,F,en estudio,Colombia
+2022,08/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,28,M,en estudio,Colombia
+2023,08/04/2020,Cucuta,Norte de Santander,hospital,32,M,importado,Panama
+2024,08/04/2020,Montenegro,Quindío,fallecido,79,F,en estudio,Colombia
+2025,08/04/2020,Cali,Valle del Cauca,casa,30,M,importado,Estados Unidos de América
+2026,08/04/2020,Tulua,Valle del Cauca,casa,53,F,en estudio,Colombia
+2027,08/04/2020,Tulua,Valle del Cauca,casa,9,F,en estudio,Colombia
+2028,08/04/2020,Cali,Valle del Cauca,casa,29,F,en estudio,Colombia
+2029,08/04/2020,Cali,Valle del Cauca,casa,61,F,en estudio,Colombia
+2030,08/04/2020,Cali,Valle del Cauca,hospital,49,M,en estudio,Colombia
+2031,08/04/2020,Cali,Valle del Cauca,casa,58,F,en estudio,Colombia
+2032,08/04/2020,Cali,Valle del Cauca,casa,22,F,en estudio,Colombia
+2033,08/04/2020,Cali,Valle del Cauca,hospital,77,F,en estudio,Colombia
+2034,08/04/2020,Jamundi,Valle del Cauca,casa,41,F,en estudio,Colombia
+2035,08/04/2020,Cali,Valle del Cauca,casa,54,F,en estudio,Colombia
+2036,08/04/2020,Cali,Valle del Cauca,casa,40,F,en estudio,Colombia
+2037,08/04/2020,Buga,Valle del Cauca,casa,39,M,en estudio,Colombia
+2038,08/04/2020,Cali,Valle del Cauca,hospital,31,M,en estudio,Colombia
+2039,08/04/2020,Cali,Valle del Cauca,casa,5,F,en estudio,Colombia
+2040,08/04/2020,Ginebra,Valle del Cauca,fallecido,58,M,en estudio,Colombia
+2041,08/04/2020,Cali,Valle del Cauca,hospital,28,M,en estudio,Colombia
+2042,08/04/2020,Cali,Valle del Cauca,hospital,51,F,relacionado,Colombia
+2043,08/04/2020,Cali,Valle del Cauca,casa,29,M,en estudio,Colombia
+2044,08/04/2020,Cali,Valle del Cauca,hospital,29,M,en estudio,Colombia
+2045,08/04/2020,Palmira,Valle del Cauca,casa,29,F,en estudio,Colombia
+2046,08/04/2020,Cali,Valle del Cauca,casa,40,M,en estudio,Colombia
+2047,08/04/2020,Cali,Valle del Cauca,casa,41,F,en estudio,Colombia
+2048,08/04/2020,Cali,Valle del Cauca,casa,46,M,en estudio,Colombia
+2049,08/04/2020,Cali,Valle del Cauca,casa,53,M,en estudio,Colombia
+2050,08/04/2020,Trujillo,Valle del Cauca,casa,38,F,importado,Turquia
+2051,08/04/2020,Trujillo,Valle del Cauca,casa,64,M,importado,Turquia
+2052,08/04/2020,Andalucia,Valle del Cauca,hospital,78,F,en estudio,Colombia
+2053,08/04/2020,Ipiales,Nariño,casa,59,F,importado,Ecuador
+2054,08/04/2020,Ipiales,Nariño,casa,25,F,importado,Ecuador
+2055,09/04/2020,Envigado,Antioquia,casa,36,F,relacionado,Colombia
+2056,09/04/2020,Togui,Boyacá,casa,32,F,en estudio,Colombia
+2057,09/04/2020,Cali,Valle del Cauca,casa,64,F,en estudio,Colombia
+2058,09/04/2020,Cali,Valle del Cauca,casa,28,F,en estudio,Colombia
+2059,09/04/2020,Cali,Valle del Cauca,casa,47,F,en estudio,Colombia
+2060,09/04/2020,Medellin,Antioquia,casa,29,F,relacionado,Colombia
+2061,09/04/2020,Medellin,Antioquia,casa,58,M,en estudio,Colombia
+2062,09/04/2020,Pasto,Nariño,fallecido,73,M,en estudio,Colombia
+2063,09/04/2020,Pasto,Nariño,hospital,48,M,en estudio,Colombia
+2064,09/04/2020,Ipiales,Nariño,hospital,62,F,en estudio,Colombia
+2065,09/04/2020,Pasto,Nariño,casa,57,F,en estudio,Colombia
+2066,09/04/2020,Barranquilla,Barranquilla D.E.,casa,33,F,en estudio,Colombia
+2067,09/04/2020,Barranquilla,Barranquilla D.E.,casa,40,M,en estudio,Colombia
+2068,09/04/2020,Santa Marta,Santa Marta D.T. y C.,fallecido,75,F,en estudio,Colombia
+2069,09/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,70,M,en estudio,Colombia
+2070,09/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital,50,F,en estudio,Colombia
+2071,09/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital,47,M,en estudio,Colombia
+2072,09/04/2020,La Ceja,Antioquia,hospital,75,F,en estudio,Colombia
+2073,09/04/2020,Cartagena,Cartagena D.T. y C,fallecido,70,M,en estudio,Colombia
+2074,09/04/2020,Cartagena,Cartagena D.T. y C,hospital,58,M,en estudio,Colombia
+2075,09/04/2020,Cartagena,Cartagena D.T. y C,casa,72,M,en estudio,Colombia
+2076,09/04/2020,Cartagena,Cartagena D.T. y C,hospital,57,F,en estudio,Colombia
+2077,09/04/2020,Bogotá,Bogotá D.C.,casa,54,F,en estudio,Colombia
+2078,09/04/2020,Bogotá,Bogotá D.C.,casa,28,M,importado,Kenia
+2079,09/04/2020,Bogotá,Bogotá D.C.,casa,26,F,en estudio,Colombia
+2080,09/04/2020,Bogotá,Bogotá D.C.,hospital,61,F,en estudio,Colombia
+2081,09/04/2020,Bogotá,Bogotá D.C.,casa,58,F,en estudio,Colombia
+2082,09/04/2020,Bogotá,Bogotá D.C.,casa,32,M,en estudio,Colombia
+2083,09/04/2020,Bogotá,Bogotá D.C.,casa,28,M,en estudio,Colombia
+2084,09/04/2020,Bogotá,Bogotá D.C.,casa,23,F,en estudio,Colombia
+2085,09/04/2020,Bogotá,Bogotá D.C.,casa,34,F,en estudio,Colombia
+2086,09/04/2020,Bogotá,Bogotá D.C.,casa,24,F,relacionado,Colombia
+2087,09/04/2020,Bogotá,Bogotá D.C.,casa,46,F,relacionado,Colombia
+2088,09/04/2020,Bogotá,Bogotá D.C.,casa,37,F,en estudio,Colombia
+2089,09/04/2020,Bogotá,Bogotá D.C.,casa,8,F,relacionado,Colombia
+2090,09/04/2020,Bogotá,Bogotá D.C.,casa,43,F,importado,Israel
+2091,09/04/2020,Bogotá,Bogotá D.C.,casa,71,F,relacionado,Colombia
+2092,09/04/2020,Bogotá,Bogotá D.C.,casa,20,M,relacionado,Colombia
+2093,09/04/2020,Bogotá,Bogotá D.C.,casa,17,M,relacionado,Colombia
+2094,09/04/2020,Bogotá,Bogotá D.C.,casa,72,M,en estudio,Colombia
+2095,09/04/2020,Bogotá,Bogotá D.C.,casa,40,M,relacionado,Colombia
+2096,09/04/2020,Bogotá,Bogotá D.C.,casa,36,F,en estudio,Colombia
+2097,09/04/2020,Bogotá,Bogotá D.C.,casa,18,F,en estudio,Colombia
+2098,09/04/2020,Bogotá,Bogotá D.C.,casa,30,M,en estudio,Colombia
+2099,09/04/2020,Bogotá,Bogotá D.C.,hospital,48,F,relacionado,Colombia
+2100,09/04/2020,Bogotá,Bogotá D.C.,casa,2,M,relacionado,Colombia
+2101,09/04/2020,Bogotá,Bogotá D.C.,casa,38,M,importado,Egipto
+2102,09/04/2020,Bogotá,Bogotá D.C.,fallecido,83,F,en estudio,Colombia
+2103,09/04/2020,Bogotá,Bogotá D.C.,hospital,41,F,en estudio,Colombia
+2104,09/04/2020,Bogotá,Bogotá D.C.,hospital,65,M,en estudio,Colombia
+2105,09/04/2020,Bogotá,Bogotá D.C.,casa,33,F,relacionado,Colombia
+2106,09/04/2020,Bogotá,Bogotá D.C.,casa,15,M,relacionado,Colombia
+2107,09/04/2020,Bogotá,Bogotá D.C.,casa,30,F,importado,Turquia
+2108,09/04/2020,Bogotá,Bogotá D.C.,casa,79,F,en estudio,Colombia
+2109,09/04/2020,Bogotá,Bogotá D.C.,fallecido,83,M,en estudio,Colombia
+2110,09/04/2020,Bogotá,Bogotá D.C.,casa,31,M,en estudio,Colombia
+2111,09/04/2020,Bogotá,Bogotá D.C.,casa,45,M,en estudio,Colombia
+2112,09/04/2020,Cucuta,Norte de Santander,casa,39,M,en estudio,Colombia
+2113,09/04/2020,San Juan De Rio Seco,Cundinamarca,casa,24,F,relacionado,Colombia
+2114,09/04/2020,Funza,Cundinamarca,casa,31,M,en estudio,Colombia
+2115,09/04/2020,Funza,Cundinamarca,casa,28,F,en estudio,Colombia
+2116,09/04/2020,Sopo,Cundinamarca,casa,29,F,relacionado,Colombia
+2117,09/04/2020,Barranquilla,Barranquilla D.E.,casa,49,F,importado,Estados Unidos
+2118,09/04/2020,Barranquilla,Barranquilla D.E.,casa,38,F,importado,España
+2119,09/04/2020,Barranquilla,Barranquilla D.E.,casa,47,M,en estudio,Colombia
+2120,09/04/2020,Barranquilla,Barranquilla D.E.,hospital,57,M,en estudio,Colombia
+2121,09/04/2020,Cartagena,Cartagena D.T. y C,fallecido,58,M,en estudio,Colombia
+2122,09/04/2020,Cartagena,Cartagena D.T. y C,casa,29,F,en estudio,Colombia
+2123,09/04/2020,Turbaco,Bolívar,casa,34,M,relacionado,Colombia
+2124,09/04/2020,Turbaco,Bolívar,casa,36,M,relacionado,Colombia
+2125,09/04/2020,Cartagena,Cartagena D.T. y C,casa,74,F,en estudio,Colombia
+2126,09/04/2020,Cartagena,Cartagena D.T. y C,casa,75,M,en estudio,Colombia
+2127,09/04/2020,Cartagena,Cartagena D.T. y C,casa,31,M,en estudio,Colombia
+2128,09/04/2020,Cartagena,Cartagena D.T. y C,fallecido,66,M,en estudio,Colombia
+2129,09/04/2020,Cartagena,Cartagena D.T. y C,casa,23,F,en estudio,Colombia
+2130,09/04/2020,Turbaco,Bolívar,fallecido,71,M,relacionado,Colombia
+2131,09/04/2020,Cartagena,Cartagena D.T. y C,casa,31,M,relacionado,Colombia
+2132,09/04/2020,Cartagena,Cartagena D.T. y C,casa,48,F,relacionado,Colombia
+2133,09/04/2020,Cartagena,Cartagena D.T. y C,hospital,78,M,relacionado,Colombia
+2134,09/04/2020,Togui,Boyacá,casa,52,M,relacionado,Colombia
+2135,09/04/2020,Togui,Boyacá,casa,19,M,relacionado,Colombia
+2136,09/04/2020,Garagoa,Boyacá,casa,47,F,relacionado,Colombia
+2137,09/04/2020,Santa Sofia,Boyacá,hospital,64,M,en estudio,Colombia
+2138,09/04/2020,La Dorada,Caldas,casa,2,M,relacionado,Colombia
+2139,09/04/2020,La Dorada,Caldas,casa,70,M,relacionado,Colombia
+2140,09/04/2020,La Dorada,Caldas,casa,1,F,relacionado,Colombia
+2141,09/04/2020,La Dorada,Caldas,casa,56,F,relacionado,Colombia
+2142,09/04/2020,La Dorada,Caldas,casa,56,F,relacionado,Colombia
+2143,09/04/2020,Valledupar,Cesar,hospital,48,F,en estudio,Colombia
+2144,09/04/2020,Villapinzon,Cundinamarca,casa,88,M,en estudio,Colombia
+2145,09/04/2020,Chia,Cundinamarca,hospital,53,F,en estudio,Colombia
+2146,09/04/2020,Facatativa,Cundinamarca,casa,32,M,en estudio,Colombia
+2147,09/04/2020,Bogotá,Bogotá D.C.,casa,26,F,en estudio,Colombia
+2148,09/04/2020,Villavicencio,Meta,casa,71,F,relacionado,Colombia
+2149,09/04/2020,Tumaco,Nariño,casa,6,F,en estudio,Colombia
+2150,09/04/2020,Ipiales,Nariño,casa,61,F,en estudio,Colombia
+2151,09/04/2020,Ipiales,Nariño,casa,51,F,en estudio,Colombia
+2152,09/04/2020,Contadero,Nariño,casa,22,F,en estudio,Colombia
+2153,09/04/2020,Pasto,Nariño,casa,59,M,en estudio,Colombia
+2154,09/04/2020,Pasto,Nariño,casa,54,M,en estudio,Colombia
+2155,09/04/2020,Pasto,Nariño,casa,24,M,importado,Mexico
+2156,09/04/2020,La Union,Nariño,hospital,15,M,en estudio,Colombia
+2157,09/04/2020,Pasto,Nariño,hospital,1,M,en estudio,Colombia
+2158,09/04/2020,Pasto,Nariño,hospital,52,M,en estudio,Colombia
+2159,09/04/2020,Ipiales,Nariño,casa,47,M,en estudio,Colombia
+2160,09/04/2020,Ipiales,Nariño,casa,63,M,en estudio,Colombia
+2161,09/04/2020,Ipiales,Nariño,casa,56,F,en estudio,Colombia
+2162,09/04/2020,Cumbitara,Nariño,casa,13,M,en estudio,Colombia
+2163,09/04/2020,Cucuta,Norte de Santander,casa,15,F,en estudio,Colombia
+2164,09/04/2020,Cucuta,Norte de Santander,casa,33,F,en estudio,Colombia
+2165,09/04/2020,Cucuta,Norte de Santander,fallecido,75,M,en estudio,Colombia
+2166,09/04/2020,Cucuta,Norte de Santander,casa,27,F,en estudio,Colombia
+2167,09/04/2020,Cucuta,Norte de Santander,casa,1,M,en estudio,Colombia
+2168,09/04/2020,Villa Del Rosario,Norte de Santander,hospital,67,F,en estudio,Colombia
+2169,09/04/2020,Cucuta,Norte de Santander,hospital,50,F,en estudio,Colombia
+2170,09/04/2020,Cucuta,Norte de Santander,casa,52,F,en estudio,Colombia
+2171,09/04/2020,Cucuta,Norte de Santander,hospital,75,F,en estudio,Colombia
+2172,09/04/2020,Ocaña,Norte de Santander,fallecido,98,M,en estudio,Colombia
+2173,09/04/2020,Armenia,Quindío,casa,29,F,importado,Mexico
+2174,09/04/2020,Dosquebradas,Risaralda,casa,56,F,importado,España
+2175,09/04/2020,Pereira,Risaralda,casa,59,F,relacionado,Colombia
+2176,09/04/2020,Dosquebradas,Risaralda,hospital,53,M,en estudio,Colombia
+2177,09/04/2020,San Andres,San Andrés,casa,49,M,relacionado,Colombia
+2178,09/04/2020,San Andres,San Andrés,casa,42,M,relacionado,Colombia
+2179,09/04/2020,Bucaramanga,Santander,casa,39,F,relacionado,Colombia
+2180,09/04/2020,Cimitarra,Santander,casa,26,F,en estudio,Colombia
+2181,09/04/2020,Concepcion,Santander,casa,61,M,relacionado,Colombia
+2182,09/04/2020,Barrancabermeja,Santander,casa,50,M,relacionado,Colombia
+2183,09/04/2020,Curiti,Santander,casa,20,F,en estudio,Colombia
+2184,09/04/2020,Bucaramanga,Santander,casa,29,M,importado,Estados Unidos de América
+2185,09/04/2020,Bucaramanga,Santander,casa,26,F,en estudio,Colombia
+2186,09/04/2020,Cali,Valle del Cauca,hospital,60,M,en estudio,Colombia
+2187,09/04/2020,Cali,Valle del Cauca,fallecido,80,M,en estudio,Colombia
+2188,09/04/2020,Cali,Valle del Cauca,casa,28,M,en estudio,Colombia
+2189,09/04/2020,Cali,Valle del Cauca,hospital,61,M,en estudio,Colombia
+2190,09/04/2020,Cali,Valle del Cauca,casa,56,F,en estudio,Colombia
+2191,09/04/2020,Cali,Valle del Cauca,hospital,28,M,en estudio,Colombia
+2192,09/04/2020,Cali,Valle del Cauca,casa,56,M,en estudio,Colombia
+2193,09/04/2020,Cali,Valle del Cauca,casa,75,F,en estudio,Colombia
+2194,09/04/2020,Cali,Valle del Cauca,hospital,45,M,en estudio,Colombia
+2195,09/04/2020,Tulua,Valle del Cauca,casa,51,M,en estudio,Colombia
+2196,09/04/2020,Cali,Valle del Cauca,casa,31,F,en estudio,Colombia
+2197,09/04/2020,Cali,Valle del Cauca,hospital,61,M,en estudio,Colombia
+2198,09/04/2020,Cali,Valle del Cauca,hospital,51,F,en estudio,Colombia
+2199,09/04/2020,Jamundi,Valle del Cauca,casa,50,F,importado,Reino Unido De Gran Bretaña E Irlanda Del
+2200,09/04/2020,Cali,Valle del Cauca,hospital,78,M,en estudio,Colombia
+2201,09/04/2020,Cali,Valle del Cauca,hospital,59,M,importado,España
+2202,09/04/2020,Bogotá,Bogotá D.C.,casa,56,M,relacionado,Colombia
+2203,09/04/2020,Bogotá,Bogotá D.C.,casa,47,M,relacionado,Colombia
+2204,09/04/2020,Cali,Valle del Cauca,casa,33,M,en estudio,Colombia
+2205,09/04/2020,Cali,Valle del Cauca,casa,22,M,en estudio,Colombia
+2206,09/04/2020,Cali,Valle del Cauca,hospital,65,M,en estudio,Colombia
+2207,09/04/2020,Cali,Valle del Cauca,casa,62,M,en estudio,Colombia
+2208,09/04/2020,Cali,Valle del Cauca,casa,46,M,en estudio,Colombia
+2209,09/04/2020,Cali,Valle del Cauca,hospital,66,M,en estudio,Colombia
+2210,09/04/2020,Cali,Valle del Cauca,hospital,37,M,en estudio,Colombia
+2211,09/04/2020,Cali,Valle del Cauca,casa,65,F,en estudio,Colombia
+2212,09/04/2020,Miranda,Cauca,hospital,50,M,en estudio,Colombia
+2213,09/04/2020,Buenaventura,Valle del Cauca,casa,75,M,relacionado,Colombia
+2214,09/04/2020,Cali,Valle del Cauca,hospital,81,M,relacionado,Colombia
+2215,09/04/2020,Neiva,Huila,casa,77,M,relacionado,Colombia
+2216,09/04/2020,Cali,Valle del Cauca,hospital,45,M,relacionado,Colombia
+2217,09/04/2020,Cali,Valle del Cauca,hospital,66,M,en estudio,Colombia
+2218,09/04/2020,Cali,Valle del Cauca,hospital,77,F,en estudio,Colombia
+2219,09/04/2020,Cali,Valle del Cauca,hospital,62,M,en estudio,Colombia
+2220,09/04/2020,Cali,Valle del Cauca,casa,32,M,en estudio,Colombia
+2221,09/04/2020,Yopal,Casanare,casa,43,F,relacionado,Colombia
+2222,09/04/2020,Espinal,Tolima,casa,44,M,en estudio,Colombia
+2223,09/04/2020,Ipiales,Nariño,hospital,42,M,en estudio,Colombia
+2224,10/04/2020,Barranquilla,Barranquilla D.E.,casa,50,M,importado,Estados Unidos
+2225,10/04/2020,Medellin,Antioquia,casa,22,F,relacionado,Colombia
+2226,10/04/2020,Envigado,Antioquia,casa,29,F,relacionado,Colombia
+2227,10/04/2020,Cali,Valle del Cauca,casa,21,F,importado,Paris
+2228,10/04/2020,Cali,Valle del Cauca,hospital,30,F,en estudio,Colombia
+2229,10/04/2020,Cali,Valle del Cauca,hospital,33,M,importado,Mexico
+2230,10/04/2020,Cartagena,Cartagena D.T. y C,casa,44,F,relacionado,Colombia
+2231,10/04/2020,Cartagena,Cartagena D.T. y C,casa,60,M,relacionado,Colombia
+2232,10/04/2020,Cartagena,Cartagena D.T. y C,casa,65,F,en estudio,Colombia
+2233,10/04/2020,Cartagena,Cartagena D.T. y C,hospital,48,M,en estudio,Colombia
+2234,10/04/2020,Cartagena,Cartagena D.T. y C,casa,43,F,relacionado,Colombia
+2235,10/04/2020,Cartagena,Cartagena D.T. y C,casa,13,M,relacionado,Colombia
+2236,10/04/2020,Cartagena,Cartagena D.T. y C,casa,11,M,relacionado,Colombia
+2237,10/04/2020,Cartagena,Cartagena D.T. y C,casa,41,M,relacionado,Colombia
+2238,10/04/2020,Cartagena,Cartagena D.T. y C,casa,8,F,relacionado,Colombia
+2239,10/04/2020,Guatape,Antioquia,casa,39,F,relacionado,Colombia
+2240,10/04/2020,Medellin,Antioquia,casa,62,M,relacionado,Colombia
+2241,10/04/2020,Medellin,Antioquia,hospital,55,M,relacionado,Colombia
+2242,10/04/2020,Medellin,Antioquia,hospital,62,F,en estudio,Colombia
+2243,10/04/2020,Puerto Colombia,Atlántico,casa,68,F,en estudio,Colombia
+2244,10/04/2020,Barranquilla,Barranquilla D.E.,casa,14,M,relacionado,Colombia
+2245,10/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital,48,M,relacionado,Colombia
+2246,10/04/2020,Palmira,Valle del Cauca,casa,39,F,relacionado,Colombia
+2247,10/04/2020,Cali,Valle del Cauca,casa,58,F,importado,Estados Unidos de América
+2248,10/04/2020,Medellin,Antioquia,hospital,48,M,en estudio,Colombia
+2249,10/04/2020,Bogotá,Bogotá D.C.,casa,17,F,en estudio,Colombia
+2250,10/04/2020,Bogotá,Bogotá D.C.,casa,17,F,en estudio,Colombia
+2251,10/04/2020,Bogotá,Bogotá D.C.,casa,20,F,en estudio,Colombia
+2252,10/04/2020,Bogotá,Bogotá D.C.,casa,18,F,en estudio,Colombia
+2253,10/04/2020,Bogotá,Bogotá D.C.,hospital,29,F,en estudio,Colombia
+2254,10/04/2020,Bogotá,Bogotá D.C.,casa,29,M,en estudio,Colombia
+2255,10/04/2020,Bogotá,Bogotá D.C.,casa,21,F,en estudio,Colombia
+2256,10/04/2020,Bogotá,Bogotá D.C.,casa,29,M,en estudio,Colombia
+2257,10/04/2020,Bogotá,Bogotá D.C.,casa,26,M,en estudio,Colombia
+2258,10/04/2020,Bogotá,Bogotá D.C.,casa,33,F,en estudio,Colombia
+2259,10/04/2020,Bogotá,Bogotá D.C.,casa,56,M,en estudio,Colombia
+2260,10/04/2020,Bogotá,Bogotá D.C.,casa,26,F,en estudio,Colombia
+2261,10/04/2020,Bogotá,Bogotá D.C.,casa,9,F,en estudio,Colombia
+2262,10/04/2020,Bogotá,Bogotá D.C.,casa,8,M,en estudio,Colombia
+2263,10/04/2020,Bogotá,Bogotá D.C.,casa,25,M,en estudio,Colombia
+2264,10/04/2020,Bogotá,Bogotá D.C.,casa,24,M,en estudio,Colombia
+2265,10/04/2020,Bogotá,Bogotá D.C.,casa,26,F,en estudio,Colombia
+2266,10/04/2020,Bogotá,Bogotá D.C.,casa,31,F,en estudio,Colombia
+2267,10/04/2020,Bogotá,Bogotá D.C.,hospital uci,63,F,en estudio,Colombia
+2268,10/04/2020,Bogotá,Bogotá D.C.,casa,39,M,en estudio,Colombia
+2269,10/04/2020,Bogotá,Bogotá D.C.,fallecido,73,M,en estudio,Colombia
+2270,10/04/2020,Bogotá,Bogotá D.C.,hospital,59,M,en estudio,Colombia
+2271,10/04/2020,Bogotá,Bogotá D.C.,casa,82,F,en estudio,Colombia
+2272,10/04/2020,Bogotá,Bogotá D.C.,casa,93,F,en estudio,Colombia
+2273,10/04/2020,Bogotá,Bogotá D.C.,casa,55,F,en estudio,Colombia
+2274,10/04/2020,Bogotá,Bogotá D.C.,casa,63,F,importado,Mexico
+2275,10/04/2020,Bogotá,Bogotá D.C.,casa,73,F,en estudio,Colombia
+2276,10/04/2020,Bogotá,Bogotá D.C.,hospital uci,60,F,en estudio,Colombia
+2277,10/04/2020,Bogotá,Bogotá D.C.,casa,60,F,importado,España
+2278,10/04/2020,Bogotá,Bogotá D.C.,casa,66,M,en estudio,Colombia
+2279,10/04/2020,Tenjo,Cundinamarca,fallecido,60,F,en estudio,Colombia
+2280,10/04/2020,Bogotá,Bogotá D.C.,casa,35,F,en estudio,Colombia
+2281,10/04/2020,Bogotá,Bogotá D.C.,casa,69,F,en estudio,Colombia
+2282,10/04/2020,Bogotá,Bogotá D.C.,hospital,65,F,importado,Panamá
+2283,10/04/2020,Bogotá,Bogotá D.C.,casa,52,F,en estudio,Colombia
+2284,10/04/2020,Bogotá,Bogotá D.C.,casa,57,F,en estudio,Colombia
+2285,10/04/2020,Bogotá,Bogotá D.C.,casa,49,F,en estudio,Colombia
+2286,10/04/2020,Bogotá,Bogotá D.C.,casa,44,F,en estudio,Colombia
+2287,10/04/2020,Bogotá,Bogotá D.C.,hospital,44,F,en estudio,Colombia
+2288,10/04/2020,Bogotá,Bogotá D.C.,casa,39,F,en estudio,Colombia
+2289,10/04/2020,Bogotá,Bogotá D.C.,casa,38,F,importado,Inglaterra
+2290,10/04/2020,Bogotá,Bogotá D.C.,casa,34,F,en estudio,Colombia
+2291,10/04/2020,Bogotá,Bogotá D.C.,casa,59,M,en estudio,Colombia
+2292,10/04/2020,Bogotá,Bogotá D.C.,casa,39,M,en estudio,Colombia
+2293,10/04/2020,Bogotá,Bogotá D.C.,hospital,59,M,en estudio,Colombia
+2294,10/04/2020,Bogotá,Bogotá D.C.,hospital,55,M,en estudio,Colombia
+2295,10/04/2020,Bogotá,Bogotá D.C.,casa,51,M,importado,España
+2296,10/04/2020,Bogotá,Bogotá D.C.,casa,44,M,en estudio,Colombia
+2297,10/04/2020,Bogotá,Bogotá D.C.,hospital,43,M,en estudio,Colombia
+2298,10/04/2020,Bogotá,Bogotá D.C.,casa,39,M,en estudio,Colombia
+2299,10/04/2020,Bogotá,Bogotá D.C.,casa,36,M,en estudio,Colombia
+2300,10/04/2020,Bogotá,Bogotá D.C.,casa,24,F,en estudio,Colombia
+2301,10/04/2020,Bogotá,Bogotá D.C.,casa,53,M,importado,Ecuador
+2302,10/04/2020,Bogotá,Bogotá D.C.,casa,32,F,en estudio,Colombia
+2303,10/04/2020,Bogotá,Bogotá D.C.,casa,39,F,en estudio,Colombia
+2304,10/04/2020,Bogotá,Bogotá D.C.,casa,25,M,relacionado,Colombia
+2305,10/04/2020,Bogotá,Bogotá D.C.,casa,60,M,relacionado,Colombia
+2306,10/04/2020,Bogotá,Bogotá D.C.,casa,36,M,en estudio,Colombia
+2307,10/04/2020,Bogotá,Bogotá D.C.,casa,25,M,en estudio,Colombia
+2308,10/04/2020,Bogotá,Bogotá D.C.,casa,39,M,en estudio,Colombia
+2309,10/04/2020,Bogotá,Bogotá D.C.,casa,53,M,en estudio,Colombia
+2310,10/04/2020,Bogotá,Bogotá D.C.,casa,24,M,en estudio,Colombia
+2311,10/04/2020,Bogotá,Bogotá D.C.,casa,55,F,en estudio,Colombia
+2312,10/04/2020,Bogotá,Bogotá D.C.,casa,23,F,en estudio,Colombia
+2313,10/04/2020,Bogotá,Bogotá D.C.,casa,38,F,importado,Europa
+2314,10/04/2020,Bogotá,Bogotá D.C.,casa,33,M,en estudio,Colombia
+2315,10/04/2020,Bogotá,Bogotá D.C.,casa,27,F,en estudio,Colombia
+2316,10/04/2020,Bogotá,Bogotá D.C.,hospital,44,F,en estudio,Colombia
+2317,10/04/2020,Bogotá,Bogotá D.C.,casa,2,M,en estudio,Colombia
+2318,10/04/2020,Bogotá,Bogotá D.C.,casa,24,F,relacionado,Colombia
+2319,10/04/2020,Bogotá,Bogotá D.C.,casa,36,F,relacionado,Colombia
+2320,10/04/2020,Bogotá,Bogotá D.C.,casa,18,F,relacionado,Colombia
+2321,10/04/2020,Bogotá,Bogotá D.C.,casa,48,M,relacionado,Colombia
+2322,10/04/2020,Bogotá,Bogotá D.C.,casa,42,M,relacionado,Colombia
+2323,10/04/2020,Bogotá,Bogotá D.C.,casa,42,F,relacionado,Colombia
+2324,10/04/2020,Bogotá,Bogotá D.C.,casa,39,F,relacionado,Colombia
+2325,10/04/2020,Bogotá,Bogotá D.C.,casa,19,F,relacionado,Colombia
+2326,10/04/2020,Bogotá,Bogotá D.C.,casa,18,F,relacionado,Colombia
+2327,10/04/2020,Bogotá,Bogotá D.C.,casa,10,M,relacionado,Colombia
+2328,10/04/2020,Bogotá,Bogotá D.C.,casa,25,M,relacionado,Colombia
+2329,10/04/2020,Bogotá,Bogotá D.C.,casa,10,M,relacionado,Colombia
+2330,10/04/2020,Bogotá,Bogotá D.C.,casa,65,F,relacionado,Colombia
+2331,10/04/2020,Bogotá,Bogotá D.C.,casa,13,F,relacionado,Colombia
+2332,10/04/2020,Bogotá,Bogotá D.C.,casa,14,F,relacionado,Colombia
+2333,10/04/2020,Bogotá,Bogotá D.C.,casa,23,M,relacionado,Colombia
+2334,10/04/2020,Bogotá,Bogotá D.C.,casa,22,F,relacionado,Colombia
+2335,10/04/2020,Bogotá,Bogotá D.C.,casa,17,F,relacionado,Colombia
+2336,10/04/2020,Bogotá,Bogotá D.C.,casa,25,M,en estudio,Colombia
+2337,10/04/2020,Bogotá,Bogotá D.C.,casa,29,M,importado,China
+2338,10/04/2020,Bogotá,Bogotá D.C.,casa,86,F,en estudio,Colombia
+2339,10/04/2020,Bogotá,Bogotá D.C.,casa,38,F,importado,Mexico
+2340,10/04/2020,Bogotá,Bogotá D.C.,casa,67,M,en estudio,Colombia
+2341,10/04/2020,Cali,Valle del Cauca,casa,40,F,en estudio,Colombia
+2342,10/04/2020,Cali,Valle del Cauca,casa,50,M,en estudio,Colombia
+2343,10/04/2020,Cali,Valle del Cauca,casa,55,M,en estudio,Colombia
+2344,10/04/2020,Cali,Valle del Cauca,casa,17,F,relacionado,Colombia
+2345,10/04/2020,Cali,Valle del Cauca,casa,66,F,relacionado,Colombia
+2346,10/04/2020,Cali,Valle del Cauca,hospital uci,76,M,en estudio,Colombia
+2347,10/04/2020,Cali,Valle del Cauca,casa,30,F,relacionado,Colombia
+2348,10/04/2020,Cundinamarca,Cundinamarca,casa,24,M,importado,Estados Unidos
+2349,10/04/2020,Barranquilla,Barranquilla D.E.,casa,25,F,relacionado,Colombia
+2350,10/04/2020,Barranquilla,Barranquilla D.E.,casa,32,M,relacionado,Colombia
+2351,10/04/2020,Barranquilla,Barranquilla D.E.,casa,56,F,relacionado,Colombia
+2352,10/04/2020,Cartagena,Cartagena D.T. y C,casa,36,F,en estudio,Colombia
+2353,10/04/2020,Cartagena,Cartagena D.T. y C,hospital,66,M,en estudio,Colombia
+2354,10/04/2020,Cartagena,Cartagena D.T. y C,casa,1,F,relacionado,Colombia
+2355,10/04/2020,Cartagena,Cartagena D.T. y C,casa,38,F,en estudio,Colombia
+2356,10/04/2020,Cartagena,Cartagena D.T. y C,casa,56,M,en estudio,Colombia
+2357,10/04/2020,Cartagena,Cartagena D.T. y C,casa,31,M,importado,Venezuela
+2358,10/04/2020,Cartagena,Cartagena D.T. y C,casa,56,F,en estudio,Colombia
+2359,10/04/2020,Cartagena,Cartagena D.T. y C,casa,45,F,en estudio,Colombia
+2360,10/04/2020,Cartagena,Cartagena D.T. y C,casa,30,F,en estudio,Colombia
+2361,10/04/2020,Cartagena,Cartagena D.T. y C,casa,31,F,en estudio,Colombia
+2362,10/04/2020,Cartagena,Cartagena D.T. y C,casa,36,F,importado,Estados Unidos
+2363,10/04/2020,Cartagena,Cartagena D.T. y C,casa,40,F,en estudio,Colombia
+2364,10/04/2020,Tunja,Boyacá,casa,34,M,en estudio,Colombia
+2365,10/04/2020,Socha,Boyacá,hospital,36,F,en estudio,Colombia
+2366,10/04/2020,Tunja,Boyacá,casa,24,F,relacionado,Colombia
+2367,10/04/2020,Popayan,Cauca,casa,32,M,relacionado,Colombia
+2368,10/04/2020,Popayan,Cauca,casa,61,M,importado,Estados Unidos de América
+2369,10/04/2020,Valledupar,Cesar,casa,43,F,relacionado,Colombia
+2370,10/04/2020,San Diego,Cesar,hospital,54,M,relacionado,Colombia
+2371,10/04/2020,Facatativa,Cundinamarca,casa,47,F,en estudio,Colombia
+2372,10/04/2020,Villeta,Cundinamarca,casa,45,M,importado,España
+2373,10/04/2020,Chia,Cundinamarca,casa,77,M,en estudio,Colombia
+2374,10/04/2020,Cajica,Cundinamarca,hospital,35,M,en estudio,Colombia
+2375,10/04/2020,Villapinzon,Cundinamarca,casa,62,M,en estudio,Colombia
+2376,10/04/2020,Neiva,Huila,casa,50,M,relacionado,Colombia
+2377,10/04/2020,Neiva,Huila,casa,94,F,relacionado,Colombia
+2378,10/04/2020,Ipiales,Nariño,casa,38,F,en estudio,Colombia
+2379,10/04/2020,Ipiales,Nariño,fallecido,72,M,en estudio,Colombia
+2380,10/04/2020,Espinal,Tolima,fallecido,57,M,en estudio,Colombia
+2381,10/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,34,M,en estudio,Colombia
+2382,10/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,28,M,en estudio,Colombia
+2383,10/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,63,M,en estudio,Colombia
+2384,10/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,42,F,en estudio,Colombia
+2385,10/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital,59,M,en estudio,Colombia
+2386,10/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital,73,M,en estudio,Colombia
+2387,10/04/2020,Cienaga,Magdalena,casa,41,M,relacionado,Colombia
+2388,10/04/2020,Cienaga,Magdalena,casa,58,M,relacionado,Colombia
+2389,10/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital,76,M,en estudio,Colombia
+2390,10/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,40,F,en estudio,Colombia
+2391,10/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,41,M,en estudio,Colombia
+2392,10/04/2020,Villavicencio,Meta,fallecido,62,M,en estudio,Colombia
+2393,10/04/2020,Ipiales,Nariño,casa,26,M,importado,Ecuador
+2394,10/04/2020,Cucuta,Norte de Santander,casa,59,F,importado,Turquía
+2395,10/04/2020,Armenia,Quindío,casa,78,M,en estudio,Colombia
+2396,10/04/2020,Armenia,Quindío,hospital,57,M,en estudio,Colombia
+2397,10/04/2020,Armenia,Quindío,hospital,74,M,en estudio,Colombia
+2398,10/04/2020,Pereira,Risaralda,casa,33,M,en estudio,Colombia
+2399,10/04/2020,Pereira,Risaralda,fallecido,70,M,en estudio,Colombia
+2400,10/04/2020,Dosquebradas,Risaralda,casa,57,F,en estudio,Colombia
+2401,10/04/2020,Ibague,Tolima,casa,67,M,importado,Jamaica
+2402,10/04/2020,Ibague,Tolima,hospital,26,F,importado,Estados Unidos de América
+2403,10/04/2020,Ibague,Tolima,casa,59,F,en estudio,Colombia
+2404,10/04/2020,Ibague,Tolima,casa,21,M,en estudio,Colombia
+2405,10/04/2020,Cali,Valle del Cauca,casa,32,M,importado,Panamá
+2406,10/04/2020,Cali,Valle del Cauca,casa,39,M,en estudio,Colombia
+2407,10/04/2020,Cali,Valle del Cauca,casa,25,F,en estudio,Colombia
+2408,10/04/2020,Cali,Valle del Cauca,casa,33,F,en estudio,Colombia
+2409,10/04/2020,Cali,Valle del Cauca,hospital,24,M,en estudio,Colombia
+2410,10/04/2020,Cali,Valle del Cauca,casa,65,F,en estudio,Colombia
+2411,10/04/2020,Cali,Valle del Cauca,casa,46,F,en estudio,Colombia
+2412,10/04/2020,Cali,Valle del Cauca,hospital,54,F,en estudio,Colombia
+2413,10/04/2020,Cali,Valle del Cauca,casa,32,M,en estudio,Colombia
+2414,10/04/2020,Cali,Valle del Cauca,hospital,53,M,en estudio,Colombia
+2415,10/04/2020,Cali,Valle del Cauca,casa,63,F,en estudio,Colombia
+2416,10/04/2020,Cali,Valle del Cauca,casa,54,M,en estudio,Colombia
+2417,10/04/2020,Cali,Valle del Cauca,casa,32,F,relacionado,Colombia
+2418,10/04/2020,Cali,Valle del Cauca,casa,32,M,importado,México
+2419,10/04/2020,Cali,Valle del Cauca,casa,32,F,en estudio,Colombia
+2420,10/04/2020,Cali,Valle del Cauca,casa,43,F,relacionado,Colombia
+2421,10/04/2020,Buga,Valle del Cauca,hospital,80,M,en estudio,Colombia
+2422,10/04/2020,Cali,Valle del Cauca,casa,60,M,en estudio,Colombia
+2423,10/04/2020,Cali,Valle del Cauca,casa,69,F,en estudio,Colombia
+2424,10/04/2020,Cali,Valle del Cauca,casa,85,F,en estudio,Colombia
+2425,10/04/2020,Bugalagrande,Valle del Cauca,casa,24,M,importado,Uruguay
+2426,10/04/2020,Cali,Valle del Cauca,hospital,64,M,en estudio,Colombia
+2427,10/04/2020,Ubate,Cundinamarca,hospital,28,F,relacionado,Colombia
+2428,10/04/2020,Soacha,Cundinamarca,hospital,72,M,relacionado,Colombia
+2429,10/04/2020,Cucuta,Norte de Santander,hospital,93,F,en estudio,Colombia
+2430,10/04/2020,Yopal,Casanare,casa,39,M,en estudio,Colombia
+2431,10/04/2020,Tenjo,Cundinamarca,casa,45,F,en estudio,Colombia
+2432,10/04/2020,Tenjo,Cundinamarca,casa,24,F,en estudio,Colombia
+2433,10/04/2020,Cali,Valle del Cauca,hospital,58,F,en estudio,Colombia
+2434,10/04/2020,Cali,Valle del Cauca,casa,23,F,en estudio,Colombia
+2435,10/04/2020,Cali,Valle del Cauca,casa,12,M,en estudio,Colombia
+2436,10/04/2020,Cali,Valle del Cauca,casa,80,F,en estudio,Colombia
+2437,10/04/2020,Cali,Valle del Cauca,casa,48,F,en estudio,Colombia
+2438,10/04/2020,Cali,Valle del Cauca,hospital,45,F,en estudio,Colombia
+2439,10/04/2020,Cali,Valle del Cauca,casa,31,F,en estudio,Colombia
+2440,10/04/2020,Cali,Valle del Cauca,hospital,36,M,en estudio,Colombia
+2441,10/04/2020,Cali,Valle del Cauca,casa,48,F,en estudio,Colombia
+2442,10/04/2020,Cali,Valle del Cauca,casa,60,M,en estudio,Colombia
+2443,10/04/2020,Cali,Valle del Cauca,casa,31,F,en estudio,Colombia
+2444,10/04/2020,Cali,Valle del Cauca,casa,33,F,en estudio,Colombia
+2445,10/04/2020,Cali,Valle del Cauca,casa,13,M,en estudio,Colombia
+2446,10/04/2020,Cali,Valle del Cauca,casa,8,F,en estudio,Colombia
+2447,10/04/2020,Cali,Valle del Cauca,casa,56,M,en estudio,Colombia
+2448,10/04/2020,Cali,Valle del Cauca,casa,25,F,en estudio,Colombia
+2449,10/04/2020,Cali,Valle del Cauca,casa,35,F,en estudio,Colombia
+2450,10/04/2020,Cali,Valle del Cauca,casa,29,F,importado,España
+2451,10/04/2020,Cali,Valle del Cauca,hospital,75,M,en estudio,Colombia
+2452,10/04/2020,Cali,Valle del Cauca,casa,26,F,en estudio,Colombia
+2453,10/04/2020,Cali,Valle del Cauca,casa,44,F,en estudio,Colombia
+2454,10/04/2020,Buga,Valle del Cauca,casa,43,F,en estudio,Colombia
+2455,10/04/2020,Cali,Valle del Cauca,casa,26,M,importado,Brasil
+2456,10/04/2020,Cali,Valle del Cauca,casa,31,F,en estudio,Colombia
+2457,10/04/2020,Cali,Valle del Cauca,casa,38,M,en estudio,Colombia
+2458,10/04/2020,Cali,Valle del Cauca,casa,27,F,en estudio,Colombia
+2459,10/04/2020,Cali,Valle del Cauca,casa,20,M,en estudio,Colombia
+2460,10/04/2020,Soacha,Cundinamarca,hospital,30,M,relacionado,Colombia
+2461,10/04/2020,Palmira,Valle del Cauca,casa,6,F,en estudio,Colombia
+2462,10/04/2020,Palmira,Valle del Cauca,casa,54,M,en estudio,Colombia
+2463,10/04/2020,Cali,Valle del Cauca,hospital,39,M,en estudio,Colombia
+2464,10/04/2020,Palmira,Valle del Cauca,casa,8,M,en estudio,Colombia
+2465,10/04/2020,Cali,Valle del Cauca,hospital,58,F,importado,Estados Unidos de América
+2466,10/04/2020,Cali,Valle del Cauca,casa,24,M,en estudio,Colombia
+2467,10/04/2020,Palmira,Valle del Cauca,casa,52,F,en estudio,Colombia
+2468,10/04/2020,Cali,Valle del Cauca,hospital,25,M,en estudio,Colombia
+2469,10/04/2020,Cali,Valle del Cauca,casa,78,M,en estudio,Colombia
+2470,10/04/2020,Yopal,Casanare,casa,71,F,relacionado,Colombia
+2471,10/04/2020,Popayan,Cauca,casa,35,M,relacionado,Colombia
+2472,10/04/2020,Palmira,Valle del Cauca,hospital,69,F,en estudio,Colombia
+2473,10/04/2020,La Dorada,Caldas,casa,32,F,en estudio,Colombia
+2474,11/04/2020,Tocancipa,Cundinamarca,hospital,71,F,relacionado,Colombia
+2475,11/04/2020,Neiva,Huila,casa,44,M,relacionado,Colombia
+2476,11/04/2020,Chia,Cundinamarca,casa,42,F,relacionado,Colombia
+2477,11/04/2020,Chia,Cundinamarca,casa,5,F,relacionado,Colombia
+2478,11/04/2020,Chia,Cundinamarca,casa,11,F,relacionado,Colombia
+2479,11/04/2020,Chia,Cundinamarca,casa,3,M,relacionado,Colombia
+2480,11/04/2020,Cali,Valle del Cauca,casa,30,F,importado,Mexico
+2481,11/04/2020,Cali,Valle del Cauca,hospital,55,M,en estudio,Colombia
+2482,11/04/2020,Chia,Cundinamarca,casa,61,M,relacionado,Colombia
+2483,11/04/2020,Cali,Valle del Cauca,casa,42,F,relacionado,Colombia
+2484,11/04/2020,Medellin,Antioquia,casa,40,F,relacionado,Colombia
+2485,11/04/2020,Medellin,Antioquia,casa,27,F,en estudio,Colombia
+2486,11/04/2020,Barrancabermeja,Santander,casa,47,M,en estudio,Colombia
+2487,11/04/2020,Valledupar,Cesar,casa,18,M,en estudio,Colombia
+2488,11/04/2020,Ipiales,Nariño,casa,35,F,en estudio,Colombia
+2489,11/04/2020,Ipiales,Nariño,hospital,36,M,en estudio,Colombia
+2490,11/04/2020,Barranquilla,Barranquilla D.E.,hospital,61,M,en estudio,Colombia
+2491,11/04/2020,Cali,Valle del Cauca,casa,51,M,relacionado,Colombia
+2492,11/04/2020,Cali,Valle del Cauca,casa,53,M,importado,Estados Unidos de América
+2493,11/04/2020,Cali,Valle del Cauca,casa,2,M,en estudio,Colombia
+2494,11/04/2020,Cali,Valle del Cauca,casa,50,F,en estudio,Colombia
+2495,11/04/2020,Santuario,Antioquia,casa,53,F,en estudio,Colombia
+2496,11/04/2020,Medellin,Antioquia,casa,47,F,relacionado,Colombia
+2497,11/04/2020,Medellin,Antioquia,casa,53,F,en estudio,Colombia
+2498,11/04/2020,Bello,Antioquia,casa,48,F,relacionado,Colombia
+2499,11/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital,85,F,en estudio,Colombia
+2500,11/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,68,M,en estudio,Colombia
+2501,11/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital,73,F,en estudio,Colombia
+2502,11/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital,87,F,en estudio,Colombia
+2503,11/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,38,M,en estudio,Colombia
+2504,11/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,20,M,en estudio,Colombia
+2505,11/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital,72,F,en estudio,Colombia
+2506,11/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,36,F,en estudio,Colombia
+2507,11/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,40,F,en estudio,Colombia
+2508,11/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,35,F,en estudio,Colombia
+2509,11/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,27,F,en estudio,Colombia
+2510,11/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,27,M,en estudio,Colombia
+2511,11/04/2020,Cienaga,Magdalena,hospital,34,M,en estudio,Colombia
+2512,11/04/2020,Cartagena,Cartagena D.T. y C,casa,39,M,en estudio,Colombia
+2513,11/04/2020,Cartagena,Cartagena D.T. y C,casa,27,F,en estudio,Colombia
+2514,11/04/2020,Cartagena,Cartagena D.T. y C,casa,66,M,en estudio,Colombia
+2515,11/04/2020,Cartagena,Cartagena D.T. y C,fallecido,55,M,en estudio,Colombia
+2516,11/04/2020,Cartagena,Cartagena D.T. y C,hospital,63,F,en estudio,Colombia
+2517,11/04/2020,Cartagena,Cartagena D.T. y C,hospital,67,M,en estudio,Colombia
+2518,11/04/2020,Cartagena,Cartagena D.T. y C,hospital,57,M,en estudio,Colombia
+2519,11/04/2020,Yumbo,Valle del Cauca,hospital,52,M,en estudio,Colombia
+2520,11/04/2020,Cali,Valle del Cauca,fallecido,89,F,relacionado,Colombia
+2521,11/04/2020,Cali,Valle del Cauca,hospital,73,M,relacionado,Colombia
+2522,11/04/2020,Cali,Valle del Cauca,hospital,74,F,relacionado,Colombia
+2523,11/04/2020,Cali,Valle del Cauca,hospital,66,M,relacionado,Colombia
+2524,11/04/2020,Palmira,Valle del Cauca,hospital uci,51,F,relacionado,Colombia
+2525,11/04/2020,Buenaventura,Valle del Cauca,hospital uci,65,F,en estudio,Colombia
+2526,11/04/2020,Cali,Valle del Cauca,casa,72,M,en estudio,Colombia
+2527,11/04/2020,Cali,Valle del Cauca,casa,3,M,relacionado,Colombia
+2528,11/04/2020,Cali,Valle del Cauca,casa,39,F,en estudio,Colombia
+2529,11/04/2020,Cali,Valle del Cauca,hospital uci,79,F,relacionado,Colombia
+2530,11/04/2020,Cali,Valle del Cauca,casa,27,M,en estudio,Colombia
+2531,11/04/2020,Cali,Valle del Cauca,hospital,47,F,relacionado,Colombia
+2532,11/04/2020,Bogotá,Bogotá D.C.,casa,47,F,en estudio,Colombia
+2533,11/04/2020,Bogotá,Bogotá D.C.,casa,38,M,relacionado,Colombia
+2534,11/04/2020,Bogotá,Bogotá D.C.,hospital,64,M,en estudio,Colombia
+2535,11/04/2020,Bogotá,Bogotá D.C.,casa,32,F,en estudio,Colombia
+2536,11/04/2020,Bogotá,Bogotá D.C.,hospital,89,F,en estudio,Colombia
+2537,11/04/2020,Bogotá,Bogotá D.C.,casa,68,F,en estudio,Colombia
+2538,11/04/2020,Bogotá,Bogotá D.C.,hospital,70,M,en estudio,Colombia
+2539,11/04/2020,Bogotá,Bogotá D.C.,casa,37,F,en estudio,Colombia
+2540,11/04/2020,Bogotá,Bogotá D.C.,casa,60,F,en estudio,Colombia
+2541,11/04/2020,Bogotá,Bogotá D.C.,casa,33,F,en estudio,Colombia
+2542,11/04/2020,Bogotá,Bogotá D.C.,casa,37,M,relacionado,Colombia
+2543,11/04/2020,Bogotá,Bogotá D.C.,casa,19,M,relacionado,Colombia
+2544,11/04/2020,Bogotá,Bogotá D.C.,casa,49,M,en estudio,Colombia
+2545,11/04/2020,Bogotá,Bogotá D.C.,hospital,91,M,en estudio,Colombia
+2546,11/04/2020,Bogotá,Bogotá D.C.,hospital,51,F,en estudio,Colombia
+2547,11/04/2020,Bogotá,Bogotá D.C.,casa,36,F,en estudio,Colombia
+2548,11/04/2020,Bogotá,Bogotá D.C.,casa,61,F,en estudio,Colombia
+2549,11/04/2020,Bogotá,Bogotá D.C.,hospital,47,M,en estudio,Colombia
+2550,11/04/2020,Bogotá,Bogotá D.C.,hospital,52,M,en estudio,Colombia
+2551,11/04/2020,Bogotá,Bogotá D.C.,hospital,27,M,en estudio,Colombia
+2552,11/04/2020,Bogotá,Bogotá D.C.,casa,49,F,en estudio,Colombia
+2553,11/04/2020,Bogotá,Bogotá D.C.,casa,78,F,en estudio,Colombia
+2554,11/04/2020,Bogotá,Bogotá D.C.,casa,57,F,en estudio,Colombia
+2555,11/04/2020,Bogotá,Bogotá D.C.,casa,27,F,en estudio,Colombia
+2556,11/04/2020,Bogotá,Bogotá D.C.,casa,53,F,en estudio,Colombia
+2557,11/04/2020,Bogotá,Bogotá D.C.,casa,18,M,relacionado,Colombia
+2558,11/04/2020,Bogotá,Bogotá D.C.,casa,40,F,en estudio,Colombia
+2559,11/04/2020,Bogotá,Bogotá D.C.,hospital,87,M,en estudio,Colombia
+2560,11/04/2020,Bogotá,Bogotá D.C.,casa,26,F,en estudio,Colombia
+2561,11/04/2020,Bogotá,Bogotá D.C.,hospital,40,F,en estudio,Colombia
+2562,11/04/2020,Bogotá,Bogotá D.C.,hospital uci,28,M,en estudio,Colombia
+2563,11/04/2020,Bogotá,Bogotá D.C.,casa,37,M,en estudio,Colombia
+2564,11/04/2020,Bogotá,Bogotá D.C.,casa,34,F,en estudio,Colombia
+2565,11/04/2020,Bogotá,Bogotá D.C.,casa,77,M,en estudio,Colombia
+2566,11/04/2020,Bogotá,Bogotá D.C.,hospital,67,F,en estudio,Colombia
+2567,11/04/2020,Bogotá,Bogotá D.C.,hospital,54,M,en estudio,Colombia
+2568,11/04/2020,Bogotá,Bogotá D.C.,hospital,31,M,en estudio,Colombia
+2569,11/04/2020,Bogotá,Bogotá D.C.,hospital,67,F,en estudio,Colombia
+2570,11/04/2020,Bogotá,Bogotá D.C.,hospital,8,M,en estudio,Colombia
+2571,11/04/2020,Bogotá,Bogotá D.C.,hospital,90,F,en estudio,Colombia
+2572,11/04/2020,Bogotá,Bogotá D.C.,casa,31,M,relacionado,Colombia
+2573,11/04/2020,Bogotá,Bogotá D.C.,hospital,62,M,en estudio,Colombia
+2574,11/04/2020,Bogotá,Bogotá D.C.,casa,46,F,importado,Egipto
+2575,11/04/2020,Cali,Valle del Cauca,casa,58,M,en estudio,Colombia
+2576,11/04/2020,Cali,Valle del Cauca,casa,59,M,en estudio,Colombia
+2577,11/04/2020,Cali,Valle del Cauca,casa,33,M,en estudio,Colombia
+2578,11/04/2020,Cali,Valle del Cauca,casa,32,M,en estudio,Colombia
+2579,11/04/2020,Cali,Valle del Cauca,casa,19,F,en estudio,Colombia
+2580,11/04/2020,Cali,Valle del Cauca,casa,32,M,en estudio,Colombia
+2581,11/04/2020,Cali,Valle del Cauca,casa,33,M,relacionado,Colombia
+2582,11/04/2020,Cali,Valle del Cauca,hospital uci,49,M,relacionado,Colombia
+2583,11/04/2020,Cali,Valle del Cauca,casa,53,M,relacionado,Colombia
+2584,11/04/2020,Cali,Valle del Cauca,hospital,60,M,relacionado,Colombia
+2585,11/04/2020,Barranquilla,Barranquilla D.E.,casa,30,F,en estudio,Colombia
+2586,11/04/2020,Barranquilla,Barranquilla D.E.,casa,22,M,en estudio,Colombia
+2587,11/04/2020,Cartagena,Cartagena D.T. y C,casa,59,M,relacionado,Colombia
+2588,11/04/2020,Sogamoso,Boyacá,casa,18,F,relacionado,Colombia
+2589,11/04/2020,Socha,Boyacá,casa,66,F,en estudio,Colombia
+2590,11/04/2020,Socha,Boyacá,casa,38,M,en estudio,Colombia
+2591,11/04/2020,Tunja,Boyacá,casa,23,F,en estudio,Colombia
+2592,11/04/2020,La Dorada,Caldas,casa,48,M,relacionado,Colombia
+2593,11/04/2020,La Dorada,Caldas,casa,57,F,relacionado,Colombia
+2594,11/04/2020,La Dorada,Caldas,casa,58,F,relacionado,Colombia
+2595,11/04/2020,La Dorada,Caldas,casa,88,F,relacionado,Colombia
+2596,11/04/2020,La Dorada,Caldas,fallecido,54,M,relacionado,Colombia
+2597,11/04/2020,Villamaria,Caldas,hospital uci,55,M,en estudio,Colombia
+2598,11/04/2020,Yopal,Casanare,casa,26,F,relacionado,Colombia
+2599,11/04/2020,Yopal,Casanare,casa,24,F,relacionado,Colombia
+2600,11/04/2020,Valledupar,Cesar,casa,24,M,en estudio,Colombia
+2601,11/04/2020,Valledupar,Cesar,casa,35,F,en estudio,Colombia
+2602,11/04/2020,Valledupar,Cesar,casa,40,F,relacionado,Colombia
+2603,11/04/2020,Valledupar,Cesar,casa,23,M,en estudio,Colombia
+2604,11/04/2020,Valledupar,Cesar,casa,46,F,en estudio,Colombia
+2605,11/04/2020,Valledupar,Cesar,casa,41,F,en estudio,Colombia
+2606,11/04/2020,Valledupar,Cesar,casa,53,F,en estudio,Colombia
+2607,11/04/2020,Valledupar,Cesar,casa,24,F,relacionado,Colombia
+2608,11/04/2020,Valledupar,Cesar,casa,33,M,en estudio,Colombia
+2609,11/04/2020,Cerete,Córdoba,casa,49,M,en estudio,Colombia
+2610,11/04/2020,Monteria,Córdoba,casa,41,M,en estudio,Colombia
+2611,11/04/2020,Monteria,Córdoba,casa,31,F,en estudio,Colombia
+2612,11/04/2020,Tierralta,Córdoba,casa,25,M,en estudio,Colombia
+2613,11/04/2020,Monteria,Córdoba,casa,58,F,en estudio,Colombia
+2614,11/04/2020,Suesca,Cundinamarca,fallecido,71,M,en estudio,Colombia
+2615,11/04/2020,Bogotá,Bogotá D.C.,casa,45,F,en estudio,Colombia
+2616,11/04/2020,Soacha,Cundinamarca,casa,26,F,en estudio,Colombia
+2617,11/04/2020,Zipaquira,Cundinamarca,casa,1,F,en estudio,Colombia
+2618,11/04/2020,Facatativa,Cundinamarca,casa,22,F,en estudio,Colombia
+2619,11/04/2020,Mosquera,Cundinamarca,casa,69,M,en estudio,Colombia
+2620,11/04/2020,Cajica,Cundinamarca,casa,32,M,en estudio,Colombia
+2621,11/04/2020,Zipaquira,Cundinamarca,hospital,38,M,en estudio,Colombia
+2622,11/04/2020,Agrado,Huila,hospital,27,F,en estudio,Colombia
+2623,11/04/2020,Gigante,Huila,hospital,89,M,en estudio,Colombia
+2624,11/04/2020,Pitalito,Huila,hospital,78,F,en estudio,Colombia
+2625,11/04/2020,Neiva,Huila,casa,30,M,en estudio,Colombia
+2626,11/04/2020,Neiva,Huila,casa,60,M,en estudio,Colombia
+2627,11/04/2020,Quibdo,Chocó,casa,47,F,en estudio,Colombia
+2628,11/04/2020,Neiva,Huila,fallecido,79,M,en estudio,Colombia
+2629,11/04/2020,Pereira,Risaralda,casa,58,M,en estudio,Colombia
+2630,11/04/2020,Santa Marta,Santa Marta D.T. y C.,hospital,24,F,en estudio,Colombia
+2631,11/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,39,M,en estudio,Colombia
+2632,11/04/2020,Villavicencio,Meta,fallecido,77,M,relacionado,Colombia
+2633,11/04/2020,Villavicencio,Meta,hospital uci,67,M,relacionado,Colombia
+2634,11/04/2020,Pasto,Nariño,hospital uci,24,M,en estudio,Colombia
+2635,11/04/2020,Pasto,Nariño,hospital,31,M,en estudio,Colombia
+2636,11/04/2020,Cumbal,Nariño,casa,14,M,en estudio,Colombia
+2637,11/04/2020,Ipiales,Nariño,hospital uci,41,M,en estudio,Colombia
+2638,11/04/2020,Cucuta,Norte de Santander,hospital,57,M,en estudio,Colombia
+2639,11/04/2020,Armenia,Quindío,casa,69,F,importado,Estados Unidos
+2640,11/04/2020,Armenia,Quindío,hospital,36,M,en estudio,Colombia
+2641,11/04/2020,Armenia,Quindío,fallecido,77,M,en estudio,Colombia
+2642,11/04/2020,Pereira,Risaralda,casa,36,F,en estudio,Colombia
+2643,11/04/2020,Dosquebradas,Risaralda,casa,36,F,en estudio,Colombia
+2644,11/04/2020,Floridablanca,Santander,casa,56,F,relacionado,Colombia
+2645,11/04/2020,Cimitarra,Santander,casa,57,M,en estudio,Colombia
+2646,11/04/2020,Bucaramanga,Santander,casa,54,F,en estudio,Colombia
+2647,11/04/2020,Barrancabermeja,Santander,hospital,27,F,en estudio,Colombia
+2648,11/04/2020,Ibague,Tolima,fallecido,66,F,en estudio,Colombia
+2649,11/04/2020,Ibague,Tolima,hospital uci,39,M,en estudio,Colombia
+2650,11/04/2020,Candelaria,Valle del Cauca,casa,59,M,en estudio,Colombia
+2651,11/04/2020,Candelaria,Valle del Cauca,casa,54,F,en estudio,Colombia
+2652,11/04/2020,Cali,Valle del Cauca,casa,58,M,en estudio,Colombia
+2653,11/04/2020,Cali,Valle del Cauca,casa,28,F,en estudio,Colombia
+2654,11/04/2020,Cali,Valle del Cauca,casa,18,F,en estudio,Colombia
+2655,11/04/2020,Cali,Valle del Cauca,casa,53,F,en estudio,Colombia
+2656,11/04/2020,Cali,Valle del Cauca,casa,30,F,en estudio,Colombia
+2657,11/04/2020,Cali,Valle del Cauca,hospital,30,M,en estudio,Colombia
+2658,11/04/2020,Cali,Valle del Cauca,casa,55,M,en estudio,Colombia
+2659,11/04/2020,Cali,Valle del Cauca,casa,39,F,en estudio,Colombia
+2660,11/04/2020,Cali,Valle del Cauca,casa,26,M,en estudio,Colombia
+2661,11/04/2020,Cali,Valle del Cauca,casa,66,M,en estudio,Colombia
+2662,11/04/2020,Jamundi,Valle del Cauca,casa,53,M,en estudio,Colombia
+2663,11/04/2020,San Pedro,Valle del Cauca,casa,27,F,en estudio,Colombia
+2664,11/04/2020,Yumbo,Valle del Cauca,casa,57,F,en estudio,Colombia
+2665,11/04/2020,Yumbo,Valle del Cauca,casa,39,F,en estudio,Colombia
+2666,11/04/2020,Yumbo,Valle del Cauca,casa,36,F,en estudio,Colombia
+2667,11/04/2020,Barranquilla,Barranquilla D.E.,hospital,45,M,en estudio,Colombia
+2668,11/04/2020,Barranquilla,Barranquilla D.E.,casa,33,F,en estudio,Colombia
+2669,11/04/2020,Valledupar,Cesar,casa,40,M,relacionado,Colombia
+2670,11/04/2020,Valledupar,Cesar,casa,25,M,en estudio,Colombia
+2671,11/04/2020,Soacha,Cundinamarca,casa,2,F,relacionado,Colombia
+2672,11/04/2020,Neiva,Huila,casa,40,M,relacionado,Colombia
+2673,11/04/2020,Neiva,Huila,casa,24,M,relacionado,Colombia
+2674,11/04/2020,Neiva,Huila,hospital,60,F,relacionado,Colombia
+2675,11/04/2020,Neiva,Huila,casa,44,F,relacionado,Colombia
+2676,11/04/2020,Dosquebradas,Risaralda,casa,35,M,relacionado,Colombia
+2677,11/04/2020,Villavicencio,Meta,casa,54,M,en estudio,Colombia
+2678,11/04/2020,Bucaramanga,Santander,casa,35,F,en estudio,Colombia
+2679,11/04/2020,Cali,Valle del Cauca,casa,72,F,en estudio,Colombia
+2680,11/04/2020,Cali,Valle del Cauca,casa,27,F,relacionado,Colombia
+2681,11/04/2020,El Cerrito,Valle del Cauca,casa,22,F,relacionado,Colombia
+2682,11/04/2020,El Cerrito,Valle del Cauca,casa,48,M,relacionado,Colombia
+2683,11/04/2020,El Cerrito,Valle del Cauca,casa,40,F,relacionado,Colombia
+2684,11/04/2020,Cali,Valle del Cauca,hospital,66,M,en estudio,Colombia
+2685,11/04/2020,Buenaventura,Valle del Cauca,casa,24,M,en estudio,Colombia
+2686,11/04/2020,Cali,Valle del Cauca,casa,32,F,relacionado,Colombia
+2687,11/04/2020,Cali,Valle del Cauca,casa,49,M,en estudio,Colombia
+2688,11/04/2020,Cali,Valle del Cauca,casa,55,M,en estudio,Colombia
+2689,11/04/2020,Cali,Valle del Cauca,casa,34,F,en estudio,Colombia
+2690,11/04/2020,Cali,Valle del Cauca,casa,42,M,relacionado,Colombia
+2691,11/04/2020,Cali,Valle del Cauca,hospital,68,F,relacionado,Colombia
+2692,11/04/2020,Cali,Valle del Cauca,hospital,65,F,en estudio,Colombia
+2693,11/04/2020,Tumaco,Nariño,casa,45,M,importado,Ecuador
+2694,11/04/2020,San Andres,San Andrés,casa,65,M,en estudio,Colombia
+2695,11/04/2020,Villavicencio,Meta,casa,22,F,importado,México
+2696,11/04/2020,Villavicencio,Meta,casa,34,M,importado,Estados Unidos de América
+2697,11/04/2020,Pereira,Risaralda,casa,44,F,en estudio,Colombia
+2698,11/04/2020,Pereira,Risaralda,casa,42,F,en estudio,Colombia
+2699,11/04/2020,Manizales,Caldas,casa,22,F,en estudio,Colombia
+2700,11/04/2020,La Dorada,Caldas,casa,28,F,en estudio,Colombia
+2701,11/04/2020,Soacha,Cundinamarca,casa,23,F,relacionado,Colombia
+2702,11/04/2020,Subachoque,Cundinamarca,casa,28,F,relacionado,Colombia
+2703,11/04/2020,Soacha,Cundinamarca,casa,39,M,relacionado,Colombia
+2704,11/04/2020,Madrid,Cundinamarca,casa,27,F,relacionado,Colombia
+2705,11/04/2020,Sopo,Cundinamarca,casa,68,F,importado,España
+2706,11/04/2020,Pacho,Cundinamarca,casa,54,M,relacionado,Colombia
+2707,11/04/2020,Pacho,Cundinamarca,hospital,49,F,relacionado,Colombia
+2708,11/04/2020,Monteria,Córdoba,casa,26,F,en estudio,Colombia
+2709,11/04/2020,Bogotá,Bogotá D.C.,casa,50,F,en estudio,Colombia
+2710,12/04/2020,Bogotá,Bogotá D.C.,hospital,52,F,en estudio,Colombia
+2711,12/04/2020,Cartagena,Cartagena D.T. y C,casa,21,M,en estudio,Colombia
+2712,12/04/2020,Cartagena,Cartagena D.T. y C,casa,51,M,en estudio,Colombia
+2713,12/04/2020,Floridablanca,Santander,casa,52,F,importado,España
+2714,12/04/2020,Bucaramanga,Santander,casa,23,F,en estudio,Colombia
+2715,12/04/2020,Medellin,Antioquia,casa,33,M,en estudio,Colombia
+2716,12/04/2020,Medellin,Antioquia,casa,27,M,en estudio,Colombia
+2717,12/04/2020,Medellin,Antioquia,casa,52,M,en estudio,Colombia
+2718,12/04/2020,Medellin,Antioquia,casa,29,M,relacionado,Colombia
+2719,12/04/2020,Pereira,Risaralda,casa,45,M,en estudio,Colombia
+2720,12/04/2020,Pereira,Risaralda,casa,54,M,relacionado,Colombia
+2721,12/04/2020,Cali,Valle del Cauca,casa,1,M,en estudio,Colombia
+2722,12/04/2020,Florida,Valle del Cauca,hospital uci,90,M,en estudio,Colombia
+2723,12/04/2020,Guacari,Valle del Cauca,casa,25,F,importado,España
+2724,12/04/2020,Buenaventura,Valle del Cauca,casa,23,M,relacionado,Colombia
+2725,12/04/2020,Zipaquira,Cundinamarca,hospital,60,F,en estudio,Colombia
+2726,12/04/2020,Cajica,Cundinamarca,casa,42,F,en estudio,Colombia
+2727,12/04/2020,Cali,Valle del Cauca,casa,7,M,en estudio,Colombia
+2728,12/04/2020,Yotoco,Valle del Cauca,casa,38,M,en estudio,Colombia
+2729,12/04/2020,El Reten,Magdalena,hospital,76,M,en estudio,Colombia
+2730,12/04/2020,Barranquilla,Barranquilla D.E.,hospital,20,M,en estudio,Colombia
+2731,12/04/2020,Medellin,Antioquia,casa,72,M,en estudio,Colombia
+2732,12/04/2020,Manizales,Caldas,casa,34,M,importado,Brasil
+2733,12/04/2020,Cartagena,Cartagena D.T. y C,casa,28,M,en estudio,Colombia
+2734,12/04/2020,Cartagena,Cartagena D.T. y C,casa,35,F,en estudio,Colombia
+2735,12/04/2020,Cartagena,Cartagena D.T. y C,casa,53,M,relacionado,Colombia
+2736,12/04/2020,Cartagena,Cartagena D.T. y C,casa,14,F,relacionado,Colombia
+2737,12/04/2020,Bogotá,Bogotá D.C.,casa,8,M,relacionado,Colombia
+2738,12/04/2020,Bogotá,Bogotá D.C.,casa,48,M,en estudio,Colombia
+2739,12/04/2020,Cali,Valle del Cauca,hospital,47,F,en estudio,Colombia
+2740,12/04/2020,Cucuta,Norte de Santander,casa,23,M,en estudio,Colombia
+2741,12/04/2020,Cucuta,Norte de Santander,casa,32,F,en estudio,Colombia
+2742,12/04/2020,Chia,Cundinamarca,casa,52,F,relacionado,Colombia
+2743,12/04/2020,Chïa,Cundinamarca,casa,58,M,relacionado,Colombia
+2744,12/04/2020,Villapinzon,Cundinamarca,casa,25,M,relacionado,Colombia
+2745,12/04/2020,Soacha,Cundinamarca,hospital,42,M,en estudio,Colombia
+2746,12/04/2020,Cajica,Cundinamarca,casa,30,F,relacionado,Colombia
+2747,12/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,14,F,en estudio,Colombia
+2748,12/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,47,F,en estudio,Colombia
+2749,12/04/2020,Santa Marta,Santa Marta D.T. y C.,casa,38,F,en estudio,Colombia
+2750,12/04/2020,Puerto Colombia,Atlántico,casa,34,M,relacionado,Colombia
+2751,12/04/2020,Baranoa,Atlántico,casa,67,F,relacionado,Colombia
+2752,12/04/2020,Baranoa,Atlántico,casa,68,M,en estudio,Colombia
+2753,12/04/2020,Envigado,Antioquia,casa,84,F,relacionado,Colombia
+2754,12/04/2020,Medellin,Antioquia,casa,84,M,relacionado,Colombia
+2755,12/04/2020,Medellin,Antioquia,casa,20,F,importado,Ecuador
+2756,12/04/2020,Cali,Valle del Cauca,casa,10,M,en estudio,Colombia
+2757,12/04/2020,Cali,Valle del Cauca,casa,42,F,en estudio,Colombia
+2758,12/04/2020,Cali,Valle del Cauca,hospital,74,F,en estudio,Colombia
+2759,12/04/2020,Bogotá,Bogotá D.C.,hospital,75,M,importado,Estados Unidos
+2760,12/04/2020,Bogotá,Bogotá D.C.,hospital,57,M,en estudio,Colombia
+2761,12/04/2020,Bogotá,Bogotá D.C.,hospital,34,F,en estudio,Colombia
+2762,12/04/2020,Bogotá,Bogotá D.C.,hospital,18,M,en estudio,Colombia
+2763,12/04/2020,Bogotá,Bogotá D.C.,hospital,73,M,en estudio,Colombia
+2764,12/04/2020,Bogotá,Bogotá D.C.,hospital uci,66,M,en estudio,Colombia
+2765,12/04/2020,Bogotá,Bogotá D.C.,casa,2,F,relacionado,Colombia
+2766,12/04/2020,Bogotá,Bogotá D.C.,hospital,66,M,en estudio,Colombia
+2767,12/04/2020,Bogotá,Bogotá D.C.,hospital,49,M,en estudio,Colombia
+2768,12/04/2020,Bogotá,Bogotá D.C.,hospital,76,F,en estudio,Colombia
+2769,12/04/2020,Bogotá,Bogotá D.C.,hospital,58,M,en estudio,Colombia
+2770,12/04/2020,Bogotá,Bogotá D.C.,casa,37,F,en estudio,Colombia
+2771,12/04/2020,Bogotá,Bogotá D.C.,casa,10,M,relacionado,Colombia
+2772,12/04/2020,Bogotá,Bogotá D.C.,casa,55,F,en estudio,Colombia
+2773,12/04/2020,Bogotá,Bogotá D.C.,hospital uci,65,M,en estudio,Colombia
+2774,12/04/2020,Bogotá,Bogotá D.C.,hospital,74,M,en estudio,Colombia
+2775,12/04/2020,Bogotá,Bogotá D.C.,casa,56,M,relacionado,Colombia
+2776,12/04/2020,Bogotá,Bogotá D.C.,casa,80,F,en estudio,Colombia

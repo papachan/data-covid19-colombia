@@ -3,7 +3,7 @@
     "deps": "yarn install",
     "watch": "clj -A:shadow-cljs watch app;",
     "release": "shadow-cljs -A:release release app;",
-    "clean": "rm -rf public/js"
+    "clean": "rm -rf public/js; rm -rf target;"
   },
   "dependencies": {
     "react-chartist": "^0.14.3",

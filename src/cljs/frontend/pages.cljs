@@ -33,30 +33,35 @@
   (let [formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy")
         fn-parse (fn [[k v]] [(d/parse-date k) v])
         fn-unparse (fn [[k v]] [(.format formatter k) v])
-        contamined (->> data
-                        (map #(nth % 1))
+        dates-freq (->> data
+                        (map second)
                         vec
-                        frequencies
+                        frequencies)
+        contamined (->> dates-freq
                         (map fn-parse)
                         sort
                         (map fn-unparse))
-        series-fechas (->> contamined
-                           (map (fn [[k v]] {k 0}))
-                           (into {}))
+        series-zero (->> dates-freq
+                         (reduce-kv (fn [m k v] (assoc m (d/parse-date k) 0)) {})
+                         sort
+                         (map fn-unparse)
+                         (into {}))
         deaths (->> data
                     (filter #(some #{"Fallecido" "fallecido"} %))
                     (map #(.format formatter (d/parse-date (nth % 1))))
-                    frequencies)
-        series-deaths (->> (apply merge series-fechas deaths)
-                           (map fn-parse)
-                           sort)
-        labels-fechas (into [] (map #(first (clojure.string/split (first %) #"/")) contamined))
+                    frequencies
+                    (apply merge series-zero)
+                    (map fn-parse)
+                    sort)
+        labels-fechas (->> contamined
+                           (map #(first (clojure.string/split (first %) #"/")))
+                           vec)
         series1 (->> (sum contamined)
-                     (map #(nth % 1))
+                     (map second)
                      vec)
-        series2 (->> (sum series-deaths)
-                     (map (fn [[k v]] v))
-                     vec)]
+        series2 (->> (sum deaths)
+                      (map second)
+                      vec)]
     [labels-fechas series1 series2]))
 
 (defn show-chart
@@ -120,7 +125,7 @@
           series1 (->> statuses
                        (map #(nth % 1))
                        vec)
-          options {:height "180px"
+          options {:height "210px"
                    :reverseData true
                    :horizontalBars true
                    :axisY {:offset 120}}]
