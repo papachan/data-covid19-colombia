@@ -11,26 +11,11 @@
   (:import java.net.URL
            java.net.HttpURLConnection))
 
-(let [uri (URL. "https://e.infogram.com/api/live/flex/0e44ab71-9a20-43ab-89b3-0e73c594668f/832a1373-0724-4182-a188-b958f9bf0906?")
-      dest (io/file "resources/datos.json")
-      conn ^HttpURLConnection (.openConnection ^URL uri)]
-  (.connect conn)
-  (with-open [is (.getInputStream conn)]
-    (io/copy is dest)))
-
 (def content (slurp (io/resource "datos.json")))
 (def json-data (json/parse-string content))
 (def data (json-data "data"))
 
-;; ultima fecha del archivo json
-(->> data
-     first
-     rest
-     vec
-     (map #(nth % 1))
-     last)
-
-(let [date (clojure.string/replace (last (map #(nth % 1) (rest (first data)))) #"/" "-")
+(let [date (clojure.string/replace (last (map #(second %) (rest (first data)))) #"/" "-")
       file-name (clojure.string/join ["data/" "Datos_" date ".csv"])]
   (spit file-name "" :append false)
   (with-open [out-file (io/writer file-name)]
@@ -64,21 +49,28 @@
                       (map (fn [[k v]] [(f/parse fmt k) v]))
                       (into (sorted-map)))
 
-      series-fechas (make-serie (sort (into #{} (map #(nth % 1) rows))))
-      timeseries-deaths (frequencies (into [] (map #(nth % 1) (filter #(some #{"Fallecido" "fallecido"} %) rows))))
+      series-fechas (make-serie (sort (into #{} (map #(second %) rows))))
+      timeseries-deaths (frequencies (into [] (map #(second %) (filter #(some #{"Fallecido" "fallecido"} %) rows))))
       timeseries (->> (apply merge series-fechas timeseries-deaths)
                       (map (fn [[k v]] [(f/parse fmt k) v]))
                       sort
                       (map (fn [[k v]] [(f/unparse fmt k) v])))]
 
   ;; ultima fecha del archivo json
-  (last (map #(nth % 1) rows))
+  (last (map #(second %) rows))
 
   ;; all deaths by dates
   (apply merge series-fechas timeseries-deaths)
 
   ;; all cases per dates
-  (sort (frequencies (into [] (map #(nth % 1) rows))))
+  (into (sorted-map) (vec (frequencies (into [] (map #(f/parse fmt (second %)) rows)))))
+
+  ;; all new rows per dates
+  (->> rows
+       (map #(f/parse fmt (second %)))
+       frequencies
+       vec
+       (into (sorted-map)))
 
   ;; all statuses available
   (distinct (map #(clojure.string/lower-case (nth % 4)) rows))
@@ -96,16 +88,9 @@
 
   ;; count rows from a specific date
   (count (filter #{"08/04/2020"}
-                 (map #(nth % 1) rows)))
+                 (map #(second %) rows)))
 
-  ;; all new rows per dates
-  (->> rows
-       (map #(f/parse fmt (nth % 1)))
-       frequencies
-       vec
-       (into (sorted-map)))
-
-  ;; statuses to lower case
+  ;; statuses
   (map #(clojure.string/lower-case (nth % 4)) (filter #(some #{"Bogotá"} %) rows))
 
   ;; (map #(nth % 4)
@@ -132,30 +117,30 @@
   ;; Fallecidos total
   (count (filter #{"fallecido"}
                  (map #(clojure.string/lower-case (nth % 4)) rows)))
-  ;; => 14 ;; => 16 => 17 => 25 => 32 => 35 => 46 => 50 => 54 => 109
+  ;; => 14 ;; => 16 => 17 => 25 => 32 => 35 => 46 => 50 => 54 => 109 => 112
 
   ;; fallecidos por regiones:
-  ;; => {"cienaga de oro" 1, "villapinzon" 2, "monteria" 1, "espinal" 1, "ipiales" 2, "bogota" 47, "santander de quilichao" 1, "cucuta" 2, "neiva" 3, "turbaco" 1, "cartagena" 8, "montenegro" 1, "barrancabermeja" 1, "armenia" 1, "zipaquira" 1, "ginebra" 1, "pasto" 1, "ocaña" 1, "cali" 12, "medellin" 1, "tenjo" 1, "popayan" 1, "ibague" 1, "santa marta" 4, "villavicencio" 3, "suesca" 1, "soledad" 2, "pereira" 2, "la dorada" 2, "tunja" 1, "barranquilla" 2}
+  ;; => {"cienaga de oro" 1, "villapinzon" 2, "monteria" 1, "espinal" 1, "ipiales" 2, "bogota" 48, "santander de quilichao" 1, "cucuta" 2, "neiva" 3, "turbaco" 1, "zona bananera" 1, "cartagena" 9, "montenegro" 1, "barrancabermeja" 1, "armenia" 1, "zipaquira" 1, "ginebra" 1, "pasto" 1, "ocaña" 1, "cali" 12, "medellin" 1, "tenjo" 1, "popayan" 1, "ibague" 1, "santa marta" 4, "villavicencio" 3, "suesca" 1, "soledad" 2, "pereira" 2, "la dorada" 2, "tunja" 1, "barranquilla" 2}
   (frequencies (into [] (map #(clojure.string/lower-case (nth % 2)) (filter #(some #{"Fallecido" "fallecido"} %) rows))))
 
   ;; all rows from 3 days ago
-  ;; => {"10/04/02020" 250, "11/04/02020" 236, "12/04/02020" 67}
+  ;; => {"11/04/02020" 236, "12/04/02020" 67, "13/04/02020" 76}
   (->> rows
-       (map #(f/parse fmt (nth % 1)))
+       (map #(f/parse fmt (second %)))
        (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (-> 3 t/days t/ago)))))
        frequencies
        (map (fn [[k v]] [(f/unparse fmt k) v]))
        (into {}))
 
   ;; all cases from 1 week ago
-  ;; => 1312 => 1206 => 1442 => 1370
+  ;; => 1312 => 1206 => 1442 => 1370 => 1273
   (->> rows
-       (map #(f/parse fmt (nth % 1)))
+       (map #(f/parse fmt (second %)))
        (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (-> 8 t/days t/ago)))))
        count)
 
   ;; deads between ages
-  ;; => => {"mayores de 40" 98, "menores de 40" 11}
+  ;; => {"mayores de 40" 101, "menores de 40" 11}
   (->> rows
        (filter #(some #{"Fallecido" "fallecido"} %))
        (map #(Integer/parseInt (nth % 5)))

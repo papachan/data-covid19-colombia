@@ -120,7 +120,7 @@
                         vec
                         frequencies)
           labels-fechas (->> statuses
-                             (map #(labels (nth % 0)))
+                             (map #(labels (first %)))
                              vec)
           series1 (->> statuses
                        (map #(nth % 1))
