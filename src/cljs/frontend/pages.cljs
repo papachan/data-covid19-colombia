@@ -171,7 +171,7 @@
        [block-stats {:title "Number of deaths"
                      :value
                      (when (count data) (count (filter #(some #{"Fallecido" "fallecido"} %) data)))}]
-       [block-stats {:title "Number of contamined"
+       [block-stats {:title "Number of cases"
                      :value
                      (when (count data)
                        (count (remove
