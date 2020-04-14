@@ -11,6 +11,7 @@
   (:import java.net.URL
            java.net.HttpURLConnection))
 
+;; From infogram
 (let [uri (URL. "https://e.infogram.com/api/live/flex/0e44ab71-9a20-43ab-89b3-0e73c594668f/832a1373-0724-4182-a188-b958f9bf0906?")
       dest (io/file "resources/datos.json")
       conn ^HttpURLConnection (.openConnection ^URL uri)]
