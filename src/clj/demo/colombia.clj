@@ -15,21 +15,11 @@
 (def json-data (json/parse-string content))
 (def data (json-data "data"))
 
-(let [date (clojure.string/replace (last (map #(second %) (rest (first data)))) #"/" "-")
+(let [date (clojure.string/replace (last (map second (rest (first data)))) #"/" "-")
       file-name (clojure.string/join ["data/" "Datos_" date ".csv"])]
   (spit file-name "" :append false)
   (with-open [out-file (io/writer file-name)]
     (csv/write-csv out-file (first data))))
-
-(defn make-serie
-  [coll]
-  (loop [in coll,
-         out {}]
-    (if (seq in)
-      (recur (rest in)
-             (conj out {(first in) 0}))
-      out)))
-
 
 (def fmt (f/formatter "dd/MM/yyyyy"))
 
@@ -49,15 +39,19 @@
                       (map (fn [[k v]] [(f/parse fmt k) v]))
                       (into (sorted-map)))
 
-      series-fechas (make-serie (sort (into #{} (map #(second %) rows))))
-      timeseries-deaths (frequencies (into [] (map #(second %) (filter #(some #{"Fallecido" "fallecido"} %) rows))))
+      series-fechas   (->> rows
+                           (map second)
+                           vec
+                           frequencies
+                           (reduce-kv (fn [m k v] (assoc m k 0)) {}))
+      timeseries-deaths (frequencies (into [] (map second (filter #(some #{"Fallecido" "fallecido"} %) rows))))
       timeseries (->> (apply merge series-fechas timeseries-deaths)
                       (map (fn [[k v]] [(f/parse fmt k) v]))
                       sort
                       (map (fn [[k v]] [(f/unparse fmt k) v])))]
 
   ;; ultima fecha del archivo json
-  (last (map #(second %) rows))
+  (last (map second rows))
 
   ;; all deaths by dates
   (apply merge series-fechas timeseries-deaths)

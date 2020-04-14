@@ -19,15 +19,6 @@
                    out))
       (reverse out))))
 
-(defn make-serie
-  [coll]
-  (loop [in coll,
-         out {}]
-    (if (seq in)
-      (recur (rest in)
-             (conj out {(first in) 0}))
-      out)))
-
 (defn process-data
   [data]
   (let [formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy")
