@@ -37,9 +37,9 @@
                       :pa_s_de_procedencia]) (clojure.walk/keywordize-keys (json/parse-string data))))))
 
 (defn start-crawler
-  [max-num]
+  [max-num header]
   (loop [i max-num
-         out []]
+         out [header]]
     (if (> i 0)
       (let [fmt (f/formatter "dd/MM/yyyy")
             name (clojure.string/join ["temp" i ".json"])
@@ -73,7 +73,7 @@
                 "Sexo"
                 "Tipo*"
                 "País de procedencia"]
-      content (start-crawler days-diff)
+      content (start-crawler days-diff header)
       sheet-names ["PositivasNegativas"
                    "Titulo"
                    "Casos1"
