@@ -12,10 +12,6 @@
            java.net.HttpURLConnection))
 
 
-
-(def json-template "{\"data\":[[%s]],\"sheetNames\":[\"Casos1\"],\"allSheetNames\":[\"PositivasNegativas\",\"Titulo\",\"Casos1\",\"IndicadoresGenerales\",\"Mapa\",\"Copia de Mapa\",\"Mundo\",\"Procesadas\",\"PCR\",\"Etario\",\"TotalEtario\",\"importadosvsrelacionados\",\"Procedencia\",\"Estado\",\"Estado2\",\"Hoja 12\",\"Historico_Muestras\",\"fys\",\"Laboratorios operando en Colomb\"],\"refreshed\":%s}")
-
-
 ;; From datos.gov.co
 (defn fetch-file
   [^String d n]
@@ -41,9 +37,9 @@
                       :pa_s_de_procedencia]) (clojure.walk/keywordize-keys (json/parse-string data))))))
 
 (defn start-crawler
-  [maxi]
-  (loop [i maxi
-         out ""]
+  [max-num]
+  (loop [i max-num
+         out []]
     (if (> i 0)
       (let [fmt (f/formatter "dd/MM/yyyy")
             name (clojure.string/join ["temp" i ".json"])
@@ -51,17 +47,11 @@
             _ (fetch-file dat (clojure.string/join ["resources/" name]))
             data (when (io/resource name)
                    (process-data (io/resource name)))
-            res (if-not (= (count data) 0)
-                  (->> data
-                       (map (partial clojure.string/join #","))
-                       (map (fn [k] (str "[" k "]")))
-                       vec
-                       (clojure.string/join #","))
-                  "")]
-        (recur (dec i)
-               (str out res)))
+            res (if (not= (count data) 0)
+                  (concat out data)
+                  out)]
+        (recur (dec i) res))
       out)))
-
 
 (let [content (slurp (io/resource "datos.json"))
       json-data (json/parse-string content)
@@ -73,8 +63,41 @@
                      (map #(second %))
                      first
                      (f/parse fmt))
-      days-diff (t/in-days (t/interval start-date (t/now)))]
-  (format json-template (start-crawler days-diff) (coerce/to-long (t/now))))
+      days-diff (t/in-days (t/interval start-date (t/now)))
+      header ["ID de caso"
+                "Fecha de diagnóstico"
+                "Ciudad de ubicación"
+                "Departamento o Distrito"
+                "Atención**"
+                "Edad"
+                "Sexo"
+                "Tipo*"
+                "País de procedencia"]
+      content (start-crawler days-diff)
+      sheet-names ["PositivasNegativas"
+                   "Titulo"
+                   "Casos1"
+                   "IndicadoresGenerales"
+                   "Mapa"
+                   "Copia de Mapa"
+                   "Mundo"
+                   "Procesadas"
+                   "PCR"
+                   "Etario"
+                   "TotalEtario"
+                   "importadosvsrelacionados"
+                   "Procedencia"
+                   "Estado"
+                   "Estado2"
+                   "Hoja 12"
+                   "Historico_Muestras"
+                   "fys"
+                   "Laboratorios operando en Colomb"]
+      data-json {:data [content]
+                 :sheetNames ["Casos1"]
+                 :allSheetNames sheet-names
+                 :refreshed (coerce/to-long (t/now))}]
+  (spit "resources/datos.json" (json/encode data-json)))
 
 ;; export to csv
 (def content (slurp (io/resource "datos.json")))
