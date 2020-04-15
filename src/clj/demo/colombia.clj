@@ -11,17 +11,11 @@
   (:import java.net.URL
            java.net.HttpURLConnection))
 
+
+(def fmt (f/formatter "dd/MM/yyyyy"))
 (def content (slurp (io/resource "datos.json")))
 (def json-data (json/parse-string content))
 (def data (json-data "data"))
-
-(let [date (clojure.string/replace (last (map second (rest (first data)))) #"/" "-")
-      file-name (clojure.string/join ["data/" "Datos_" date ".csv"])]
-  (spit file-name "" :append false)
-  (with-open [out-file (io/writer file-name)]
-    (csv/write-csv out-file (first data))))
-
-(def fmt (f/formatter "dd/MM/yyyyy"))
 
 (let [rows (into [] (rest (first data)))
       bogota (filter #(some #{"Bogotá" "Bogota"} %) rows)
