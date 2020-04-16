@@ -28,23 +28,39 @@
                         (map second)
                         vec
                         frequencies)
-        contamined (->> dates-freq
-                        (map fn-parse)
-                        sort
-                        (map fn-unparse))
+        sorted-dates (->> dates-freq
+                          (map fn-parse)
+                          sort
+                          (map fn-unparse))
+
         series-zero (->> dates-freq
                          (reduce-kv (fn [m k v] (assoc m (d/parse-date k) 0)) {})
                          sort
                          (map fn-unparse)
                          (into {}))
+
+        contamined (->> data
+                        (remove #(some #{"Recuperado"
+                                         "recuperado"
+                                         ;; "Fallecido"
+                                         ;; "fallecido"
+                                         ;; "Recuperado (Hospital)"
+                                         } %))
+                        (map #(.format formatter (d/parse-date (second %))))
+                        frequencies
+                        (apply merge series-zero)
+                        (map fn-parse)
+                        sort)
+
         deaths (->> data
                     (filter #(some #{"Fallecido" "fallecido"} %))
-                    (map #(.format formatter (d/parse-date (nth % 1))))
+                    (map #(.format formatter (d/parse-date (second %))))
                     frequencies
                     (apply merge series-zero)
                     (map fn-parse)
                     sort)
-        labels-fechas (->> contamined
+
+        labels-fechas (->> sorted-dates
                            (map #(first (clojure.string/split (first %) #"/")))
                            vec)
         series1 (->> (sum contamined)
