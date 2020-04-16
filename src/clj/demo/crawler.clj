@@ -26,9 +26,13 @@
   [max-num]
   (loop [i max-num]
     (when (>= i 0)
-      (let [fmt (f/formatter "dd/MM/yyyy")
-            name (clojure.string/join ["temp" i ".json"])
-            dat (f/unparse (f/with-zone fmt (t/default-time-zone)) (-> i t/days t/ago))]
+      (let [name (clojure.string/join ["temp" i ".json"])
+            date-interval (-> i t/days t/ago)
+            fmt-str (if (< (t/month date-interval) 4)
+                      "dd/M/yyyy"
+                      "dd/MM/yyyy")
+            dat (->> date-interval
+                     (f/unparse (f/with-zone (f/formatter fmt-str) (t/default-time-zone))))]
         (fetch-file dat (clojure.string/join ["resources/" name]))
         (recur (dec i))))))
 
