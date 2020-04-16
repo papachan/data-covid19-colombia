@@ -18,7 +18,7 @@
 (def data (json-data "data"))
 
 (let [rows (into [] (rest (first data)))
-      bogota (filter #(some #{"Bogotá" "Bogota"} %) rows)
+      bogota (filter #(some #{"BOGOTÁ" "BOGOTA"} %) rows)
       statuses (into [] (map #(clojure.string/lower-case (nth % 4)) bogota))
       types (into [] (map #(clojure.string/lower-case (nth % 7)) bogota))
       ages (into [] (map #(clojure.string/lower-case (nth % 5)) bogota))
@@ -67,19 +67,19 @@
   (sort (distinct (map #(nth % 2) rows)))
 
   ;; ;; count fallecidos en bogota
-  (count (filter #(= "fallecido" %) statuses)) ;; => 3 => 5 => 12 => 14 => 45
+  (count (filter #(= "fallecido" %) statuses)) ;; => 3 => 5 => 12 => 14 => 45 => 60
 
   (count rows) ;; => 491 => 539 => 608 => 702 => 798 => 906 => 1065 => 1267 => 1406
 
-  (count (filter #{"Bogotá"}
-           (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587 => 725 => 861 => 1030 => 1164
+  (count (filter #{"BOGOTA"}
+           (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587 => 725 => 861 => 1030 => 1164 => 1333
 
   ;; count rows from a specific date
   (count (filter #{"08/04/2020"}
                  (map #(second %) rows)))
 
   ;; statuses
-  (map #(clojure.string/lower-case (nth % 4)) (filter #(some #{"Bogotá"} %) rows))
+  (map #(clojure.string/lower-case (nth % 4)) (filter #(some #{"BOGOTA"} %) rows))
 
   ;; (map #(nth % 4)
   ;;      (filter #(some #{"Bogotá"} %) rows))
@@ -97,7 +97,7 @@
 
   ;; ;; suma por regiones
   (frequencies (map #(nth % 2) only-infected))
-  (by-regions "Bogota") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733 => 926 => 964 => 1060 => 1102
+  (by-regions "BOGOTA") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733 => 926 => 964 => 1060 => 1102
 
   ;; => {"recuperado" 62, "casa" 883, "hospital" 138, "hospital uci" 31, "fallecido" 45, "recuperado (hospital)" 5}
   (frequencies statuses)
@@ -108,7 +108,7 @@
   ;; => 14 ;; => 16 => 17 => 25 => 32 => 35 => 46 => 50 => 54 => 109 => 112
 
   ;; fallecidos por regiones:
-  ;; => {"cienaga de oro" 1, "villapinzon" 2, "monteria" 1, "espinal" 1, "ipiales" 2, "bogota" 48, "santander de quilichao" 1, "cucuta" 2, "neiva" 3, "turbaco" 1, "zona bananera" 1, "cartagena" 9, "montenegro" 1, "barrancabermeja" 1, "armenia" 1, "zipaquira" 1, "ginebra" 1, "pasto" 1, "ocaña" 1, "cali" 12, "medellin" 1, "tenjo" 1, "popayan" 1, "ibague" 1, "santa marta" 4, "villavicencio" 3, "suesca" 1, "soledad" 2, "pereira" 2, "la dorada" 2, "tunja" 1, "barranquilla" 2}
+  ;; => {"cienaga de oro" 1, "villapinzon" 2, "monteria" 1, "espinal" 1, "ipiales" 2, "bogota" 60, "santander de quilichao" 1, "cucuta" 2, "neiva" 3, "turbaco" 1, "zona bananera" 1, "palmira" 2, "cartagena" 9, "buenaventura" 1, "montenegro" 1, "barrancabermeja" 1, "armenia" 1, "zipaquira" 1, "ginebra" 1, "pasto" 2, "ocaña" 1, "el dovio" 1, "cali" 20, "medellin" 1, "tenjo" 1, "miranda" 1, "popayan" 1, "ibague" 1, "santa marta" 6, "villavicencio" 4, "suesca" 1, "soledad" 2, "pereira" 3, "la dorada" 2, "tunja" 1, "barranquilla" 3, "tumaco" 1}
   (frequencies (into [] (map #(clojure.string/lower-case (nth % 2)) (filter #(some #{"Fallecido" "fallecido"} %) rows))))
 
   ;; all rows from 3 days ago
@@ -121,14 +121,14 @@
        (into {}))
 
   ;; all cases from 1 week ago
-  ;; => 1312 => 1206 => 1442 => 1370 => 1273
+  ;; => 1312 => 1206 => 1442 => 1370 => 1273 => 1179
   (->> rows
        (map #(f/parse fmt (second %)))
        (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (-> 8 t/days t/ago)))))
        count)
 
   ;; deads between ages
-  ;; => {"mayores de 40" 101, "menores de 40" 11}
+  ;; => {"mayores de 40" 132, "menores de 40" 12}
   (->> rows
        (filter #(some #{"Fallecido" "fallecido"} %))
        (map #(Integer/parseInt (nth % 5)))
