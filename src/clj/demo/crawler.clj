@@ -22,6 +22,28 @@
     (with-open [is (.getInputStream conn)]
       (io/copy is dest))))
 
+(defn start-crawler
+  [max-num]
+  (loop [i max-num]
+    (when (>= i 0)
+      (let [fmt (f/formatter "dd/MM/yyyy")
+            name (clojure.string/join ["temp" i ".json"])
+            dat (f/unparse (f/with-zone fmt (t/default-time-zone)) (-> i t/days t/ago))]
+        (fetch-file dat (clojure.string/join ["resources/" name]))
+        (recur (dec i))))))
+
+(let [content (slurp (io/resource "datos.json"))
+      json-data (json/parse-string content)
+      start-date (->> (json-data "data")
+                     first
+                     rest
+                     vec
+                     (map second)
+                     first
+                     (f/parse (f/formatter "dd/MM/yyyyy")))
+      days-diff (t/in-days (t/interval start-date (t/now)))]
+  (start-crawler (- days-diff 1)))
+
 (defn process-data
   [file]
   (let [data (slurp file)]
@@ -36,15 +58,12 @@
                       :tipo
                       :pa_s_de_procedencia]) (clojure.walk/keywordize-keys (json/parse-string data))))))
 
-(defn start-crawler
+(defn parse-json-files
   [max-num header]
   (loop [i max-num
          out [header]]
-    (if (> i 0)
-      (let [fmt (f/formatter "dd/MM/yyyy")
-            name (clojure.string/join ["temp" i ".json"])
-            dat (f/unparse fmt (-> i t/days t/ago))
-            _ (fetch-file dat (clojure.string/join ["resources/" name]))
+    (if (>= i 0)
+      (let [name (clojure.string/join ["temp" i ".json"])
             data (when (io/resource name)
                    (process-data (io/resource name)))
             res (if (not= (count data) 0)
@@ -53,16 +72,18 @@
         (recur (dec i) res))
       out)))
 
-(let [content (slurp (io/resource "datos.json"))
-      json-data (json/parse-string content)
+(let [json-data (->> "datos.json"
+                      io/resource
+                      slurp
+                      json/parse-string)
       fmt (f/formatter "dd/MM/yyyyy")
       start-date (->> (json-data "data")
-                     first
-                     rest
-                     vec
-                     (map #(second %))
-                     first
-                     (f/parse fmt))
+                      first
+                      rest
+                      vec
+                      (map second)
+                      first
+                      (f/parse fmt))
       days-diff (t/in-days (t/interval start-date (t/now)))
       header ["ID de caso"
                 "Fecha de diagnóstico"
@@ -73,7 +94,7 @@
                 "Sexo"
                 "Tipo*"
                 "País de procedencia"]
-      content (start-crawler days-diff header)
+      content (parse-json-files (- days-diff 1) header)
       sheet-names ["PositivasNegativas"
                    "Titulo"
                    "Casos1"
@@ -93,17 +114,20 @@
                    "Historico_Muestras"
                    "fys"
                    "Laboratorios operando en Colomb"]
-      data-json {:data [content]
-                 :sheetNames ["Casos1"]
-                 :allSheetNames sheet-names
-                 :refreshed (coerce/to-long (t/now))}]
+      data-json (when content
+                  {:data [content]
+                   :sheetNames ["Casos1"]
+                   :allSheetNames sheet-names
+                   :refreshed (coerce/to-long (t/now))})]
   (spit "resources/datos.json" (json/encode data-json)))
 
 ;; export to csv
-(def content (slurp (io/resource "datos.json")))
-(def json-data (json/parse-string content))
-(def data (json-data "data"))
-(let [last-date (->> data
+(let [json-data (->> "datos.json"
+                      io/resource
+                      slurp
+                      json/parse-string)
+      data (json-data "data")
+      last-date (->> data
                      first
                      rest
                      (map second)
