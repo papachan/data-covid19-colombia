@@ -27,24 +27,26 @@
   (loop [i max-num]
     (when (>= i 0)
       (let [name (clojure.string/join ["temp" i ".json"])
-            date-interval (-> i t/days t/ago)
-            fmt-str (if (< (t/month date-interval) 4)
-                      "dd/M/yyyy"
+            date (-> i t/days t/ago)
+            fmt-str (if (< (t/month date) 4)
+                      (if (< (t/day date) 13)
+                        "d/M/yy"
+                        "dd/M/yyyy")
                       "dd/MM/yyyy")
-            dat (->> date-interval
-                     (f/unparse (f/with-zone (f/formatter fmt-str) (t/default-time-zone))))]
-        (fetch-file dat (clojure.string/join ["resources/" name]))
+            str-date (->> date
+                          (f/unparse (f/with-zone (f/formatter fmt-str) (t/default-time-zone))))]
+        (fetch-file str-date (clojure.string/join ["resources/" name]))
         (recur (dec i))))))
 
 (let [content (slurp (io/resource "datos.json"))
       json-data (json/parse-string content)
       start-date (->> (json-data "data")
-                     first
-                     rest
-                     vec
-                     (map second)
-                     first
-                     (f/parse (f/formatter "dd/MM/yyyyy")))
+                      first
+                      rest
+                      vec
+                      (map second)
+                      first
+                      (f/parse (f/formatter "dd/MM/yyyyy")))
       days-diff (t/in-days (t/interval start-date (t/now)))]
   (start-crawler (- days-diff 1)))
 
