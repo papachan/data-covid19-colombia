@@ -195,5 +195,5 @@
                                (map #(clojure.string/lower-case (nth % 4)) data))))}]
        [block-stats {:title "Recovered"
                      :value
-                     (when (count data) (count (filter #(some #{"Recuperado"} %) data)))}]]]
+                     (when (count data) (count (filter #(some #{"Recuperado" "Recuperado (Hospital)"} %) data)))}]]]
      [footer]]))
