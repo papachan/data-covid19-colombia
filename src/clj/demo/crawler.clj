@@ -24,10 +24,10 @@
 
 (defn start-crawler
   [max-num]
-  (loop [i max-num]
-    (when (>= i 0)
+  (loop [i 1]
+    (when (<= i max-num)
       (let [name (clojure.string/join ["temp" i ".json"])
-            date (-> i t/days t/ago)
+            date (-> (- i 1) t/days t/ago)
             fmt-str (if (< (t/month date) 4)
                       (if (< (t/day date) 13)
                         "d/M/yy"
@@ -36,7 +36,7 @@
             str-date (->> date
                           (f/unparse (f/with-zone (f/formatter fmt-str) (t/default-time-zone))))]
         (fetch-file str-date (clojure.string/join ["resources/" name]))
-        (recur (dec i))))))
+        (recur (inc i))))))
 
 (defn process-data
   [file]
@@ -54,39 +54,43 @@
 
 (defn parse-json-files
   [max-num header]
-  (loop [i max-num
+  (loop [i 1
          out [header]]
-    (if (>= i 0)
+    (if (<= i max-num)
       (let [name (clojure.string/join ["temp" i ".json"])
             data (when (io/resource name)
                    (process-data (io/resource name)))
             res (if (not= (count data) 0)
                   (concat out data)
                   out)]
-        (recur (dec i) res))
+        (recur (inc i) res))
       out)))
+
+(defn search-for-dates
+  [json-obj]
+  (if-not (empty? json-obj)
+    (let [dat ((first json-obj) "fecha_de_diagn_stico")
+          vdat (clojure.string/split dat #"/")
+          fmt (f/formatter "dd/MM/yyyy")
+          fmt-in (if (and (count (nth vdat 2))
+                          (= (nth vdat 2) "20"))
+                   (f/formatter "dd/MM/yy")
+                   (f/formatter "dd/MM/yyyy"))
+          new-date (f/unparse fmt (f/parse fmt-in dat))]
+      (clojure.walk/prewalk-replace {["fecha_de_diagn_stico" dat]
+                                     ["fecha_de_diagn_stico" new-date]} json-obj))))
 
 ;; look for bad dates formats and fix it under our json
 (defn standarize-dates
   [max-num]
-  (loop [i max-num
-         out 0]
-    (if (>= i 0)
-      (let [fmt (f/formatter "dd/MM/yyyy")
-            name (clojure.string/join ["temp" i ".json"])
+  (loop [i 1]
+    (when (<= i max-num)
+      (let [name (clojure.string/join ["temp" i ".json"])
             body (slurp (io/resource name))
-            json-obj (json/parse-string body)
-            dat ((first json-obj) "fecha_de_diagn_stico")
-            vdat (clojure.string/split dat #"/")
-            new-date (if (and (count (nth vdat 2))
-                              (= (nth vdat 2) "20"))
-                       (f/unparse fmt (f/parse (f/formatter "dd/MM/yy") dat))
-                       (f/unparse fmt (f/parse (f/formatter "dd/MM/yyyy") dat)))
-            new-data (clojure.walk/prewalk-replace {["fecha_de_diagn_stico" dat] ["fecha_de_diagn_stico" new-date]} json-obj)
-            _ (if-not (nil? new-data)
-                (spit (str "resources/" name) (json/encode new-data)))]
-        (recur (dec i) (+ out (count json-obj))))
-      out)))
+            new-data (search-for-dates (json/parse-string body))]
+        (if new-data
+          (spit (str "resources/" name) (json/encode new-data)))
+        (recur (inc i))))))
 
 (def fmt (f/formatter "dd/MM/yyyyy"))
 (def json-data (->> "datos.json"
@@ -101,7 +105,9 @@
                      first
                      (f/parse fmt)))
 
-(def days-diff (- (t/in-days (t/interval start-date (t/now))) 1))
+(def now (clj-time.coerce/to-date-time (str (java.time.LocalDateTime/now))))
+
+(def days-diff (+ (t/in-days (t/interval start-date now)) 1))
 
 (def header ["ID de caso"
              "Fecha de diagnóstico"
@@ -119,30 +125,30 @@
   (standarize-dates days-diff)
   (let [content (parse-json-files days-diff header)
         sheet-names ["PositivasNegativas"
-                       "Titulo"
-                       "Casos1"
-                       "IndicadoresGenerales"
-                       "Mapa"
-                       "Copia de Mapa"
-                       "Mundo"
-                       "Procesadas"
-                       "PCR"
-                       "Etario"
-                       "TotalEtario"
-                       "importadosvsrelacionados"
-                       "Procedencia"
-                       "Estado"
-                       "Estado2"
-                       "Hoja 12"
-                       "Historico_Muestras"
-                       "fys"
-                       "Laboratorios operando en Colomb"]
-          data-json (when content
-                      {:data [content]
-                       :sheetNames ["Casos1"]
-                       :allSheetNames sheet-names
-                       :refreshed (coerce/to-long (t/now))})]
-      (spit "resources/datos.json" (json/encode data-json))))
+                     "Titulo"
+                     "Casos1"
+                     "IndicadoresGenerales"
+                     "Mapa"
+                     "Copia de Mapa"
+                     "Mundo"
+                     "Procesadas"
+                     "PCR"
+                     "Etario"
+                     "TotalEtario"
+                     "importadosvsrelacionados"
+                     "Procedencia"
+                     "Estado"
+                     "Estado2"
+                     "Hoja 12"
+                     "Historico_Muestras"
+                     "fys"
+                     "Laboratorios operando en Colomb"]
+        data-json (when content
+                    {:data [content]
+                     :sheetNames ["Casos1"]
+                     :allSheetNames sheet-names
+                     :refreshed (coerce/to-long (t/now))})]
+    (spit "resources/datos.json" (json/encode data-json))))
 
 ;; export to csv
 (let [json-data (->> "datos.json"
