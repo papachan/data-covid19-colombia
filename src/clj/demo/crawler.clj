@@ -15,27 +15,39 @@
 ;; From datos.gov.co
 (defn fetch-file
   [^String d n]
-  (let [uri (URL. (str "https://www.datos.gov.co/resource/gt2j-8ykr.json?fecha_de_diagn_stico=" d))
+  (let [dat (subs (str d) 0 23)
+        uri (URL. (str "https://www.datos.gov.co/resource/gt2j-8ykr.json?fecha_de_diagn_stico=" dat))
         dest (io/file n)
         conn ^HttpURLConnection (.openConnection ^URL uri)]
     (.connect conn)
     (with-open [is (.getInputStream conn)]
       (io/copy is dest))))
 
-(defn start-crawler
-  [max-num]
-  (loop [i 1]
-    (when (<= i max-num)
-      (let [name (clojure.string/join ["temp" i ".json"])
-            date (-> (- i 1) t/days t/ago)
-            fmt-str (if (< (t/month date) 4)
-                      (if (< (t/day date) 13)
-                        "d/M/yy"
-                        "dd/M/yyyy")
-                      "dd/MM/yyyy")
-            str-date (->> date
-                          (f/unparse (f/with-zone (f/formatter fmt-str) (t/default-time-zone))))]
-        (fetch-file str-date (clojure.string/join ["resources/" name]))
+;; old crawler legacy
+;; (defn start-crawler
+;;   [max-num]
+;;   (loop [i 1]
+;;     (when (<= i max-num)
+;;       (let [name (clojure.string/join ["temp" i ".json"])
+;;             date (-> (- i 1) t/days t/ago)
+;;             fmt-str (if (< (t/month date) 4)
+;;                       (if (< (t/day date) 13)
+;;                         "d/M/yy"
+;;                         "dd/M/yyyy")
+;;                       "dd/MM/yyyy")
+;;             str-date (->> date
+;;                           (f/unparse (f/with-zone (f/formatter fmt-str) (t/default-time-zone))))]
+;;         (fetch-file str-date (clojure.string/join ["resources/" name]))
+;;         (recur (inc i))))))
+
+(defn crawler
+  [max-num start-date]
+  (loop [i 0]
+    (when (< i max-num)
+      (let [name (clojure.string/join ["temp" (+ i 1) ".json"])
+            date (t/plus start-date (t/days i))]
+        (println date)
+        (fetch-file date (clojure.string/join ["resources/" name]))
         (recur (inc i))))))
 
 (defn process-data
@@ -50,7 +62,9 @@
                       :edad
                       :sexo
                       :tipo
-                      :pa_s_de_procedencia]) (clojure.walk/keywordize-keys (json/parse-string data))))))
+                      :pa_s_de_procedencia
+                      :fecha_recuperado
+                      :fis]) (clojure.walk/keywordize-keys (json/parse-string data))))))
 
 (defn parse-json-files
   [max-num header]
@@ -66,17 +80,26 @@
         (recur (inc i) res))
       out)))
 
+;; (defn search-for-dates
+;;   [json-obj]
+;;   (if-not (empty? json-obj)
+;;     (let [dat ((first json-obj) "fecha_de_diagn_stico")
+;;           vdat (clojure.string/split dat #"/")
+;;           fmt (f/formatter "dd/MM/yyyy")
+;;           fmt-in (if (and (count (nth vdat 2))
+;;                           (= (nth vdat 2) "20"))
+;;                    (f/formatter "dd/MM/yy")
+;;                    (f/formatter "dd/MM/yyyy"))
+;;           new-date (f/unparse fmt (f/parse fmt-in dat))]
+;;       (clojure.walk/prewalk-replace {["fecha_de_diagn_stico" dat]
+;;                                      ["fecha_de_diagn_stico" new-date]} json-obj))))
+
 (defn search-for-dates
   [json-obj]
   (if-not (empty? json-obj)
     (let [dat ((first json-obj) "fecha_de_diagn_stico")
-          vdat (clojure.string/split dat #"/")
-          fmt (f/formatter "dd/MM/yyyy")
-          fmt-in (if (and (count (nth vdat 2))
-                          (= (nth vdat 2) "20"))
-                   (f/formatter "dd/MM/yy")
-                   (f/formatter "dd/MM/yyyy"))
-          new-date (f/unparse fmt (f/parse fmt-in dat))]
+          date (f/parse (f/formatter :date-hour-minute-second-ms) dat)
+          new-date (f/unparse (f/formatter "dd/MM/yyyy") date)]
       (clojure.walk/prewalk-replace {["fecha_de_diagn_stico" dat]
                                      ["fecha_de_diagn_stico" new-date]} json-obj))))
 
@@ -91,6 +114,25 @@
         (if new-data
           (spit (str "resources/" name) (json/encode new-data)))
         (recur (inc i))))))
+
+;; export to csv
+(defn export-csv
+  [fname]
+  (let [json-data (->> fname
+                       io/resource
+                       slurp
+                       json/parse-string)
+        data (json-data "data")
+        last-date (->> data
+                       first
+                       rest
+                       (map second)
+                       last)
+        date (clojure.string/replace last-date #"/" "-")
+        file-name (clojure.string/join ["data/" "Datos_" date ".csv"])]
+    (spit file-name "" :append false)
+    (with-open [out-file (io/writer file-name)]
+      (csv/write-csv out-file (first data)))))
 
 (def fmt (f/formatter "dd/MM/yyyyy"))
 (def json-data (->> "datos.json"
@@ -117,11 +159,13 @@
              "Edad"
              "Sexo"
              "Tipo*"
-             "País de procedencia"])
+             "País de procedencia"
+             "fecha_recuperado"
+             "fis"])
 
 ;; create new datos.json file
 (do
-  (start-crawler days-diff)
+  (crawler days-diff start-date)
   (standarize-dates days-diff)
   (let [content (parse-json-files days-diff header)
         sheet-names ["PositivasNegativas"
@@ -148,21 +192,5 @@
                      :sheetNames ["Casos1"]
                      :allSheetNames sheet-names
                      :refreshed (coerce/to-long (t/now))})]
-    (spit "resources/datos.json" (json/encode data-json))))
-
-;; export to csv
-(let [json-data (->> "datos.json"
-                      io/resource
-                      slurp
-                      json/parse-string)
-      data (json-data "data")
-      last-date (->> data
-                     first
-                     rest
-                     (map second)
-                     last)
-      date (clojure.string/replace last-date #"/" "-")
-      file-name (clojure.string/join ["data/" "Datos_" date ".csv"])]
-  (spit file-name "" :append false)
-  (with-open [out-file (io/writer file-name)]
-    (csv/write-csv out-file (first data))))
+    (spit "resources/datos.json" (json/encode data-json))
+    (export-csv "datos.json")))
