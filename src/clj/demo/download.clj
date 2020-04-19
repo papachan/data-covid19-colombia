@@ -30,3 +30,15 @@
      vec
      (map #(second %))
      last)
+
+
+
+;; from datos.gov
+(defn download-raw-json
+  []
+  (let [uri (URL. (str "https://www.datos.gov.co/api/views/gt2j-8ykr/rows.json?accessType=DOWNLOAD"))
+        dest (io/file "resources/raw_data.json")
+        conn ^HttpURLConnection (.openConnection ^URL uri)]
+    (.connect conn)
+    (with-open [is (.getInputStream conn)]
+      (io/copy is dest))))

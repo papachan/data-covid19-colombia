@@ -20,4 +20,5 @@
   ;; so it is available even in :advanced release builds
   (re-frame/dispatch-sync [::events/initialize-db])
   (re-frame/dispatch-sync [::events/load-data])
+  (re-frame/dispatch-sync [::events/load-stats])
   (start))

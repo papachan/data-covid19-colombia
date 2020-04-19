@@ -167,7 +167,8 @@
 
 (defn home
   []
-  (let [data @(re-frame/subscribe [::events/data])]
+  (let [data @(re-frame/subscribe [::events/data])
+        stats @(re-frame/subscribe [::events/stats])]
     [:<>
      [:header
       [:h1
@@ -186,14 +187,14 @@
        {:id "stats"}
        [block-stats {:title "Number of deaths"
                      :value
-                     (when (count data) (count (filter #(some #{"Fallecido" "fallecido"} %) data)))}]
+                     (when stats
+                       (:deaths (last stats)))}]
        [block-stats {:title "Number of cases"
                      :value
-                     (when (count data)
-                       (count (remove
-                               (fn [s] (or (= "recuperado" s) (= "fallecido" s)))
-                               (map #(clojure.string/lower-case (nth % 4)) data))))}]
+                     (when stats
+                       (:confirmed (last stats)))}]
        [block-stats {:title "Recovered"
                      :value
-                     (when (count data) (count (filter #(some #{"Recuperado" "Recuperado (Hospital)"} %) data)))}]]]
+                     (when stats
+                       (:recovered (last stats)))}]]]
      [footer]]))

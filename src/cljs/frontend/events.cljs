@@ -7,7 +7,8 @@
 ;;; Events Handlers ;;;
 
 (def default-db
-  {:data ""})
+  {:data ""
+   :stats ""})
 
 (re-frame/reg-event-db
  ::initialize-db
@@ -20,6 +21,11 @@
   [db [_ data]]
   (assoc db :data (:data data))))
 
+(re-frame/reg-event-db
+ ::set-timeserie-db
+ (fn [db [_ data]]
+   (assoc db :stats (:Colombia data))))
+
 ;;; Subscriptions ;;;
 
 (re-frame/reg-sub
@@ -27,6 +33,12 @@
  (fn [{:keys [data]}]
    (when data
      (rest (first data)))))
+
+(re-frame/reg-sub
+ ::stats
+ (fn [{:keys [stats]}]
+   (when stats
+     stats)))
 
 ;;; Http calls ;;;
 (re-frame/reg-event-fx
@@ -37,3 +49,12 @@
                 :uri "https://raw.githubusercontent.com/papachan/data-covid19-colombia/master/resources/datos.json"
                 :response-format (ajax/json-response-format {:keywords? true})
                 :on-success [::set-data-db]}}))
+
+(re-frame/reg-event-fx
+ ::load-stats
+ (fn-traced
+  [db _]
+  {:http-xhrio {:method :get
+                :uri "https://pomber.github.io/covid19/timeseries.json"
+                :response-format (ajax/json-response-format {:keywords? true})
+                :on-success [::set-timeserie-db]}}))
