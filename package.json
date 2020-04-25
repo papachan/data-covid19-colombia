@@ -1,7 +1,7 @@
 {
   "scripts": {
     "deps": "yarn install",
-    "watch": "clj -A:shadow-cljs watch app;",
+    "watch": "shadow-cljs -A:shadow-cljs watch app;",
     "release": "shadow-cljs -A:release release app;",
     "clean": "rm -rf public/js; rm -rf target;"
   },
@@ -11,6 +11,6 @@
     "create-react-class": "^15.6.3",
     "react": "16.13.0",
     "react-dom": "16.13.0",
-    "shadow-cljs": "2.8.98"
+    "shadow-cljs": "^2.8.102"
   }
 }
