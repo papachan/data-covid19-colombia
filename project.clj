@@ -11,7 +11,8 @@
 
   :resource-paths ["resources"]
 
-  :profiles {:dev {:dependencies [[cider/cider-nrepl "0.25.0-SNAPSHOT"]
-                                  [binaryage/devtools "0.9.10"]
+  :plugins [[cider/cider-nrepl "0.25.0-SNAPSHOT"]]
+  :middleware [cider-nrepl.plugin/middleware]
+  :profiles {:dev {:dependencies [[binaryage/devtools "0.9.10"]
                                   [cider/piggieback "0.4.0"]]}}
   :repl-options {:init-ns demo.colombia})
