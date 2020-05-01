@@ -46,7 +46,6 @@
     (when (< i max-num)
       (let [name (clojure.string/join ["temp" (+ i 1) ".json"])
             date (t/plus start-date (t/days i))]
-        (println date)
         (fetch-file date (clojure.string/join ["resources/" name]))
         (recur (inc i))))))
 
@@ -80,6 +79,24 @@
         (recur (inc i) res))
       out)))
 
+(defn transform-data
+  [coll body]
+  (when (seq coll)
+    (let [old (first coll)
+          date (f/parse (f/formatter :date-hour-minute-second-ms) old)
+          new-date (f/unparse (f/formatter "dd/MM/yyyy") date)
+          new-data (clojure.walk/prewalk-replace {["fecha_de_diagn_stico" old]
+                                                  ["fecha_de_diagn_stico" new-date]} body)]
+      (if (next coll)
+        (recur (next coll) new-data)
+        new-data))))
+
+(defn merge-dates
+  [result]
+  (if-not (contains? (first result) "fecha_de_diagn_stico")
+    (map #(merge % {"fecha_de_diagn_stico" (get % "fecha_diagnostico")}) result)
+    result))
+
 ;; (defn search-for-dates
 ;;   [json-obj]
 ;;   (if-not (empty? json-obj)
@@ -95,25 +112,16 @@
 ;;                                      ["fecha_de_diagn_stico" new-date]} json-obj))))
 
 (defn search-for-dates
-  [json-obj]
-  (if-not (empty? json-obj)
-    (let [dat ((first json-obj) "fecha_de_diagn_stico")
-          date (f/parse (f/formatter :date-hour-minute-second-ms) dat)
-          new-date (f/unparse (f/formatter "dd/MM/yyyy") date)]
-      (clojure.walk/prewalk-replace {["fecha_de_diagn_stico" dat]
-                                     ["fecha_de_diagn_stico" new-date]} json-obj))))
-
-;; look for bad dates formats and fix it under our json
-(defn standarize-dates
-  [max-num]
-  (loop [i 1]
-    (when (<= i max-num)
-      (let [name (clojure.string/join ["temp" i ".json"])
-            body (slurp (io/resource name))
-            new-data (search-for-dates (json/parse-string body))]
-        (if new-data
-          (spit (str "resources/" name) (json/encode new-data)))
-        (recur (inc i))))))
+  [name]
+  (let [body (slurp (io/resource name))
+        json-obj (merge-dates (json/parse-string body))
+        dates (if-not (empty? json-obj)
+                (vec (filter
+                      (fn [x] (> (count x) 10))
+                      (vec (distinct (map (fn[v] (or (get v "fecha_diagnostico")
+                                                     (get v "fecha_de_diagn_stico"))) json-obj))))))]
+    (when dates
+      (transform-data dates json-obj))))
 
 ;; export to csv
 (defn export-csv
@@ -133,6 +141,16 @@
     (spit file-name "" :append false)
     (with-open [out-file (io/writer file-name)]
       (csv/write-csv out-file (first data)))))
+
+;; look for all dates formats and use a single format date
+(defn standarize-dates
+  [max-num]
+  (loop [i 1]
+    (when (<= i max-num)
+      (let [fname (clojure.string/join ["temp" i ".json"])
+            result (search-for-dates fname)]
+        (spit (str"resources/" fname) (json/encode result))
+        (recur (inc i))))))
 
 (def fmt (f/formatter "dd/MM/yyyyy"))
 (def json-data (->> "datos.json"
