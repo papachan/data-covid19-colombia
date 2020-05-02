@@ -83,12 +83,15 @@
                       :ciudad_de_ubicaci_n
                       :departamento
                       :atenci_n
+                      :estado
                       :edad
                       :sexo
                       :tipo
                       :pa_s_de_procedencia
+                      :fecha_de_notificaci_n
                       :fecha_recuperado
-                      :fis]) (clojure.walk/keywordize-keys (json/parse-string data))))))
+                      :fecha_de_muerte
+                      ]) (clojure.walk/keywordize-keys (json/parse-string data))))))
 
 (defn parse-json-files
   [max-num header]
@@ -143,8 +146,8 @@
         dates (if-not (empty? json-obj)
                 (vec (filter
                       (fn [x] (> (count x) 10))
-                      (vec (distinct (map (fn[v] (or (get v "fecha_diagnostico")
-                                                     (get v "fecha_de_diagn_stico"))) json-obj))))))]
+                      (vec (distinct (map (fn[v]
+                                            (get v "fecha_de_diagn_stico")) json-obj))))))]
     (when dates
       (transform-data dates json-obj))))
 
@@ -199,12 +202,14 @@
              "Ciudad de ubicación"
              "Departamento o Distrito"
              "Atención**"
+             "Estado"
              "Edad"
              "Sexo"
              "Tipo*"
              "País de procedencia"
-             "fecha_recuperado"
-             "fis"])
+             "fecha de_notificaci_n"
+             "fecha recuperado"
+             "fecha_de_muerte"])
 
 (def max-contamined-count (Integer/parseInt (last-user-data)))
 
