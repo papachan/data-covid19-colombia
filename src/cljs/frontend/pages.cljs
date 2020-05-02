@@ -97,7 +97,7 @@
   (when-not (empty? data)
     (let [series (->> data
                       (filter #(some #{"Fallecido" "fallecido"} %))
-                      (map #(js/parseInt (nth % 5)))
+                      (map #(js/parseInt (nth % 6)))
                       (group-by (fn [v] (< v 40)))
                       vals
                       (map count)
@@ -168,7 +168,9 @@
 (defn home
   []
   (let [data @(re-frame/subscribe [::events/data])
-        stats @(re-frame/subscribe [::events/stats])]
+        deaths @(re-frame/subscribe [::events/deaths])
+        recovered @(re-frame/subscribe [::events/recovered])
+        max-id @(re-frame/subscribe [::events/max-id])]
     [:<>
      [:header
       [:h1
@@ -187,14 +189,14 @@
        {:id "stats"}
        [block-stats {:title "Number of deaths"
                      :value
-                     (when stats
-                       (:deaths (last stats)))}]
+                     (when deaths
+                       (:deaths deaths))}]
        [block-stats {:title "Number of cases"
                      :value
-                     (when stats
-                       (:confirmed (last stats)))}]
+                     (when max-id
+                       (:max_id max-id))}]
        [block-stats {:title "Recovered"
                      :value
-                     (when stats
-                       (:recovered (last stats)))}]]]
+                     (when recovered
+                       (:recovered recovered))}]]]
      [footer]]))
