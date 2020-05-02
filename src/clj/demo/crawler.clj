@@ -13,15 +13,40 @@
 
 
 ;; From datos.gov.co
+(defn max-id
+  []
+  (let [uri (URL. "https://www.datos.gov.co/api/id/gt2j-8ykr.json?$query=select%20MAX(%3Aid)")
+        conn ^HttpURLConnection (.openConnection ^URL uri)]
+    (with-open [is (.getInputStream conn)]
+      ((first (json/parse-string (slurp is))) "MAX_id"))))
+
+(defn last-user-data
+  []
+  (let [id (max-id)
+        uri (URL. (str "https://www.datos.gov.co/api/id/gt2j-8ykr.json?$query=select%20*%2C%20%3Aid%20where%20:id%20%3D%20%27" id "%27"))
+        conn ^HttpURLConnection (.openConnection ^URL uri)]
+    (with-open [is (.getInputStream conn)]
+      ((first (json/parse-string (slurp is))) "id_de_caso"))))
+
 (defn fetch-file
-  [^String d n]
-  (let [dat (subs (str d) 0 23)
-        uri (URL. (str "https://www.datos.gov.co/resource/gt2j-8ykr.json?fecha_de_diagn_stico=" dat))
-        dest (io/file n)
+  [i]
+  (let [limit (if (= i 1) "999" "1000")
+        value (- (* (- i 1) 1000) 1)
+        offset (if (= i 1) "" (str "%20offset%20" value))
+        uri (URL. (str "https://www.datos.gov.co/api/id/gt2j-8ykr.json?$query=select%20*%2C%20%3Aid%20limit%20" limit offset))
+        fname (clojure.string/join ["resources/" "temp" i ".json"])
+        dest (io/file fname)
         conn ^HttpURLConnection (.openConnection ^URL uri)]
     (.connect conn)
     (with-open [is (.getInputStream conn)]
       (io/copy is dest))))
+
+(defn crawl-reports
+  [max-num]
+  (loop [i 1]
+    (when (<= i max-num)
+      (fetch-file i)
+      (recur (inc i)))))
 
 ;; old crawler legacy
 ;; (defn start-crawler
@@ -40,14 +65,14 @@
 ;;         (fetch-file str-date (clojure.string/join ["resources/" name]))
 ;;         (recur (inc i))))))
 
-(defn crawler
-  [max-num start-date]
-  (loop [i 0]
-    (when (< i max-num)
-      (let [name (clojure.string/join ["temp" (+ i 1) ".json"])
-            date (t/plus start-date (t/days i))]
-        (fetch-file date (clojure.string/join ["resources/" name]))
-        (recur (inc i))))))
+;; (defn crawler
+;;   [max-num start-date]
+;;   (loop [i 0]
+;;     (when (< i max-num)
+;;       (let [name (clojure.string/join ["temp" (+ i 1) ".json"])
+;;             date (t/plus start-date (t/days i))]
+;;         (fetch-file date (clojure.string/join ["resources/" name]))
+;;         (recur (inc i))))))
 
 (defn process-data
   [file]
@@ -167,7 +192,7 @@
 
 (def now (clj-time.coerce/to-date-time (str (java.time.LocalDateTime/now))))
 
-(def days-diff (+ (t/in-days (t/interval start-date now)) 1))
+;; (def days-diff (+ (t/in-days (t/interval start-date now)) 1))
 
 (def header ["ID de caso"
              "Fecha de diagnóstico"
@@ -181,34 +206,38 @@
              "fecha_recuperado"
              "fis"])
 
+(def max-contamined-count (Integer/parseInt (last-user-data)))
+
 ;; create new datos.json file
-(do
-  (crawler days-diff start-date)
-  (standarize-dates days-diff)
-  (let [content (parse-json-files days-diff header)
-        sheet-names ["PositivasNegativas"
-                     "Titulo"
-                     "Casos1"
-                     "IndicadoresGenerales"
-                     "Mapa"
-                     "Copia de Mapa"
-                     "Mundo"
-                     "Procesadas"
-                     "PCR"
-                     "Etario"
-                     "TotalEtario"
-                     "importadosvsrelacionados"
-                     "Procedencia"
-                     "Estado"
-                     "Estado2"
-                     "Hoja 12"
-                     "Historico_Muestras"
-                     "fys"
-                     "Laboratorios operando en Colomb"]
-        data-json (when content
-                    {:data [content]
-                     :sheetNames ["Casos1"]
-                     :allSheetNames sheet-names
-                     :refreshed (coerce/to-long (t/now))})]
-    (spit "resources/datos.json" (json/encode data-json))
-    (export-csv "datos.json")))
+(let [pages-count (Math/ceil (/ max-contamined-count 1000))]
+  (do
+    ;; (crawler days-diff start-date)
+    (crawl-reports pages-count)
+    (standarize-dates pages-count)
+    (let [content (parse-json-files pages-count header)
+          sheet-names ["PositivasNegativas"
+                       "Titulo"
+                       "Casos1"
+                       "IndicadoresGenerales"
+                       "Mapa"
+                       "Copia de Mapa"
+                       "Mundo"
+                       "Procesadas"
+                       "PCR"
+                       "Etario"
+                       "TotalEtario"
+                       "importadosvsrelacionados"
+                       "Procedencia"
+                       "Estado"
+                       "Estado2"
+                       "Hoja 12"
+                       "Historico_Muestras"
+                       "fys"
+                       "Laboratorios operando en Colomb"]
+          data-json (when content
+                      {:data [content]
+                       :sheetNames ["Casos1"]
+                       :allSheetNames sheet-names
+                       :refreshed (coerce/to-long (t/now))})]
+      (spit "resources/datos.json" (json/encode data-json))
+      (export-csv "datos.json"))))
