@@ -93,14 +93,14 @@
                 :response-format (ajax/json-response-format {:keywords? true})
                 :on-success [::set-data-db]}}))
 
-(re-frame/reg-event-fx
- ::load-stats
- (fn-traced
-  [db _]
-  {:http-xhrio {:method :get
-                :uri "https://pomber.github.io/covid19/timeseries.json"
-                :response-format (ajax/json-response-format {:keywords? true})
-                :on-success [::set-timeserie-db]}}))
+;; (re-frame/reg-event-fx
+;;  ::load-stats
+;;  (fn-traced
+;;   [db _]
+;;   {:http-xhrio {:method :get
+;;                 :uri "https://pomber.github.io/covid19/timeseries.json"
+;;                 :response-format (ajax/json-response-format {:keywords? true})
+;;                 :on-success [::set-timeserie-db]}}))
 
 (re-frame/reg-event-fx
  ::load-deaths

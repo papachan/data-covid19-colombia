@@ -244,7 +244,7 @@
     (spit fname (json/encode data-json))))
 
 ;; create new datos.json file
-(let [pages-count (Math/ceil (/ max-contamined-count 1000))]
+(let [pages-count (Math/floor (/ max-contamined-count 1000))]
   (do
     (crawl-reports pages-count)
     (clean-replace-values pages-count)
