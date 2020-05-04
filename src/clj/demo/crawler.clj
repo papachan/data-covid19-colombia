@@ -32,7 +32,10 @@
 (defn fetch-file
   [i]
   (let [limit (if (= i 1) "999" "1000")
-        value (- (* (- i 1) 1000) 1)
+        value (-> i
+                  (- 1)
+                  (* 1000)
+                  (- 1))
         offset (if (= i 1) "" (str "%20offset%20" value))
         uri (URL. (str "https://www.datos.gov.co/api/id/gt2j-8ykr.json?$query=select%20*%2C%20%3Aid%20limit%20" limit offset))
         fname (clojure.string/join ["resources/" "temp" i ".json"])
@@ -108,6 +111,12 @@
         (recur (inc i) res))
       out)))
 
+(defn merge-dates
+  [result]
+  (if-not (contains? (first result) "fecha_de_diagn_stico")
+    (map #(merge % {"fecha_de_diagn_stico" (get % "fecha_diagnostico")}) result)
+    result))
+
 (defn transform-data
   [coll body]
   (when (seq coll)
@@ -119,12 +128,6 @@
       (if (next coll)
         (recur (next coll) new-data)
         new-data))))
-
-(defn merge-dates
-  [result]
-  (if-not (contains? (first result) "fecha_de_diagn_stico")
-    (map #(merge % {"fecha_de_diagn_stico" (get % "fecha_diagnostico")}) result)
-    result))
 
 ;; (defn search-for-dates
 ;;   [json-obj]
@@ -140,16 +143,27 @@
 ;;       (clojure.walk/prewalk-replace {["fecha_de_diagn_stico" dat]
 ;;                                      ["fecha_de_diagn_stico" new-date]} json-obj))))
 
-(defn search-for-dates
-  [json-obj key]
-  (let [dates (if-not (empty? json-obj)
-                (vec (filter
-                      (fn [x] (> (count x) 10))
-                      (vec (distinct (map (fn[v]
-                                            (get v key)) json-obj))))))]
-    (when dates
-      (transform-data dates json-obj))))
+;; (defn search-for-dates
+;;   [json-obj]
+;;   (let [dates (if-not (empty? json-obj)
+;;                 (vec (filter
+;;                       (fn [x] (> (count x) 10))
+;;                       (vec (distinct (map (fn[v]
+;;                                             (get v "fecha_de_diagn_stico")) json-obj))))))]
+;;     (when dates
+;;       (transform-data dates json-obj))))
 
+(defn replace-all-dates
+  [json-obj]
+  (clojure.walk/postwalk (fn [e]
+                           (cond (clojure.string/includes? e "T00:00:00.000")
+                                 (->> e
+                                      (f/parse (f/formatter :date-hour-minute-second-ms))
+                                      (f/unparse (f/formatter "dd/MM/yyyy")))
+                                 (clojure.string/includes? e "-   -")
+                                 ""
+                                 :else e))
+                         json-obj))
 
 ;; look for all dates formats and use a single format date
 (defn clean-replace-values
@@ -159,10 +173,7 @@
       (let [fname (clojure.string/join ["temp" i ".json"])
             body (slurp (io/resource fname))
             json-obj (merge-dates (json/parse-string body))
-            result (search-for-dates json-obj "fecha_de_diagn_stico")
-            res (clojure.walk/postwalk (fn [e]
-                                         (if (= e "-   -") "" e))
-                                       result)]
+            res (replace-all-dates json-obj)]
         (when res
           (spit (str"resources/" fname) (json/encode res)))
         (recur (inc i))))))
@@ -202,35 +213,40 @@
 
 (def max-contamined-count (Integer/parseInt (last-user-data (max-id)))) ;; => 7708
 
+(defn make-json-file
+  [pages-count name]
+  (let [fname (clojure.string/join ["resources/" name])
+        content (parse-json-files pages-count header)
+        sheet-names ["PositivasNegativas"
+                     "Titulo"
+                     "Casos1"
+                     "IndicadoresGenerales"
+                     "Mapa"
+                     "Copia de Mapa"
+                     "Mundo"
+                     "Procesadas"
+                     "PCR"
+                     "Etario"
+                     "TotalEtario"
+                     "importadosvsrelacionados"
+                     "Procedencia"
+                     "Estado"
+                     "Estado2"
+                     "Hoja 12"
+                     "Historico_Muestras"
+                     "fys"
+                     "Laboratorios operando en Colomb"]
+        data-json (when content
+                    {:data [content]
+                     :sheetNames ["Casos1"]
+                     :allSheetNames sheet-names
+                     :refreshed (coerce/to-long (t/now))})]
+    (spit fname (json/encode data-json))))
+
 ;; create new datos.json file
 (let [pages-count (Math/ceil (/ max-contamined-count 1000))]
   (do
     (crawl-reports pages-count)
     (clean-replace-values pages-count)
-    (let [content (parse-json-files pages-count header)
-          sheet-names ["PositivasNegativas"
-                       "Titulo"
-                       "Casos1"
-                       "IndicadoresGenerales"
-                       "Mapa"
-                       "Copia de Mapa"
-                       "Mundo"
-                       "Procesadas"
-                       "PCR"
-                       "Etario"
-                       "TotalEtario"
-                       "importadosvsrelacionados"
-                       "Procedencia"
-                       "Estado"
-                       "Estado2"
-                       "Hoja 12"
-                       "Historico_Muestras"
-                       "fys"
-                       "Laboratorios operando en Colomb"]
-          data-json (when content
-                      {:data [content]
-                       :sheetNames ["Casos1"]
-                       :allSheetNames sheet-names
-                       :refreshed (coerce/to-long (t/now))})]
-      (spit "resources/datos.json" (json/encode data-json))
-      (export-csv "datos.json"))))
+    (make-json-file pages-count "datos.json")
+    (export-csv "datos.json")))

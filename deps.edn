@@ -11,7 +11,7 @@
  {:shadow-cljs
   {:extra-deps
    {day8.re-frame/tracing {:mvn/version  "0.5.3"}
-    cider/cider-nrepl {:mvn/version "0.25.0-SNAPSHOT"}}}
+    cider/cider-nrepl {:mvn/version "0.25.0-alpha1"}}}
   :release
   {:extra-deps
    {day8.re-frame/tracing-stubs {:mvn/version "0.5.3"}}}}}
