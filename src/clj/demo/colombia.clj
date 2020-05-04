@@ -18,9 +18,9 @@
 (def data (json-data "data"))
 
 (let [rows (into [] (rest (first data)))
-      bogota (filter #(some #{"BOGOTÁ" "BOGOTA"} %) rows)
+      bogota (filter #(some #{"Bogotá D.C."} %) rows)
       statuses (into [] (map #(clojure.string/lower-case (nth % 4)) bogota))
-      types (into [] (map #(clojure.string/lower-case (nth % 7)) bogota))
+      types (into [] (map #(clojure.string/lower-case (nth % 8)) bogota))
       ages (into [] (map #(clojure.string/lower-case (nth % 5)) bogota))
       only-infected (remove (fn [s] (= "recuperado" (clojure.string/lower-case (nth s 4)))) rows)
       by-regions (frequencies (map #(nth % 2) only-infected))
@@ -131,7 +131,7 @@
   ;; => {"mayores de 40" 132, "menores de 40" 12}
   (->> rows
        (filter #(some #{"Fallecido" "fallecido"} %))
-       (map #(Integer/parseInt (nth % 5)))
+       (map #(Integer/parseInt (nth % 6)))
        (group-by (fn [v] (< v 40)))
        vals
        (map count)

@@ -12,6 +12,8 @@
            java.net.HttpURLConnection))
 
 
+(def now (clj-time.coerce/to-date-time (str (java.time.LocalDateTime/now))))
+
 ;; From datos.gov.co
 (defn max-id
   []
@@ -21,9 +23,8 @@
       ((first (json/parse-string (slurp is))) "MAX_id"))))
 
 (defn last-user-data
-  []
-  (let [id (max-id)
-        uri (URL. (str "https://www.datos.gov.co/api/id/gt2j-8ykr.json?$query=select%20*%2C%20%3Aid%20where%20:id%20%3D%20%27" id "%27"))
+  [id]
+  (let [uri (URL. (str "https://www.datos.gov.co/api/id/gt2j-8ykr.json?$query=select%20*%2C%20%3Aid%20where%20:id%20%3D%20%27" id "%27"))
         conn ^HttpURLConnection (.openConnection ^URL uri)]
     (with-open [is (.getInputStream conn)]
       ((first (json/parse-string (slurp is))) "id_de_caso"))))
@@ -140,16 +141,31 @@
 ;;                                      ["fecha_de_diagn_stico" new-date]} json-obj))))
 
 (defn search-for-dates
-  [name]
-  (let [body (slurp (io/resource name))
-        json-obj (merge-dates (json/parse-string body))
-        dates (if-not (empty? json-obj)
+  [json-obj key]
+  (let [dates (if-not (empty? json-obj)
                 (vec (filter
                       (fn [x] (> (count x) 10))
                       (vec (distinct (map (fn[v]
-                                            (get v "fecha_de_diagn_stico")) json-obj))))))]
+                                            (get v key)) json-obj))))))]
     (when dates
       (transform-data dates json-obj))))
+
+
+;; look for all dates formats and use a single format date
+(defn clean-replace-values
+  [max-num]
+  (loop [i 1]
+    (when (<= i max-num)
+      (let [fname (clojure.string/join ["temp" i ".json"])
+            body (slurp (io/resource fname))
+            json-obj (merge-dates (json/parse-string body))
+            result (search-for-dates json-obj "fecha_de_diagn_stico")
+            res (clojure.walk/postwalk (fn [e]
+                                         (if (= e "-   -") "" e))
+                                       result)]
+        (when res
+          (spit (str"resources/" fname) (json/encode res)))
+        (recur (inc i))))))
 
 ;; export to csv
 (defn export-csv
@@ -170,33 +186,6 @@
     (with-open [out-file (io/writer file-name)]
       (csv/write-csv out-file (first data)))))
 
-;; look for all dates formats and use a single format date
-(defn standarize-dates
-  [max-num]
-  (loop [i 1]
-    (when (<= i max-num)
-      (let [fname (clojure.string/join ["temp" i ".json"])
-            result (search-for-dates fname)]
-        (spit (str"resources/" fname) (json/encode result))
-        (recur (inc i))))))
-
-(def fmt (f/formatter "dd/MM/yyyyy"))
-(def json-data (->> "datos.json"
-                    io/resource
-                    slurp
-                    json/parse-string))
-(def start-date (->> (json-data "data")
-                     first
-                     rest
-                     vec
-                     (map second)
-                     first
-                     (f/parse fmt)))
-
-(def now (clj-time.coerce/to-date-time (str (java.time.LocalDateTime/now))))
-
-;; (def days-diff (+ (t/in-days (t/interval start-date now)) 1))
-
 (def header ["ID de caso"
              "Fecha de diagnóstico"
              "Ciudad de ubicación"
@@ -211,14 +200,13 @@
              "fecha recuperado"
              "fecha_de_muerte"])
 
-(def max-contamined-count (Integer/parseInt (last-user-data)))
+(def max-contamined-count (Integer/parseInt (last-user-data (max-id)))) ;; => 7708
 
 ;; create new datos.json file
 (let [pages-count (Math/ceil (/ max-contamined-count 1000))]
   (do
-    ;; (crawler days-diff start-date)
     (crawl-reports pages-count)
-    (standarize-dates pages-count)
+    (clean-replace-values pages-count)
     (let [content (parse-json-files pages-count header)
           sheet-names ["PositivasNegativas"
                        "Titulo"
