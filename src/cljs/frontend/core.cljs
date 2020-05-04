@@ -20,7 +20,6 @@
   ;; so it is available even in :advanced release builds
   (re-frame/dispatch-sync [::events/initialize-db])
   (re-frame/dispatch-sync [::events/load-data])
-  ;; (re-frame/dispatch-sync [::events/load-stats])
   (re-frame/dispatch-sync [::events/load-deaths])
   (re-frame/dispatch-sync [::events/load-recovered])
   (re-frame/dispatch-sync [::events/load-max-case])
