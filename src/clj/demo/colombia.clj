@@ -135,4 +135,9 @@
        (group-by (fn [v] (< v 40)))
        vals
        (map count)
-       (zipmap ["mayores de 40" "menores de 40"])))
+       (zipmap ["mayores de 40" "menores de 40"]))
+
+  ;; active case in Bogota
+  ;; => 2228
+  (count (remove (fn [s] (or (= "fallecido" (clojure.string/lower-case (nth s 4)))
+                             (= "recuperado" (clojure.string/lower-case (nth s 4))))) bogota)))

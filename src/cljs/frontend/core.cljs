@@ -3,7 +3,7 @@
             [reagent.core :as reagent]
             [reagent.dom :as rd]
             [frontend.events :as events]
-            [frontend.pages :as pages :refer [home]]))
+            [frontend.views :as views :refer [home]]))
 
 (defn start []
   (rd/render [home]
