@@ -15,7 +15,8 @@
 
 (defn process-data
   [data]
-  (let [formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy")
+  (let [min-date "2020-03-25"
+        formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy")
         fn-parse (fn [[k v]] [(d/parse-date k) v])
         fn-unparse (fn [[k v]] [(.format formatter k) v])
         dates-freq (->> data
@@ -24,11 +25,15 @@
                         frequencies)
         sorted-dates (->> dates-freq
                           (map fn-parse)
+                          (filter (fn [s]
+                                   (> (.getTime (first s)) (.getTime (js/Date. min-date)))))
                           sort
                           (map fn-unparse))
 
         series-zero (->> dates-freq
                          (reduce-kv (fn [m k v] (assoc m (d/parse-date k) 0)) {})
+                         (filter (fn [s]
+                                   (> (.getTime (first s)) (.getTime (js/Date. min-date)))))
                          sort
                          (map fn-unparse)
                          (into {}))
@@ -57,10 +62,13 @@
         labels-fechas (->> sorted-dates
                            (map #(first (clojure.string/split (first %) #"/")))
                            vec)
-        series1 (->> (sum contamined)
-                     (map second)
-                     vec)
-        series2 (->> (sum deaths)
-                      (map second)
-                      vec)]
+
+        series1 (->> contamined
+                     (filter (fn [s] (> (.getTime (first s)) (.getTime (js/Date. min-date)))))
+                     sum
+                     (map second))
+        series2 (->> deaths
+                     (filter (fn [s] (> (.getTime (first s)) (.getTime (js/Date. min-date)))))
+                     sum
+                     (map second))]
     [labels-fechas series1 series2]))
