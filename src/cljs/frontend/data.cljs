@@ -19,6 +19,8 @@
         formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy")
         fn-parse (fn [[k v]] [(d/parse-date k) v])
         fn-unparse (fn [[k v]] [(.format formatter k) v])
+        ;; statuses (distinct (->> data
+        ;;                         (map #(nth % 4))))
         dates-freq (->> data
                         (map second)
                         vec
@@ -39,12 +41,7 @@
                          (into {}))
 
         contamined (->> data
-                        (remove #(some #{"Recuperado"
-                                         "recuperado"
-                                         ;; "Fallecido"
-                                         ;; "fallecido"
-                                         ;; "Recuperado (Hospital)"
-                                         } %))
+                        ;; (remove #(some #{"Recuperado"} %))
                         (map #(.format formatter (d/parse-date (second %))))
                         frequencies
                         (apply merge series-zero)
@@ -67,6 +64,7 @@
                      (filter (fn [s] (> (.getTime (first s)) (.getTime (js/Date. min-date)))))
                      sum
                      (map second))
+
         series2 (->> deaths
                      (filter (fn [s] (> (.getTime (first s)) (.getTime (js/Date. min-date)))))
                      sum
