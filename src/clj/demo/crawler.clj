@@ -250,4 +250,4 @@
     (crawl-reports pages-count)
     (clean-replace-values pages-count)
     (make-json-file pages-count "datos.json")
-    (export-csv "datos.json" "resources/Datos_%s.csv")))
+    (export-csv "datos.json" "data/Datos_%s.csv")))

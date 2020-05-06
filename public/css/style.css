@@ -27,6 +27,17 @@ header h1 {
   position: relative;
 }
 
+.header-note {
+  padding: 10px 0 10px 5px;
+  margin: 10px 0 10px 0;
+}
+
+.header-note .row {
+  color: #828282;
+  font-size: 14px;
+  margin: 8px 0 0 0;
+}
+
 .graph {
   width: 70%;
   float: left;

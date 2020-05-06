@@ -8,6 +8,12 @@
             [frontend.date :as d])
   (:import goog.i18n.DateTimeFormat))
 
+
+(defn get-min-date
+  [data]
+  (let [fmt (goog.i18n.DateTimeFormat. "yyyy-MM-dd")]
+    (first (map #(.format fmt (d/parse-date (second %))) data))))
+
 (defn home
   []
   (let [data @(re-frame/subscribe [::events/data])
@@ -20,9 +26,19 @@
        "Colombia Covid19 Report"]
       [:div
        {:className "description"}
-       "Live report from Colombian data using clojurescript"]]
+       "Live report from Colombian data using ❤ clojurescript"]]
      [:div
       {:className "container"}
+      [:div
+       {:className "header-note"}
+       (when-not (empty? data)
+         [:div
+          [:div
+           {:className "row"}
+           (str "First Case of Covid19 in Colombia: ")
+           [:span
+            {:className "highlighted"}
+            (get-min-date data)]]])]
       [:div
        {:className "graph"}
        [ui/chart-component data]

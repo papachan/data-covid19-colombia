@@ -4,6 +4,7 @@
             [clojure.string :as str]
             [clojure.java.io :as io]
             [clojure.data.csv :as csv]
+            [clojure.data.json :as j]
             [cheshire.core :as json]
             [clj-time.format :as f]
             [clj-time.core :as t]
@@ -11,26 +12,25 @@
   (:import java.net.URL
            java.net.HttpURLConnection))
 
-;; From infogram
-(let [uri (URL. "https://e.infogram.com/api/live/flex/0e44ab71-9a20-43ab-89b3-0e73c594668f/832a1373-0724-4182-a188-b958f9bf0906?")
-      dest (io/file "resources/datos.json")
-      conn ^HttpURLConnection (.openConnection ^URL uri)]
-  (.connect conn)
-  (with-open [is (.getInputStream conn)]
-    (io/copy is dest)))
 
 (def content (slurp (io/resource "datos.json")))
 (def json-data (json/parse-string content))
 (def data (json-data "data"))
 
-;; ultima fecha del archivo json
+;; last date
 (->> data
      first
      rest
      vec
-     (map #(second %))
+     (map second)
      last)
 
+;; check empty rows with age value
+(->> data
+     first
+     rest
+     (map #(nth % 7))
+     (filter (fn [s] (empty? s))))
 
 
 ;; from datos.gov

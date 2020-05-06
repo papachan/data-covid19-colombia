@@ -13,60 +13,62 @@
                    out))
       (reverse out))))
 
+(def fn-parse (fn [[k v]] [(d/parse-date k) v]))
+
+(def formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy"))
+
+;; minimun date to display in chart
+(def min-date (js/Date. "2020-03-25"))
+
+
 (defn process-data
   [data]
-  (let [min-date "2020-03-25"
-        formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy")
-        fn-parse (fn [[k v]] [(d/parse-date k) v])
-        fn-unparse (fn [[k v]] [(.format formatter k) v])
-        ;; statuses (distinct (->> data
-        ;;                         (map #(nth % 4))))
-        dates-freq (->> data
-                        (map second)
-                        vec
-                        frequencies)
-        sorted-dates (->> dates-freq
-                          (map fn-parse)
-                          (filter (fn [s]
-                                   (> (.getTime (first s)) (.getTime (js/Date. min-date)))))
-                          sort
-                          (map fn-unparse))
+  (letfn [(get-frequencies
+            [series-zero in]
+            (->> in
+                 (map #(.format formatter (d/parse-date (second %))))
+                 (filter (fn [s]
+                           (> (.getTime (d/parse-date s))
+                              (.getTime min-date))))
+                 frequencies
+                 (apply merge series-zero)
+                 (map fn-parse)
+                 sort))]
+    (let [fn-unparse (fn [[k v]] [(.format formatter k) v])
+          ;; statuses (distinct (->> data
+          ;;                         (map #(nth % 4))))
+          dates-freq (->> data
+                          (map second)
+                          vec
+                          frequencies)
+          sorted-dates (->> dates-freq
+                            (map fn-parse)
+                            (filter (fn [s]
+                                      (> (.getTime (first s)) (.getTime min-date))))
+                            sort
+                            (map fn-unparse))
 
-        series-zero (->> dates-freq
-                         (reduce-kv (fn [m k v] (assoc m (d/parse-date k) 0)) {})
-                         (filter (fn [s]
-                                   (> (.getTime (first s)) (.getTime (js/Date. min-date)))))
-                         sort
-                         (map fn-unparse)
-                         (into {}))
+          series-zero (->> dates-freq
+                           (reduce-kv (fn [m k v] (assoc m (d/parse-date k) 0)) {})
+                           (filter (fn [s]
+                                     (> (.getTime (first s)) (.getTime min-date))))
+                           sort
+                           (map fn-unparse)
+                           (into {}))
 
-        contamined (->> data
-                        ;; (remove #(some #{"Recuperado"} %))
-                        (map #(.format formatter (d/parse-date (second %))))
-                        frequencies
-                        (apply merge series-zero)
-                        (map fn-parse)
-                        sort)
+          deaths (->> data
+                      (filter #(some #{"Fallecido"} %))
+                      (get-frequencies series-zero))
 
-        deaths (->> data
-                    (filter #(some #{"Fallecido" "fallecido"} %))
-                    (map #(.format formatter (d/parse-date (second %))))
-                    frequencies
-                    (apply merge series-zero)
-                    (map fn-parse)
-                    sort)
+          labels-fechas (->> sorted-dates
+                             (map #(first (clojure.string/split (first %) #"/")))
+                             vec)
 
-        labels-fechas (->> sorted-dates
-                           (map #(first (clojure.string/split (first %) #"/")))
-                           vec)
+          series1 (->> (get-frequencies series-zero data)
+                       sum
+                       (map second))
 
-        series1 (->> contamined
-                     (filter (fn [s] (> (.getTime (first s)) (.getTime (js/Date. min-date)))))
-                     sum
-                     (map second))
-
-        series2 (->> deaths
-                     (filter (fn [s] (> (.getTime (first s)) (.getTime (js/Date. min-date)))))
-                     sum
-                     (map second))]
-    [labels-fechas series1 series2]))
+          series2 (->> deaths
+                       sum
+                       (map second))]
+      [labels-fechas series1 series2])))
