@@ -178,9 +178,8 @@
           (spit (str"resources/" fname) (json/encode res)))
         (recur (inc i))))))
 
-;; export to csv
 (defn export-csv
-  [fname]
+  [fname pat]
   (let [json-data (->> fname
                        io/resource
                        slurp
@@ -191,8 +190,10 @@
                        rest
                        (map second)
                        last)
-        date (clojure.string/replace last-date #"/" "-")
-        file-name (clojure.string/join ["data/" "Datos_" date ".csv"])]
+        date (->> last-date
+                  (f/parse (f/formatter "dd/MM/yyyy"))
+                  (f/unparse (f/formatter "dd-MM-yyyy")))
+        file-name (format pat date)]
     (spit file-name "" :append false)
     (with-open [out-file (io/writer file-name)]
       (csv/write-csv out-file (first data)))))
@@ -244,9 +245,9 @@
     (spit fname (json/encode data-json))))
 
 ;; create new datos.json file
-(let [pages-count (Math/floor (/ max-contamined-count 1000))]
+(let [pages-count (Math/ceil (/ max-contamined-count 1000))]
   (do
     (crawl-reports pages-count)
     (clean-replace-values pages-count)
     (make-json-file pages-count "datos.json")
-    (export-csv "datos.json")))
+    (export-csv "datos.json" "resources/Datos_%s.csv")))
