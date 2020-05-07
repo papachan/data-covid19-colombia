@@ -16,6 +16,7 @@ header h1 {
   margin: 0 auto;
   color: lightcoral;
   font-size: 1.8em;
+  margin-bottom: 5px;
 }
 
 .description {
@@ -40,17 +41,13 @@ header h1 {
 
 .header-note .row .highlighted {
   background-color: #5242af;
-  color: #a5a5a5;
   display: inline;
-  padding: 2px 2px 2px 2px;
+  color: #b5b5b5;
+  padding: 2px 6px 2px 6px;
 }
 
 .graph {
   width: 70%;
-  float: left;
-}
-
-.chart-bar {
   float: left;
 }
 
@@ -113,6 +110,22 @@ footer a {
   border-radius: 10px;
   padding-top: 20px;
   margin-bottom: 13px;
+}
+
+#chart7 {
+  display: block;
+  background-color: #1b1921;
+  border-radius: 10px;
+  padding-top: 20px;
+  margin-bottom: 13px;
+}
+
+#chart7 .title {
+  color: #828282;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 0 0 20px 0;
+  text-align: center;
 }
 
 .ct-vertical, .ct-horizontal {

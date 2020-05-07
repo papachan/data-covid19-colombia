@@ -23,4 +23,5 @@
   (re-frame/dispatch-sync [::events/load-deaths])
   (re-frame/dispatch-sync [::events/load-recovered])
   (re-frame/dispatch-sync [::events/load-max-case])
+  (re-frame/dispatch-sync [::events/load-covid-tests])
   (start))

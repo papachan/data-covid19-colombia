@@ -19,7 +19,8 @@
   (let [data @(re-frame/subscribe [::events/data])
         deaths @(re-frame/subscribe [::events/deaths])
         recovered @(re-frame/subscribe [::events/recovered])
-        max-id @(re-frame/subscribe [::events/max-id])]
+        max-id @(re-frame/subscribe [::events/max-id])
+        covid-tests @(re-frame/subscribe [::events/covid-tests])]
     [:<>
      [:header
       [:h1
@@ -43,7 +44,9 @@
        {:className "graph"}
        [ui/chart-component data]
        [ui/chart-bars-component data]
-       [ui/chart-bars-component2 data]]
+       [ui/chart-bars-component2 data]
+       (when covid-tests
+         [ui/chart-bars-component3 covid-tests])]
       [:div
        {:id "stats"}
        [ui/block-stats {:title "Number of deaths"

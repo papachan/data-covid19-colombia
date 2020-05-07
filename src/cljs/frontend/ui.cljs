@@ -37,6 +37,23 @@
         :reagent-render      (fn []
                                [:div {:id "chart4"
                                       :class "ct-chart"}])}))))
+(defn chart-bars-component3
+  [data]
+  (when-not (empty? data)
+    (let [formatter (goog.i18n.DateTimeFormat. "dd")
+          series (->> data
+                      rest
+                      (map #(js/parseInt (clojure.string/replace (:accumulate %) #"," ""))))
+          labels (->> data
+                      rest
+                      (map #(.format formatter (js/Date. (:date %)))))]
+      [:div
+       {:id "chart7"}
+       [:div {:className "title"} "Daily Covid tests"]
+       [:> react-graph
+        {:data {:labels labels
+                :series [series]}
+         :type "Bar"}]])))
 
 (defn chart-bars-component2
   [data]
@@ -58,6 +75,14 @@
                 :series [series]}
          :options options
          :type "Bar"}]])))
+
+;; (reagent/create-class
+;;         {:component-did-mount #(show-chart {:labels labels
+;;                                             :series [series]})
+;;          :display-name        "chart-component"
+;;          :reagent-render      (fn []
+;;                                 [:div {:id "chart5"
+;;                                        :class "ct-chart"}])})
 
 (defn chart-bars-component
   [data]
