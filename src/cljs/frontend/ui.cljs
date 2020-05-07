@@ -49,7 +49,7 @@
                       (map #(.format formatter (js/Date. (:date %)))))]
       [:div
        {:id "chart7"}
-       [:div {:className "title"} "Daily Covid tests"]
+       [:div {:className "title"} "Daily Accumulate Covid tests"]
        [:> react-graph
         {:data {:labels labels
                 :series [series]}
