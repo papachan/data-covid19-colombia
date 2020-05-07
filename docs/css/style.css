@@ -38,6 +38,13 @@ header h1 {
   margin: 8px 0 0 0;
 }
 
+.header-note .row .highlighted {
+  background-color: #5242af;
+  color: #a5a5a5;
+  display: inline;
+  padding: 2px 2px 2px 2px;
+}
+
 .graph {
   width: 70%;
   float: left;
