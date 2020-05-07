@@ -12,7 +12,6 @@
   (:import java.net.URL
            java.net.HttpURLConnection))
 
-
 (def content (slurp (io/resource "datos.json")))
 (def json-data (json/parse-string content))
 (def data (json-data "data"))
@@ -32,13 +31,25 @@
      (map #(nth % 7))
      (filter (fn [s] (empty? s))))
 
-
-;; from datos.gov
-(defn download-raw-json
-  []
-  (let [uri (URL. (str "https://www.datos.gov.co/api/views/gt2j-8ykr/rows.json?accessType=DOWNLOAD"))
-        dest (io/file "resources/raw_data.json")
+;; download tests reports from datos.gov.co
+(defn download-csv
+  [fname]
+  (let [uri (URL. (str "https://www.datos.gov.co/api/views/8835-5baf/rows.csv?accessType=DOWNLOAD&bom=true&format=true"))
+        pathfile (clojure.string/join ["resources/" fname])
+        dest (io/file pathfile)
         conn ^HttpURLConnection (.openConnection ^URL uri)]
     (.connect conn)
     (with-open [is (.getInputStream conn)]
       (io/copy is dest))))
+
+(defn convert-to-json
+  [name fname]
+  (let [[header & rows] (csv/read-csv (slurp (io/resource name)))
+        vals (mapv #(hash-map :date (first %) :accumulate (second %)) rows)
+        output-file (clojure.string/join ["resources/" fname])]
+    (with-open [wrtr (io/writer output-file)]
+      (.write wrtr (clojure.data.json/write-str vals)))))
+
+(do
+  (download-csv "report.csv")
+  (convert-to-json "report.csv" "report.json"))
