@@ -2,13 +2,13 @@ body {
   background-color: #2b2b39;
   padding: 20px;
   margin: 0;
-  font-family: arial;
+  font-family: Arial;
 }
 
 header {
   width: 100%;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 1px;
 }
 
 header h1 {
@@ -64,6 +64,7 @@ header h1 {
   width: 200px;
   padding: 20px 0 45px 0;
   margin-bottom: 20px;
+  min-height: 120px;
 }
 
 .block-stats .title {
@@ -77,10 +78,20 @@ header h1 {
   color: #FFCC00;
   width: 100%;
   text-align: center;
+}
+
+.block-stats .bignum{
   font-size: 5.2em;
   font-weight: bold;
   font-family: arial;
   padding-top: 14px;
+}
+
+.block-stats .num {
+  font-size: 3.2em;
+  font-weight: bold;
+  font-family: arial;
+  padding-top: 27px;
 }
 
 footer {
@@ -98,10 +109,9 @@ footer a {
   display: block;
   background-color: #1b1921;
   border-radius: 10px;
-  padding-top: 10px;
+  padding-top: 20px;
   margin-bottom: 13px;
 }
-
 
 #chart5, #chart6 {
   display: block;
@@ -120,7 +130,7 @@ footer a {
   margin-bottom: 13px;
 }
 
-#chart7 .title {
+.title {
   color: #828282;
   font-size: 17px;
   font-weight: bold;
@@ -130,6 +140,7 @@ footer a {
 
 .ct-vertical, .ct-horizontal {
   font-size: 9px;
+  /* color: #505050; */
   color: #808080;
 }
 
