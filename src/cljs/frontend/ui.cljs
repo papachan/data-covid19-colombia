@@ -7,14 +7,14 @@
 
 
 (defn block-stats
-  [{:keys [title value]} data]
+  [{:keys [title value style]} data]
   [:div
    {:className "block-stats"}
    [:div
     {:className "title"}
     title]
    [:div
-    {:className "stats"}
+    {:className style}
     value]])
 
 (defn show-chart
@@ -25,7 +25,7 @@
     (chartist/Line. ".ct-chart" (clj->js data) (clj->js options))))
 
 (defn chart-component
-  [data]
+  [{:keys [data title]}]
   (when-not (empty? data)
     (let [[labels-fechas
            series1
@@ -35,10 +35,13 @@
                                            :series [series1 series2]})
         :display-name        "chart-component"
         :reagent-render      (fn []
-                               [:div {:id "chart4"
-                                      :class "ct-chart"}])}))))
+                               [:div
+                                [:div {:id "chart4"}
+                                 [:div {:className "title"} title]
+                                 [:div {:class "ct-chart"}]]])}))))
+
 (defn chart-bars-component3
-  [data]
+  [{:keys [data title]}]
   (when-not (empty? data)
     (let [formatter (goog.i18n.DateTimeFormat. "dd")
           series (->> data
@@ -49,14 +52,14 @@
                       (map #(.format formatter (js/Date. (:date %)))))]
       [:div
        {:id "chart7"}
-       [:div {:className "title"} "Daily Accumulate Covid tests"]
+       [:div {:className "title"} title]
        [:> react-graph
         {:data {:labels labels
                 :series [series]}
          :type "Bar"}]])))
 
 (defn chart-bars-component2
-  [data]
+  [{:keys [data title]}]
   (when-not (empty? data)
     (let [series (->> data
                       (filter #(some #{"Fallecido" "fallecido"} %))
@@ -70,22 +73,15 @@
           options {:height "220px"}]
       [:div
        {:id "chart6"}
+       [:div {:className "title"} title]
        [:> react-graph
         {:data {:labels labels
                 :series [series]}
          :options options
          :type "Bar"}]])))
 
-;; (reagent/create-class
-;;         {:component-did-mount #(show-chart {:labels labels
-;;                                             :series [series]})
-;;          :display-name        "chart-component"
-;;          :reagent-render      (fn []
-;;                                 [:div {:id "chart5"
-;;                                        :class "ct-chart"}])})
-
 (defn chart-bars-component
-  [data]
+  [{:keys [data title]}]
   (when-not (empty? data)
     (let [labels {"recuperado" "recovered"
                   "casa" "at home"
@@ -110,6 +106,7 @@
                    :axisY {:offset 120}}]
       [:div
        {:id "chart5"}
+       [:div {:className "title"} title]
        [:> react-graph
         {:data {:labels labels-fechas
                 :series [series1]}

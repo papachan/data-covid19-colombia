@@ -42,32 +42,46 @@
             (get-min-date data)]]])]
       [:div
        {:className "graph"}
-       [ui/chart-component data]
-       [ui/chart-bars-component data]
-       [ui/chart-bars-component2 data]
+       [ui/chart-component {:data data
+                            :title "Daily/cummulative number of reported cases / deaths"}]
+       [ui/chart-bars-component {:data data
+                                 :title "All cases by status"}]
+       [ui/chart-bars-component2 {:data data
+                                  :title "All cases by ages"}]
        (when covid-tests
-         [ui/chart-bars-component3 covid-tests])]
+         [ui/chart-bars-component3 {:data covid-tests
+                                    :title "Daily cumulative number of Covid tests"}])]
       [:div
        {:id "stats"}
        [ui/block-stats {:title "Number of deaths"
-                     :value
-                     (when deaths
-                       (:deaths deaths))}]
+                        :style "stats bignum"
+                        :value
+                        (when deaths
+                          (:deaths deaths))}]
        [ui/block-stats {:title "Number of cases"
-                     :value
-                     (when max-id
-                       (:max_id max-id))}]
+                        :style "stats bignum"
+                        :value
+                        (when max-id
+                          (:max_id max-id))}]
        [ui/block-stats {:title "Recovered"
-                     :value
-                     (when recovered
-                       (:recovered recovered))}]
+                        :style "stats bignum"
+                        :value
+                        (when recovered
+                          (:recovered recovered))}]
        [ui/block-stats {:title "Active cases (Bogotá)"
+                        :style "stats bignum"
                         :value
                         (when-not (empty? data)
-                          :recovered (->> data
-                                          (filter #(some #{"Bogotá D.C."} %))
-                                          (remove (fn [s] (or (= "Fallecido" (nth s 4))
-                                                              (= "Recuperado" (nth s 4)))))
-                                          count))
-                        }]]]
+                          (->> data
+                               (filter #(some #{"Bogotá D.C."} %))
+                               (remove (fn [s] (or (= "Fallecido" (nth s 4))
+                                                   (= "Recuperado" (nth s 4)))))
+                               count))}]
+       [ui/block-stats {:title "Number of Covid Tests"
+                        :style "stats num"
+                        :value
+                        (when covid-tests
+                          (->> covid-tests
+                               (map #(js/parseInt (clojure.string/replace (:accumulate %) #"," "")))
+                               last))}]]]
      [ui/footer]]))
