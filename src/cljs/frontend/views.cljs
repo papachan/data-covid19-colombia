@@ -43,14 +43,14 @@
       [:div
        {:className "graph"}
        [ui/chart-component {:data data
-                            :title "Daily/cummulative number of reported cases / deaths"}]
+                            :title "Cummulative number of reported cases / deaths"}]
        [ui/chart-bars-component {:data data
                                  :title "All cases by status"}]
        [ui/chart-bars-component2 {:data data
                                   :title "All cases by ages"}]
        (when covid-tests
          [ui/chart-bars-component3 {:data covid-tests
-                                    :title "Daily cumulative number of Covid tests"}])]
+                                    :title "Cummulative number of Covid tests"}])]
       [:div
        {:id "stats"}
        [ui/block-stats {:title "Number of deaths"

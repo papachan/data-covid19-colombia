@@ -51,6 +51,14 @@ header h1 {
   float: left;
 }
 
+.graph .title {
+  color: #828282;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 0 0 20px 0;
+  text-align: center;
+}
+
 #stats {
   float: left;
   width: 26%;
@@ -62,7 +70,7 @@ header h1 {
   background-color: #1b1921;
   border-radius: 12px;
   width: 200px;
-  padding: 20px 0 45px 0;
+  padding: 25px 0 35px 0;
   margin-bottom: 20px;
   min-height: 120px;
 }
@@ -72,6 +80,7 @@ header h1 {
   width: 100%;
   text-align: center;
   font-weight: bold;
+  padding: 0;
 }
 
 .block-stats .stats {
@@ -130,17 +139,8 @@ footer a {
   margin-bottom: 13px;
 }
 
-.title {
-  color: #828282;
-  font-size: 17px;
-  font-weight: bold;
-  padding: 0 0 20px 0;
-  text-align: center;
-}
-
 .ct-vertical, .ct-horizontal {
   font-size: 9px;
-  /* color: #505050; */
   color: #808080;
 }
 
