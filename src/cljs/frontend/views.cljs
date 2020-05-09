@@ -43,11 +43,11 @@
       [:div
        {:className "graph"}
        [ui/chart-component {:data data
-                            :title "Cummulative number of reported cases / deaths"}]
+                            :title "Cummulative number of reported cases & deaths"}]
        [ui/chart-bars-component {:data data
                                  :title "All cases by status"}]
        [ui/chart-bars-component2 {:data data
-                                  :title "All cases by ages"}]
+                                  :title "Deaths by Age"}]
        (when covid-tests
          [ui/chart-bars-component3 {:data covid-tests
                                     :title "Cummulative number of Covid tests"}])]
@@ -59,7 +59,7 @@
                         (when deaths
                           (:deaths deaths))}]
        [ui/block-stats {:title "Number of cases"
-                        :style "stats bignum"
+                        :style "stats num"
                         :value
                         (when max-id
                           (:max_id max-id))}]

@@ -118,7 +118,7 @@
   [:footer
    "©  "
    (.getFullYear (js/Date.))
-   " @papachan - "
+   " papachan - "
    [:a {:href "https://twitter.com/papachan"} "Twitter"]
    " "
    [:a {:href "https://github.com/papachan/data-covid19-colombia"} "Github"]])
