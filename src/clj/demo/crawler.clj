@@ -12,8 +12,6 @@
            java.net.HttpURLConnection))
 
 
-(def now (clj-time.coerce/to-date-time (str (java.time.LocalDateTime/now))))
-
 ;; From datos.gov.co
 (defn max-id
   []
@@ -101,7 +99,8 @@
   [max-num header]
   (loop [i 1
          out [header]]
-    (if (<= i max-num)
+    (cond
+      (<= i max-num)
       (let [name (clojure.string/join ["temp" i ".json"])
             data (when (io/resource name)
                    (process-data (io/resource name)))
@@ -109,6 +108,7 @@
                   (concat out data)
                   out)]
         (recur (inc i) res))
+      :else
       out)))
 
 (defn merge-dates

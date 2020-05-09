@@ -29,7 +29,34 @@
      first
      rest
      (map #(nth % 7))
-     (filter (fn [s] (empty? s))))
+     (filter empty?)
+     count)
+
+;; check empty rows with status values
+(->> data
+     first
+     rest
+     (map #(nth % 4))
+     (filter empty?)
+     count)
+
+;; check empty rows with ages values
+(->> data
+     first
+     rest
+     (map #(nth % 6))
+     (filter empty?)
+     count)
+
+;; check minimum age
+(let [ages (->> data
+                first
+                rest
+                (map #(nth % 6))
+                (map #(Integer/parseInt %))
+                )]
+  (first (into (sorted-set) ages)))
+
 
 ;; download tests reports from datos.gov.co
 (defn download-csv

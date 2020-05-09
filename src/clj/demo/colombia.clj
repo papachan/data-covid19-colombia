@@ -12,17 +12,39 @@
            java.net.HttpURLConnection))
 
 
+(def now (clj-time.coerce/to-date-time (str (java.time.LocalDateTime/now))))
+
 (def fmt (f/formatter "dd/MM/yyyyy"))
 (def content (slurp (io/resource "datos.json")))
 (def json-data (json/parse-string content))
 (def data (json-data "data"))
 
-(let [rows (into [] (rest (first data)))
-      bogota (filter #(some #{"Bogotá D.C."} %) rows)
-      statuses (into [] (map #(clojure.string/lower-case (nth % 4)) bogota))
-      types (into [] (map #(clojure.string/lower-case (nth % 8)) bogota))
-      ages (into [] (map #(clojure.string/lower-case (nth % 5)) bogota))
-      only-infected (remove (fn [s] (= "recuperado" (clojure.string/lower-case (nth s 4)))) rows)
+(let [rows (->> data
+                first
+                rest
+                vec)
+      all-bogota-cases (filter #(some #{"Bogotá D.C."} %) rows)
+      statuses (->> rows
+                    (map #(nth % 4))
+                    (remove empty?)
+                    (map clojure.string/lower-case)
+                    vec)
+      types (into [] (map #(clojure.string/lower-case (nth % 8)) all-bogota-cases))
+
+      ages (->> all-bogota-cases
+                (map #(nth % 6))
+                (map #(Integer/parseInt %))
+                (remove zero?)
+                vec)
+
+      ;; only-infected (->> rows
+      ;;                    (map #(nth % 4))
+      ;;                    (remove empty?)
+      ;;                    (map clojure.string/lower-case)
+      ;;                    (remove #(= "recuperado" %)))
+
+      only-infected (remove #(or (= "Recuperado" (nth % 4)) (empty? (nth % 4))) rows)
+      only-infected-statuses (frequencies (map clojure.string/lower-case (map #(nth % 4) only-infected)))
       by-regions (frequencies (map #(nth % 2) only-infected))
 
       ;; timeserie contamined
@@ -61,7 +83,7 @@
        (into (sorted-map)))
 
   ;; all statuses available
-  (distinct (map #(clojure.string/lower-case (nth % 4)) rows))
+  (distinct (map #(clojure.string/lower-case (nth % 4)) (remove #(empty? (nth % 4)) rows)))
 
   ;; all provinces
   (sort (distinct (map #(nth % 2) rows)))
@@ -71,18 +93,15 @@
 
   (count rows) ;; => 491 => 539 => 608 => 702 => 798 => 906 => 1065 => 1267 => 1406
 
-  (count (filter #{"BOGOTA"}
+  (count (filter #{"Bogotá D.C."}
            (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587 => 725 => 861 => 1030 => 1164 => 1333
 
   ;; count rows from a specific date
   (count (filter #{"08/04/2020"}
                  (map #(second %) rows)))
 
-  ;; statuses
-  (map #(clojure.string/lower-case (nth % 4)) (filter #(some #{"BOGOTA"} %) rows))
-
   ;; (map #(nth % 4)
-  ;;      (filter #(some #{"Bogotá"} %) rows))
+  ;;      (filter #(some #{"Bogotá D.C."} %) rows))
 
   ;; numero de relacionados en bogota
   (count (filter #(= "relacionado" %) types)) ;; => 71 ;; => 73 ;; => 89 ;; => 95 => 115 => 134 => 154
@@ -97,14 +116,14 @@
 
   ;; ;; suma por regiones
   (frequencies (map #(nth % 2) only-infected))
-  (by-regions "BOGOTA") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733 => 926 => 964 => 1060 => 1102
+  (by-regions "Bogotá D.C.") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733 => 926 => 964 => 1060 => 1102
 
   ;; => {"recuperado" 62, "casa" 883, "hospital" 138, "hospital uci" 31, "fallecido" 45, "recuperado (hospital)" 5}
   (frequencies statuses)
 
   ;; Fallecidos total
-  (count (filter #{"fallecido"}
-                 (map #(clojure.string/lower-case (nth % 4)) rows)))
+  (count (filter #(or (= "Fallecido" (nth % 4)) (empty? (nth % 4))) rows))
+
   ;; => 14 ;; => 16 => 17 => 25 => 32 => 35 => 46 => 50 => 54 => 109 => 112
 
   ;; fallecidos por regiones:
@@ -113,9 +132,10 @@
 
   ;; all rows from 3 days ago
   ;; => {"11/04/02020" 236, "12/04/02020" 67, "13/04/02020" 76}
+  ;; => {"06/05/02020" 347, "07/05/02020" 497, "08/05/02020" 595}
   (->> rows
        (map #(f/parse fmt (second %)))
-       (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (-> 3 t/days t/ago)))))
+       (filter (fn [s] (> (coerce/to-long s) (coerce/to-long (t/minus now (t/days 3))))))
        frequencies
        (map (fn [[k v]] [(f/unparse fmt k) v]))
        (into {}))
@@ -139,5 +159,4 @@
 
   ;; active case in Bogota
   ;; => 2228
-  (count (remove (fn [s] (or (= "fallecido" (clojure.string/lower-case (nth s 4)))
-                             (= "recuperado" (clojure.string/lower-case (nth s 4))))) bogota)))
+  (count (remove #(or (= "Recuperado" (nth % 4)) (= "Fallecido" (nth % 4)) (empty? (nth % 4))) all-bogota-cases)))
