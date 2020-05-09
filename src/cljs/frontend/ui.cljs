@@ -91,11 +91,12 @@
                   "recuperado (hospital)" "recovered in hospital"
                   "n/a" "N/A"}
           statuses (->> data
-                        (map #(clojure.string/lower-case (nth % 4)))
-                        vec
+                        (map #(nth % 4))
+                        (remove nil?)
+                        (map clojure.string/lower-case)
                         frequencies)
           labels-fechas (->> statuses
-                             (map #(labels (first %)))
+                             (map #(labels (key %)))
                              vec)
           series1 (->> statuses
                        (map #(nth % 1))
