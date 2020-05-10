@@ -53,8 +53,7 @@
                 first
                 rest
                 (map #(nth % 6))
-                (map #(Integer/parseInt %))
-                )]
+                (map #(Integer/parseInt %)))]
   (first (into (sorted-set) ages)))
 
 
