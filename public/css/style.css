@@ -34,11 +34,12 @@ header h1 {
 .header-note {
   padding: 10px 0 10px 5px;
   margin: 10px 0 10px 0;
+  line-height: 22px;
 }
 
 .header-note .row {
   color: #828282;
-  font-size: 14px;
+  font-size: 12px;
   margin: 8px 0 0 0;
 }
 
