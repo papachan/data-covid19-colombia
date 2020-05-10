@@ -6,6 +6,15 @@
             [frontend.data :as data :refer [process-data]]))
 
 
+(defn row
+  [{:keys [title value]}]
+  [:div
+   {:className "row"}
+   title
+   [:span
+    {:className "highlighted"}
+    value]])
+
 (defn block-stats
   [{:keys [title value style]} data]
   [:div

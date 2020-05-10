@@ -4,15 +4,24 @@
             ["chartist" :as chartist]
             ["react-chartist" :default react-graph]
             [frontend.events :as events]
-            [frontend.ui :as ui]
+            [frontend.ui :as ui :refer [row]]
             [frontend.date :as d])
   (:import goog.i18n.DateTimeFormat))
 
 
+(def iso-fmt (goog.i18n.DateTimeFormat. "yyyy-MM-dd"))
+
 (defn get-min-date
   [data]
-  (let [fmt (goog.i18n.DateTimeFormat. "yyyy-MM-dd")]
-    (first (map #(.format fmt (d/parse-date (second %))) data))))
+  (first (map #(.format iso-fmt (d/parse-date (second %))) data)))
+
+(defn get-first-death
+  [data]
+  (let [all-dates (->> data
+                       (filter #(some #{"Fallecido" "fallecido"} %))
+                       (map #(d/parse-date (second %)))
+                       sort)]
+    (.format iso-fmt (first all-dates))))
 
 (defn home
   []
@@ -34,12 +43,8 @@
        {:className "header-note"}
        (when-not (empty? data)
          [:div
-          [:div
-           {:className "row"}
-           (str "First Case of Covid19 in Colombia: ")
-           [:span
-            {:className "highlighted"}
-            (get-min-date data)]]])]
+          (row {:title "First Case of Covid19 in Colombia: " :value (get-min-date data)})
+          (row {:title "First Death of Covid19 in Colombia: " :value (get-first-death data)})])]
       [:div
        {:className "graph"}
        [ui/chart-component {:data data
