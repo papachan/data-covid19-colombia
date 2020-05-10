@@ -12,51 +12,6 @@
   (:import java.net.URL
            java.net.HttpURLConnection))
 
-(def content (slurp (io/resource "datos.json")))
-(def json-data (json/parse-string content))
-(def data (json-data "data"))
-
-;; last date
-(->> data
-     first
-     rest
-     vec
-     (map second)
-     last)
-
-;; check empty rows with age value
-(->> data
-     first
-     rest
-     (map #(nth % 7))
-     (filter empty?)
-     count)
-
-;; check empty rows with status values
-(->> data
-     first
-     rest
-     (map #(nth % 4))
-     (filter empty?)
-     count)
-
-;; check empty rows with ages values
-(->> data
-     first
-     rest
-     (map #(nth % 6))
-     (filter empty?)
-     count)
-
-;; check minimum age
-(let [ages (->> data
-                first
-                rest
-                (map #(nth % 6))
-                (map #(Integer/parseInt %)))]
-  (first (into (sorted-set) ages)))
-
-
 ;; download tests reports from datos.gov.co
 (defn download-csv
   [fname]
