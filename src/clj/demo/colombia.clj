@@ -182,7 +182,7 @@
        (into (sorted-map))))
 
 segments-by-age
-;; => {"0 a 9" 439, "10 a 19" 699, "20 a 29" 2389, "30 a 39" 2448, "40 a 49" 1834, "50 a 59" 1509, "60 a 69" 881, "70 a 79" 563, "80 a 89" 242, "90 a 99" 59}
+;; => {"0 a 9" 465, "10 a 19" 740, "20 a 29" 2516, "30 a 39" 2575, "40 a 49" 1905, "50 a 59" 1590, "60 a 69" 921, "70 a 79" 587, "80 a 89" 252, "90 a 99" 62}
 
 ;; suma por regiones
 (frequencies (map #(nth % 2) only-infected))
@@ -219,4 +219,4 @@ segments-by-age
 
 ;; active case in Bogota
 (count (remove #(or (= "Recuperado" (nth % 4)) (= "Fallecido" (nth % 4)) (empty? (nth % 4))) all-bogota-cases))
-;; => 2903
+;; => 2903 => 2993
