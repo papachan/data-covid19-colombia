@@ -4,6 +4,7 @@
             ["chartist" :as chartist]
             ["react-chartist" :default react-graph]
             [frontend.data :as data :refer [process-data]]
+            [goog.string.format]
             [goog.string :refer [format]]))
 
 
@@ -70,18 +71,21 @@
 
 
 (def map-fields-name
-  (let [fields [:1_zeros_to_nine
-                :2_tens
-                :3_twenties
-                :4_thirties
-                :5_fourties
-                :6_fifties
-                :7_sixties
-                :8_seventies
-                :9_eighties
-                :10_nineties]
-        texts (vec (map #(format "%s a %s" % (+ % 9)) (range 0 100 10)))]
-    (apply hash-map (interleave fields texts))))
+  (let [fields [:a_zeros_to_nine
+                :b_tens
+                :c_twenties
+                :d_thirties
+                :e_fourties
+                :f_fifties
+                :g_sixties
+                :h_seventies
+                :i_eighties
+                :j_nineties]]
+    (into (sorted-map)
+          (map (fn [field n]
+                 [field (format "%s a %s" n (+ n 9))])
+               fields
+               (range 0 100 10)))))
 
 (defn chart-bars-component2
   [{:keys [data title]}]
@@ -90,16 +94,16 @@
                               (filter #(some #{"Fallecido" "fallecido"} %))
                               (map #(nth % 6))
                               (map js/parseInt)
-                              (group-by #(cond (<= 0 % 9)   :1_zeros_to_nine
-                                               (<= 10 % 19) :2_tens
-                                               (<= 20 % 29) :3_twenties
-                                               (<= 30 % 39) :4_thirties
-                                               (<= 40 % 49) :5_fourties
-                                               (<= 50 % 59) :6_fifties
-                                               (<= 60 % 69) :7_sixties
-                                               (<= 70 % 79) :8_seventies
-                                               (<= 80 % 89) :9_eighties
-                                               (>= % 90)    :10_nineties))
+                              (group-by #(cond (<= 0 % 9)   :a_zeros_to_nine
+                                               (<= 10 % 19) :b_tens
+                                               (<= 20 % 29) :c_twenties
+                                               (<= 30 % 39) :d_thirties
+                                               (<= 40 % 49) :e_fourties
+                                               (<= 50 % 59) :f_fifties
+                                               (<= 60 % 69) :g_sixties
+                                               (<= 70 % 79) :h_seventies
+                                               (<= 80 % 89) :i_eighties
+                                               (>= % 90)    :j_nineties))
                               (map (fn [[k vs]]
                                      {(map-fields-name k) (count vs)}))
                               (into (sorted-map)))

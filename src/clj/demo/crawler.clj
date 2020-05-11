@@ -29,14 +29,12 @@
 
 (defn fetch-file
   [i]
-  (let [limit (if (= i 1) "999" "1000")
-        value (-> i
-                  (- 1)
-                  (* 1000)
-                  (- 1))
-        offset (if (= i 1) "" (str "%20offset%20" value))
+  (let [limit (if (= i 0) "999" "1000")
+        step (if (= i 0) 0 1000)
+        value (- (* step i) 1)
+        offset (if (= i 0) "" (str "%20offset%20" value))
         uri (URL. (str "https://www.datos.gov.co/api/id/gt2j-8ykr.json?$query=select%20*%2C%20%3Aid%20limit%20" limit offset))
-        fname (clojure.string/join ["resources/" "temp" i ".json"])
+        fname (clojure.string/join ["resources/" "temp" (+ i 1) ".json"])
         dest (io/file fname)
         conn ^HttpURLConnection (.openConnection ^URL uri)]
     (.connect conn)
@@ -45,8 +43,8 @@
 
 (defn crawl-reports
   [max-num]
-  (loop [i 1]
-    (when (<= i max-num)
+  (loop [i 0]
+    (when (< i max-num)
       (fetch-file i)
       (recur (inc i)))))
 

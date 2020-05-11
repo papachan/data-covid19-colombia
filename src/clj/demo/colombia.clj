@@ -132,8 +132,6 @@
 
 ;; group by ages
 ;; => {"20 a 29" 67, "70 a 79" 18, "60 a 69" 44, "50 a 59" 64, "40 a 49" 72, "10 a 19" 10, "80 a 89" 7, "30 a 39" 104, "0 a 9" 4}
-(vec (map #(format "%s a %s" % (+ % 9)) (range 0 90 10)))
-;; => ["0 a 9" "10 a 19" "20 a 29" "30 a 39" "40 a 49" "50 a 59" "60 a 69" "70 a 79" "80 a 89"]
 
 
 ;; Two groups of deads by ages
@@ -147,28 +145,44 @@
      (zipmap ["mayores de 40" "menores de 40"]))
 ;; => {"mayores de 40" 418, "menores de 40" 27}
 
-
 ;; multiple groups of deads by ages
+(def map-fields-name
+  (let [fields [:a_zeros_to_nine
+                :b_tens
+                :c_twenties
+                :d_thirties
+                :e_fourties
+                :f_fifties
+                :g_sixties
+                :h_seventies
+                :i_eighties
+                :j_nineties]]
+    (into (sorted-map)
+          (map (fn [field n]
+                 [field (format "%s a %s" n (+ n 9))])
+               fields
+               (range 0 100 10)))))
+
 (def segments-by-age
   (->> rows
        (map #(nth % 6))
        (map #(Integer/parseInt %))
-       (group-by #(cond (<= 0 % 9)   :zeros_to_nine
-                        (<= 10 % 19) :tens
-                        (<= 20 % 29) :twenties
-                        (<= 30 % 39) :thirties
-                        (<= 40 % 49) :fourties
-                        (<= 50 % 59) :fifties
-                        (<= 60 % 69) :sixties
-                        (<= 70 % 79) :seventies
-                        (<= 80 % 89) :eighties
-                        (>= % 90)    :nineties
-                        ))
+       (group-by #(cond (<= 0 % 9)   :a_zeros_to_nine
+                        (<= 10 % 19) :b_tens
+                        (<= 20 % 29) :c_twenties
+                        (<= 30 % 39) :d_thirties
+                        (<= 40 % 49) :e_fourties
+                        (<= 50 % 59) :f_fifties
+                        (<= 60 % 69) :g_sixties
+                        (<= 70 % 79) :h_seventies
+                        (<= 80 % 89) :i_eighties
+                        (>= % 90)    :j_nineties))
        (map (fn [[k vs]]
-              {k (count vs)}))))
+              {(map-fields-name k) (count vs)}))
+       (into (sorted-map))))
 
 segments-by-age
-;; => ({:seventies 537} {:zeros_to_nine 407} {:fourties 1744} {:thirties 2317} {:eighties 228} {:nineties 57} {:tens 671} {:fifties 1434} {:sixties 840} {:twenties 2260})
+;; => {"0 a 9" 439, "10 a 19" 699, "20 a 29" 2389, "30 a 39" 2448, "40 a 49" 1834, "50 a 59" 1509, "60 a 69" 881, "70 a 79" 563, "80 a 89" 242, "90 a 99" 59}
 
 ;; suma por regiones
 (frequencies (map #(nth % 2) only-infected))
@@ -205,4 +219,4 @@ segments-by-age
 
 ;; active case in Bogota
 (count (remove #(or (= "Recuperado" (nth % 4)) (= "Fallecido" (nth % 4)) (empty? (nth % 4))) all-bogota-cases))
-;; => 2861
+;; => 2903
