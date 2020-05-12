@@ -243,9 +243,10 @@
     (spit fname (json/encode data-json))))
 
 ;; create new datos.json file
-(let [pages-count (Math/ceil (/ max-contamined-count 1000))]
-  (do
-    (crawl-reports pages-count)
-    (clean-replace-values pages-count)
-    (make-json-file pages-count "datos.json")
-    (export-csv "datos.json" "data/Datos_%s.csv")))
+(comment
+  (let [pages-count (Math/ceil (/ max-contamined-count 1000))]
+   (do
+     (crawl-reports pages-count)
+     (clean-replace-values pages-count)
+     (make-json-file pages-count "datos.json")
+     (export-csv "datos.json" "data/Datos_%s.csv"))))

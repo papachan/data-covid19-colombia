@@ -31,6 +31,7 @@
     (with-open [wrtr (io/writer output-file)]
       (.write wrtr (clojure.data.json/write-str vals)))))
 
-(do
-  (download-csv "report.csv")
-  (convert-to-json "report.csv" "report.json"))
+(comment
+  (do
+   (download-csv "report.csv")
+   (convert-to-json "report.csv" "report.json")))
