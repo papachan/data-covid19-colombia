@@ -219,4 +219,4 @@ segments-by-age
 
 ;; active case in Bogota
 (count (remove #(or (= "Recuperado" (nth % 4)) (= "Fallecido" (nth % 4)) (empty? (nth % 4))) all-bogota-cases))
-;; => 2903 => 2993 => 3291 => 3403
+;; => 2903 => 2993 => 3291 => 3403 => 3493
