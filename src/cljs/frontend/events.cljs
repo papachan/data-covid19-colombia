@@ -101,7 +101,7 @@
  (fn-traced
   [db _]
   {:http-xhrio {:method :get
-                :uri (str base-url "select%20*%2C%20%3Aid%20%20|%3E%20select%20count(*)%20as%20deaths%20where%20(upper(`estado`)%20%3D%20upper(%27Fallecido%27))%20")
+                :uri (str base-url "select%20*%2C%20%3Aid%20%20|%3E%20select%20count(*)%20as%20deaths%20where%20(upper(`atenci_n`)%20%3D%20upper(%27Fallecido%27))%20")
                 :response-format (ajax/json-response-format {:keywords? true})
                 :on-success [::set-deaths]}}))
 
