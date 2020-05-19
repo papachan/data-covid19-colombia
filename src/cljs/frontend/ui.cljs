@@ -3,7 +3,9 @@
             [reagent.core :as reagent :refer [atom]]
             ["chartist" :as chartist]
             ["react-chartist" :default react-graph]
-            [frontend.data :as data :refer [process-data]]
+            [frontend.data :as data :refer [process-data
+                                            map-fields-name
+                                            get-segments-by-ages]]
             [goog.string.format]
             [goog.string :refer [format]]))
 
@@ -70,45 +72,10 @@
          :type "Bar"}]])))
 
 
-(def map-fields-name
-  (let [fields [:a_zeros_to_nine
-                :b_tens
-                :c_twenties
-                :d_thirties
-                :e_fourties
-                :f_fifties
-                :g_sixties
-                :h_seventies
-                :i_eighties
-                :j_nineties]]
-    (into (sorted-map)
-          (map (fn [field n]
-                 [field (format "%s a %s" n (+ n 9))])
-               fields
-               (range 0 100 10)))))
-
 (defn chart-bars-component2
   [{:keys [data title]}]
   (when-not (empty? data)
-    (let [segment-by-age (->> data
-                              (filter #(some #{"Fallecido" "fallecido"} %))
-                              (map #(nth % 6))
-                              (map js/parseInt)
-                              (group-by #(cond (<= 0 % 9)   :a_zeros_to_nine
-                                               (<= 10 % 19) :b_tens
-                                               (<= 20 % 29) :c_twenties
-                                               (<= 30 % 39) :d_thirties
-                                               (<= 40 % 49) :e_fourties
-                                               (<= 50 % 59) :f_fifties
-                                               (<= 60 % 69) :g_sixties
-                                               (<= 70 % 79) :h_seventies
-                                               (<= 80 % 89) :i_eighties
-                                               (>= % 90)    :j_nineties))
-                              (map (fn [[k vs]]
-                                     {(map-fields-name k) (count vs)}))
-                              (into (sorted-map)))
-          series (vals segment-by-age)
-          labels (keys segment-by-age)
+    (let [[series labels] (get-segments-by-ages data)
           options {:height "220px"}]
       [:div
        {:id "chart6"}
