@@ -86,11 +86,16 @@
                                                    (= "Recuperado" (nth s 4)))))
                                count
                                format-number))}]
-       [ui/block-stats {:title "n of cases by Millions"
+       [ui/block-stats {:title "n of cases for each millions of people"
                         :style "stats num"
                         :value
                         (when max-id
                           (cases-by-population (:max_id max-id)))}]
+       [ui/block-stats {:title "n of deaths for each millions of people"
+                        :style "stats num"
+                        :value
+                        (when deaths
+                          (cases-by-population (:deaths deaths)))}]
        [ui/block-stats {:title "Number of Covid Tests"
                         :style "stats num"
                         :value
