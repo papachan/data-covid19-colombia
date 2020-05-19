@@ -5,7 +5,9 @@
             ["react-chartist" :default react-graph]
             [frontend.events :as events]
             [frontend.ui :as ui :refer [row]]
-            [frontend.date :as d])
+            [frontend.date :as d]
+            [frontend.util :as util :refer [format-number]]
+            [frontend.data :as data :refer [cases-by-population population]])
   (:import goog.i18n.DateTimeFormat))
 
 
@@ -43,8 +45,9 @@
        {:className "header-note"}
        (when-not (empty? data)
          [:div
-          (row {:title "First Case of Covid19 in Colombia: " :value (get-min-date data)})
-          (row {:title "First Death of Covid19 in Colombia: " :value (get-first-death data)})])]
+          (row {:title "Total Colombian Population: " :value (format-number population)})
+          (row {:title "First Covid19 case in Colombia: " :value (get-min-date data)})
+          (row {:title "First Covid19 death in Colombia: " :value (get-first-death data)})])]
       [:div
        {:className "graph"}
        [ui/chart-component {:data data
@@ -67,12 +70,12 @@
                         :style "stats num"
                         :value
                         (when max-id
-                          (:max_id max-id))}]
+                          (format-number (:max_id max-id)))}]
        [ui/block-stats {:title "Recovered"
                         :style "stats bignum"
                         :value
                         (when recovered
-                          (:recovered recovered))}]
+                          (format-number (:recovered recovered)))}]
        [ui/block-stats {:title "Active cases (Bogotá)"
                         :style "stats bignum"
                         :value
@@ -81,12 +84,19 @@
                                (filter #(some #{"Bogotá D.C."} %))
                                (remove (fn [s] (or (= "Fallecido" (nth s 4))
                                                    (= "Recuperado" (nth s 4)))))
-                               count))}]
+                               count
+                               format-number))}]
+       [ui/block-stats {:title "n of cases by Millions"
+                        :style "stats num"
+                        :value
+                        (when max-id
+                          (cases-by-population (:max_id max-id)))}]
        [ui/block-stats {:title "Number of Covid Tests"
                         :style "stats num"
                         :value
                         (when covid-tests
                           (->> covid-tests
                                (map #(js/parseInt (clojure.string/replace (:accumulate %) #"," "")))
-                               last))}]]]
+                               last
+                               format-number))}]]]
      [ui/footer]]))

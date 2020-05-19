@@ -2,6 +2,14 @@
   (:require [frontend.date :as d])
   (:import goog.i18n.DateTimeFormat))
 
+
+(def population 48759958)
+
+(defn cases-by-population
+  [num]
+  (let [result (float (* (/ num population) 1000000))]
+    (.toFixed result 2)))
+
 (defn sum
   [coll]
   (loop [in coll,
@@ -19,7 +27,6 @@
 
 ;; minimun date to display in chart
 (def min-date (js/Date. "2020-03-25"))
-
 
 (defn process-data
   [data]
