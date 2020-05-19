@@ -1,4 +1,4 @@
-{:deps true
+{:deps {:aliases [:shadow-cljs]}
 
  :nrepl {:port 8777}
 
