@@ -5,9 +5,12 @@
             [frontend.events :as events]
             [frontend.views :as views :refer [home]]))
 
-(defn start []
-  (rd/render [home]
-             (. js/document (getElementById "app"))))
+
+(defn ^:dev/after-load mount-root []
+  (re-frame/clear-subscription-cache!)
+  (let [root-el (.getElementById js/document "app")]
+    (rd/unmount-component-at-node root-el)
+    (rd/render [home] root-el)))
 
 (defn stop []
   ;; stop is called before any code is reloaded
@@ -24,4 +27,4 @@
   (re-frame/dispatch-sync [::events/load-recovered])
   (re-frame/dispatch-sync [::events/load-max-case])
   (re-frame/dispatch-sync [::events/load-covid-tests])
-  (start))
+  (mount-root))

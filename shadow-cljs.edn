@@ -13,7 +13,6 @@
 
         :devtools
         {:before-load frontend.core/stop
-         :after-load frontend.core/start
          :http-root    "public"
          :http-port    3000
          :preloads     [devtools.preload]}
