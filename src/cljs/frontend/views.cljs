@@ -91,7 +91,7 @@
                         :value
                         (when max-id
                           (cases-by-population (:max_id max-id)))}]
-       [ui/block-stats {:title "n of deaths per millions people"
+       [ui/block-stats {:title "n of deaths per million people"
                         :style "stats num"
                         :value
                         (when deaths
