@@ -52,8 +52,6 @@
 (def only-infected (remove #(or (= "Recuperado" (nth % 4)) (empty? (nth % 4))) rows))
 (def only-infected-statuses (frequencies (map clojure.string/lower-case (map #(nth % 4) only-infected))))
 (def by-regions (frequencies (map #(nth % 2) only-infected)))
-
-
 (def contamined (->> rows
                      (map second)
                      vec
@@ -130,10 +128,6 @@
 ;; numero de casos relacionados y en estudio en bogota
 (count (filter (fn [s] (or (= "relacionado" s) (= "en estudio" s))) types)) ;; => 207 => 277 => 365 => 589 => 846
 
-;; group by ages
-;; => {"20 a 29" 67, "70 a 79" 18, "60 a 69" 44, "50 a 59" 64, "40 a 49" 72, "10 a 19" 10, "80 a 89" 7, "30 a 39" 104, "0 a 9" 4}
-
-
 ;; Two groups of deads by ages
 (->> rows
      (filter #(some #{"Fallecido" "fallecido"} %))
@@ -145,7 +139,7 @@
      (zipmap ["mayores de 40" "menores de 40"]))
 ;; => {"mayores de 40" 418, "menores de 40" 27}
 
-;; multiple groups of deads by ages
+;; group by ages
 (def map-fields-name
   (let [fields [:a_zeros_to_nine
                 :b_tens
@@ -219,4 +213,13 @@ segments-by-age
 
 ;; active case in Bogota
 (count (remove #(or (= "Recuperado" (nth % 4)) (= "Fallecido" (nth % 4)) (empty? (nth % 4))) all-bogota-cases))
-;; => 2903 => 2993 => 3291 => 3403 => 3493 => 3735 => 3898 => 4046 => 4216
+;; => 2903 => 2993 => 3291 => 3403 => 3493 => 3735 => 3898 => 4046 => 4216 => 4390
+
+;; number of rows with last date
+(->> rows
+     (map #(f/parse fmt (second %)))
+     frequencies
+     sort
+     last
+     val)
+;; => 752
