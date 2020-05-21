@@ -7,6 +7,20 @@
 
 (def population 48759958)
 
+(def formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy"))
+
+;; minimun date to display in chart
+(def min-date (js/Date. "2020-03-25"))
+
+(defn get-last-date
+  [dat]
+  (->> dat
+       (map #(d/parse-date (second %)))
+       frequencies
+       sort
+       last
+       val))
+
 (defn cases-by-population
   [num]
   (let [result (float (* (/ num population) 1000000))]
@@ -62,11 +76,6 @@
       (reverse out))))
 
 (def fn-parse (fn [[k v]] [(d/parse-date k) v]))
-
-(def formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy"))
-
-;; minimun date to display in chart
-(def min-date (js/Date. "2020-03-25"))
 
 (defn process-data
   [data]

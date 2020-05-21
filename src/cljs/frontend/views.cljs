@@ -7,7 +7,9 @@
             [frontend.ui :as ui :refer [row]]
             [frontend.date :as d]
             [frontend.util :as util :refer [format-number]]
-            [frontend.data :as data :refer [cases-by-population population]])
+            [frontend.data :as data :refer [cases-by-population
+                                            population
+                                            get-last-date]])
   (:import goog.i18n.DateTimeFormat))
 
 
@@ -61,6 +63,12 @@
                                     :title "Cummulative number of Covid tests"}])]
       [:div
        {:id "stats"}
+       [ui/block-stats {:title "New cases"
+                        :style "stats num"
+                        :value
+                        (when-not (empty? data)
+                          (get-last-date data))}]
+
        [ui/block-stats {:title "Number of deaths"
                         :style "stats bignum"
                         :value
