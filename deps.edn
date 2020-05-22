@@ -5,10 +5,21 @@
   binaryage/devtools {:mvn/version "1.0.0"}
   reagent {:mvn/version "0.10.0"}
   re-frame {:mvn/version "0.12.0"}
-  day8.re-frame/http-fx {:mvn/version "v0.2.0"}}
+  day8.re-frame/http-fx {:mvn/version "v0.2.0"}
+  org.clojure/clojure {:mvn/version "1.10.2-alpha1"}
+  org.clojure/data.csv {:mvn/version "1.0.0"}
+  cheshire {:mvn/version "5.10.0"}
+  clj-time {:mvn/version "0.15.2"}}
 
  :aliases
- {:shadow-cljs
+ {:repl
+  {:main-opts ["-m" "demo.colombia"]
+   :extra-paths ["src/clj"]
+   :extra-deps
+   {cider/piggieback {:mvn/version "0.4.2"}
+    binaryage/devtools {:mvn/version "1.0.0"}}}
+
+  :shadow-cljs
   {:extra-paths ["dev"]
    :extra-deps
    {day8.re-frame/tracing {:mvn/version  "0.5.3"}
