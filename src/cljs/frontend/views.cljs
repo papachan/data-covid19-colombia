@@ -64,7 +64,7 @@
       [:div
        {:id "stats"}
        [ui/block-stats {:title "New cases"
-                        :style "stats num"
+                        :style "stats bignum"
                         :value
                         (when-not (empty? data)
                           (get-last-date data))}]
@@ -100,7 +100,7 @@
                         (when max-id
                           (cases-by-population (:max_id max-id)))}]
        [ui/block-stats {:title "n of deaths per million people"
-                        :style "stats num"
+                        :style "stats bignum"
                         :value
                         (when deaths
                           (cases-by-population (:deaths deaths)))}]
