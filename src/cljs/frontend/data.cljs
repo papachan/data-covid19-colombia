@@ -12,6 +12,20 @@
 ;; minimun date to display in chart
 (def min-date (js/Date. "2020-03-25"))
 
+(defn get-series-by-genres
+  [dat]
+  (let [fields {:F "Womans" :M "Mens"}
+        genres (->> dat
+                    (map #(nth % 7))
+                    frequencies)
+        series (->> genres
+                    (map second)
+                    vec)
+        labels (->> genres
+                    (map #(fields (keyword (first %))))
+                    vec)]
+    [series labels]))
+
 (defn get-last-date
   [dat]
   (->> dat

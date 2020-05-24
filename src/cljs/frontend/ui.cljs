@@ -5,7 +5,8 @@
             ["react-chartist" :default react-graph]
             [frontend.data :as data :refer [process-data
                                             map-fields-name
-                                            get-segments-by-ages]]
+                                            get-segments-by-ages
+                                            get-series-by-genres]]
             [goog.string.format]
             [goog.string :refer [format]]))
 
@@ -56,16 +57,7 @@
 (defn chart-bars-component4
   [{:keys [data title]}]
   (when-not (empty? data)
-    (let [fields {:F "Womans" :M "Mens"}
-          genres (->> data
-                      (map #(nth % 7))
-                      frequencies)
-          series (->> genres
-                      (map second)
-                      vec)
-          labels (->> genres
-                      (map #(fields (keyword (first %))))
-                      vec)
+    (let [[series labels] (get-series-by-genres data)
           options {:height "140px"}]
       [:div
        {:id "chart6"}
