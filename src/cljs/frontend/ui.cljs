@@ -53,6 +53,29 @@
                                  [:div {:className "title"} title]
                                  [:div {:class "ct-chart"}]]])}))))
 
+(defn chart-bars-component4
+  [{:keys [data title]}]
+  (when-not (empty? data)
+    (let [fields {:F "Womans" :M "Mens"}
+          genres (->> data
+                      (map #(nth % 7))
+                      frequencies)
+          series (->> genres
+                      (map second)
+                      vec)
+          labels (->> genres
+                      (map #(fields (keyword (first %))))
+                      vec)
+          options {:height "140px"}]
+      [:div
+       {:id "chart6"}
+       [:div {:className "title"} title]
+       [:> react-graph
+        {:data {:labels labels
+                :series [series]}
+         :options options
+         :type "Bar"}]])))
+
 (defn chart-bars-component3
   [{:keys [data title]}]
   (when-not (empty? data)
@@ -70,7 +93,6 @@
         {:data {:labels labels
                 :series [series]}
          :type "Bar"}]])))
-
 
 (defn chart-bars-component2
   [{:keys [data title]}]

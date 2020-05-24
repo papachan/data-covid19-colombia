@@ -186,3 +186,8 @@ footer a {
   stroke: darkslateblue;
   stroke-width: 15px;
 }
+
+#chart6 .ct-horizontal {
+  text-align: center;
+  display: block;
+ }

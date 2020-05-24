@@ -60,7 +60,9 @@
                                   :title "Deaths by Age"}]
        (when covid-tests
          [ui/chart-bars-component3 {:data covid-tests
-                                    :title "Cummulative number of Covid tests"}])]
+                                    :title "Cummulative number of Covid tests"}])
+       [ui/chart-bars-component4 {:data data
+                                  :title "Covid19 Cases by gender"}]]
       [:div
        {:id "stats"}
        [ui/block-stats {:title "New cases"
