@@ -14,7 +14,7 @@
 
 (defn get-series-by-genres
   [dat]
-  (let [fields {:F "Womans" :M "Mens"}
+  (let [fields {:F "Women" :M "Men"}
         genres (->> dat
                     (map #(nth % 7))
                     frequencies)
