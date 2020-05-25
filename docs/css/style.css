@@ -145,6 +145,15 @@ footer a {
   color: #808080;
 }
 
+#chart6 .ct-horizontal, #chart7 .ct-horizontal {
+  text-align: center;
+  display: block;
+}
+
+#chart7 .ct-horizontal {
+  font-size: 7px;
+}
+
 .ct-series-a .ct-line {
   stroke: blue;
   stroke-width: 4px;
@@ -181,8 +190,3 @@ footer a {
   stroke: darkslateblue;
   stroke-width: 15px;
 }
-
-#chart6 .ct-horizontal {
-  text-align: center;
-  display: block;
- }
