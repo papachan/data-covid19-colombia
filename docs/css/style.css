@@ -54,7 +54,7 @@ header h1 {
 
 .graph .title {
   color: #828282;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
   padding: 0 0 20px 0;
   text-align: center;
@@ -143,6 +143,12 @@ footer a {
 .ct-vertical, .ct-horizontal {
   font-size: 9px;
   color: #808080;
+}
+
+#chart5 .ct-horizontal {
+  text-align: center;
+  display: block;
+  font-size: 8px;
 }
 
 #chart6 .ct-horizontal, #chart7 .ct-horizontal {
