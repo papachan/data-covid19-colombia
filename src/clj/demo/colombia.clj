@@ -124,6 +124,11 @@
 ;; numero de relacionados en bogota
 (count (filter #(= "relacionado" %) types)) ;; => 71 ;; => 73 ;; => 89 ;; => 95 => 115 => 134 => 154
 (count (filter #(= "importado" %) types)) ;; => 126 => 139 => 154 => 178 => 183 => 195 => 222
+(count (filter #(some #{"Recuperado"} %) rows)) ;; => 5511
+;; deaths
+(->> rows
+     (filter #(some #{"Fallecido" "fallecido"} %))
+     count) ;; => 776
 
 ;; numero de casos relacionados y en estudio en bogota
 (count (filter (fn [s] (or (= "relacionado" s) (= "en estudio" s))) types)) ;; => 207 => 277 => 365 => 589 => 846
@@ -213,7 +218,7 @@ segments-by-age
 
 ;; active case in Bogota
 (count (remove #(or (= "Recuperado" (nth % 4)) (= "Fallecido" (nth % 4)) (empty? (nth % 4))) all-bogota-cases))
-;; => 2903 => 2993 => 3291 => 3403 => 3493 => 3735 => 3898 => 4046 => 4216 => 4390 => 4459 => 4681 => 4991 => 5115 => 5217
+;; => 2903 => 2993 => 3291 => 3403 => 3493 => 3735 => 3898 => 4046 => 4216 => 4390 => 4459 => 4681 => 4991 => 5115 => 5217 => 5470
 
 ;; number of rows with last date
 (->> rows
@@ -222,4 +227,4 @@ segments-by-age
      sort
      last
      val)
-;; => 802
+;; => 1023
