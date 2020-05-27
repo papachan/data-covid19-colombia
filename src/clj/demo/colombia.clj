@@ -13,8 +13,8 @@
 
 (def now (clj-time.coerce/to-date-time (str (java.time.LocalDateTime/now))))
 
-(def fmt (f/formatter "dd/MM/yyyyy"))
 (def content (slurp (io/resource "datos.json")))
+(def fmt (f/formatter "dd/MM/YYYY"))
 (def json-data (json/parse-string content))
 (def data (json-data "data"))
 (def rows (->> data

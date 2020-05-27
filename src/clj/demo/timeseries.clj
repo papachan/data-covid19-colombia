@@ -7,12 +7,13 @@
             [cheshire.core :as json]
             [clj-time.format :as f]
             [clj-time.core :as t]
-            [clj-time.coerce :as coerce])
+            [clj-time.coerce :as coerce]
+            [demo.crawler :refer (process-data max-contamined-count)])
   (:import java.net.URL
            java.net.HttpURLConnection))
 
 
-(def fmt (f/formatter "dd/MM/yyyyy"))
+(def fmt (f/formatter "dd/MM/yyyy"))
 (def content (slurp (io/resource "datos.json")))
 (def json-data (json/parse-string content))
 (def data (json-data "data"))
@@ -42,3 +43,56 @@
 
 ;; number of cases per dates
 (into (sorted-map) (vec (frequencies (into [] (map #(f/parse fmt (second %)) rows)))))
+
+(defn create-timeseries-file
+  [max-num]
+  (loop [i 1
+         out []]
+    (cond
+      (<= i max-num)
+      (let [name (clojure.string/join ["temp" i ".json"])
+            data (when (io/resource name)
+                   (process-data (io/resource name)))
+            res (if (not= (count data) 0)
+                  (concat out data)
+                  out)]
+        (recur (inc i) res))
+      :else
+      out)))
+
+(defn sum-deaths
+  [data]
+  (->> data
+       (filter #(some #{"Fallecido" "fallecido"} %))
+       count))
+
+(defn read-data
+  [fname]
+  (let [content (slurp (io/resource fname))
+        json-data (json/parse-string content)
+        rows (->> (json-data "data")
+               first
+               rest
+               vec)]
+    rows))
+
+;; create a new timeseries file
+(comment
+  (let [pages-count (Math/ceil (/ max-contamined-count 1000))
+        rows (create-timeseries-file pages-count)
+        all-cases (->> rows
+                       (map #(f/parse fmt (second %)))
+                       vec
+                       frequencies
+                       (into (sorted-map))
+                       (map (fn [[k v]] [(f/unparse fmt k) v])))
+
+        content (slurp "docs/timeseries.json")
+        json-data (json/parse-string content)
+        diff (- (sum-deaths (read-data "datos.json")) (sum-deaths (read-data "datos1.json")))
+        last-date (->> (read-data "datos.json")
+                       (map second)
+                       last)
+        series-deaths (conj (json-data "deaths") [last-date diff])]
+    (spit "docs/new.json" (json/encode {:cases all-cases
+                                        :deaths series-deaths}))))

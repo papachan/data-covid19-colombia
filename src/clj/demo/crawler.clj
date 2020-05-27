@@ -210,7 +210,7 @@
              "fecha recuperado"
              "fecha_de_muerte"])
 
-(def max-contamined-count (Integer/parseInt (last-user-data (max-id)))) ;; => 7708
+(def max-contamined-count (Integer/parseInt (last-user-data (max-id))))
 
 (defn make-json-file
   [pages-count name]
