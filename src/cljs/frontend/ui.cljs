@@ -40,19 +40,18 @@
 
 (defn chart-component
   [{:keys [data title]}]
-  (when-not (empty? data)
-    (let [[labels-fechas
-           series1
-           series2] (process-data data)]
-      (reagent/create-class
-       {:component-did-mount #(show-chart {:labels labels-fechas
-                                           :series [series1 series2]})
-        :display-name        "chart-component"
-        :reagent-render      (fn []
-                               [:div
-                                [:div {:id "chart4"}
-                                 [:div {:className "title"} title]
-                                 [:div {:class "ct-chart"}]]])}))))
+  (let [[labels-fechas
+         series1
+         series2] (process-data data)]
+    (reagent/create-class
+     {:component-did-mount #(show-chart {:labels labels-fechas
+                                         :series [series1 series2]})
+      :display-name        "chart-component"
+      :reagent-render      (fn []
+                             [:div
+                              [:div {:id "chart4"}
+                               [:div {:className "title"} title]
+                               [:div {:class "ct-chart"}]]])})))
 
 (defn chart-bars-component4
   [{:keys [data title]}]

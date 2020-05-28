@@ -33,7 +33,8 @@
         deaths @(re-frame/subscribe [::events/deaths])
         recovered @(re-frame/subscribe [::events/recovered])
         max-id @(re-frame/subscribe [::events/max-id])
-        covid-tests @(re-frame/subscribe [::events/covid-tests])]
+        covid-tests @(re-frame/subscribe [::events/covid-tests])
+        timeseries @(re-frame/subscribe [::events/timeseries])]
     [:<>
      [:header
       [:h1
@@ -52,8 +53,9 @@
           (row {:title "First Covid19 death in Colombia: " :value (get-first-death data)})])]
       [:div
        {:className "graph"}
-       [ui/chart-component {:data data
-                            :title "Cummulative number of reported cases & deaths"}]
+       (when-not (empty? timeseries)
+         [ui/chart-component {:data timeseries
+                              :title "Cummulative number of reported cases & deaths"}])
        [ui/chart-bars-component {:data data
                                  :title "All cases by status"}]
        [ui/chart-bars-component2 {:data data

@@ -6,6 +6,8 @@
             [day8.re-frame.tracing :refer-macros [fn-traced]]))
 
 
+(def timeseries "/data-covid19-colombia/timeseries.json")
+
 (def github-uri "https://raw.githubusercontent.com/papachan/data-covid19-colombia/master")
 
 (def base-url "https://www.datos.gov.co/api/id/gt2j-8ykr.json?$query=")
@@ -13,7 +15,8 @@
 ;;; Events Handlers ;;;
 
 (def default-db
-  {:data ""
+  {:timeseries ""
+   :data ""
    :deaths ""
    :recovered ""
    :max-id ""
@@ -23,6 +26,12 @@
  ::initialize-db
  (fn [_ _]
    default-db))
+
+(re-frame/reg-event-db
+ ::set-timeseries-db
+ (fn-traced
+  [db [_ data]]
+  (assoc db :timeseries data)))
 
 (re-frame/reg-event-db
  ::set-data-db
@@ -55,6 +64,11 @@
   (assoc db :covid-tests data)))
 
 ;;; Subscriptions ;;;
+(re-frame/reg-sub
+ ::timeseries
+ (fn [{:keys [timeseries]}]
+   (when timeseries
+     timeseries)))
 
 (re-frame/reg-sub
  ::data
@@ -87,6 +101,15 @@
      covid-tests)))
 
 ;;; Http calls ;;;
+(re-frame/reg-event-fx
+ ::load-timeseries
+ (fn-traced
+  [db _]
+  {:http-xhrio {:method :get
+                :uri timeseries
+                :response-format (ajax/json-response-format {:keywords? true})
+                :on-success [::set-timeseries-db]}}))
+
 (re-frame/reg-event-fx
  ::load-data
  (fn-traced

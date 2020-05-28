@@ -27,4 +27,5 @@
   (re-frame/dispatch-sync [::events/load-recovered])
   (re-frame/dispatch-sync [::events/load-max-case])
   (re-frame/dispatch-sync [::events/load-covid-tests])
+  (re-frame/dispatch-sync [::events/load-timeseries])
   (mount-root))
