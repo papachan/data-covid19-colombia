@@ -94,5 +94,5 @@
                        (map second)
                        last)
         series-deaths (conj (json-data "deaths") [last-date diff])]
-    (spit "docs/new.json" (json/encode {:cases all-cases
+    (spit "docs/timeseries.json" (json/encode {:cases all-cases
                                         :deaths series-deaths}))))
