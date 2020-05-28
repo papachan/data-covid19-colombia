@@ -10,11 +10,23 @@ https://papachan.github.io/data-covid19-colombia/
 
 ## Data repository
 
-You will find latest CSV File with INS Data at https://github.com/papachan/data-covid19-colombia/tree/master/data
 
-Or in json format you can use this file:
+* You will find latest CSV File with INS Data here:
+
+https://github.com/papachan/data-covid19-colombia/tree/master/data
+
+* Same data but in json here:
 
 https://raw.githubusercontent.com/papachan/data-covid19-colombia/master/resources/datos.json
+
+* Timeseries Deaths and Cases (Json format)
+
+https://papachan.github.io/data-covid19-colombia/timeseries.json
+
+* Number of Covid Tests (json format)
+
+https://papachan.github.io/data-covid19-colombia/covid-tests.json
+
 
 ### URLs and related links
 
