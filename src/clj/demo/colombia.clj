@@ -218,7 +218,7 @@ segments-by-age
 
 ;; active case in Bogota
 (count (remove #(or (= "Recuperado" (nth % 4)) (= "Fallecido" (nth % 4)) (empty? (nth % 4))) all-bogota-cases))
-;; => 2903 => 2993 => 3291 => 3403 => 3493 => 3735 => 3898 => 4046 => 4216 => 4390 => 4459 => 4681 => 4991 => 5115 => 5217 => 5470 => 5266
+;; => 2903 => 2993 => 3291 => 3403 => 3493 => 3735 => 3898 => 4046 => 4216 => 4390 => 4459 => 4681 => 4991 => 5115 => 5217 => 5470 => 5266 => 5470
 
 ;; number of rows with last date
 (->> rows
@@ -227,4 +227,4 @@ segments-by-age
      sort
      last
      val)
-;; => 1101
+;; => 1262
