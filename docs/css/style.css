@@ -115,6 +115,24 @@ footer a {
   color: #ef5e5d;
 }
 
+.chart {
+  display: block;
+  background-color: #1b1921;
+  border-radius: 10px;
+  padding-top: 20px;
+  margin-bottom: 13px;
+  padding-bottom: 20px;
+}
+
+.input-btn {
+  background-color: black;
+  color: grey;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+}
+
 #chart4 {
   display: block;
   background-color: #1b1921;
