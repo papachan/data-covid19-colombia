@@ -185,25 +185,26 @@
 
 (defn chart-bars-component4
   [{:keys [data title label-name]}]
-  (let [formatter (goog.i18n.DateTimeFormat. "dd")
-        series (->> data
-                    rest
-                    (map #(js/parseInt (clojure.string/replace (:accumulate %) #"," ""))))
-        labels (->> data
-                    rest
-                    (map #(.format formatter (js/Date. (:date %)))))
-        canvas-id 5]
-    (r/create-class
-     {:component-did-mount #(show-bar-component {:title title
-                                                 :label-name label-name
-                                                 :series series
-                                                 :labels labels
-                                                 :canvas-id (str "rev-chartjs-" canvas-id)})
-      :display-name        "chartjs-component"
-      :reagent-render      (fn []
-                             [:div
-                              {:className "chart"}
-                              [:canvas {:id (str "rev-chartjs-" canvas-id) :width 420 :height 160}]])})))
+  (when-not (empty? data)
+    (let [formatter (goog.i18n.DateTimeFormat. "dd")
+          series (->> data
+                      rest
+                      (map #(js/parseInt (clojure.string/replace (:accumulate %) #"," ""))))
+          labels (->> data
+                      rest
+                      (map #(.format formatter (js/Date. (:date %)))))
+          canvas-id 5]
+      (r/create-class
+       {:component-did-mount #(show-bar-component {:title title
+                                                   :label-name label-name
+                                                   :series series
+                                                   :labels labels
+                                                   :canvas-id (str "rev-chartjs-" canvas-id)})
+        :display-name        "chartjs-component"
+        :reagent-render      (fn []
+                               [:div
+                                {:className "chart"}
+                                [:canvas {:id (str "rev-chartjs-" canvas-id) :width 420 :height 160}]])}))))
 
 (defn footer
   []
