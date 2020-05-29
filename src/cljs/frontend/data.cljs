@@ -110,13 +110,13 @@
                             (map #(first (clojure.string/split (first %) #"/")))
                             vec)
         series1 (->> (:cases data)
-                     limit-by-date
                      sum
+                     limit-by-date
                      (map second)
                      vec)
         series2 (->> (:deaths data)
-                     limit-by-date
                      sum
+                     limit-by-date
                      (map second)
                      vec)]
     [labels-fechas series1 series2]))
