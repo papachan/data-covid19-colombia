@@ -1,8 +1,6 @@
 (ns frontend.views
   (:require [re-frame.core :as re-frame]
             [reagent.core :as reagent :refer [atom]]
-            ["chartist" :as chartist]
-            ["react-chartist" :default react-graph]
             [frontend.events :as events]
             [frontend.ui :as ui :refer [row]]
             [frontend.date :as d]
@@ -54,17 +52,28 @@
       [:div
        {:className "graph"}
        (when-not (empty? timeseries)
-         [ui/chart-component {:data timeseries
-                              :title "Cummulative number of reported cases & deaths"}])
-       [ui/chart-bars-component {:data data
-                                 :title "All cases by status"}]
-       [ui/chart-bars-component2 {:data data
-                                  :title "Deaths by Age"}]
+         [:<>
+          [ui/chart-component
+           {:data timeseries
+            :title "Cummulative number of reported cases"}]
+          [ui/chart-bar-comp
+           {:data timeseries
+            :title "Cummulative number of deaths"
+            :label-name "Deaths"}]])
+       (when-not (empty? data)
+         [:<>
+          [ui/chart-bars-component {:data data
+                                    :title "All cases by status"}]
+          [ui/chart-bars-component2 {:data data
+                                     :title "Deaths by Group of Ages"
+                                     :label-name "Deaths"}]
+          [ui/chart-bars-component3 {:data data
+                                     :title "Covid19 Cases by gender"
+                                     :label-name "Cases"}]])
        (when covid-tests
-         [ui/chart-bars-component3 {:data covid-tests
-                                    :title "Cummulative number of Covid tests"}])
-       [ui/chart-bars-component4 {:data data
-                                  :title "Covid19 Cases by gender"}]]
+         [ui/chart-bars-component4 {:data covid-tests
+                                    :title "Cummulative number of Covid tests"
+                                    :label-name "tests"}])]
       [:div
        {:id "stats"}
        [ui/block-stats {:title "New cases"

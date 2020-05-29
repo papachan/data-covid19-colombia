@@ -1,16 +1,15 @@
 (ns frontend.data
   (:require [frontend.date :as d]
+            [clojure.string :as str]
             [goog.string.format]
             [goog.string :refer [format]])
   (:import goog.i18n.DateTimeFormat))
 
 
+;; Colombian population
 (def population 48759958)
 
 (def formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy"))
-
-;; first date to display in line chart
-(def first-date (js/Date. "2020-03-25"))
 
 (defn get-series-by-genres
   [dat]
@@ -93,28 +92,30 @@
 (def fn-parse (fn [[k v]] [(d/parse-date k) v]))
 
 (defn limit-by-date
-  [first-date data]
-  (->> data
-       (map fn-parse)
-       (filter (fn [s]
-                 (> (.getTime (first s)) (.getTime first-date))))
-       sort
-       (map fn-unparse)
-       vec))
+  [data]
+  (let [starting-date (js/Date. "2020-03-16")
+        fmt (goog.i18n.DateTimeFormat. "dd MMM")
+        unparse (fn [[k v]] [(str/lower-case (.format fmt k)) v])]
+    (->> data
+         (map fn-parse)
+         (filter (fn [[k v]]
+                   (> (.getTime k) (.getTime starting-date))))
+         sort
+         (mapv unparse))))
 
 (defn process-data
   [data]
   (let [ labels-fechas (->> (:cases data)
-                            (limit-by-date first-date)
+                            limit-by-date
                             (map #(first (clojure.string/split (first %) #"/")))
                             vec)
         series1 (->> (:cases data)
-                     (limit-by-date first-date)
+                     limit-by-date
                      sum
                      (map second)
                      vec)
         series2 (->> (:deaths data)
-                     (limit-by-date first-date)
+                     limit-by-date
                      sum
                      (map second)
                      vec)]

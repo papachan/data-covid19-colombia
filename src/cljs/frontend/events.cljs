@@ -3,10 +3,15 @@
             [re-frame.core :as re-frame]
             [ajax.core :as ajax]
             [day8.re-frame.http-fx]
-            [day8.re-frame.tracing :refer-macros [fn-traced]]))
+            [day8.re-frame.tracing :refer-macros [fn-traced]]
+            [frontend.debug :as d :refer [debug?]]))
 
 
-(def timeseries "/data-covid19-colombia/timeseries.json")
+(def github_pages_uri
+  (if debug?
+    "https://papachan.github.io/data-covid19-colombia/" "/"))
+
+(def timeseries "https://papachan.github.io/data-covid19-colombia/timeseries.json")
 
 (def github-uri "https://raw.githubusercontent.com/papachan/data-covid19-colombia/master")
 
@@ -106,7 +111,7 @@
  (fn-traced
   [db _]
   {:http-xhrio {:method :get
-                :uri timeseries
+                :uri (str github_pages_uri "timeseries.json")
                 :response-format (ajax/json-response-format {:keywords? true})
                 :on-success [::set-timeseries-db]}}))
 
@@ -151,6 +156,6 @@
  (fn-traced
   [db _]
   {:http-xhrio {:method :get
-                :uri (str github-uri "/resources/report.json")
+                :uri (str github_pages_uri "covid-tests.json")
                 :response-format (ajax/json-response-format {:keywords? true})
                 :on-success [::set-covid-tests]}}))
