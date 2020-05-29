@@ -9,7 +9,7 @@
 
 (def github_pages_uri
   (if debug?
-    "https://papachan.github.io/data-covid19-colombia/" "/"))
+    "https://papachan.github.io/data-covid19-colombia/" "/data-covid19-colombia/"))
 
 (def timeseries "https://papachan.github.io/data-covid19-colombia/timeseries.json")
 
