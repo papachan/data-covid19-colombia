@@ -27,11 +27,11 @@
   [name fname]
   (let [[header & rows] (csv/read-csv (slurp (io/resource name)))
         vals (mapv #(hash-map :date (first %) :accumulate (second %)) rows)
-        output-file (clojure.string/join ["resources/" fname])]
+        output-file (clojure.string/join ["docs/" fname])]
     (with-open [wrtr (io/writer output-file)]
       (.write wrtr (clojure.data.json/write-str vals)))))
 
 (comment
   (do
    (download-csv "report.csv")
-   (convert-to-json "report.csv" "report.json")))
+   (convert-to-json "report.csv" "covid-tests.json")))

@@ -71,9 +71,9 @@
   (let [content (slurp (io/resource fname))
         json-data (json/parse-string content)
         rows (->> (json-data "data")
-               first
-               rest
-               vec)]
+                  first
+                  rest
+                  vec)]
     rows))
 
 ;; create a new timeseries file
@@ -95,4 +95,4 @@
                        last)
         series-deaths (conj (json-data "deaths") [last-date diff])]
     (spit "docs/timeseries.json" (json/encode {:cases all-cases
-                                        :deaths series-deaths}))))
+                                               :deaths series-deaths}))))
