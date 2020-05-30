@@ -22,13 +22,34 @@
                rest
                vec))
 
-(def statuses (->> rows
-                   (map #(nth % 4))
-                   (remove empty?)
-                   (map clojure.string/lower-case)
-                   vec))
+(def cares (->> rows
+                (map #(nth % 4))
+                (remove empty?)
+                (mapv clojure.string/lower-case)))
 
-(frequencies statuses)
+(distinct cares)
+;; => ("recuperado" "casa" "fallecido" "hospital uci" "hospital" "n/a")
+
+(frequencies cares)
+;; => {"recuperado" 6665, "casa" 16346, "fallecido" 822, "hospital uci" 234, "hospital" 1266, "n/a" 33}
+
+(def states (->> rows
+                 (map #(nth % 5))
+                 (remove nil?)
+                 (map #(clojure.string/lower-case %))
+                 distinct)) ;; => ("leve" "asintomático" "fallecido" "grave" "moderado")
+
+(def genres (->> rows
+                 (map #(nth % 7))))
+
+(def fields {"F" "Women"
+             "M" "Men"})
+
+(->> genres
+     frequencies
+     (map (fn [[k v]] {(fields k) v}))
+     (into {}))
+;; => {"Women" 11195, "Men" 14171}
 
 (def all-bogota-cases (filter #(some #{"Bogotá D.C."} %) rows))
 
@@ -102,14 +123,8 @@
      vec
      (into (sorted-map)))
 
-;; all statuses available
-(distinct (map #(clojure.string/lower-case (nth % 4)) (remove #(empty? (nth % 4)) rows)))
-
 ;; all provinces
 (sort (distinct (map #(nth % 2) rows)))
-
-;; ;; count fallecidos en bogota
-(count (filter #(= "fallecido" %) statuses)) ;; => 3 => 5 => 12 => 14 => 45 => 60
 
 (count (filter #{"Bogotá D.C."}
                (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587 => 725 => 861 => 1030 => 1164 => 1333
@@ -128,7 +143,7 @@
 ;; deaths
 (->> rows
      (filter #(some #{"Fallecido" "fallecido"} %))
-     count) ;; => 776
+     count) ;; => 822
 
 ;; numero de casos relacionados y en estudio en bogota
 (count (filter (fn [s] (or (= "relacionado" s) (= "en estudio" s))) types)) ;; => 207 => 277 => 365 => 589 => 846
@@ -189,9 +204,6 @@ segments-by-age
 ;; Bogota
 (by-regions "Bogotá D.C.") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733 => 926 => 964 => 1060 => 1102 => 3000
 
-(frequencies statuses)
-;; => {"recuperado" 2569, "casa" 6765, "fallecido" 445, "hospital uci" 128, "hospital" 582, "n/a" 6}
-
 ;; Fallecidos total
 (count (filter #(or (= "Fallecido" (nth % 4)) (empty? (nth % 4))) rows))
 ;; => 14 ;; => 16 => 17 => 25 => 32 => 35 => 46 => 50 => 54 => 109 => 112 => 445
@@ -228,3 +240,12 @@ segments-by-age
      last
      val)
 ;; => 1262
+
+
+;; Number of cases in UCI marked as grave
+(->> rows
+     (filter #(some #{"Hospital UCI"} %))
+     (map #(nth % 5))
+     (remove nil?)
+     (filter #(= "grave" (clojure.string/lower-case %)))
+     count) ;; => 232

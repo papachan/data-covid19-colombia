@@ -67,11 +67,11 @@
           [ui/chart-bars-component2 {:data data
                                      :title "Deaths by Group of Ages"
                                      :label-name "Deaths"}]
-          [ui/chart-bars-component3 {:data data
-                                     :title "Covid19 Cases by gender"
-                                     :label-name "Cases"}]])
+          [ui/show-doughnut-component {:data data
+                                       :title "Covid19 Cases by gender"
+                                       :label-name "Cases"}]])
        (when covid-tests
-         [ui/chart-bars-component4 {:data covid-tests
+         [ui/chart-bars-component3 {:data covid-tests
                                     :title "Cummulative number of Covid tests"
                                     :label-name "tests"}])]
       [:div

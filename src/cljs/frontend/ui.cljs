@@ -167,23 +167,20 @@
                               {:className "chart"}
                               [:canvas {:id (str "rev-chartjs-" canvas-id) :width 420 :height 160}]])})))
 
-(defn chart-bars-component3
+(defn show-doughnut-component
   [{:keys [data title label-name]}]
-  (let [[series labels] (get-series-by-genres data)
-        canvas-id 4]
-    (r/create-class
-     {:component-did-mount #(show-bar-component {:title title
-                                                 :label-name label-name
-                                                 :series series
-                                                 :labels labels
-                                                 :canvas-id (str "rev-chartjs-" canvas-id)})
-      :display-name        "chartjs-component"
-      :reagent-render      (fn []
-                             [:div
-                              {:className "chart"}
-                              [:canvas {:id (str "rev-chartjs-" canvas-id) :width 420 :height 160}]])})))
+  (let [[series labels] (get-series-by-genres data)]
+    (let [options {:data {:labels labels
+                          :datasets [{:data series
+                                      :backgroundColor ["#FFCC00" "blueviolet"]
+                                      :borderWidth 0}]}
+                   :options {:legend {:position "top"}
+                             :title {:display true
+                                     :text title}}}]
+      [:div {:className "chart"}
+       [doughnut-chart options]])))
 
-(defn chart-bars-component4
+(defn chart-bars-component3
   [{:keys [data title label-name]}]
   (when-not (empty? data)
     (let [formatter (goog.i18n.DateTimeFormat. "dd")
