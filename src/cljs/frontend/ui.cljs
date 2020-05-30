@@ -4,7 +4,8 @@
             [frontend.data :as data :refer [process-data
                                             map-fields-name
                                             get-segments-by-ages
-                                            get-series-by-genres]]
+                                            get-series-by-genres
+                                            get-series-by-status]]
             ["chart.js" :refer [Chart]]
             ["react-chartjs-2" :as ReactChartjs2 :refer [Line]]
             [goog.string.format]
@@ -43,7 +44,7 @@
     (let [[labels
            series1
            series2] (process-data data)
-          btn-txt (if @scaled? "linear" "logarithm")]
+          btn-txt (if @scaled? "linear" "logarithmic")]
       [:div
        [:div {:className "chart"}
         [:input
@@ -53,16 +54,18 @@
           :on-click (fn [e]
                       (swap! scaled? not)
                       (reset! type (if @scaled? "logarithmic" "linear")))}]
-        [line-chart {:width   500
-                     :height  280
+        [line-chart {:width   680
+                     :height  460
                      :data    {:labels   labels
                                :datasets [{:label "covid cases"
                                            :data series1
                                            :fill false
                                            :borderColor "blue"}]}
-                     :options {:legend {:position "top"}
+                     :options {:responsive false
+                               :legend {:position "top"}
                                :title {:display true
-                                       :text title}
+                                       :text title
+                                       :fontSize 20}
                                :scales {:xAxes [{:gridLines {:display false}}]
                                         :yAxes [{:type @type
                                                  :display true
@@ -77,45 +80,11 @@
                                        :label label-name
                                        :backgroundColor "#FFCC00"
                                        :borderWidth 0}]}
-                    :options {:legend {:position "top"}
+                    :options {:responsive false
+                              :legend {:position "top"}
                               :title {:display true
-                                      :text title}
-                              :scales {:xAxes [{:gridLines {:display false}}]
-                                       :yAxes [{:gridLines {:display false}}]}
-                              }}]
-    (Chart. context (clj->js chart-data))))
-
-(defn show-horizontal-chart
-  [{:keys [data title canvas-id]}]
-  (let [context (.getContext (.getElementById js/document canvas-id) "2d")
-        labels {"recuperado" "recovered"
-                "casa" "at home"
-                "hospital" "hospitalized"
-                "hospital uci" "ICU hospitalization"
-                "fallecido" "deads"
-                "recuperado (hospital)" "recovered in hospital"
-                "n/a" "N/A"}
-        statuses (->> data
-                      (map #(nth % 4))
-                      (remove nil?)
-                      (map clojure.string/lower-case)
-                      frequencies)
-        labels (->> statuses
-                    (map #(labels (key %)))
-                    vec)
-        series (->> statuses
-                    (map #(nth % 1))
-                    vec)
-        chart-data {:type "horizontalBar"
-                    :maintainAspectRatio false
-                    :data {:labels labels
-                           :datasets [{:data series
-                                       :label "Number of cases"
-                                       :backgroundColor "darkslateblue"
-                                       :borderWidth 0}]}
-                    :options {:legend {:position "top"}
-                              :title {:display true
-                                      :text title}
+                                      :text title
+                                      :fontSize 16}
                               :scales {:xAxes [{:gridLines {:display false}}]
                                        :yAxes [{:gridLines {:display false}}]}
                               }}]
@@ -137,18 +106,26 @@
       :reagent-render      (fn []
                              [:div
                               {:className "chart"}
-                              [:canvas {:id "rev-chartjs" :width "600" :height "380"}]])})))
+                              [:canvas {:id "rev-chartjs"
+                                        :width 690
+                                        :height 360}]])})))
 
 (defn chart-bars-component
-  [configs]
-  (let [canvas-id 2]
-    (r/create-class
-     {:component-did-mount #(show-horizontal-chart (assoc configs :canvas-id (str "rev-chartjs-" canvas-id)))
-      :display-name        "chartjs-component"
-      :reagent-render      (fn []
-                             [:div
-                              {:className "chart"}
-                              [:canvas {:id (str "rev-chartjs-" canvas-id) :width 420 :height 240}]])})))
+  [{:keys [data title canvas-id]}]
+  (let [[series labels] (get-series-by-status data)]
+    (let [options {:width 350
+                   :height 350
+                   :data {:labels labels
+                          :datasets [{:data series
+                                      :backgroundColor ["deeppink" "darkslateblue" "blueviolet" "crimson" "cornflowerblue" "cadetblue" "darkorange"]
+                                      :borderWidth 0}]}
+                   :options {:responsive false
+                             :legend {:position "top"}
+                             :title {:display true
+                                     :text title
+                                     :fontSize 16}}}]
+      [:div {:className "chart reduced"}
+       [doughnut-chart options]])))
 
 (defn chart-bars-component2
   [{:keys [data title label-name]}]
@@ -159,37 +136,42 @@
                                                  :label-name label-name
                                                  :series series
                                                  :labels labels
-                                                 :canvas-id (str "rev-chartjs-" canvas-id)
-                                                 })
+                                                 :canvas-id (str "rev-chartjs-" canvas-id)})
       :display-name        "chartjs-component"
       :reagent-render      (fn []
                              [:div
                               {:className "chart"}
-                              [:canvas {:id (str "rev-chartjs-" canvas-id) :width 420 :height 160}]])})))
+                              [:canvas {:id (str "rev-chartjs-" canvas-id)
+                                        :width 600
+                                        :height 250}]])})))
 
 (defn show-doughnut-component
   [{:keys [data title label-name]}]
   (let [[series labels] (get-series-by-genres data)]
-    (let [options {:data {:labels labels
+    (let [options {:width 300
+                   :height 300
+                   :data {:labels labels
                           :datasets [{:data series
                                       :backgroundColor ["#FFCC00" "blueviolet"]
                                       :borderWidth 0}]}
-                   :options {:legend {:position "top"}
+                   :options {:responsive false
+                             :legend {:position "top"}
                              :title {:display true
-                                     :text title}}}]
-      [:div {:className "chart"}
+                                     :text title
+                                     :fontSize 16}}}]
+      [:div {:className "chart reduced"}
        [doughnut-chart options]])))
 
 (defn chart-bars-component3
   [{:keys [data title label-name]}]
   (when-not (empty? data)
-    (let [formatter (goog.i18n.DateTimeFormat. "dd")
+    (let [formatter (goog.i18n.DateTimeFormat. "dd MMM")
           series (->> data
                       rest
                       (map #(js/parseInt (clojure.string/replace (:accumulate %) #"," ""))))
           labels (->> data
                       rest
-                      (map #(.format formatter (js/Date. (:date %)))))
+                      (map #(clojure.string/lower-case (.format formatter (js/Date. (:date %))))))
           canvas-id 5]
       (r/create-class
        {:component-did-mount #(show-bar-component {:title title
@@ -201,7 +183,10 @@
         :reagent-render      (fn []
                                [:div
                                 {:className "chart"}
-                                [:canvas {:id (str "rev-chartjs-" canvas-id) :width 420 :height 160}]])}))))
+                                [:canvas {:id (str "rev-chartjs-" canvas-id)
+                                          :width 600
+                                          :height 250
+                                          }]])}))))
 
 (defn footer
   []

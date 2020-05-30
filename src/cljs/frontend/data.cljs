@@ -11,6 +11,26 @@
 
 (def formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy"))
 
+(defn get-series-by-status
+  [dat]
+  (let [labels {"recuperado" "recovered"
+                "casa" "at home"
+                "hospital" "hospitalized"
+                "hospital uci" "ICU hospitalization"
+                "fallecido" "deads"
+                "recuperado (hospital)" "recovered in hospital"
+                "n/a" "N/A"}
+        statuses (->> dat
+                      (map #(nth % 4))
+                      (remove nil?)
+                      (map clojure.string/lower-case)
+                      frequencies)
+        labels (->> statuses
+                    (mapv #(labels (key %))))
+        series (->> statuses
+                    (mapv #(nth % 1)))]
+    [series labels]))
+
 (defn get-series-by-genres
   [dat]
   (let [fields {:F "Women" :M "Men"}

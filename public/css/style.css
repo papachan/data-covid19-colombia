@@ -126,6 +126,16 @@ footer a {
   padding-top: 20px;
   margin-bottom: 13px;
   padding-bottom: 20px;
+  text-align: center;
+}
+
+.chart canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+.reduced {
+  width: 330px;
 }
 
 .input-btn {
@@ -135,87 +145,4 @@ footer a {
   border: none;
   border-radius: 10px;
   padding: 5px 10px 5px 10px;
-}
-
-#chart4 {
-  display: block;
-  background-color: #1b1921;
-  border-radius: 10px;
-  padding-top: 20px;
-  margin-bottom: 13px;
-}
-
-#chart5, #chart6 {
-  display: block;
-  width: 68%;
-  background-color: #1b1921;
-  border-radius: 10px;
-  padding-top: 20px;
-  margin-bottom: 13px;
-}
-
-#chart7 {
-  display: block;
-  background-color: #1b1921;
-  border-radius: 10px;
-  padding-top: 20px;
-  margin-bottom: 13px;
-}
-
-.ct-vertical, .ct-horizontal {
-  font-size: 9px;
-  /* color: #505050; */
-  color: #808080;
-}
-
-#chart5 .ct-horizontal {
-  text-align: center;
-  display: block;
-  font-size: 8px;
-}
-
-#chart6 .ct-horizontal, #chart7 .ct-horizontal {
-  text-align: center;
-  display: block;
-}
-
-#chart7 .ct-horizontal {
-  font-size: 7px;
-}
-
-.ct-series-a .ct-line {
-  stroke: blue;
-  stroke-width: 4px;
-}
-
-.ct-series-a .ct-point {
-  stroke: rgba(0, 0, 0, 0.0);
-}
-
-.ct-series-b .ct-line {
-  stroke: Orange;
-  stroke-width: 4px;
-}
-
-.ct-series-b .ct-point {
-  stroke: rgba(0, 0, 0, 0.0);
-}
-
-.ct-series-c .ct-line {
-  stroke: #fff;
-  stroke-width: 4px;
-}
-
-.ct-series-c .ct-point {
-  stroke: black;
-  stroke-width: 3px;
-}
-
-.ct-grid {
-  stroke: rgba(165, 165, 165, 0.06);
-}
-
-.ct-series-a .ct-bar {
-  stroke: darkslateblue;
-  stroke-width: 15px;
 }
