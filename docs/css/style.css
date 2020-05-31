@@ -116,6 +116,7 @@ footer a {
 }
 
 .chart {
+  clear: both;
   display: block;
   background-color: #1b1921;
   border-radius: 10px;
@@ -141,4 +142,43 @@ footer a {
   border: none;
   border-radius: 10px;
   padding: 5px 10px 5px 10px;
+}
+
+.box-options {
+  margin-top: 20px;
+}
+
+.box-options span {
+  color: #FFFFFF;
+  font-size: 13px;
+}
+
+.box-options .input-btn {
+  width: 20px;
+  display: inline;
+}
+
+.doughnut-charts {
+  display: block;
+  background-color: #1b1921;
+  border-radius: 10px;
+  padding-top: 20px;
+  margin-bottom: 13px;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 355px;
+  min-height: 320px;
+}
+
+.doughnut-charts canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+.graph .left {
+  float: left;
+}
+
+.graph .right {
+  float: right;
 }
