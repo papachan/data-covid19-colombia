@@ -62,14 +62,16 @@
             :label-name "Deaths"}]])
        (when-not (empty? data)
          [:<>
-          [ui/chart-bars-component {:data data
-                                    :title "All cases by status"}]
+          [:div
+           [ui/show-doughnut-component {:data data
+                                        :title "Covid19 Cases by gender"
+                                        :align "left"}]
+           [ui/show-doughnut-component2 {:data data
+                                         :title "All cases by status"
+                                         :align "right"}]]
           [ui/chart-bars-component2 {:data data
                                      :title "Deaths by Group of Ages"
-                                     :label-name "Deaths"}]
-          [ui/show-doughnut-component {:data data
-                                       :title "Covid19 Cases by gender"
-                                       :label-name "Cases"}]])
+                                     :label-name "Deaths"}]])
        (when covid-tests
          [ui/chart-bars-component3 {:data covid-tests
                                     :title "Cummulative number of Covid tests"

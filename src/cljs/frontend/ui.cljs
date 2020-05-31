@@ -47,13 +47,6 @@
           btn-txt (if @scaled? "linear" "logarithmic")]
       [:div
        [:div {:className "chart"}
-        [:input
-         {:type :button
-          :className "input-btn"
-          :value btn-txt
-          :on-click (fn [e]
-                      (swap! scaled? not)
-                      (reset! type (if @scaled? "logarithmic" "linear")))}]
         [line-chart {:width   680
                      :height  460
                      :data    {:labels   labels
@@ -69,7 +62,27 @@
                                :scales {:xAxes [{:gridLines {:display false}}]
                                         :yAxes [{:type @type
                                                  :display true
-                                                 :gridLines {:display false}}]}}}]]])))
+                                                 :gridLines {:display false}}]}}}]
+        [:div
+         {:className "box-options"}
+         [:span
+          "Linear"]
+         [:input
+              {:type :checkbox
+               :className "input-btn"
+               :checked (not @scaled?)
+               :on-click (fn [e]
+                           (swap! scaled? not)
+                           (reset! type "linear"))}]
+         [:span "Logarithmic"]
+         [:input
+          {:type :checkbox
+           :className "input-btn"
+           :checked @scaled?
+           :on-click (fn [e]
+                       (swap! scaled? not)
+                       (reset! type "logarithmic"))}]]
+        ]])))
 
 (defn show-bar-component
   [{:keys [title label-name canvas-id labels series]}]
@@ -110,11 +123,11 @@
                                         :width 690
                                         :height 360}]])})))
 
-(defn chart-bars-component
-  [{:keys [data title canvas-id]}]
+(defn show-doughnut-component2
+  [{:keys [data title align]}]
   (let [[series labels] (get-series-by-status data)]
-    (let [options {:width 350
-                   :height 350
+    (let [options {:width 320
+                   :height 320
                    :data {:labels labels
                           :datasets [{:data series
                                       :backgroundColor ["deeppink" "darkslateblue" "blueviolet" "crimson" "cornflowerblue" "cadetblue" "darkorange"]
@@ -124,7 +137,7 @@
                              :title {:display true
                                      :text title
                                      :fontSize 16}}}]
-      [:div {:className "chart reduced"}
+      [:div {:className (str "doughnut-charts reduced " align)}
        [doughnut-chart options]])))
 
 (defn chart-bars-component2
@@ -146,10 +159,10 @@
                                         :height 250}]])})))
 
 (defn show-doughnut-component
-  [{:keys [data title label-name]}]
+  [{:keys [data title align]}]
   (let [[series labels] (get-series-by-genres data)]
-    (let [options {:width 300
-                   :height 300
+    (let [options {:width 250
+                   :height 250
                    :data {:labels labels
                           :datasets [{:data series
                                       :backgroundColor ["#FFCC00" "blueviolet"]
@@ -159,7 +172,7 @@
                              :title {:display true
                                      :text title
                                      :fontSize 16}}}]
-      [:div {:className "chart reduced"}
+      [:div {:className (str "doughnut-charts reduced " align)}
        [doughnut-chart options]])))
 
 (defn chart-bars-component3
