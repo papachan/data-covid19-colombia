@@ -51,6 +51,15 @@
           (row {:title "First Covid19 death in Colombia: " :value (get-first-death data)})])]
       [:div
        {:className "graph"}
+       (when-not (empty? data)
+         [:<>
+          [:div
+           [ui/show-doughnut-component {:data data
+                                        :title "Covid19 Cases by gender"
+                                        :align "left"}]
+           [ui/show-doughnut-component2 {:data data
+                                         :title "All cases by status"
+                                         :align "right"}]]])
        (when-not (empty? timeseries)
          [:<>
           [ui/chart-component
@@ -61,17 +70,9 @@
             :title "Cummulative number of deaths"
             :label-name "Deaths"}]])
        (when-not (empty? data)
-         [:<>
-          [:div
-           [ui/show-doughnut-component {:data data
-                                        :title "Covid19 Cases by gender"
-                                        :align "left"}]
-           [ui/show-doughnut-component2 {:data data
-                                         :title "All cases by status"
-                                         :align "right"}]]
-          [ui/chart-bars-component2 {:data data
+         [ui/chart-bars-component2 {:data data
                                      :title "Deaths by Group of Ages"
-                                     :label-name "Deaths"}]])
+                                     :label-name "Deaths"}])
        (when covid-tests
          [ui/chart-bars-component3 {:data covid-tests
                                     :title "Cummulative number of Covid tests"
@@ -99,6 +100,14 @@
                         :value
                         (when recovered
                           (format-number (:recovered recovered)))}]
+       [ui/block-stats {:title "Total cases in Bogotá"
+                        :style "stats bignum"
+                        :value
+                        (when-not (empty? data)
+                          (->> data
+                               (filter #(some #{"Bogotá D.C."} %))
+                               count
+                               format-number))}]
        [ui/block-stats {:title "Active cases (Bogotá)"
                         :style "stats bignum"
                         :value

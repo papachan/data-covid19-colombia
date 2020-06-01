@@ -129,8 +129,8 @@
 (defn show-doughnut-component2
   [{:keys [data title align]}]
   (let [[series labels] (get-series-by-status data)]
-    (let [options {:width 320
-                   :height 320
+    (let [options {:width 280
+                   :height 280
                    :data {:labels labels
                           :datasets [{:data series
                                       :backgroundColor ["deeppink" "darkslateblue" "blueviolet" "crimson" "cornflowerblue" "cadetblue" "darkorange"]
@@ -164,8 +164,8 @@
 (defn show-doughnut-component
   [{:keys [data title align]}]
   (let [[series labels] (get-series-by-genres data)]
-    (let [options {:width 250
-                   :height 250
+    (let [options {:width 220
+                   :height 220
                    :data {:labels labels
                           :datasets [{:data series
                                       :backgroundColor ["#FFCC00" "blueviolet"]
