@@ -43,8 +43,7 @@
                type (atom "linear")]
     (let [[labels
            series1
-           series2] (process-data data)
-          btn-txt (if @scaled? "linear" "logarithmic")]
+           series2] (process-data data)]
       [:div
        [:div {:className "chart"}
         [line-chart {:width   680
@@ -71,17 +70,21 @@
               {:type :checkbox
                :className "input-btn"
                :checked (not @scaled?)
+               :on-change (fn [e]
+                            (reset! type "linear"))
                :on-click (fn [e]
-                           (swap! scaled? not)
-                           (reset! type "linear"))}]
+                           (if @scaled?
+                             (swap! scaled? not)))}]
          [:span "Logarithmic"]
          [:input
           {:type :checkbox
            :className "input-btn"
            :checked @scaled?
+           :on-change (fn [e]
+                        (reset! type "logarithmic"))
            :on-click (fn [e]
-                       (swap! scaled? not)
-                       (reset! type "logarithmic"))}]]
+                       (if-not @scaled?
+                         (swap! scaled? not)))}]]
         ]])))
 
 (defn show-bar-component
