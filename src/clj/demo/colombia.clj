@@ -53,7 +53,8 @@
 
 (def all-bogota-cases (filter #(some #{"Bogotá D.C."} %) rows))
 
-(def types (into [] (map #(clojure.string/lower-case (nth % 8)) all-bogota-cases)))
+(def types (->> all-bogota-cases
+                (mapv #(clojure.string/lower-case (nth % 8)))))
 
 (frequencies types)
 
@@ -130,8 +131,7 @@
                (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587 => 725 => 861 => 1030 => 1164 => 1333
 
 ;; count rows from a specific date
-(count (filter #{"08/04/2020"}
-               (map #(second %) rows)))
+(count (filter #{"08/04/2020"} (map second rows)))
 
 ;; (map #(nth % 4)
 ;;      (filter #(some #{"Bogotá D.C."} %) rows))
@@ -248,4 +248,4 @@ segments-by-age
      (map #(nth % 5))
      (remove nil?)
      (filter #(= "grave" (clojure.string/lower-case %)))
-     count) ;; => 238
+     count) ;; => 287
