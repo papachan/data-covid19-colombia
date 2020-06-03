@@ -239,7 +239,7 @@ segments-by-age
      sort
      last
      val)
-;; => 1548
+;; => 1339
 
 
 ;; Number of cases in UCI marked as grave
@@ -248,4 +248,4 @@ segments-by-age
      (map #(nth % 5))
      (remove nil?)
      (filter #(= "grave" (clojure.string/lower-case %)))
-     count) ;; => 287
+     count) ;; => 303
