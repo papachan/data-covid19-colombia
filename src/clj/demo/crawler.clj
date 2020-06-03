@@ -154,14 +154,20 @@
 (defn replace-all-dates
   [json-obj]
   (clojure.walk/postwalk (fn [e]
-                           (cond (clojure.string/includes? e "T00:00:00.000")
+                           (cond (and (not (empty? e)) (clojure.string/ends-with? e "T00:00:00.000"))
                                  (->> e
                                       (f/parse (f/formatter :date-hour-minute-second-ms))
                                       (f/unparse (f/formatter "dd/MM/yyyy")))
-                                 (clojure.string/includes? e "-   -")
-                                 ""
                                  :else e))
                          json-obj))
+
+
+(defn remove-junk-values
+  [json-obj]
+  (map (fn [x]
+         (update x "fecha_de_diagn_stico"
+                 #(if (= "SIN DATO" %) (get x "fecha_reporte_web") %)))
+       json-obj))
 
 ;; look for all dates formats and use a single format date
 (defn clean-replace-values
@@ -170,8 +176,10 @@
     (when (<= i max-num)
       (let [fname (clojure.string/join ["temp" i ".json"])
             body (slurp (io/resource fname))
-            json-obj (merge-dates (json/parse-string body))
-            res (replace-all-dates json-obj)]
+            res (->> (json/parse-string body)
+                     merge-dates
+                     remove-junk-values
+                     replace-all-dates)]
         (when res
           (spit (str"resources/" fname) (json/encode res)))
         (recur (inc i))))))
