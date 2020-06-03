@@ -162,12 +162,10 @@ footer a {
   display: block;
   background-color: #1b1921;
   border-radius: 10px;
-  padding-top: 20px;
-  margin-bottom: 13px;
+  margin-bottom: 20px;
   padding-bottom: 20px;
   text-align: center;
-  width: 355px;
-  min-height: 290px;
+  margin-right: 20px;
 }
 
 .doughnut-charts canvas {
