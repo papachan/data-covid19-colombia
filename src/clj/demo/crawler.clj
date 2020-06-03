@@ -48,38 +48,12 @@
       (fetch-file i)
       (recur (inc i)))))
 
-;; old crawler legacy
-;; (defn start-crawler
-;;   [max-num]
-;;   (loop [i 1]
-;;     (when (<= i max-num)
-;;       (let [name (clojure.string/join ["temp" i ".json"])
-;;             date (-> (- i 1) t/days t/ago)
-;;             fmt-str (if (< (t/month date) 4)
-;;                       (if (< (t/day date) 13)
-;;                         "d/M/yy"
-;;                         "dd/M/yyyy")
-;;                       "dd/MM/yyyy")
-;;             str-date (->> date
-;;                           (f/unparse (f/with-zone (f/formatter fmt-str) (t/default-time-zone))))]
-;;         (fetch-file str-date (clojure.string/join ["resources/" name]))
-;;         (recur (inc i))))))
-
-;; (defn crawler
-;;   [max-num start-date]
-;;   (loop [i 0]
-;;     (when (< i max-num)
-;;       (let [name (clojure.string/join ["temp" (+ i 1) ".json"])
-;;             date (t/plus start-date (t/days i))]
-;;         (fetch-file date (clojure.string/join ["resources/" name]))
-;;         (recur (inc i))))))
-
 (defn process-data
   [file]
   (let [data (slurp file)]
     (when-not (empty? data)
       (mapv #(mapv % [:id_de_caso
-                      :fecha_de_diagn_stico
+                      :fecha_diagnostico
                       :ciudad_de_ubicaci_n
                       :departamento
                       :atenci_n
@@ -111,45 +85,9 @@
 
 (defn merge-dates
   [result]
-  (if-not (contains? (first result) "fecha_de_diagn_stico")
-    (map #(merge % {"fecha_de_diagn_stico" (get % "fecha_diagnostico")}) result)
-    result))
-
-(defn transform-data
-  [coll body]
-  (when (seq coll)
-    (let [old (first coll)
-          date (f/parse (f/formatter :date-hour-minute-second-ms) old)
-          new-date (f/unparse (f/formatter "dd/MM/yyyy") date)
-          new-data (clojure.walk/prewalk-replace {["fecha_de_diagn_stico" old]
-                                                  ["fecha_de_diagn_stico" new-date]} body)]
-      (if (next coll)
-        (recur (next coll) new-data)
-        new-data))))
-
-;; (defn search-for-dates
-;;   [json-obj]
-;;   (if-not (empty? json-obj)
-;;     (let [dat ((first json-obj) "fecha_de_diagn_stico")
-;;           vdat (clojure.string/split dat #"/")
-;;           fmt (f/formatter "dd/MM/yyyy")
-;;           fmt-in (if (and (count (nth vdat 2))
-;;                           (= (nth vdat 2) "20"))
-;;                    (f/formatter "dd/MM/yy")
-;;                    (f/formatter "dd/MM/yyyy"))
-;;           new-date (f/unparse fmt (f/parse fmt-in dat))]
-;;       (clojure.walk/prewalk-replace {["fecha_de_diagn_stico" dat]
-;;                                      ["fecha_de_diagn_stico" new-date]} json-obj))))
-
-;; (defn search-for-dates
-;;   [json-obj]
-;;   (let [dates (if-not (empty? json-obj)
-;;                 (vec (filter
-;;                       (fn [x] (> (count x) 10))
-;;                       (vec (distinct (map (fn[v]
-;;                                             (get v "fecha_de_diagn_stico")) json-obj))))))]
-;;     (when dates
-;;       (transform-data dates json-obj))))
+  (map #(if-not (contains? % "fecha_diagnostico")
+          (merge % {"fecha_diagnostico" (get % "fecha_reporte_web")}) %)
+       result))
 
 (defn replace-all-dates
   [json-obj]
@@ -157,15 +95,16 @@
                            (cond (and (not (empty? e)) (clojure.string/ends-with? e "T00:00:00.000"))
                                  (->> e
                                       (f/parse (f/formatter :date-hour-minute-second-ms))
-                                      (f/unparse (f/formatter "dd/MM/yyyy")))
+                                      (f/unparse (f/formatter "dd/MM/YYYY")))
+                                 (= e "-   -")
+                                 ""
                                  :else e))
                          json-obj))
-
 
 (defn remove-junk-values
   [json-obj]
   (map (fn [x]
-         (update x "fecha_de_diagn_stico"
+         (update x "fecha_diagnostico"
                  #(if (= "SIN DATO" %) (get x "fecha_reporte_web") %)))
        json-obj))
 
@@ -184,6 +123,16 @@
           (spit (str"resources/" fname) (json/encode res)))
         (recur (inc i))))))
 
+(defn create-file-name
+  [dat]
+  (->> dat
+       first
+       rest
+       (map second)
+       last
+       (f/parse (f/formatter "dd/MM/YYYY"))
+       (f/unparse (f/formatter "dd-MM-YYYY"))))
+
 (defn export-csv
   [fname pat]
   (let [json-data (->> fname
@@ -191,15 +140,8 @@
                        slurp
                        json/parse-string)
         data (json-data "data")
-        last-date (->> data
-                       first
-                       rest
-                       (map second)
-                       last)
-        date (->> last-date
-                  (f/parse (f/formatter "dd/MM/yyyy"))
-                  (f/unparse (f/formatter "dd-MM-yyyy")))
-        file-name (format pat date)]
+        file-name (->> (create-file-name data)
+                       (format pat))]
     (spit file-name "" :append false)
     (with-open [out-file (io/writer file-name)]
       (csv/write-csv out-file (first data)))))

@@ -11,6 +11,7 @@
   (:import java.net.URL
            java.net.HttpURLConnection))
 
+
 (def now (clj-time.coerce/to-date-time (str (java.time.LocalDateTime/now))))
 
 (def content (slurp (io/resource "datos.json")))
@@ -22,8 +23,11 @@
                rest
                vec))
 
+(defn extract-column [column rows]
+  (map #(nth % column) rows))
+
 (def cares (->> rows
-                (map #(nth % 4))
+                (extract-column 4)
                 (remove empty?)
                 (mapv clojure.string/lower-case)))
 
@@ -31,16 +35,16 @@
 ;; => ("recuperado" "casa" "fallecido" "hospital uci" "hospital" "n/a")
 
 (frequencies cares)
-;; => {"recuperado" 6665, "casa" 16346, "fallecido" 822, "hospital uci" 234, "hospital" 1266, "n/a" 33}
+;; => {"recuperado" 11142, "fallecido" 1009, "hospital uci" 305, "hospital" 1518, "casa" 17811, "n/a" 48}
 
 (def states (->> rows
-                 (map #(nth % 5))
+                 (extract-column 5)
                  (remove nil?)
                  (map #(clojure.string/lower-case %))
                  distinct)) ;; => ("leve" "asintomático" "fallecido" "grave" "moderado")
 
 (def genres (->> rows
-                 (map #(nth % 7))))
+                 (extract-column 7)))
 
 (def fields {"F" "Women"
              "M" "Men"})
@@ -49,7 +53,7 @@
      frequencies
      (map (fn [[k v]] {(fields k) v}))
      (into {}))
-;; => {"Women" 11195, "Men" 14171}
+;; => {"Women" 14137, "Men" 17696}
 
 (def all-bogota-cases (filter #(some #{"Bogotá D.C."} %) rows))
 
@@ -59,9 +63,8 @@
 (frequencies types)
 
 (def ages (->> all-bogota-cases
-               (map #(nth % 6))
-               (map #(Integer/parseInt %))
-               vec))
+               (extract-column 6)
+               (map #(Integer/parseInt %))))
 
 (def only-infected (->> rows
                         (map #(nth % 4))
@@ -75,8 +78,7 @@
 (def only-infected-statuses (frequencies (map clojure.string/lower-case (map #(nth % 4) only-infected))))
 (def by-regions (frequencies (map #(nth % 2) only-infected)))
 (def contamined (->> rows
-                     (map second)
-                     vec
+                     (mapv second)
                      frequencies
                      (map (fn [[k v]] [(f/parse fmt k) v]))
                      (into (sorted-map))))
@@ -112,7 +114,7 @@
 
 ;; check zero ages values
 (->> rows
-     (map #(nth % 6))
+     (extract-column 6)
      (map #(Integer/parseInt %))
      (filter zero?)
      count)
@@ -125,7 +127,7 @@
      (into (sorted-map)))
 
 ;; all provinces
-(sort (distinct (map #(nth % 2) rows)))
+(vec (sort (distinct (extract-column 2 rows))))
 
 (count (filter #{"Bogotá D.C."}
                (map #(nth % 2) rows))) ;; => 225 => 264 => 297 => 353 => 390 => 472 => 587 => 725 => 861 => 1030 => 1164 => 1333
@@ -151,13 +153,13 @@
 ;; Two groups of deads by ages
 (->> rows
      (filter #(some #{"Fallecido" "fallecido"} %))
-     (map #(nth % 6))
+     (extract-column 6)
      (map #(Integer/parseInt %))
      (group-by #(< % 40))
      vals
      (map count)
      (zipmap ["mayores de 40" "menores de 40"]))
-;; => {"mayores de 40" 418, "menores de 40" 27}
+;; => {"mayores de 40" 955, "menores de 40" 54}
 
 ;; group by ages
 (def map-fields-name
@@ -177,8 +179,9 @@
                fields
                (range 0 100 10)))))
 
-(def segments-by-age
-  (->> rows
+(defn segments-by-age
+  [dat]
+  (->> dat
        (map #(nth % 6))
        (map #(Integer/parseInt %))
        (group-by #(cond (<= 0 % 9)   :a_zeros_to_nine
@@ -195,18 +198,24 @@
               {(map-fields-name k) (count vs)}))
        (into (sorted-map))))
 
-segments-by-age
-;; => {"0 a 9" 465, "10 a 19" 740, "20 a 29" 2516, "30 a 39" 2575, "40 a 49" 1905, "50 a 59" 1590, "60 a 69" 921, "70 a 79" 587, "80 a 89" 252, "90 a 99" 62}
+(segments-by-age rows)
+;; => {"0 a 9" 1444, "10 a 19" 2539, "20 a 29" 7021, "30 a 39" 6952, "40 a 49" 5012, "50 a 59" 4118, "60 a 69" 2472, "70 a 79" 1420, "80 a 89" 692, "90 a 99" 163}
+
+(segments-by-age all-bogota-cases)
+;; => {"0 a 9" 531, "10 a 19" 930, "20 a 29" 2298, "30 a 39" 2282, "40 a 49" 1751, "50 a 59" 1443, "60 a 69" 850, "70 a 79" 415, "80 a 89" 187, "90 a 99" 56}
 
 ;; suma por regiones
-(frequencies (map #(nth % 2) only-infected))
+(def all-regions (->> only-infected
+                      (extract-column 2)))
+
+(frequencies all-regions)
 
 ;; Bogota
-(by-regions "Bogotá D.C.") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733 => 926 => 964 => 1060 => 1102 => 3000
+(by-regions "Bogotá D.C.") ;; => 294 => 350 => 371 => 451 => 566 => 651 => 733 => 926 => 964 => 1060 => 1102 => 3000 => 6628
 
 ;; Fallecidos total
 (count (filter #(or (= "Fallecido" (nth % 4)) (empty? (nth % 4))) rows))
-;; => 14 ;; => 16 => 17 => 25 => 32 => 35 => 46 => 50 => 54 => 109 => 112 => 445
+;; => 14 ;; => 16 => 17 => 25 => 32 => 35 => 46 => 50 => 54 => 109 => 112 => 445 => 1009
 
 ;; fallecidos por regiones:
 (frequencies (into [] (map #(clojure.string/lower-case (nth % 2)) (filter #(some #{"Fallecido" "fallecido"} %) rows))))
@@ -245,7 +254,7 @@ segments-by-age
 ;; Number of cases in UCI marked as grave
 (->> rows
      (filter #(some #{"Hospital UCI"} %))
-     (map #(nth % 5))
+     (extract-column 5)
      (remove nil?)
      (filter #(= "grave" (clojure.string/lower-case %)))
      count) ;; => 303
