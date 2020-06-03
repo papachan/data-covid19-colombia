@@ -11,6 +11,35 @@
   (:import java.net.URL
            java.net.HttpURLConnection))
 
+(def header
+  [:id_de_caso
+   :fecha_diagnostico
+   :atenci_n
+   :estado
+   :edad
+   :sexo
+   :tipo
+   :ciudad_de_ubicaci_n
+   :departamento
+   :pa_s_de_procedencia
+   :fecha_de_notificaci_n
+   :fecha_recuperado
+   :fecha_de_muerte])
+
+(def header_fields
+  {:id_de_caso "ID de caso"
+   :fecha_diagnostico "Fecha de diagnóstico"
+   :ciudad_de_ubicaci_n "Ciudad de ubicación"
+   :departamento "Departamento o Distrito"
+   :atenci_n "Atención**"
+   :estado "Estado"
+   :edad "Edad"
+   :sexo "Sexo"
+   :tipo "Tipo*"
+   :pa_s_de_procedencia "País de procedencia"
+   :fecha_de_notificaci_n "fecha de_notificaci_n"
+   :fecha_recuperado "fecha recuperado"
+   :fecha_de_muerte "fecha_de_muerte"})
 
 ;; From datos.gov.co
 (defn max-id
@@ -49,33 +78,20 @@
       (recur (inc i)))))
 
 (defn process-data
-  [file]
+  [file header]
   (let [data (slurp file)]
     (when-not (empty? data)
-      (mapv #(mapv % [:id_de_caso
-                      :fecha_diagnostico
-                      :ciudad_de_ubicaci_n
-                      :departamento
-                      :atenci_n
-                      :estado
-                      :edad
-                      :sexo
-                      :tipo
-                      :pa_s_de_procedencia
-                      :fecha_de_notificaci_n
-                      :fecha_recuperado
-                      :fecha_de_muerte
-                      ]) (clojure.walk/keywordize-keys (json/parse-string data))))))
+      (mapv #(mapv % header) (clojure.walk/keywordize-keys (json/parse-string data))))))
 
 (defn parse-json-files
-  [max-num header]
+  [max-num fields]
   (loop [i 1
-         out [header]]
+         out [(mapv #(header_fields %) fields)]]
     (cond
       (<= i max-num)
       (let [name (clojure.string/join ["temp" i ".json"])
             data (when (io/resource name)
-                   (process-data (io/resource name)))
+                   (process-data (io/resource name) fields))
             res (if (not= (count data) 0)
                   (concat out data)
                   out)]
@@ -146,26 +162,11 @@
     (with-open [out-file (io/writer file-name)]
       (csv/write-csv out-file (first data)))))
 
-(def header ["ID de caso"
-             "Fecha de diagnóstico"
-             "Ciudad de ubicación"
-             "Departamento o Distrito"
-             "Atención**"
-             "Estado"
-             "Edad"
-             "Sexo"
-             "Tipo*"
-             "País de procedencia"
-             "fecha de_notificaci_n"
-             "fecha recuperado"
-             "fecha_de_muerte"])
-
 (def max-contamined-count (Integer/parseInt (last-user-data (max-id))))
 
 (defn make-json-file
-  [pages-count name]
-  (let [fname (clojure.string/join ["resources/" name])
-        content (parse-json-files pages-count header)
+  [pages-count fname fields]
+  (let [content (parse-json-files pages-count fields)
         sheet-names ["PositivasNegativas"
                      "Titulo"
                      "Casos1"
@@ -195,8 +196,10 @@
 ;; create new datos.json file
 (comment
   (let [pages-count (Math/ceil (/ max-contamined-count 1000))]
-   (do
-     (crawl-reports pages-count)
-     (clean-replace-values pages-count)
-     (make-json-file pages-count "datos.json")
-     (export-csv "datos.json" "data/Datos_%s.csv"))))
+           (do
+             (crawl-reports pages-count)
+             (clean-replace-values pages-count)
+             (make-json-file pages-count "resources/datos.json" header)
+             (make-json-file pages-count "docs/datos.json" (vec (take 7 header)))
+             (export-csv "datos.json" "data/Datos_%s.csv")))
+  )
