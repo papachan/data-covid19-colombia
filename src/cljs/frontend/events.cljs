@@ -13,8 +13,6 @@
 
 (def timeseries "https://papachan.github.io/data-covid19-colombia/timeseries.json")
 
-(def github-uri "https://raw.githubusercontent.com/papachan/data-covid19-colombia/master")
-
 (def base-url "https://www.datos.gov.co/api/id/gt2j-8ykr.json?$query=")
 
 ;;; Events Handlers ;;;
@@ -120,7 +118,7 @@
  (fn-traced
   [db _]
   {:http-xhrio {:method :get
-                :uri (str github-uri "/resources/datos.json")
+                :uri (str github_pages_uri "datos.json")
                 :response-format (ajax/json-response-format {:keywords? true})
                 :on-success [::set-data-db]}}))
 

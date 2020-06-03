@@ -164,14 +164,18 @@
 (defn show-doughnut-component
   [{:keys [data title align]}]
   (let [[series labels] (get-series-by-genres data)]
-    (let [options {:width 220
-                   :height 220
+    (let [options {:width 250
+                   :height 250
                    :data {:labels labels
                           :datasets [{:data series
                                       :backgroundColor ["#FFCC00" "blueviolet"]
                                       :borderWidth 0}]}
                    :options {:responsive false
                              :legend {:position "top"}
+                             :layout {:padding {:left 0
+                                                :right 0
+                                                :top 20
+                                                :bottom 20}}
                              :title {:display true
                                      :text title
                                      :fontSize 16}}}]

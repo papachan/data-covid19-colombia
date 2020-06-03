@@ -15,11 +15,11 @@
   [:id_de_caso
    :fecha_diagnostico
    :atenci_n
-   :estado
    :edad
    :sexo
-   :tipo
    :ciudad_de_ubicaci_n
+   :tipo
+   :estado
    :departamento
    :pa_s_de_procedencia
    :fecha_de_notificaci_n

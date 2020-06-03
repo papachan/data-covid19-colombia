@@ -7,11 +7,12 @@
             [frontend.util :as util :refer [format-number]]
             [frontend.data :as data :refer [cases-by-population
                                             population
-                                            get-last-date]])
+                                            get-last-date
+                                            get-all-dates]])
   (:import goog.i18n.DateTimeFormat))
 
 
-(def iso-fmt (goog.i18n.DateTimeFormat. "yyyy-MM-dd"))
+(def iso-fmt (goog.i18n.DateTimeFormat. "YYYY-MM-dd"))
 
 (defn get-min-date
   [data]
@@ -19,11 +20,7 @@
 
 (defn get-first-death
   [data]
-  (let [all-dates (->> data
-                       (filter #(some #{"Fallecido" "fallecido"} %))
-                       (map #(d/parse-date (second %)))
-                       sort)]
-    (.format iso-fmt (first all-dates))))
+  (.format iso-fmt (first (get-all-dates data))))
 
 (defn home
   []
@@ -48,7 +45,7 @@
          [:div
           (row {:title "Total Colombian Population: " :value (format-number population)})
           (row {:title "First Covid19 case in Colombia: " :value (get-min-date data)})
-          (row {:title "First Covid19 death in Colombia: " :value (get-first-death data)})])]
+          (row {:title "First death caused by Covid19 in Colombia: " :value (get-first-death data)})])]
       [:div
        {:className "graph"}
        (when-not (empty? data)
@@ -84,7 +81,6 @@
                         :value
                         (when-not (empty? data)
                           (get-last-date data))}]
-
        [ui/block-stats {:title "Number of deaths"
                         :style "stats bignum"
                         :value
@@ -96,16 +92,16 @@
                         (when max-id
                           (format-number (:max_id max-id)))}]
        [ui/block-stats {:title "Recovered"
-                        :style "stats bignum"
+                        :style "stats num"
                         :value
                         (when recovered
                           (format-number (:recovered recovered)))}]
        [ui/block-stats {:title "Total cases in Bogotá"
-                        :style "stats bignum"
+                        :style "stats num"
                         :value
                         (when-not (empty? data)
                           (->> data
-                               (filter #(some #{"Bogotá D.C."} %))
+                               (filter (fn [s] (= "Bogotá D.C." (nth s 5))))
                                count
                                format-number))}]
        [ui/block-stats {:title "Active cases (Bogotá)"
@@ -114,8 +110,8 @@
                         (when-not (empty? data)
                           (->> data
                                (filter #(some #{"Bogotá D.C."} %))
-                               (remove (fn [s] (or (= "Fallecido" (nth s 4))
-                                                   (= "Recuperado" (nth s 4)))))
+                               (remove (fn [s] (or (= "Fallecido" (nth s 2))
+                                                   (= "Recuperado" (nth s 2)))))
                                count
                                format-number))}]
        [ui/block-stats {:title "cases per one million"

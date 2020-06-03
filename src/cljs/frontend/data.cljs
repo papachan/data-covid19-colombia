@@ -9,7 +9,14 @@
 ;; Colombian population
 (def population 48759958)
 
-(def formatter (goog.i18n.DateTimeFormat. "dd/MM/yyyy"))
+(def formatter (goog.i18n.DateTimeFormat. "dd/MM/YYYY"))
+
+(defn get-all-dates
+  [dat]
+  (->> dat
+       (filter #(some #{"Fallecido" "fallecido"} %))
+       (map #(d/parse-date (second %)))
+       sort))
 
 (defn get-series-by-status
   [dat]
@@ -21,7 +28,7 @@
                 "recuperado (hospital)" "recovered in hospital"
                 "n/a" "N/A"}
         statuses (->> dat
-                      (map #(nth % 4))
+                      (map #(nth % 2))
                       (remove nil?)
                       (map clojure.string/lower-case)
                       frequencies)
@@ -35,7 +42,7 @@
   [dat]
   (let [fields {:F "Women" :M "Men"}
         genres (->> dat
-                    (map #(nth % 7))
+                    (map #(nth % 4))
                     frequencies)
         series (->> genres
                     (map second)
@@ -79,8 +86,8 @@
 (defn get-segments-by-ages
   [dat]
   (let [segment (->> dat
-                     (filter #(some #{"Fallecido" "fallecido"} %))
-                     (map #(nth % 6))
+                     (filter (fn [s] (= "Fallecido" (nth s 2))))
+                     (map #(nth % 3))
                      (map js/parseInt)
                      (group-by #(cond (<= 0 % 9)   :a_zeros_to_nine
                                       (<= 10 % 19) :b_tens
