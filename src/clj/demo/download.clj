@@ -34,4 +34,5 @@
 (comment
   (do
    (download-csv "report.csv")
-   (convert-to-json "report.csv" "covid-tests.json")))
+   (convert-to-json "report.csv" "covid-tests.json"))
+  )

@@ -8,7 +8,7 @@
             [clj-time.format :as f]
             [clj-time.core :as t]
             [clj-time.coerce :as coerce]
-            [demo.crawler :refer (process-data max-contamined-count)])
+            [demo.crawler :refer (max-contamined-count)])
   (:import java.net.URL
            java.net.HttpURLConnection))
 
@@ -43,6 +43,25 @@
 
 ;; number of cases per dates
 (into (sorted-map) (vec (frequencies (into [] (map #(f/parse fmt (second %)) rows)))))
+
+(defn process-data
+  [file]
+  (let [data (slurp file)]
+    (when-not (empty? data)
+      (mapv #(mapv % [:id_de_caso
+                      :fecha_diagnostico
+                      :ciudad_de_ubicaci_n
+                      :departamento
+                      :atenci_n
+                      :estado
+                      :edad
+                      :sexo
+                      :tipo
+                      :pa_s_de_procedencia
+                      :fecha_de_notificaci_n
+                      :fecha_recuperado
+                      :fecha_de_muerte
+                      ]) (clojure.walk/keywordize-keys (json/parse-string data))))))
 
 (defn create-timeseries-file
   [max-num]

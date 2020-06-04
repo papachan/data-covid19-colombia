@@ -196,10 +196,10 @@
 ;; create new datos.json file
 (comment
   (let [pages-count (Math/ceil (/ max-contamined-count 1000))]
-           (do
-             (crawl-reports pages-count)
-             (clean-replace-values pages-count)
-             (make-json-file pages-count "resources/datos.json" header)
-             (make-json-file pages-count "docs/datos.json" (vec (take 7 header)))
-             (export-csv "datos.json" "data/Datos_%s.csv")))
+    (do
+      (crawl-reports pages-count)
+      (clean-replace-values pages-count)
+      (make-json-file pages-count "resources/datos.json" header)
+      (make-json-file pages-count "docs/datos.json" (vec (take 7 header)))
+      (export-csv "datos.json" "data/Datos_%s.csv")))
   )
