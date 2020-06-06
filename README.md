@@ -15,9 +15,13 @@ https://papachan.github.io/data-covid19-colombia/
 
 https://github.com/papachan/data-covid19-colombia/tree/master/data
 
-* Same data but in json here:
+* Same data than csv file but in json format:
 
 https://raw.githubusercontent.com/papachan/data-covid19-colombia/master/resources/datos.json
+
+* A lighter json (just 7 columns):
+
+https://papachan.github.io/data-covid19-colombia/datos.json
 
 * Timeseries Deaths and Cases (Json format)
 
