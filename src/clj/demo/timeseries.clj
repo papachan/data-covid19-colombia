@@ -13,7 +13,7 @@
            java.net.HttpURLConnection))
 
 
-(def fmt (f/formatter "dd/MM/yyyy"))
+(def fmt (f/formatter "dd/MM/YYYY"))
 (def content (slurp (io/resource "datos.json")))
 (def json-data (json/parse-string content))
 (def data (json-data "data"))
