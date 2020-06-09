@@ -130,20 +130,30 @@
          sort
          (mapv unparse))))
 
+(defn deltas
+  [coll]
+  (vec (concat '(0) (map - (rest coll) coll))))
+
+(defn get-accumulate-tests
+  [dat]
+  (->> dat
+       rest
+       (mapv :accumulate)))
+
 (defn process-data
   [data]
-  (let [ labels-fechas (->> (:cases data)
-                            limit-by-date
-                            (map #(first (clojure.string/split (first %) #"/")))
-                            vec)
-        series1 (->> (:cases data)
+  (let [labels-fechas (->> data
+                           :cases
+                           limit-by-date
+                           (mapv #(first (clojure.string/split (first %) #"/"))))
+        series1 (->> data
+                     :cases
                      sum
                      limit-by-date
-                     (map second)
-                     vec)
-        series2 (->> (:deaths data)
+                     (mapv second))
+        series2 (->> data
+                     :deaths
                      sum
                      limit-by-date
-                     (map second)
-                     vec)]
+                     (mapv second))]
     [labels-fechas series1 series2]))

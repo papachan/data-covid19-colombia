@@ -11,8 +11,6 @@
   (if debug?
     "https://papachan.github.io/data-covid19-colombia/" "/data-covid19-colombia/"))
 
-(def timeseries "https://papachan.github.io/data-covid19-colombia/timeseries.json")
-
 (def base-url "https://www.datos.gov.co/api/id/gt2j-8ykr.json?$query=")
 
 ;;; Events Handlers ;;;

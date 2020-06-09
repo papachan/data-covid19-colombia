@@ -129,7 +129,7 @@
                         :value
                         (when covid-tests
                           (->> covid-tests
-                               (map #(js/parseInt (clojure.string/replace (:accumulate %) #"," "")))
+                               (map #(js/parseInt (:accumulate %)))
                                last
                                format-number))}]]]
      [ui/footer]]))
