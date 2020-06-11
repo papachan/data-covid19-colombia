@@ -13,12 +13,11 @@
 
  :aliases
  {:repl
-  {:main-opts ["-m" "demo.colombia"]
-   :extra-paths ["src/clj"]
+  {:extra-paths ["src/clj" "dev/clj"]
    :extra-deps
    {cider/piggieback {:mvn/version "0.4.2"}
-    binaryage/devtools {:mvn/version "1.0.0"}}}
-
+    binaryage/devtools {:mvn/version "1.0.0"}
+    org.clojure/tools.namespace {:mvn/version "1.0.0"}}}
   :shadow-cljs
   {:extra-paths ["dev"]
    :extra-deps
