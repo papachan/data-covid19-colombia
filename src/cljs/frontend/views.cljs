@@ -59,20 +59,20 @@
                                          :align "right"}]]])
        (when-not (empty? timeseries)
          [:<>
-          [ui/chart-component
+          [ui/line-chart-component
            {:data timeseries
-            :title "Cummulative number of reported cases"}]
-          [ui/chart-bar-comp
+            :title "Cumulative number of reported cases"}]
+          [ui/chart-bar-component
            {:data timeseries
-            :title "Cummulative number of deaths"
+            :title "Number of Deaths"
             :label-name "Deaths"}]])
        (when-not (empty? data)
          [ui/chart-bars-component2 {:data data
-                                     :title "Deaths by Group of Ages"
-                                     :label-name "Deaths"}])
+                                    :title "Deaths by Group of Ages"
+                                    :label-name "Deaths"}])
        (when covid-tests
-         [ui/chart-bars-component3 {:data covid-tests
-                                    :title "Cummulative number of Covid tests"
+         [ui/chart-bar-covid-tests {:data covid-tests
+                                    :title "Number of Covid tests"
                                     :label-name "tests"}])]
       [:div
        {:id "stats"}

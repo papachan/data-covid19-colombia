@@ -142,10 +142,10 @@
 
 (defn process-data
   [data]
-  (let [labels-fechas (->> data
-                           :cases
-                           limit-by-date
-                           (mapv #(first (clojure.string/split (first %) #"/"))))
+  (let [labels (->> data
+                    :cases
+                    limit-by-date
+                    (mapv #(first (clojure.string/split (first %) #"/"))))
         series1 (->> data
                      :cases
                      sum
@@ -156,4 +156,4 @@
                      sum
                      limit-by-date
                      (mapv second))]
-    [labels-fechas series1 series2]))
+    [labels series1 series2]))

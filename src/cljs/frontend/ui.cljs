@@ -38,13 +38,37 @@
     {:className style}
     value]])
 
+(defn bottom-options-chart
+  [props]
+  (let [{:keys [toggled? title1 title2]} props]
+    [:<>
+     [:div
+      {:className "box-options"}
+      [:span
+       title1]
+      [:input
+       {:type :checkbox
+        :className "input-btn"
+        :checked @toggled?
+        :on-change (fn [e]
+                     (reset! toggled? true))}]
+      [:span
+       title2]
+      [:input
+       {:type :checkbox
+        :className "input-btn"
+        :checked (not @toggled?)
+        :on-change (fn [e]
+                     (reset! toggled? false))}]
+      ]]))
+
 (defn show-chart-component
   [{:keys [canvas-id chart-data]}]
   (let [context (.getContext (.getElementById js/document canvas-id) "2d")]
     (Chart. context (clj->js chart-data))))
 
 ;; show line chart with timeseries
-(defn chart-component
+(defn line-chart-component
   [{:keys [data title]}]
   (r/with-let [scaled? (atom false)
                type (atom "linear")]
@@ -93,36 +117,48 @@
                          (swap! scaled? not)))}]]
         ]])))
 
-(defn chart-bar-comp
+(defn chart-bar-component
   [{:keys [data title label-name]}]
-  (let [
+  (let [toggled? (atom true)
+        mychart (atom nil)
         [labels
          cases
          series] (process-data data)
-        canvas-id 1]
+        dataset-options {:data series
+                         :label label-name
+                         :backgroundColor "#FFCC00"
+                         :borderWidth 0}]
     (r/create-class
      {:display-name        "chartjs-component"
-      :component-did-mount #(show-chart-component
-                             {:chart-data {:type "bar"
-                                           :data {:labels labels
-                                                  :datasets [{:data series
-                                                              :label label-name
-                                                              :backgroundColor "#FFCC00"
-                                                              :borderWidth 0}]}
-                                           :options {:responsive false
-                                                     :legend {:position "top"}
-                                                     :title {:display true
-                                                             :text title
-                                                             :fontSize 16}
-                                                     :scales {:xAxes [{:gridLines {:display false}}]
-                                                              :yAxes [{:gridLines {:display false}}]}}}
-                              :canvas-id "rev-chartjs"})
-      :reagent-render      (fn []
-                             [:div
-                              {:className "chart"}
-                              [:canvas {:id "rev-chartjs"
-                                        :width 690
-                                        :height 360}]])})))
+      :component-did-update (fn [this]
+                              (set! (.-datasets (.-data @mychart))
+                                    (clj->js [(assoc dataset-options :data (if @toggled?
+                                                                             series
+                                                                             (deltas series)))]))
+                              (.update @mychart))
+      :component-did-mount  (fn [this]
+                              (reset! mychart
+                                      (show-chart-component
+                                       {:canvas-id "rev-chartjs"
+                                        :chart-data {:type "bar"
+                                                     :data {:labels labels
+                                                            :datasets [dataset-options]}
+                                                     :options {:responsive false
+                                                               :legend {:position "top"}
+                                                               :title {:display true
+                                                                       :text title
+                                                                       :fontSize 16}
+                                                               :scales {:xAxes [{:gridLines {:display false}}]
+                                                                        :yAxes [{:gridLines {:display false}}]}}}})))
+      :reagent-render (fn [props]
+                        [:div
+                         {:className "chart"}
+                         [:canvas {:id "rev-chartjs"
+                                   :width 690
+                                   :height 360}]
+                         (bottom-options-chart {:toggled? toggled?
+                                                :title1 "Cumulative"
+                                                :title2 "Daily"})])})))
 
 (defn show-doughnut-component2
   [{:keys [data title align]}]
@@ -196,70 +232,50 @@
       [:div {:className (str "doughnut-charts reduced " align)}
        [doughnut-chart options]])))
 
-(defn chart-bars-component3
+(defn chart-bar-covid-tests
   [{:keys [data title label-name]}]
-  (r/with-let [changed (atom false)
-               series (atom [])
-               mychart (atom nil)]
-    (let [canvas-id 5
-          formatter (goog.i18n.DateTimeFormat. "dd MMM")
-          labels (->> data
-                      rest
-                      (map #(clojure.string/lower-case (.format formatter (js/Date. (:date %))))))]
-      (when-not (empty? data)
-        (r/create-class
-         {:display-name         "chartjs-component"
-          :component-did-update (fn [this]
-                                  (set! (.-datasets (.-data @mychart)) (clj->js [{:data @series
-                                                                                  :label label-name
-                                                                                  :backgroundColor "#FFCC00"
-                                                                                  :borderWidth 0}]))
-                                  (.update @mychart))
-          :component-did-mount (fn [this]
-                                 (reset! mychart
-                                         (show-chart-component {:chart-data
-                                                                {:type "bar"
-                                                                 :data {:labels labels
-                                                                        :datasets [{:data (get-accumulate-tests data)
-                                                                                    :label label-name
-                                                                                    :backgroundColor "#FFCC00"
-                                                                                    :borderWidth 0}]}
-                                                                 :options {:responsive false
-                                                                           :legend {:position "top"}
-                                                                           :title {:display true
-                                                                                   :text title
-                                                                                   :fontSize 16}
-                                                                           :scales {:xAxes [{:gridLines {:display false}}]
-                                                                                    :yAxes [{:gridLines {:display false}}]}}}
-                                                                :canvas-id (str "rev-chartjs-" canvas-id)})))
-          :reagent-render      (fn [this]
-                                 [:div
-                                  {:className "chart"}
-                                  [:canvas {:id (str "rev-chartjs-" canvas-id)
-                                            :width 600
-                                            :height 250}]
-                                  [:div
-                                   {:className "box-options"}
-                                   [:span
-                                    "Accumulate"]
-                                   [:input
-                                    {:type :checkbox
-                                     :className "input-btn"
-                                     :checked (not @changed)
-                                     :on-change (fn [e]
-                                                  (reset! changed false))
-                                     :on-click (fn [e]
-                                                 (reset! series (get-accumulate-tests data)))}]
-                                   [:span
-                                    "Daily Tests"]
-                                   [:input
-                                    {:type :checkbox
-                                     :className "input-btn"
-                                     :checked @changed
-                                     :on-change (fn [e]
-                                                  (reset! changed true))
-                                     :on-click (fn [e]
-                                                 (reset! series (deltas (get-accumulate-tests data))))}]]])})))))
+  (let [toggled? (atom true)
+        mychart (atom nil)
+        canvas-id 5
+        formatter (goog.i18n.DateTimeFormat. "dd MMM")
+        labels (->> data
+                    rest
+                    (map #(clojure.string/lower-case (.format formatter (js/Date. (:date %))))))
+        series (get-accumulate-tests data)
+        dataset-options {:label label-name
+                         :backgroundColor "#FFCC00"
+                         :borderWidth 0}]
+    (when-not (empty? data)
+      (r/create-class
+       {:display-name         "chartjs-component"
+        :component-did-update (fn [this]
+                                (set! (.-datasets (.-data @mychart)) (clj->js [(assoc dataset-options :data (if @toggled?
+                                                                                                              (deltas series)
+                                                                                                              series))]))
+                                (.update @mychart))
+        :component-did-mount (fn [this]
+                               (reset! mychart
+                                       (show-chart-component {:chart-data
+                                                              {:type "bar"
+                                                               :data {:labels labels
+                                                                      :datasets [(assoc dataset-options :data (deltas series))]}
+                                                               :options {:responsive false
+                                                                         :legend {:position "top"}
+                                                                         :title {:display true
+                                                                                 :text title
+                                                                                 :fontSize 16}
+                                                                         :scales {:xAxes [{:gridLines {:display false}}]
+                                                                                  :yAxes [{:gridLines {:display false}}]}}}
+                                                              :canvas-id (str "rev-chartjs-" canvas-id)})))
+        :reagent-render (fn [props]
+                          [:div
+                           {:className "chart"}
+                           [:canvas {:id (str "rev-chartjs-" canvas-id)
+                                     :width 600
+                                     :height 250}]
+                           (bottom-options-chart {:toggled? toggled?
+                                                  :title1 "Daily tests"
+                                                  :title2 "Cumulative"})])}))))
 
 (defn footer
   []
