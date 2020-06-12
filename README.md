@@ -4,24 +4,23 @@
 Running Clojurescript and Clojure to fetch data from colombian open
 data repository (datos.gov.co)
 
-This project is published on github pages you can find it here:
+This project is published on github pages, the web report can be found here:
 
 https://papachan.github.io/data-covid19-colombia/
 
-## Data repository
-
+### Data repository
 
 * You will find latest CSV File with INS Data here:
 
 https://github.com/papachan/data-covid19-colombia/tree/master/data
 
-* Same data than csv file but in json format:
-
-https://raw.githubusercontent.com/papachan/data-covid19-colombia/master/resources/datos.json
-
-* A lighter json (just 7 columns):
+* A daily report using json format for charts:
 
 https://papachan.github.io/data-covid19-colombia/datos.json
+
+Complete version (5 mb)
+
+https://raw.githubusercontent.com/papachan/data-covid19-colombia/master/resources/datos.json
 
 * Timeseries Deaths and Cases (Json format)
 
@@ -34,17 +33,24 @@ https://papachan.github.io/data-covid19-colombia/covid-tests.json
 
 ### URLs and related links
 
-**"Casos positivos de COVID-19 en Colombia"**
+Colombia publish every day different reports from the INS (Colombian
+National Health Institute) and store them under datos.gov.co platform.
 
-Colombia publish every day different reports from INS (Colombian
-Health National Institute).
-
-* https://datosabiertos.bogota.gov.co/dataset
-* https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia/gt2j-8ykr/data
-* [colombian report at infogram](https://infogram.com/covid-19-or-instituto-nacional-de-salud-or-colombia-1hke60w3qlz345r)
+* [Datos Ocupación UCI](http://saludata.saludcapital.gov.co/osb/index.php/datos-de-salud/enfermedades-trasmisibles/ocupacion-ucis/)
+* [Coronavirus Reporte del Instituto Nacional de la Salud](https://www.ins.gov.co/Noticias/Paginas/Coronavirus.aspx)
+* [Dataset de los casos de COVID-19 en Colombia](https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia/gt2j-8ykr/data)
 
 
-## Build and development
+### Build and development
+
+Dev environment with Clojure ( to load crawler and downloads features ):
+
+```
+    clj -A:repl
+```
+
+#### Clojurescript App:
+
 
 Start project:
 
