@@ -31,6 +31,20 @@
     (with-open [wrtr (io/writer output-file)]
       (.write wrtr (clojure.data.json/write-str vals)))))
 
+(defn filter-empty-rows
+  [dat]
+  (filter #(not (empty? (first %))) dat))
+
+(defn convert-to-json
+  [name fname]
+  (let [[header & rows] (csv/read-csv (slurp (io/resource name)))
+        vals (->> rows
+                  filter-empty-rows
+                  (mapv #(hash-map :date (first %) :accumulate (Integer/parseInt (clojure.string/replace (second %) #"," "")))))
+        output-file (clojure.string/join ["docs/" fname])]
+    (with-open [wrtr (io/writer output-file)]
+      (.write wrtr (clojure.data.json/write-str vals)))))
+
 (comment
   (do
    (download-csv "report.csv")
