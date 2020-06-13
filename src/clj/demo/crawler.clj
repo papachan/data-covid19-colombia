@@ -203,3 +203,8 @@
       (make-json-file pages-count "docs/datos.json" (vec (take 7 header)))
       (export-csv "datos.json" "data/Datos_%s.csv")))
   )
+
+(defn -main
+  [& args]
+  (let [pages-count (Math/ceil (/ max-contamined-count 1000))]
+    (crawl-reports pages-count)))

@@ -12,7 +12,10 @@
   clj-time {:mvn/version "0.15.2"}}
 
  :aliases
- {:repl
+ {:main
+  {:main-opts ["-m" "demo.crawler"]
+   :extra-paths ["src/clj"]}
+  :repl
   {:extra-paths ["src/clj" "dev/clj"]
    :extra-deps
    {cider/piggieback {:mvn/version "0.4.2"}
