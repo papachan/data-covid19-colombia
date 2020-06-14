@@ -104,16 +104,13 @@
                      (into (sorted-map)))]
     [(vals segment) (keys segment)]))
 
-(defn sum
-  [coll]
-  (loop [in coll,
-         sum 0,
-         out ()]
-    (if (seq in)
-      (recur (rest in) (+ (second (first in)) sum)
-             (cons [(first (first in)) (+ (second (first in)) sum)]
-                   out))
-      (reverse out))))
+(defn reduce-sum
+  [coll out acc]
+  (if-let [in (seq coll)]
+    (recur (rest in)
+           (cons [(first (first in)) (+ (second (first in)) acc)] out)
+           (+ (second (first in)) acc))
+    (reverse out)))
 
 (def fn-unparse (fn [[k v]] [(.format formatter k) v]))
 (def fn-parse (fn [[k v]] [(d/parse-date k) v]))
@@ -146,14 +143,12 @@
                     :cases
                     limit-by-date
                     (mapv #(first (clojure.string/split (first %) #"/"))))
-        series1 (->> data
-                     :cases
-                     sum
+        series1 (->> (-> (:cases data)
+                         (reduce-sum [] 0))
                      limit-by-date
                      (mapv second))
-        series2 (->> data
-                     :deaths
-                     sum
+        series2 (->> (-> (:deaths data)
+                         (reduce-sum [] 0))
                      limit-by-date
                      (mapv second))]
     [labels series1 series2]))
