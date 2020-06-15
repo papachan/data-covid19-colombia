@@ -7,7 +7,8 @@
             [cheshire.core :as json]
             [clj-time.format :as f]
             [clj-time.core :as t]
-            [clj-time.coerce :as coerce])
+            [clj-time.coerce :as coerce]
+            [demo.download :as d])
   (:import java.net.URL
            java.net.HttpURLConnection))
 
@@ -207,4 +208,15 @@
 (defn -main
   [& args]
   (let [pages-count (Math/ceil (/ max-contamined-count 1000))]
-    (crawl-reports pages-count)))
+    (cond (= "crawl" (first args))
+          (crawl-reports pages-count)
+          (= "clean" (first args))
+          (clean-replace-values pages-count)
+          (= "export" (first args))
+          (do (make-json-file pages-count "resources/datos.json" header)
+              (make-json-file pages-count "docs/datos.json" (vec (take 7 header)))
+              (export-csv "datos.json" "data/Datos_%s.csv"))
+          (= "download" (first args))
+          (do
+            (d/download-csv "report.csv")
+            (d/convert-to-json "report.csv" "covid-tests.json")))))
