@@ -8,7 +8,9 @@
             [clj-time.format :as f]
             [clj-time.core :as t]
             [clj-time.coerce :as coerce]
-            [demo.download :as d])
+            [demo.download :as d]
+            [demo.timeseries :as timeseries
+             :refer (update-timeseries)])
   (:import java.net.URL
            java.net.HttpURLConnection))
 
@@ -219,4 +221,6 @@
           (= "download" (first args))
           (do
             (d/download-csv "report.csv")
-            (d/convert-to-json "report.csv" "covid-tests.json")))))
+            (d/convert-to-json "report.csv" "covid-tests.json"))
+          (= "update" (first args))
+          (update-timeseries pages-count))))

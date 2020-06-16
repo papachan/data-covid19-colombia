@@ -7,8 +7,7 @@
             [cheshire.core :as json]
             [clj-time.format :as f]
             [clj-time.core :as t]
-            [clj-time.coerce :as coerce]
-            [demo.crawler :refer (max-contamined-count)])
+            [clj-time.coerce :as coerce])
   (:import java.net.URL
            java.net.HttpURLConnection))
 
@@ -96,9 +95,9 @@
     rows))
 
 ;; create a new timeseries file
-(comment
-  (let [pages-count (Math/ceil (/ max-contamined-count 1000))
-        rows (create-timeseries-file pages-count)
+(defn update-timeseries
+  [pages-count]
+  (let [rows (create-timeseries-file pages-count)
         all-cases (->> rows
                        (map #(f/parse fmt (second %)))
                        vec
