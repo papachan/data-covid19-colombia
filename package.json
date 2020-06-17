@@ -6,7 +6,7 @@
     "clean": "rm -rf public/js; rm -rf target;"
   },
   "devDependencies": {
-    "shadow-cljs": "^2.10.6"
+    "shadow-cljs": "^2.10.10"
   },
   "dependencies": {
     "chart.js": "^2.9.3",
