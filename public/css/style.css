@@ -86,12 +86,27 @@ header h1 {
   text-align: center;
   font-weight: bold;
   padding: 0;
+  margin-top: 4px;
 }
 
 .block-stats .stats {
   color: #FFCC00;
   width: 100%;
   text-align: center;
+}
+
+.block-stats .percent {
+  font-size: 2.4em;
+  font-weight: bold;
+  font-family: arial;
+  padding-top: 4px;
+}
+
+.block-stats .topnum {
+  font-size: 3.2em;
+  font-weight: bold;
+  font-family: arial;
+  padding-top: 8px;
 }
 
 .block-stats .bignum{
@@ -105,7 +120,7 @@ header h1 {
   font-size: 3.2em;
   font-weight: bold;
   font-family: arial;
-  padding-top: 27px;
+  padding-top: 22px;
 }
 
 footer {

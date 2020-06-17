@@ -28,15 +28,19 @@
     value]])
 
 (defn block-stats
-  [{:keys [title value style]} data]
+  [{:keys [title value style percent]} data]
   [:div
    {:className "block-stats"}
    [:div
+    {:className style}
+    value]
+   [:div
     {:className "title"}
     title]
-   [:div
-    {:className style}
-    value]])
+   (when percent
+     [:div
+      {:className "stats percent"}
+      (str percent "%")])])
 
 (defn bottom-options-chart
   [props]

@@ -92,10 +92,14 @@
                         (when max-id
                           (format-number (:max_id max-id)))}]
        [ui/block-stats {:title "Recovered"
-                        :style "stats num"
+                        :style "stats topnum"
                         :value
                         (when recovered
-                          (format-number (:recovered recovered)))}]
+                          (format-number (:recovered recovered)))
+                        :percent
+                        (when recovered
+                          (.round js/Math (* (float (/ (:recovered recovered)
+                                                       (:max_id max-id) )) 100)))}]
        [ui/block-stats {:title "Total cases in Bogotá"
                         :style "stats num"
                         :value
