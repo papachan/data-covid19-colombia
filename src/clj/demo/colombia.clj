@@ -151,25 +151,26 @@ states ;; => ("leve" "asintomático" "fallecido" "grave" "moderado")
 ;; numero de fallecidos en bogota
 (->> all-bogota-cases
      (filter #(= "Fallecido" (nth % 2)))
-     count) ;; => 393
+     count) ;; => 413
 
 ;; nuevos casos en bogota
 (->> all-bogota-cases
      (filter #(= (f/unparse fmt now) (nth % 1)))
      (map #(nth % 7))
-     frequencies) ;; => {"Leve" 277, "Asintomático" 61, "Moderado" 26, "Fallecido" 1, "leve" 1, "Grave" 2}
+     frequencies) ;; => {"Leve" 242, "Moderado" 45, "Asintomático" 134, "Grave" 3, "Fallecido" 7}
 
+;; nuevos casos en bogota
 (->> all-bogota-cases
      (filter #(= (f/unparse fmt now) (nth % 1)))
      (map #(nth % 2))
-     frequencies) ;; => {"Casa" 339, "Hospital" 26, "Fallecido" 1, "Hospital UCI" 2}
+     frequencies) ;; => {"Casa" 376, "Hospital" 45, "Hospital UCI" 3, "Fallecido" 7}
 
 (->> all-bogota-cases
      (remove #(= "Recuperado" (nth % 2)))
      (map #(nth % 2))
-     frequencies) ;; => {"Fallecido" 393, "Hospital" 923, "Hospital UCI" 153, "N/A" 23, "Casa" 8027}
+     frequencies) ;; => {"Fallecido" 413, "Hospital" 961, "Hospital UCI" 151, "N/A" 26, "Casa" 8335}
 
-;; caos por generos en el reporte de hoy
+;; casos por generos en el reporte de hoy
 (->> rows
      (filter #(= (f/unparse fmt now) (nth % 1)))
      (mapv #(clojure.string/lower-case (nth % 4)))
@@ -275,7 +276,7 @@ states ;; => ("leve" "asintomático" "fallecido" "grave" "moderado")
      (extract-column 7)
      (remove nil?)
      (filter #(= "grave" (clojure.string/lower-case %)))
-     count) ;; => 569
+     count) ;; => 565
 
 ;; new cases
 (->> rows
@@ -283,4 +284,4 @@ states ;; => ("leve" "asintomático" "fallecido" "grave" "moderado")
      frequencies
      sort
      last
-     val) ;; => 1687
+     val) ;; => 1844

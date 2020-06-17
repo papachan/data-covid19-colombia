@@ -13,35 +13,35 @@
 
 
 (def fmt (f/formatter "dd/MM/YYYY"))
-(def content (slurp (io/resource "datos.json")))
-(def json-data (json/parse-string content))
-(def data (json-data "data"))
-(def rows (->> data
-               first
-               rest
-               vec))
+;; (def content (slurp (io/resource "datos.json")))
+;; (def json-data (json/parse-string content))
+;; (def data (json-data "data"))
+;; (def rows (->> data
+;;                first
+;;                rest
+;;                vec))
 
-;; timeseries
-(def all-dates (->> rows
-                    (map second)
-                    frequencies
-                    (map #(f/parse fmt (key %)))
-                    sort))
+;; ;; timeseries
+;; (def all-dates (->> rows
+;;                     (map second)
+;;                     frequencies
+;;                     (map #(f/parse fmt (key %)))
+;;                     sort))
 
-(def series-fechas (into (sorted-map) (map vector all-dates (vec (repeat (count all-dates) 0)))))
+;; (def series-fechas (into (sorted-map) (map vector all-dates (vec (repeat (count all-dates) 0)))))
 
-(def timeseries-deaths (->> rows
-                            (filter #(some #{"Fallecido" "fallecido"} %))
-                            (map #(f/parse fmt (second %)))
-                            frequencies
-                            (into (sorted-map))))
+;; (def timeseries-deaths (->> rows
+;;                             (filter #(some #{"Fallecido" "fallecido"} %))
+;;                             (map #(f/parse fmt (second %)))
+;;                             frequencies
+;;                             (into (sorted-map))))
 
-(def series1 (->> timeseries-deaths
-                  (apply merge series-fechas)
-                  (map (fn [[k v]] [(f/unparse fmt k) v]))))
+;; (def series1 (->> timeseries-deaths
+;;                   (apply merge series-fechas)
+;;                   (map (fn [[k v]] [(f/unparse fmt k) v]))))
 
 ;; number of cases per dates
-(into (sorted-map) (vec (frequencies (into [] (map #(f/parse fmt (second %)) rows)))))
+;; (into (sorted-map) (vec (frequencies (into [] (map #(f/parse fmt (second %)) rows)))))
 
 (defn process-data
   [file]
