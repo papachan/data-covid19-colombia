@@ -109,7 +109,7 @@
                                count
                                format-number))}]
        [ui/block-stats {:title "Active cases (Bogotá)"
-                        :style "stats bignum"
+                        :style "stats num"
                         :value
                         (when-not (empty? data)
                           (->> data
