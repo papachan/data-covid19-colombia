@@ -245,7 +245,7 @@
 
 (defn chart-bar-covid-tests
   [{:keys [data title label-name]}]
-  (let [toggled? (atom true)
+  (let [toggled? (atom false)
         mychart (atom nil)
         canvas-id 5
         formatter (goog.i18n.DateTimeFormat. "dd MMM")
@@ -261,8 +261,8 @@
        {:display-name         "chartjs-component"
         :component-did-update (fn [this]
                                 (set! (.-datasets (.-data @mychart)) (clj->js [(assoc dataset-options :data (if @toggled?
-                                                                                                              (deltas series)
-                                                                                                              series))]))
+                                                                                                              series
+                                                                                                              (deltas series)))]))
                                 (.update @mychart))
         :component-did-mount (fn [this]
                                (reset! mychart
