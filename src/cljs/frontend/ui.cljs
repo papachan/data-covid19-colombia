@@ -11,7 +11,8 @@
             ["chart.js" :refer [Chart]]
             ["react-chartjs-2" :as ReactChartjs2 :refer [Line]]
             [goog.string.format]
-            [goog.string :refer [format]]))
+            [goog.string :refer [format]]
+            [clojure.string :as str]))
 
 
 (def line-chart (r/adapt-react-class (goog.object/get ReactChartjs2 "Line")))
@@ -42,9 +43,37 @@
       {:className "stats percent"}
       (str percent "%")])])
 
+(defn div-options-buttons
+  [props]
+  (let [{:keys [scaled?
+                title-button-1
+                title-button-2]} props]
+    [:div
+     {:className "box-options"}
+     [:span
+      (str/capitalize title-button-1)]
+     [:input
+      {:type :checkbox
+       :className "input-btn"
+       :checked (not @scaled?)
+       :on-change (fn [e]
+                    (if @scaled?
+                     (swap! scaled? not)))}]
+     [:span
+      (str/capitalize title-button-2)]
+     [:input
+      {:type :checkbox
+       :className "input-btn"
+       :checked @scaled?
+       :on-change (fn [e]
+                    (if-not @scaled?
+                     (swap! scaled? not)))}]]))
+
 (defn bottom-options-chart
   [props]
-  (let [{:keys [toggled? title1 title2]} props]
+  (let [{:keys [toggled?
+                title1
+                title2]} props]
     [:<>
      [:div
       {:className "box-options"}
@@ -53,17 +82,17 @@
       [:input
        {:type :checkbox
         :className "input-btn"
-        :checked @toggled?
+        :checked (not @toggled?)
         :on-change (fn [e]
-                     (reset! toggled? true))}]
+                     (reset! toggled? false))}]
       [:span
        title2]
       [:input
        {:type :checkbox
         :className "input-btn"
-        :checked (not @toggled?)
+        :checked @toggled?
         :on-change (fn [e]
-                     (reset! toggled? false))}]
+                     (reset! toggled? true))}]
       ]]))
 
 (defn show-chart-component
@@ -74,8 +103,7 @@
 ;; show line chart with timeseries
 (defn line-chart-component
   [{:keys [data title]}]
-  (r/with-let [scaled? (atom false)
-               type (atom "linear")]
+  (r/with-let [scaled? (atom false)]
     (let [[labels
            series1] (process-data data)]
       [:div
@@ -93,42 +121,21 @@
                                        :text title
                                        :fontSize 20}
                                :scales {:xAxes [{:gridLines {:display false}}]
-                                        :yAxes [{:type @type
+                                        :yAxes [{:type (if @scaled? "logarithmic" "linear")
                                                  :display true
                                                  :gridLines {:display false}}]}}}]
-        [:div
-         {:className "box-options"}
-         [:span
-          "Linear"]
-         [:input
-          {:type :checkbox
-           :className "input-btn"
-           :checked (not @scaled?)
-           :on-change (fn [e]
-                        (reset! type "linear"))
-           :on-click (fn [e]
-                       (if @scaled?
-                         (swap! scaled? not)))}]
-         [:span "Logarithmic"]
-         [:input
-          {:type :checkbox
-           :className "input-btn"
-           :checked @scaled?
-           :on-change (fn [e]
-                        (reset! type "logarithmic"))
-           :on-click (fn [e]
-                       (if-not @scaled?
-                         (swap! scaled? not)))}]]
-        ]])))
+        (div-options-buttons {:scaled? scaled?
+                              :title-button-1 "linear"
+                              :title-button-2 "logarithmic"})]])))
 
 (defn chart-bar-component
   [{:keys [data title label-name]}]
-  (let [toggled? (atom true)
+  (let [toggled? (atom false)
         mychart (atom nil)
         [labels
          cases
          series] (process-data data)
-        dataset-options {:data series
+        dataset-options {:data (deltas series)
                          :label label-name
                          :backgroundColor "#FFCC00"
                          :borderWidth 0}]
@@ -161,8 +168,8 @@
                                    :width 690
                                    :height 360}]
                          (bottom-options-chart {:toggled? toggled?
-                                                :title1 "Cumulative"
-                                                :title2 "Daily"})])})))
+                                                :title1 "Daily"
+                                                :title2 "Cumulative"})])})))
 
 (defn show-doughnut-component2
   [{:keys [data title align]}]

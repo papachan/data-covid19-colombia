@@ -5,7 +5,8 @@
             [frontend.ui :as ui :refer [row]]
             [frontend.date :as d]
             [frontend.util :as util :refer [format-number]]
-            [frontend.data :as data :refer [cases-by-population
+            [frontend.data :as data :refer [deltas
+                                            cases-by-population
                                             population
                                             get-last-date
                                             get-all-dates]])
@@ -81,6 +82,11 @@
                         :value
                         (when-not (empty? data)
                           (get-last-date data))}]
+       [ui/block-stats {:title "New deaths"
+                        :style "stats bignum"
+                        :value
+                        (when-not (empty? timeseries)
+                          (second (last (:deaths timeseries))))}]
        [ui/block-stats {:title "Number of deaths"
                         :style "stats bignum"
                         :value
