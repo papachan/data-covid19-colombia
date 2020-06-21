@@ -49,6 +49,13 @@ Dev environment with Clojure ( to load crawler and downloads features ):
     clj -A:repl
 ```
 
+You can lanch your option commands: `crawl` `clean` `export` /
+`download` and `update` as this:
+
+```
+    clj -A:main [your option]
+```
+
 #### Clojurescript App:
 
 
