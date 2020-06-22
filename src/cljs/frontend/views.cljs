@@ -77,6 +77,15 @@
                                     :label-name "tests"}])]
       [:div
        {:id "stats"}
+       [ui/block-stats {:title "Case Fatality Rate (CFR)"
+                        :style "stats num"
+                        :value
+                        (when (and deaths max-id)
+                          (str
+                           (.toFixed
+                            (.parseFloat js/window
+                                         (* (/ (:deaths deaths) (:max_id max-id)) 100)) 2)
+                           "%"))}]
        [ui/block-stats {:title "New cases"
                         :style "stats bignum"
                         :value
