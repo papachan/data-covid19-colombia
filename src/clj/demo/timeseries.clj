@@ -97,20 +97,22 @@
 ;; create a new timeseries file
 (defn update-timeseries
   [pages-count]
-  (let [rows (create-timeseries-file pages-count)
-        all-cases (->> rows
-                       (map #(f/parse fmt (second %)))
-                       vec
-                       frequencies
-                       (into (sorted-map))
-                       (map (fn [[k v]] [(f/unparse fmt k) v])))
-
-        content (slurp "docs/timeseries.json")
-        json-data (json/parse-string content)
-        diff (- (sum-deaths (read-data "datos.json")) (sum-deaths (read-data "datos1.json")))
-        last-date (->> (read-data "datos.json")
-                       (map second)
-                       last)
-        series-deaths (conj (json-data "deaths") [last-date diff])]
-    (spit "docs/timeseries.json" (json/encode {:cases all-cases
-                                               :deaths series-deaths}))))
+  (if (not (-> "resources/datos1.json" clojure.java.io/file .exists))
+    "Error didnt copy previous datos.json file"
+    (let [rows (create-timeseries-file pages-count)
+          all-cases (->> rows
+                         (map #(f/parse fmt (second %)))
+                         vec
+                         frequencies
+                         (into (sorted-map))
+                         (map (fn [[k v]] [(f/unparse fmt k) v])))
+          content (slurp "docs/timeseries.json")
+          json-data (json/parse-string content)
+          rows (read-data "datos.json")
+          diff (- (sum-deaths rows) (sum-deaths (read-data "datos1.json")))
+          last-date (->> rows
+                         (map second)
+                         last)
+          series-deaths (conj (json-data "deaths") [last-date diff])]
+      (spit "docs/timeseries.json" (json/encode {:cases all-cases
+                                                 :deaths series-deaths})))))

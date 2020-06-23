@@ -196,6 +196,9 @@
                      :refreshed (coerce/to-long (t/now))})]
     (spit fname (json/encode data-json))))
 
+(defn copy-file []
+  (io/copy (io/file (io/resource "datos.json")) (io/file "resources/datos1.json")))
+
 ;; create new datos.json file
 (comment
   (let [pages-count (Math/ceil (/ max-contamined-count 1000))]
@@ -211,7 +214,9 @@
   [& args]
   (let [pages-count (Math/ceil (/ max-contamined-count 1000))]
     (cond (= "crawl" (first args))
-          (crawl-reports pages-count)
+          (do
+            (copy-file)
+            (crawl-reports pages-count))
           (= "clean" (first args))
           (clean-replace-values pages-count)
           (= "export" (first args))
