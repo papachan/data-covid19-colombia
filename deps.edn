@@ -1,8 +1,7 @@
 {:paths ["src/cljs" "resources"]
 
  :deps
- {thheller/shadow-cljs {:mvn/version "2.10.13"}
-  binaryage/devtools {:mvn/version "1.0.0"}
+ {binaryage/devtools {:mvn/version "1.0.0"}
   reagent {:mvn/version "0.10.0"}
   re-frame {:mvn/version "0.12.0"}
   day8.re-frame/http-fx {:mvn/version "v0.2.0"}
@@ -24,7 +23,8 @@
   :shadow-cljs
   {:extra-paths ["dev"]
    :extra-deps
-   {day8.re-frame/tracing {:mvn/version  "0.5.3"}
+   {thheller/shadow-cljs {:mvn/version "2.10.13"}
+    day8.re-frame/tracing {:mvn/version  "0.5.3"}
     cider/cider-nrepl {:mvn/version "0.25.0-alpha1"}}}
   :release
   {:extra-deps
