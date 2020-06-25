@@ -203,6 +203,7 @@
 (comment
   (let [pages-count (Math/ceil (/ max-contamined-count 1000))]
     (do
+      (copy-file)
       (crawl-reports pages-count)
       (clean-replace-values pages-count)
       (make-json-file pages-count "resources/datos.json" header)
