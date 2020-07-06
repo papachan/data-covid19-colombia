@@ -28,4 +28,8 @@
     cider/cider-nrepl {:mvn/version "0.25.3-SNAPSHOT"}}}
   :release
   {:extra-deps
-   {day8.re-frame/tracing-stubs {:mvn/version "0.5.3"}}}}}
+   {day8.re-frame/tracing-stubs {:mvn/version "0.5.3"}}}
+  :uberjar {:extra-paths ["src/clj"]
+            :extra-deps {seancorfield/depstar {:mvn/version "1.0.94"}}
+            :main-opts ["-m" "hf.depstar.uberjar" "crawler.jar"
+                        "-C" "-m" "demo.crawler"]}}}

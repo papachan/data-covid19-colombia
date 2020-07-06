@@ -12,7 +12,8 @@
             [demo.timeseries :as timeseries
              :refer (update-timeseries)])
   (:import java.net.URL
-           java.net.HttpURLConnection))
+           java.net.HttpURLConnection)
+  (:gen-class))
 
 (def header
   [:id_de_caso
