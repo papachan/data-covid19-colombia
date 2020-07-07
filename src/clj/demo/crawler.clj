@@ -10,10 +10,12 @@
             [clj-time.coerce :as coerce]
             [demo.download :as d]
             [demo.timeseries :as timeseries
-             :refer (update-timeseries)])
+             :refer (update-timeseries)]
+            [clojure.tools.cli :refer [parse-opts]])
   (:import java.net.URL
            java.net.HttpURLConnection)
   (:gen-class))
+
 
 (def header
   [:id_de_caso
@@ -44,6 +46,23 @@
    :fecha_de_notificaci_n "fecha de_notificaci_n"
    :fecha_recuperado "fecha recuperado"
    :fecha_de_muerte "fecha_de_muerte"})
+
+(defn usage [options-summary]
+  (->> ["Covid Colombian Data Crawler"
+        ""
+        "Usage: ./crawler.jar [action]"
+        ""
+        "Options:"
+        options-summary
+        ""
+        "Actions:"
+        "  crawl     crawl the data from web"
+        "  clean     format all dates from crawled files"
+        "  export    generate a new csv & json file"
+        "  download  download new report with covid tests"
+        "  update    update the deaths and cases timeseries."
+        ""]
+       (str/join \newline)))
 
 ;; From datos.gov.co
 (defn max-id
@@ -166,8 +185,6 @@
     (with-open [out-file (io/writer file-name)]
       (csv/write-csv out-file (first data)))))
 
-(def max-contamined-count (Integer/parseInt (last-user-data (max-id))))
-
 (defn make-json-file
   [pages-count fname fields]
   (let [content (parse-json-files pages-count fields)
@@ -214,20 +231,28 @@
 
 (defn -main
   [& args]
-  (let [pages-count (Math/ceil (/ max-contamined-count 1000))]
-    (cond (= "crawl" (first args))
+  (let [cli-options [["-h" "--help"]]
+        {:keys [options
+                arguments
+                errors
+                summary]} (parse-opts args cli-options)
+        max-contamined-count (Integer/parseInt (last-user-data (max-id)))
+        pages-count (Math/ceil (/ max-contamined-count 1000))]
+    (cond (:help options)
+          (println (usage summary))
+          (= (first arguments) "crawl")
           (do
             (copy-file)
             (crawl-reports pages-count))
-          (= "clean" (first args))
+          (= (first arguments) "clean")
           (clean-replace-values pages-count)
-          (= "export" (first args))
+          (= (first arguments) "export")
           (do (make-json-file pages-count "resources/datos.json" header)
               (make-json-file pages-count "docs/datos.json" (vec (take 7 header)))
               (export-csv "datos.json" "data/Datos_%s.csv"))
-          (= "download" (first args))
+          (= (first arguments) "download")
           (do
             (d/download-csv "report.csv")
             (d/convert-to-json "report.csv" "covid-tests.json"))
-          (= "update" (first args))
+          (= (first arguments) "update")
           (update-timeseries pages-count))))

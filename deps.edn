@@ -8,7 +8,8 @@
   org.clojure/data.csv {:mvn/version "1.0.0"}
   org.clojure/data.json {:mvn/version "1.0.0"}
   cheshire {:mvn/version "5.10.0"}
-  clj-time {:mvn/version "0.15.2"}}
+  clj-time {:mvn/version "0.15.2"}
+  org.clojure/tools.cli {:mvn/version "1.0.194"}}
  :aliases
  {:main
   {:main-opts ["-m" "demo.crawler"]
