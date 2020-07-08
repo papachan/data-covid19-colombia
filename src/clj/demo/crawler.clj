@@ -144,7 +144,8 @@
   [json-obj]
   (map (fn [x]
          (update x "fecha_diagnostico"
-                 #(if (= "SIN DATO" (str/upper-case %)) (get x "fecha_reporte_web") %)))
+                 #(if (or (= "SIN DATO" (str/upper-case %))
+                          (= "1899-12-31T00:00:00.000" %)) (get x "fecha_reporte_web") %)))
        json-obj))
 
 ;; look for all dates formats and use a single format date
