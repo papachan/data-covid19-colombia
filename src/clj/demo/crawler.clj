@@ -11,6 +11,7 @@
             [demo.download :as d]
             [demo.timeseries :as timeseries
              :refer (update-timeseries)]
+            [demo.util :refer (get-max-date)]
             [clojure.tools.cli :refer [parse-opts]])
   (:import java.net.URL
            java.net.HttpURLConnection)
@@ -161,15 +162,6 @@
         (when res
           (spit (str"resources/" fname) (json/encode res)))
         (recur (inc i))))))
-
-(defn get-max-date
-  [dat]
-  (->> (rest dat)
-       reverse
-       (map #(f/parse (f/formatter "dd/MM/YYYY") (second %)))
-       sort
-       last
-       (f/unparse (f/formatter "dd-MM-YYYY"))))
 
 (defn export-csv
   [fname pat]
