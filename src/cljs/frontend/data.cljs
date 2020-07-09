@@ -42,14 +42,12 @@
   [dat]
   (let [fields {:F "Women" :M "Men"}
         genres (->> dat
-                    (map #(nth % 4))
+                    (map #(clojure.string/upper-case (nth % 4)))
                     frequencies)
         series (->> genres
-                    (map second)
-                    vec)
+                    (mapv second))
         labels (->> genres
-                    (map #(fields (keyword (first %))))
-                    vec)]
+                    (mapv #(fields (keyword (first %)))))]
     [series labels]))
 
 (defn get-last-date
@@ -62,8 +60,8 @@
        val))
 
 (defn cases-by-population
-  [num]
-  (let [result (float (* (/ num population) 1000000))]
+  [total]
+  (let [result (float (* (/ total population) 100000))]
     (.toFixed result 2)))
 
 (def map-fields-name
