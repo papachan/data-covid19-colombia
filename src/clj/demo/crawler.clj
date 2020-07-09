@@ -56,7 +56,7 @@
         options-summary
         ""
         "Actions:"
-        "  crawl     crawl the data from web"
+        "  crawl     execute crawler to fetch data from the web"
         "  clean     format all dates from crawled files"
         "  export    generate a new csv & json file"
         "  download  download new report with covid tests"
@@ -110,16 +110,15 @@
   [max-num fields]
   (loop [i 1
          out [(mapv #(header_fields %) fields)]]
-    (cond
-      (<= i max-num)
-      (let [name (clojure.string/join ["temp" i ".json"])
-            data (when (io/resource name)
-                   (process-data (io/resource name) fields))
-            res (if (not= (count data) 0)
-                  (concat out data)
-                  out)]
-        (recur (inc i) res))
-      :else
+    (cond (<= i max-num)
+          (let [name (clojure.string/join ["temp" i ".json"])
+                data (when (io/resource name)
+                       (process-data (io/resource name) fields))
+                res (if (not= (count data) 0)
+                      (concat out data)
+                      out)]
+            (recur (inc i) res))
+          :else
       out)))
 
 (defn merge-dates
@@ -163,14 +162,13 @@
           (spit (str"resources/" fname) (json/encode res)))
         (recur (inc i))))))
 
-(defn create-file-name
+(defn get-max-date
   [dat]
-  (->> dat
-       first
-       rest
-       (map second)
+  (->> (rest dat)
+       reverse
+       (map #(f/parse (f/formatter "dd/MM/YYYY") (second %)))
+       sort
        last
-       (f/parse (f/formatter "dd/MM/YYYY"))
        (f/unparse (f/formatter "dd-MM-YYYY"))))
 
 (defn export-csv
@@ -179,8 +177,8 @@
                        io/resource
                        slurp
                        json/parse-string)
-        data (json-data "data")
-        file-name (->> (create-file-name data)
+        data (first (json-data "data"))
+        file-name (->> (get-max-date data)
                        (format pat))]
     (spit file-name "" :append false)
     (with-open [out-file (io/writer file-name)]
@@ -218,9 +216,10 @@
 (defn copy-file []
   (io/copy (io/file (io/resource "datos.json")) (io/file "resources/datos1.json")))
 
-;; create new datos.json file
+;; debug
 (comment
-  (let [pages-count (Math/ceil (/ max-contamined-count 1000))]
+  (let [max-contamined-count (Integer/parseInt (last-user-data (max-id)))
+        pages-count (Math/ceil (/ max-contamined-count 1000))]
     (do
       (copy-file)
       (crawl-reports pages-count)
