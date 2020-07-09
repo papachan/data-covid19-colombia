@@ -7,13 +7,23 @@
             [cheshire.core :as json]
             [clj-time.format :as f]
             [clj-time.core :as t]
-            [clj-time.coerce :as coerce]
-            [demo.util :refer (get-max-date)])
+            [clj-time.coerce :as coerce])
   (:import java.net.URL
            java.net.HttpURLConnection))
 
 
 (def fmt (f/formatter "dd/MM/YYYY"))
+
+(defn get-max-date
+  ([data] (get-max-date data "dd-MM-YYYY"))
+  ([dat fecha]
+   (->> (rest dat)
+        reverse
+        (map #(f/parse (f/formatter "dd/MM/YYYY") (second %)))
+        sort
+        last
+        (f/unparse (f/formatter fecha)))))
+
 ;; (def content (slurp (io/resource "datos.json")))
 ;; (def json-data (json/parse-string content))
 ;; (def data (json-data "data"))

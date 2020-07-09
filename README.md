@@ -68,14 +68,14 @@ Start project:
 Run into dev mode:
 
 ```
-    shadow-cljs watch app
+    shadow-cljs -A:shadow-cljs watch app
 ```
 
 Release a new build for github pages:
 
 
 ```
-    shadow-cljs release app
+    shadow-cljs -A:release release app
 ```
 
 

@@ -10,8 +10,7 @@
             [clj-time.coerce :as coerce]
             [demo.download :as d]
             [demo.timeseries :as timeseries
-             :refer (update-timeseries)]
-            [demo.util :refer (get-max-date)]
+             :refer (update-timeseries get-max-date)]
             [clojure.tools.cli :refer [parse-opts]])
   (:import java.net.URL
            java.net.HttpURLConnection)
@@ -174,7 +173,7 @@
                        (format pat))]
     (spit file-name "" :append false)
     (with-open [out-file (io/writer file-name)]
-      (csv/write-csv out-file (first data)))))
+      (csv/write-csv out-file data))))
 
 (defn make-json-file
   [pages-count fname fields]
