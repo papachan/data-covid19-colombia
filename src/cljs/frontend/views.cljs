@@ -83,8 +83,7 @@
                         (when (and deaths max-id)
                           (str
                            (.toFixed
-                            (.parseFloat js/window
-                                         (* (/ (:deaths deaths) (:max_id max-id)) 100)) 2)
+                            (* (/ (:deaths deaths) (:max_id max-id)) 100) 2)
                            "%"))}]
        [ui/block-stats {:title "New cases"
                         :style "stats bignum"

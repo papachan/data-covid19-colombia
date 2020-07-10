@@ -239,7 +239,14 @@
                                                 :bottom 20}}
                              :title {:display true
                                      :text title
-                                     :fontSize 16}}}]
+                                     :fontSize 16}
+                             :tooltips {:enabled true
+                                        :callbacks {:label (fn [item data]
+                                                             (let [dataset (first (.-datasets data))
+                                                                   total (reduce + (aget dataset "data"))
+                                                                   idx (aget item "index")
+                                                                   current (aget (aget dataset "data") idx)]
+                                                               (format "%s: %.2f%" (nth labels idx) (.toFixed (* (/ current total) 100) 2))))}}}}]
       [:div {:className (str "doughnut-charts reduced " align)}
        [doughnut-chart options]])))
 
@@ -251,7 +258,7 @@
         formatter (goog.i18n.DateTimeFormat. "dd MMM")
         labels (->> data
                     rest
-                    (map #(clojure.string/lower-case (.format formatter (js/Date. (:date %))))))
+                    (map #(str/lower-case (.format formatter (js/Date. (:date %))))))
         series (get-accumulate-tests data)
         dataset-options {:label label-name
                          :backgroundColor "#FFCC00"
