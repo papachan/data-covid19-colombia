@@ -98,24 +98,28 @@ header h1 {
   padding-top: 4px;
 }
 
-.block-stats .topnum {
-  font-size: 3.2em;
+.topnum, .bignum, .num, .small-num{
   font-weight: bold;
   font-family: arial;
+}
+
+.block-stats .topnum {
+  font-size: 3.2em;
   padding-top: 8px;
 }
 
 .block-stats .bignum{
   font-size: 4.4em;
-  font-weight: bold;
-  font-family: arial;
   padding-top: 14px;
 }
 
 .block-stats .num {
   font-size: 3.2em;
-  font-weight: bold;
-  font-family: arial;
+  padding-top: 22px;
+}
+
+.block-stats .small-num {
+  font-size: 2.4em;
   padding-top: 22px;
 }
 
