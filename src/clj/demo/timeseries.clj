@@ -79,9 +79,7 @@
          out []]
     (cond
       (<= i max-num)
-      (let [name (clojure.string/join ["temp" i ".json"])
-            data (when (io/resource name)
-                   (process-data (io/resource name)))
+      (let [data (process-data (str/join ["resources/" "temp" i ".json"]))
             res (if (not= (count data) 0)
                   (concat out data)
                   out)]
@@ -97,8 +95,9 @@
 
 (defn read-data
   [fname]
-  (let [content (slurp (io/resource fname))
-        json-data (json/parse-string content)
+  (let [json-data (-> (str/join ["resources/" fname])
+                      slurp
+                      json/parse-string)
         rows (->> (json-data "data")
                   first
                   rest
@@ -108,7 +107,7 @@
 ;; create a new timeseries file
 (defn update-timeseries
   [pages-count]
-  (if (not (-> "resources/datos1.json" clojure.java.io/file .exists))
+  (if-not (-> (str/join ["resources/" "datos1.json"]) clojure.java.io/file .exists)
     "Error didnt copy previous datos.json file"
     (let [rows (create-timeseries-file pages-count)
           all-cases (->> rows

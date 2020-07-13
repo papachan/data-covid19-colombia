@@ -86,7 +86,7 @@
         value (- (* step i) 1)
         offset (if (= i 0) "" (str "%20offset%20" value))
         uri (URL. (str "https://www.datos.gov.co/api/id/gt2j-8ykr.json?$query=select%20*%2C%20%3Aid%20limit%20" limit offset))
-        fname (clojure.string/join ["resources/" "temp" (+ i 1) ".json"])
+        fname (str/join ["resources/" "temp" (inc i) ".json"])
         dest (io/file fname)
         conn ^HttpURLConnection (.openConnection ^URL uri)]
     (.connect conn)
@@ -111,9 +111,9 @@
   (loop [i 1
          out [(mapv #(header_fields %) fields)]]
     (cond (<= i max-num)
-          (let [name (clojure.string/join ["temp" i ".json"])
-                data (when (io/resource name)
-                       (process-data (io/resource name) fields))
+          (let [name (str/join ["resources/" "temp" i ".json"])
+                data (when name
+                       (process-data name fields))
                 res (if (not= (count data) 0)
                       (concat out data)
                       out)]
@@ -130,7 +130,7 @@
 (defn replace-all-dates
   [json-obj]
   (clojure.walk/postwalk (fn [e]
-                           (cond (and (not (empty? e)) (clojure.string/ends-with? e "T00:00:00.000"))
+                           (cond (and (not (empty? e)) (str/ends-with? e "T00:00:00.000"))
                                  (->> e
                                       (f/parse (f/formatter :date-hour-minute-second-ms))
                                       (f/unparse (f/formatter "dd/MM/YYYY")))
@@ -152,20 +152,19 @@
   [max-num]
   (loop [i 1]
     (when (<= i max-num)
-      (let [fname (clojure.string/join ["temp" i ".json"])
-            body (slurp (io/resource fname))
+      (let [fname (clojure.string/join ["resources/" "temp" i ".json"])
+            body (slurp fname)
             res (->> (json/parse-string body)
                      merge-dates
                      remove-junk-values
                      replace-all-dates)]
         (when res
-          (spit (str"resources/" fname) (json/encode res)))
+          (spit fname (json/encode res)))
         (recur (inc i))))))
 
 (defn export-csv
   [fname pat]
-  (let [json-data (->> fname
-                       io/resource
+  (let [json-data (->> (str/join ["resources/" fname])
                        slurp
                        json/parse-string)
         data (first (json-data "data"))
@@ -205,7 +204,8 @@
     (spit fname (json/encode data-json))))
 
 (defn copy-file []
-  (io/copy (io/file (io/resource "datos.json")) (io/file "resources/datos1.json")))
+  (when-not (-> "resources/datos1.json" clojure.java.io/file .exists)
+    (io/copy (io/file "resources/datos.json") (io/file "resources/datos1.json"))))
 
 ;; debug
 (comment

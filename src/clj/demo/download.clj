@@ -16,7 +16,7 @@
 (defn download-csv
   [fname]
   (let [uri (URL. (str "https://www.datos.gov.co/api/views/8835-5baf/rows.csv?accessType=DOWNLOAD&bom=true&format=true"))
-        pathfile (clojure.string/join ["resources/" fname])
+        pathfile (str/join ["resources/" fname])
         dest (io/file pathfile)
         conn ^HttpURLConnection (.openConnection ^URL uri)]
     (.connect conn)
@@ -25,11 +25,11 @@
 
 (defn convert-to-json
   [name fname]
-  (let [[header & rows] (csv/read-csv (slurp (io/resource name)))
-        vals (mapv #(hash-map :date (first %) :accumulate (Integer/parseInt (clojure.string/replace (second %) #"," ""))) rows)
-        output-file (clojure.string/join ["docs/" fname])]
+  (let [[header & rows] (csv/read-csv (slurp (str/join ["resources/" name])))
+        vals (mapv #(hash-map :date (first %) :accumulate (Integer/parseInt (str/replace (second %) #"," ""))) rows)
+        output-file (str/join ["docs/" fname])]
     (with-open [wrtr (io/writer output-file)]
-      (.write wrtr (clojure.data.json/write-str vals)))))
+      (.write wrtr (j/write-str vals)))))
 
 (defn filter-empty-rows
   [dat]
@@ -37,13 +37,13 @@
 
 (defn convert-to-json
   [name fname]
-  (let [[header & rows] (csv/read-csv (slurp (io/resource name)))
+  (let [[header & rows] (csv/read-csv (slurp (str/join ["resources/" name])))
         vals (->> rows
                   filter-empty-rows
-                  (mapv #(hash-map :date (first %) :accumulate (Integer/parseInt (clojure.string/replace (second %) #"," "")))))
-        output-file (clojure.string/join ["docs/" fname])]
+                  (mapv #(hash-map :date (first %) :accumulate (Integer/parseInt (str/replace (second %) #"," "")))))
+        output-file (str/join ["docs/" fname])]
     (with-open [wrtr (io/writer output-file)]
-      (.write wrtr (clojure.data.json/write-str vals)))))
+      (.write wrtr (j/write-str vals)))))
 
 (comment
   (do

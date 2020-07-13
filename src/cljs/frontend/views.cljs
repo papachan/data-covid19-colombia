@@ -143,7 +143,7 @@
                         (when deaths
                           (cases-by-population (:deaths deaths)))}]
        [ui/block-stats {:title "Number of Covid Tests"
-                        :style "stats num"
+                        :style "stats small-num"
                         :value
                         (when covid-tests
                           (->> covid-tests
