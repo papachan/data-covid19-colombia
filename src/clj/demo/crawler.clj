@@ -8,10 +8,10 @@
             [clj-time.format :as f]
             [clj-time.core :as t]
             [clj-time.coerce :as coerce]
+            [clojure.tools.cli :refer [parse-opts]]
             [demo.download :as d]
-            [demo.timeseries :as timeseries
-             :refer (update-timeseries get-max-date)]
-            [clojure.tools.cli :refer [parse-opts]])
+            [demo.timeseries :refer (update-timeseries
+                                     get-max-date)])
   (:import java.net.URL
            java.net.HttpURLConnection)
   (:gen-class))

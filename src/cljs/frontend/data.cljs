@@ -153,3 +153,16 @@
                      limit-by-date
                      (mapv second))]
     [labels series1 series2]))
+
+(defn get-last-test
+  [num]
+  (->> num
+       (map #(js/parseInt (:accumulate %)))
+       last))
+
+(defn get-last-delta
+  [num]
+  (->> num
+       (map #(js/parseInt (:accumulate %)))
+       deltas
+       last))

@@ -95,14 +95,13 @@
 
 (defn read-data
   [fname]
-  (let [json-data (-> (str/join ["resources/" fname])
-                      slurp
-                      json/parse-string)
-        rows (->> (json-data "data")
-                  first
-                  rest
-                  vec)]
-    rows))
+  (-> (str/join ["resources/" fname])
+      slurp
+      json/parse-string
+      (get "data")
+      first
+      rest
+      vec))
 
 ;; create a new timeseries file
 (defn update-timeseries

@@ -18,10 +18,10 @@
 (def fmt (f/formatter "dd/MM/YYYY"))
 (def json-data (json/parse-string content))
 (def data (json-data "data"))
-(def rows (->> data
-               first
-               rest
-               vec))
+(def rows (-> data
+              first
+              rest
+              vec))
 
 (defn extract-column [column rows]
   (map #(nth % column) rows))

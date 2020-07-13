@@ -4,12 +4,16 @@
             [frontend.events :as events]
             [frontend.ui :as ui :refer [row]]
             [frontend.date :as d]
-            [frontend.util :as util :refer [format-number]]
             [frontend.data :as data :refer [deltas
                                             cases-by-population
                                             population
                                             get-last-date
-                                            get-all-dates]])
+                                            get-all-dates
+                                            get-last-test
+                                            get-last-delta]]
+            [goog.string.format]
+            [goog.string :refer [format]]
+            [frontend.util :as util :refer [format-number]])
   (:import goog.i18n.DateTimeFormat))
 
 
@@ -146,8 +150,12 @@
                         :style "stats small-num"
                         :value
                         (when covid-tests
-                          (->> covid-tests
-                               (map #(js/parseInt (:accumulate %)))
-                               last
-                               format-number))}]]]
+                          (format-number (get-last-test covid-tests)))}]
+       (when-not (empty? data)
+         [ui/block-stats {:title "percent of positivity"
+                          :style "stats small-num"
+                          :value (format "%s %"
+                                         (.toFixed (* (/ (get-last-date data)
+                                                         (get-last-delta covid-tests)) 100) 2))
+                          }])]]
      [ui/footer]]))
