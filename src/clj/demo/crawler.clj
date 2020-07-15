@@ -130,7 +130,10 @@
 (defn replace-all-dates
   [json-obj]
   (clojure.walk/postwalk (fn [e]
-                           (cond (and (not (empty? e)) (str/ends-with? e "T00:00:00.000"))
+                           (cond (and (not (empty? e))
+                                      (try
+                                        (f/parse (f/formatter :date-hour-minute-second-ms) e)
+                                        (catch Exception e)))
                                  (->> e
                                       (f/parse (f/formatter :date-hour-minute-second-ms))
                                       (f/unparse (f/formatter "dd/MM/YYYY")))

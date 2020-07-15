@@ -50,6 +50,17 @@
                     (mapv #(fields (keyword (first %)))))]
     [series labels]))
 
+(defn last-sum
+  [dat]
+  (let [res (-> (->> dat
+                     (map #(d/parse-date (second %))))
+                frequencies
+                sort
+                reverse
+                vals
+                rest)]
+    (reduce + res)))
+
 (defn get-last-date
   [dat]
   (->> dat
