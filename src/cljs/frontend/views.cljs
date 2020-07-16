@@ -155,7 +155,7 @@
          [ui/block-stats {:title "percent of positivity"
                           :style "stats small-num"
                           :value (format "%s %"
-                                         (.toFixed (* (/ (get-last-date data)
+                                         (.toFixed (* (/ (:difference timeseries)
                                                          (get-last-delta covid-tests)) 100) 2))
                           }])]]
      [ui/footer]]))
