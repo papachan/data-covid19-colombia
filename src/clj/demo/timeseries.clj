@@ -114,10 +114,12 @@
                          frequencies
                          (into (sorted-map))
                          (map (fn [[k v]] [(f/unparse fmt k) v])))
-          content (slurp "docs/timeseries.json")
+          content (slurp (str/join ["docs/" "timeseries.json"]))
           json-data (json/parse-string content)
           rows (read-data "datos.json")
           diff (- (sum-deaths rows) (sum-deaths (read-data "datos1.json")))
-          series-deaths (conj (json-data "deaths") [(get-max-date rows "dd/MM/YYYY") diff])]
+          series (conj (json-data "deaths") [(get-max-date rows "dd/MM/YYYY") diff])
+          difference (- (count rows) (count (read-data "datos1.json")))]
       (spit "docs/timeseries.json" (json/encode {:cases all-cases
-                                                 :deaths series-deaths})))))
+                                                 :deaths series
+                                                 :difference difference})))))
