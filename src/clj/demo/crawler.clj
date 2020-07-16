@@ -223,30 +223,36 @@
       (export-csv "datos.json" "data/Datos_%s.csv")))
   )
 
+(defn run-options
+  [action]
+  (let [max-contamined-count (Integer/parseInt (last-user-data (max-id)))
+        pages-count (Math/ceil (/ max-contamined-count 1000))]
+    (cond (= action "crawl")
+          (do
+            (copy-file)
+            (crawl-reports pages-count))
+          (= action "clean")
+          (clean-replace-values pages-count)
+          (= action "export")
+          (do (make-json-file pages-count "resources/datos.json" header)
+              (make-json-file pages-count "docs/datos.json" (vec (take 7 header)))
+              (export-csv "datos.json" "data/Datos_%s.csv"))
+          (= action "update")
+          (update-timeseries pages-count))))
+
 (defn -main
   [& args]
   (let [cli-options [["-h" "--help"]]
         {:keys [options
                 arguments
                 errors
-                summary]} (parse-opts args cli-options)
-        max-contamined-count (Integer/parseInt (last-user-data (max-id)))
-        pages-count (Math/ceil (/ max-contamined-count 1000))]
+                summary]} (parse-opts args cli-options)]
     (cond (:help options)
           (println (usage summary))
-          (= (first arguments) "crawl")
-          (do
-            (copy-file)
-            (crawl-reports pages-count))
-          (= (first arguments) "clean")
-          (clean-replace-values pages-count)
-          (= (first arguments) "export")
-          (do (make-json-file pages-count "resources/datos.json" header)
-              (make-json-file pages-count "docs/datos.json" (vec (take 7 header)))
-              (export-csv "datos.json" "data/Datos_%s.csv"))
           (= (first arguments) "download")
           (do
             (d/download-csv "report.csv")
             (d/convert-to-json "report.csv" "covid-tests.json"))
-          (= (first arguments) "update")
-          (update-timeseries pages-count))))
+
+          (.contains ["crawl" "clean" "update" "export"] (first arguments))
+          (run-options (first arguments)))))
