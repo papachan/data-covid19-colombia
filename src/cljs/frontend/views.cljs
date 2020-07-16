@@ -92,8 +92,8 @@
        [ui/block-stats {:title "New cases"
                         :style "stats bignum"
                         :value
-                        (when-not (empty? data)
-                          (get-last-date data))}]
+                        (when-not (empty? timeseries)
+                          (:difference timeseries))}]
        [ui/block-stats {:title "New deaths"
                         :style "stats bignum"
                         :value
