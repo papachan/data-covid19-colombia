@@ -33,7 +33,7 @@ https://papachan.github.io/data-covid19-colombia/covid-tests.json
 
 ### URLs and related links
 
-Colombia publish every day different reports from the INS (Colombian
+Colombia publish every day in different reports from the INS (Colombian
 National Health Institute) and store them under datos.gov.co platform.
 
 * [Datos Ocupación UCI](http://saludata.saludcapital.gov.co/osb/index.php/datos-de-salud/enfermedades-trasmisibles/ocupacion-ucis/)
