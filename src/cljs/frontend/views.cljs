@@ -100,7 +100,7 @@
                         (when-not (empty? timeseries)
                           (second (last (:deaths timeseries))))}]
        [ui/block-stats {:title "Number of deaths"
-                        :style "stats bignum"
+                        :style "stats num"
                         :value
                         (when deaths
                           (format-number (:deaths deaths)))}]
