@@ -103,7 +103,7 @@
                         :style "stats bignum"
                         :value
                         (when deaths
-                          (:deaths deaths))}]
+                          (format-number (:deaths deaths)))}]
        [ui/block-stats {:title "Number of cases"
                         :style "stats num"
                         :value
