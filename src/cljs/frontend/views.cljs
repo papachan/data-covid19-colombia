@@ -90,10 +90,10 @@
                             (* (/ (:deaths deaths) (:max_id max-id)) 100) 2)
                            "%"))}]
        [ui/block-stats {:title "New cases"
-                        :style "stats bignum"
+                        :style "stats num"
                         :value
                         (when-not (empty? timeseries)
-                          (:difference timeseries))}]
+                          (format-number (:difference timeseries)))}]
        [ui/block-stats {:title "New deaths"
                         :style "stats bignum"
                         :value
