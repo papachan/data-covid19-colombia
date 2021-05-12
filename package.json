@@ -9,7 +9,7 @@
     "shadow-cljs": "^2.10.21"
   },
   "dependencies": {
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "react-chartjs-2": "^2.9.0",
     "create-react-class": "^15.6.3",
     "react": "16.13.0",
